@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sri Rainbow School | Where Little Minds Bloom</title>
+<meta name="description" content="Sri Rainbow School - a joyful place for children to learn, play and grow. Recognized by Govt. of Telangana.">
+
+<!-- Bootstrap Icons -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+<!-- Google Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Nunito:ital,wght@0,400;0,600;0,700;0,800;1,600&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Rainbow scroll progress -->
+<div class="scroll-rainbow" id="scrollRainbow"></div>
+
+<!-- ============ NAV ============ -->
+<header class="site-header" id="siteHeader">
+  <div class="nav-wrap">
+    <a href="#home" class="brand">
+      <img src="logo.jpg" alt="Sri Rainbow School logo" class="brand-logo">
+    </a>
+
+    <nav class="main-nav" id="mainNav">
+      <a href="#home" class="nav-link active">Home</a>
+      <a href="#about" class="nav-link">About</a>
+      <a href="#academics" class="nav-link">Academics</a>
+      <a href="#gallery" class="nav-link">Gallery</a>
+      <a href="#admission" class="nav-link">Admission</a>
+      <a href="#contact" class="nav-link">Contact</a>
+    </nav>
+
+    <button class="btn-enquire" id="openEnquireBtn1">
+      <i class="bi bi-pencil-square"></i> Enquire Now
+    </button>
+
+    <button class="hamburger" id="hamburgerBtn" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<!-- ============ HOME / HERO ============ -->
+<section class="hero" id="home">
+  <div class="hero-blobs" aria-hidden="true">
+    <span class="blob blob-a"></span>
+    <span class="blob blob-b"></span>
+    <span class="blob blob-c"></span>
+  </div>
+
+  <div class="hero-inner">
+    <div class="hero-copy">
+      <p class="eyebrow"><i class="bi bi-stars"></i> Recognized by Govt. of Telangana</p>
+      <h1 class="hero-title">Every child is a <span class="rainbow-text">splash of colour.</span></h1>
+      <p class="hero-sub">Sri Rainbow School gives little learners a bright, joyful start &mdash; where curiosity is celebrated, friendships bloom, and every day feels like a new colour to explore.</p>
+      <div class="hero-actions">
+        <button class="btn-primary" id="openEnquireBtn2"><i class="bi bi-send-check"></i> Admission Enquiry</button>
+        <a href="#academics" class="btn-ghost">See Academics <i class="bi bi-arrow-down-right"></i></a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat"><span class="stat-num" data-count="18">0</span><span class="stat-label">Years of Joy</span></div>
+        <div class="stat"><span class="stat-num" data-count="1200">0</span><span class="stat-label">Happy Students</span></div>
+        <div class="stat"><span class="stat-num" data-count="60">0</span><span class="stat-label">Caring Teachers</span></div>
+      </div>
+    </div>
+
+    <div class="hero-art">
+      <svg class="rainbow-burst" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <g class="petals" transform="translate(200,260)">
+          <path class="petal p1" d="M0,0 C-10,-90 -30,-160 -70,-210 C-40,-160 -20,-90 -8,-4 Z"/>
+          <path class="petal p2" d="M0,0 C-20,-110 -40,-180 -30,-250 C0,-190 10,-110 4,-4 Z"/>
+          <path class="petal p3" d="M0,0 C-2,-120 4,-200 30,-260 C20,-190 8,-110 0,-4 Z"/>
+          <path class="petal p4" d="M0,0 C14,-110 34,-180 70,-230 C40,-170 22,-100 6,-4 Z"/>
+          <path class="petal p5" d="M0,0 C24,-90 54,-140 100,-175 C66,-130 40,-80 12,-4 Z"/>
+          <path class="petal p6" d="M0,0 C34,-60 74,-90 120,-100 C82,-80 50,-50 16,-4 Z"/>
+          <circle class="petal-core" cx="0" cy="-4" r="14"/>
+        </g>
+        <g class="cloud" transform="translate(60,320)">
+          <ellipse cx="0" cy="0" rx="46" ry="22"/>
+          <ellipse cx="30" cy="-8" rx="30" ry="20"/>
+          <ellipse cx="-30" cy="-6" rx="26" ry="16"/>
+        </g>
+        <g class="cloud cloud2" transform="translate(320,90)">
+          <ellipse cx="0" cy="0" rx="36" ry="17"/>
+          <ellipse cx="24" cy="-6" rx="22" ry="15"/>
+          <ellipse cx="-22" cy="-4" rx="20" ry="12"/>
+        </g>
+      </svg>
+    </div>
+  </div>
+
+  <svg class="wave-divider" viewBox="0 0 1440 90" preserveAspectRatio="none" aria-hidden="true">
+    <path d="M0,40 C240,90 480,0 720,30 C960,60 1200,10 1440,40 L1440,90 L0,90 Z"></path>
+  </svg>
+</section>
+
+<!-- ============ ABOUT ============ -->
+<section class="about" id="about">
+  <div class="section-wrap">
+    <p class="eyebrow eyebrow-green"><i class="bi bi-flower1"></i> About Us</p>
+    <h2 class="section-title">A little school with a big heart</h2>
+    <p class="section-lead">Sri Rainbow School was built on one simple belief: children learn best when they feel safe, seen, and delighted by what's in front of them. Our classrooms are bright, our teachers are warm, and our days are full of wonder.</p>
+
+    <div class="about-grid">
+      <div class="about-card">
+        <div class="about-icon icon-blue"><i class="bi bi-heart"></i></div>
+        <h3>Our Mission</h3>
+        <p>To nurture confident, kind and curious children through play-based, joyful learning experiences that respect each child's own pace.</p>
+      </div>
+      <div class="about-card">
+        <div class="about-icon icon-yellow"><i class="bi bi-brightness-high"></i></div>
+        <h3>Our Vision</h3>
+        <p>A school where every colour of every child is celebrated &mdash; and where learning feels like discovery, not duty.</p>
+      </div>
+      <div class="about-card">
+        <div class="about-icon icon-red"><i class="bi bi-shield-check"></i></div>
+        <h3>Safe &amp; Caring</h3>
+        <p>CCTV-monitored campus, trained caregivers, hygienic meals and a nurse on call &mdash; because peace of mind matters to parents too.</p>
+      </div>
+      <div class="about-card">
+        <div class="about-icon icon-green"><i class="bi bi-people"></i></div>
+        <h3>Small Class Sizes</h3>
+        <p>Low student-teacher ratios mean every child gets seen, heard, and encouraged &mdash; every single day.</p>
+      </div>
+    </div>
+  </div>
+
+  <svg class="wave-divider wave-yellow" viewBox="0 0 1440 90" preserveAspectRatio="none" aria-hidden="true">
+    <path d="M0,50 C240,10 480,90 720,50 C960,10 1200,70 1440,30 L1440,90 L0,90 Z"></path>
+  </svg>
+</section>
+
+<!-- ============ ACADEMICS ============ -->
+<section class="academics" id="academics">
+  <div class="section-wrap">
+    <p class="eyebrow eyebrow-orange"><i class="bi bi-book"></i> Academics</p>
+    <h2 class="section-title">A curriculum that grows with them</h2>
+    <p class="section-lead">From first steps into a classroom to confident, curious little learners &mdash; our programmes are designed stage by stage, colour by colour.</p>
+
+    <div class="academic-tabs">
+      <div class="prog-card" style="--tint:#2E5AAC">
+        <div class="prog-top"><i class="bi bi-puzzle"></i><span class="prog-age">1.5 &ndash; 3 yrs</span></div>
+        <h3>Play Group / Nursery</h3>
+        <p>Sensory play, rhymes, and gentle first routines that build trust and independence.</p>
+        <ul class="prog-list">
+          <li><i class="bi bi-check2"></i> Sensory &amp; motor skill play</li>
+          <li><i class="bi bi-check2"></i> Music, rhymes &amp; movement</li>
+          <li><i class="bi bi-check2"></i> Toilet training support</li>
+        </ul>
+      </div>
+      <div class="prog-card" style="--tint:#4CAF6D">
+        <div class="prog-top"><i class="bi bi-palette"></i><span class="prog-age">3 &ndash; 5 yrs</span></div>
+        <h3>LKG &amp; UKG</h3>
+        <p>Phonics, numeracy, art and storytelling woven into a structured, playful school day.</p>
+        <ul class="prog-list">
+          <li><i class="bi bi-check2"></i> Phonics &amp; early literacy</li>
+          <li><i class="bi bi-check2"></i> Numbers &amp; pattern play</li>
+          <li><i class="bi bi-check2"></i> Art, craft &amp; storytelling</li>
+        </ul>
+      </div>
+      <div class="prog-card" style="--tint:#F4863A">
+        <div class="prog-top"><i class="bi bi-mortarboard"></i><span class="prog-age">5 &ndash; 10 yrs</span></div>
+        <h3>Primary Wing</h3>
+        <p>A strong academic core &mdash; language, math and science &mdash; balanced with sport, art and values.</p>
+        <ul class="prog-list">
+          <li><i class="bi bi-check2"></i> English, Math, EVS &amp; Telugu</li>
+          <li><i class="bi bi-check2"></i> Computer &amp; spoken skills lab</li>
+          <li><i class="bi bi-check2"></i> Sports, yoga &amp; value education</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="activities-strip">
+      <h3 class="activities-title"><i class="bi bi-controller"></i> Beyond the classroom</h3>
+      <div class="activities-row">
+        <div class="activity-pill"><i class="bi bi-music-note-beamed"></i> Music &amp; Dance</div>
+        <div class="activity-pill"><i class="bi bi-easel2"></i> Art &amp; Craft</div>
+        <div class="activity-pill"><i class="bi bi-trophy"></i> Sports Day</div>
+        <div class="activity-pill"><i class="bi bi-book-half"></i> Story Time</div>
+        <div class="activity-pill"><i class="bi bi-tree"></i> Nature Walks</div>
+        <div class="activity-pill"><i class="bi bi-mic"></i> Show &amp; Tell</div>
+      </div>
+    </div>
+  </div>
+
+  <svg class="wave-divider wave-purple" viewBox="0 0 1440 90" preserveAspectRatio="none" aria-hidden="true">
+    <path d="M0,30 C240,70 480,10 720,40 C960,70 1200,20 1440,50 L1440,90 L0,90 Z"></path>
+  </svg>
+</section>
+
+<!-- ============ GALLERY ============ -->
+<section class="gallery" id="gallery">
+  <div class="section-wrap">
+    <p class="eyebrow eyebrow-purple"><i class="bi bi-images"></i> Gallery</p>
+    <h2 class="section-title">Moments in full colour</h2>
+    <p class="section-lead">A peek into our everyday &mdash; painted hands, sports days, story circles and all the little wins in between.</p>
+
+    <div class="gallery-grid" id="galleryGrid">
+      <div class="gal-item" style="--c:#2E5AAC" data-caption="Story Circle Time">
+        <img src="images/1.jpeg" height="280">
+      </div>
+      <div class="gal-item" style="--c:#E63946" data-caption="Annual Sports Day">
+        <img src="images/2.jpeg" height="280">
+      </div>
+      <div class="gal-item" style="--c:#FFC93C" data-caption="Colours &amp; Craft">
+        <img src="images/1.jpeg" height="280">
+      </div>
+      <div class="gal-item" style="--c:#4CAF6D" data-caption="Nature Walk">
+        <img src="images/2.jpeg" height="280">
+      </div>
+      <div class="gal-item" style="--c:#7B4FA0" data-caption="Music Class">
+        <img src="images/2.jpeg" height="280">
+      </div>
+      <div class="gal-item" style="--c:#F4863A" data-caption="Little Chef Day">
+        <img src="images/2.jpeg" height="280">
+      </div>
+      <div class="gal-item" style="--c:#E63946" data-caption="Puppet Show">
+        <img src="images/2.jpeg" height="280">
+      </div>
+      <div class="gal-item" style="--c:#2E5AAC" data-caption="Annual Day">
+        <img src="images/2.jpeg" height="280">
+      </div>
+    </div>
+  </div>
+
+  <svg class="wave-divider wave-navy" viewBox="0 0 1440 90" preserveAspectRatio="none" aria-hidden="true">
+    <path d="M0,45 C240,5 480,85 720,45 C960,5 1200,75 1440,35 L1440,90 L0,90 Z"></path>
+  </svg>
+</section>
+
+<!-- Lightbox -->
+<div class="lightbox" id="lightbox">
+  <button class="lightbox-close" id="lightboxClose" aria-label="Close"><i class="bi bi-x-lg"></i></button>
+  <div class="lightbox-card" id="lightboxCard">
+    <i class="bi bi-image"></i>
+    <p id="lightboxCaption"></p>
+  </div>
+</div>
+
+<!-- ============ ADMISSION BANNER ============ -->
+<section class="admission" id="admission">
+  <div class="section-wrap admission-wrap">
+    <div class="admission-copy">
+      <p class="eyebrow eyebrow-light"><i class="bi bi-flag"></i> Admissions Open</p>
+      <h2 class="section-title light">2026&ndash;27 seats are filling up fast</h2>
+      <p class="section-lead light">Give your little one a colourful start. Book a campus visit or send an enquiry and our admissions team will reach out within 24 hours.</p>
+      <button class="btn-primary btn-light" id="openEnquireBtn3"><i class="bi bi-send-check"></i> Start Admission Enquiry</button>
+    </div>
+
+    <div class="admission-steps">
+      <div class="step"><span class="step-num">1</span><div><h4>Enquire</h4><p>Share your child's details through our quick form.</p></div></div>
+      <div class="step"><span class="step-num">2</span><div><h4>Visit</h4><p>Tour the campus and meet our teachers.</p></div></div>
+      <div class="step"><span class="step-num">3</span><div><h4>Confirm</h4><p>Complete documentation and secure the seat.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<section class="contact" id="contact">
+  <div class="section-wrap">
+    <p class="eyebrow eyebrow-red"><i class="bi bi-chat-dots"></i> Contact</p>
+    <h2 class="section-title">Let's talk</h2>
+    <p class="section-lead">Questions about admissions, fees or a campus tour? We would love to hear from you.</p>
+
+    <div class="contact-grid">
+      <div class="contact-info">
+        <div class="info-row"><i class="bi bi-geo-alt-fill"></i><div><strong>Address</strong><p>Sri Rainbow School Campus, Hyderabad, Telangana, India</p></div></div>
+        <div class="info-row"><i class="bi bi-telephone-fill"></i><div><strong>Phone</strong><p>+91 90000 00000</p></div></div>
+        <div class="info-row"><i class="bi bi-envelope-fill"></i><div><strong>Email</strong><p>hello@srirainbowschool.edu.in</p></div></div>
+        <div class="info-row"><i class="bi bi-clock-fill"></i><div><strong>Office Hours</strong><p>Mon &ndash; Sat, 8:30 AM &ndash; 4:30 PM</p></div></div>
+        <div class="social-row">
+          <a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+          <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+          <a href="#" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+          <a href="#" aria-label="WhatsApp"><i class="bi bi-whatsapp"></i></a>
+        </div>
+      </div>
+
+      <form class="contact-form" id="contactForm">
+        <div class="form-row">
+          <div class="field">
+            <label for="cName">Your Name</label>
+            <input type="text" id="cName" required placeholder="Anitha Reddy">
+          </div>
+          <div class="field">
+            <label for="cPhone">Phone Number</label>
+            <input type="tel" id="cPhone" required placeholder="98765 43210">
+          </div>
+        </div>
+        <div class="field">
+          <label for="cEmail">Email</label>
+          <input type="email" id="cEmail" required placeholder="you@email.com">
+        </div>
+        <div class="field">
+          <label for="cMsg">Message</label>
+          <textarea id="cMsg" rows="4" placeholder="Tell us a little about your query..."></textarea>
+        </div>
+        <button type="submit" class="btn-primary full"><i class="bi bi-send"></i> Send Message</button>
+        <p class="form-note" id="contactNote"></p>
+      </form>
+    </div>
+
+    <div class="map-embed">
+      <iframe title="School location map" src="https://maps.google.com/maps?q=Hyderabad%2C%20Telangana&t=&z=12&ie=UTF8&iwloc=&output=embed" loading="lazy"></iframe>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer class="site-footer">
+  <div class="footer-wrap">
+    <div class="footer-brand">
+      <img src="assets/logo.jpg" alt="Sri Rainbow School" class="footer-logo">
+      <p>Recognized by Govt. of Telangana &mdash; nurturing curious, kind and confident learners since day one.</p>
+    </div>
+    <div class="footer-links">
+      <h4>Explore</h4>
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#academics">Academics</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#admission">Admission</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <div class="footer-links">
+      <h4>Programmes</h4>
+      <a href="#academics">Play Group / Nursery</a>
+      <a href="#academics">LKG &amp; UKG</a>
+      <a href="#academics">Primary Wing</a>
+    </div>
+    <div class="footer-cta">
+      <h4>Ready to visit?</h4>
+      <button class="btn-primary" id="openEnquireBtn4"><i class="bi bi-send-check"></i> Enquire Now</button>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; <span id="year"></span> Sri Rainbow School. All rights reserved.</p>
+  </div>
+</footer>
+
+<!-- Floating Enquiry Button (mobile) -->
+<button class="fab-enquire" id="fabEnquireBtn" aria-label="Admission Enquiry"><i class="bi bi-pencil-square"></i></button>
+
+<!-- ============ ADMISSION ENQUIRY MODAL ============ -->
+<div class="modal-overlay" id="enquireModal">
+  <div class="modal-card">
+    <button class="modal-close" id="closeEnquireBtn" aria-label="Close form"><i class="bi bi-x-lg"></i></button>
+
+    <div class="modal-side">
+      <div class="modal-side-burst" aria-hidden="true">
+        <span></span><span></span><span></span><span></span><span></span><span></span>
+      </div>
+      <h3>Let's find your child's<br>perfect fit.</h3>
+      <p>Fill this in and our admissions team will call you within one business day.</p>
+    </div>
+
+    <div class="modal-form-wrap">
+      <h4 id="modalHeading"><i class="bi bi-send-check"></i> Admission Enquiry</h4>
+      <form id="enquireForm">
+        <div class="field">
+          <label for="pName">Parent / Guardian Name</label>
+          <input type="text" id="pName" required placeholder="Full name">
+        </div>
+        <div class="form-row">
+          <div class="field">
+            <label for="pPhone">Phone Number</label>
+            <input type="tel" id="pPhone" required placeholder="10-digit number" pattern="[0-9]{10}">
+          </div>
+          <div class="field">
+            <label for="pEmail">Email</label>
+            <input type="email" id="pEmail" placeholder="you@email.com">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="field">
+            <label for="cChild">Child's Name</label>
+            <input type="text" id="cChild" placeholder="Child's name">
+          </div>
+          <div class="field">
+            <label for="pClass">Applying For</label>
+            <select id="pClass" required>
+              <option value="" disabled selected>Select a class</option>
+              <option>Play Group</option>
+              <option>Nursery</option>
+              <option>LKG</option>
+              <option>UKG</option>
+              <option>Class 1</option>
+              <option>Class 2</option>
+              <option>Class 3</option>
+              <option>Class 4</option>
+              <option>Class 5</option>
+            </select>
+          </div>
+        </div>
+        <div class="field">
+          <label for="pMsg">Message (optional)</label>
+          <textarea id="pMsg" rows="3" placeholder="Anything you'd like us to know?"></textarea>
+        </div>
+        <button type="submit" class="btn-primary full"><i class="bi bi-send-check"></i> Submit Enquiry</button>
+      </form>
+
+      <div class="modal-success" id="modalSuccess">
+        <div class="success-burst" aria-hidden="true">
+          <span></span><span></span><span></span><span></span><span></span><span></span>
+        </div>
+        <i class="bi bi-check-circle-fill success-icon"></i>
+        <h4>Thank you!</h4>
+        <p>Your enquiry has been received. Our admissions team will call you shortly.</p>
+        <button class="btn-ghost" id="modalDoneBtn">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
