@@ -1,0 +1,1868 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sri Rainbow School | Admissions – Give Your Child a Colourful Start</title>
+    <meta name="description" content="Admissions open for 2026-27 at Sri Rainbow School. Enrol your child in a joyful, play-based learning environment. Recognized by Govt. of Telangana." />
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Nunito:ital,wght@0,400;0,600;0,700;0,800;1,600&display=swap" rel="stylesheet" />
+
+    <style>
+        /* ==========================================================================
+           Sri Rainbow School — Design Tokens (same as homepage)
+           ========================================================================== */
+        :root {
+            --cream: #FFFCF4;
+            --cream-soft: #FFF6E0;
+            --navy: #1B2A57;
+            --navy-2: #141F42;
+            --blue: #2E5AAC;
+            --red: #E63946;
+            --yellow: #FFC93C;
+            --green: #4CAF6D;
+            --purple: #7B4FA0;
+            --orange: #F4863A;
+
+            --font-display: 'Baloo 2', 'Nunito', sans-serif;
+            --font-body: 'Nunito', sans-serif;
+
+            --radius-lg: 28px;
+            --radius-md: 18px;
+            --radius-sm: 12px;
+            --shadow-soft: 0 14px 34px -14px rgba(27, 42, 87, 0.25);
+            --shadow-pop: 0 20px 44px -12px rgba(27, 42, 87, 0.35);
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+        body {
+            margin: 0;
+            font-family: var(--font-body);
+            color: var(--navy);
+            background: var(--cream);
+            overflow-x: hidden;
+        }
+        img {
+            max-width: 100%;
+            display: block;
+        }
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+        ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        button {
+            font-family: inherit;
+            cursor: pointer;
+            border: none;
+            background: none;
+        }
+        h1,
+        h2,
+        h3,
+        h4 {
+            font-family: var(--font-display);
+            margin: 0;
+            line-height: 1.15;
+        }
+        p {
+            margin: 0;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                animation-duration: 0.001ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.001ms !important;
+                scroll-behavior: auto !important;
+            }
+        }
+
+        /* ---- shared section styles ---- */
+        .section-wrap {
+            max-width: 1180px;
+            margin: 0 auto;
+            padding: 100px 32px 70px;
+        }
+        .eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-weight: 800;
+            letter-spacing: .06em;
+            text-transform: uppercase;
+            font-size: .78rem;
+            color: var(--blue);
+            margin-bottom: 14px;
+        }
+        .eyebrow-green {
+            color: var(--green);
+        }
+        .eyebrow-orange {
+            color: var(--orange);
+        }
+        .eyebrow-purple {
+            color: var(--purple);
+        }
+        .eyebrow-red {
+            color: var(--red);
+        }
+        .eyebrow-light {
+            color: #FFE59A;
+        }
+        .section-title {
+            font-size: clamp(1.9rem, 3.6vw, 2.7rem);
+            font-weight: 800;
+            max-width: 760px;
+            color: var(--navy-2);
+        }
+        .section-title.light {
+            color: #fff;
+        }
+        .section-lead {
+            margin-top: 16px;
+            max-width: 640px;
+            font-size: 1.08rem;
+            line-height: 1.65;
+            color: #44507A;
+        }
+        .section-lead.light {
+            color: #D6DEFF;
+        }
+
+        /* ---- rainbow scroll progress ---- */
+        .scroll-rainbow {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 4px;
+            width: 0%;
+            z-index: 1000;
+            background: linear-gradient(90deg, #7B4FA0, #2E5AAC, #4CAF6D, #FFC93C, #F4863A, #E63946);
+            transition: width .08s linear;
+        }
+
+        /* ==========================================================================
+           Header / Nav (identical to homepage)
+           ========================================================================== */
+        .site-header {
+            position: sticky;
+            top: 0;
+            z-index: 500;
+            background: rgba(255, 252, 244, 0.85);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(27, 42, 87, 0.08);
+            transition: box-shadow .25s ease;
+        }
+        .site-header.scrolled {
+            box-shadow: 0 8px 24px -12px rgba(27, 42, 87, 0.25);
+        }
+        .nav-wrap {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 10px 28px;
+            display: flex;
+            align-items: center;
+            gap: 24px;
+        }
+        .brand-logo {
+            height: 78px;
+            width: 180px;
+        }
+        .main-nav {
+            display: flex;
+            align-items: center;
+            gap: 28px;
+            margin-left: auto;
+        }
+        .nav-link {
+            font-weight: 700;
+            font-size: .96rem;
+            color: var(--navy);
+            position: relative;
+            padding: 6px 2px;
+        }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -2px;
+            height: 3px;
+            width: 0;
+            background: var(--red);
+            border-radius: 2px;
+            transition: width .2s ease;
+        }
+        .nav-link:hover::after,
+        .nav-link.active::after {
+            width: 100%;
+        }
+        .btn-enquire {
+            background: var(--navy);
+            color: #fff;
+            font-weight: 800;
+            font-size: .9rem;
+            padding: 12px 20px;
+            border-radius: 999px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            box-shadow: var(--shadow-soft);
+            transition: transform .18s ease, background .18s ease;
+        }
+        .btn-enquire:hover {
+            transform: translateY(-2px);
+            background: var(--red);
+        }
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            padding: 6px;
+        }
+        .hamburger span {
+            width: 24px;
+            height: 3px;
+            border-radius: 2px;
+            background: var(--navy);
+        }
+
+        /* ==========================================================================
+           Admission Hero
+           ========================================================================== */
+        .admission-hero {
+            position: relative;
+            background: var(--navy-2);
+            color: #fff;
+            padding-top: 20px;
+            overflow: hidden;
+        }
+        .admission-hero-blobs {
+            position: absolute;
+            inset: 0;
+            z-index: 0;
+        }
+        .blob {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(50px);
+            opacity: .35;
+        }
+        .blob-a {
+            width: 380px;
+            height: 380px;
+            background: var(--purple);
+            top: -120px;
+            left: -100px;
+        }
+        .blob-b {
+            width: 320px;
+            height: 320px;
+            background: var(--blue);
+            bottom: -140px;
+            right: -80px;
+        }
+        .blob-c {
+            width: 220px;
+            height: 220px;
+            background: var(--green);
+            top: 40%;
+            right: 12%;
+        }
+
+        .admission-hero-inner {
+            position: relative;
+            z-index: 1;
+            max-width: 1240px;
+            margin: 0 auto;
+            padding: 64px 32px 110px;
+            display: grid;
+            grid-template-columns: 1fr 0.85fr;
+            gap: 40px;
+            align-items: center;
+        }
+        .admission-hero-copy .eyebrow {
+            color: #FFE59A;
+        }
+        .admission-hero-title {
+            font-size: clamp(2.3rem, 4.6vw, 3.6rem);
+            font-weight: 800;
+            color: #fff;
+        }
+        .rainbow-text {
+            background: linear-gradient(90deg, #7B4FA0, #2E5AAC, #4CAF6D, #FFC93C, #F4863A, #E63946);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        .admission-hero-sub {
+            margin-top: 20px;
+            font-size: 1.1rem;
+            line-height: 1.7;
+            color: #C7CFEE;
+            max-width: 520px;
+        }
+        .admission-hero-actions {
+            display: flex;
+            gap: 16px;
+            margin-top: 34px;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary {
+            background: var(--red);
+            color: #fff;
+            font-weight: 800;
+            font-size: 1rem;
+            padding: 15px 26px;
+            border-radius: 999px;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            box-shadow: 0 14px 30px -10px rgba(230, 57, 70, 0.55);
+            transition: transform .18s ease, box-shadow .18s ease;
+        }
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 18px 34px -8px rgba(230, 57, 70, 0.6);
+        }
+        .btn-primary.btn-light {
+            background: #fff;
+            color: var(--navy-2);
+            box-shadow: 0 14px 30px -10px rgba(0, 0, 0, 0.25);
+        }
+        .btn-primary.full {
+            width: 100%;
+            justify-content: center;
+        }
+        .btn-ghost {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-weight: 800;
+            color: #fff;
+            padding: 15px 8px;
+            border-bottom: 2px solid rgba(255, 255, 255, 0.4);
+            transition: border-color .18s ease;
+        }
+        .btn-ghost:hover {
+            border-color: #fff;
+        }
+
+        .admission-hero-art {
+            position: relative;
+            display: flex;
+            justify-content: center;
+        }
+        .rainbow-burst {
+            width: 100%;
+            max-width: 420px;
+        }
+        .petal {
+            transform-origin: 0 0;
+            opacity: 0;
+            animation: petalPop .7s cubic-bezier(.2, .8, .3, 1.3) forwards;
+        }
+        .p1 {
+            fill: #7B4FA0;
+            animation-delay: .05s;
+        }
+        .p2 {
+            fill: #2E5AAC;
+            animation-delay: .15s;
+        }
+        .p3 {
+            fill: #4CAF6D;
+            animation-delay: .25s;
+        }
+        .p4 {
+            fill: #FFC93C;
+            animation-delay: .35s;
+        }
+        .p5 {
+            fill: #F4863A;
+            animation-delay: .45s;
+        }
+        .p6 {
+            fill: #E63946;
+            animation-delay: .55s;
+        }
+        .petal-core {
+            fill: var(--navy-2);
+            opacity: 0;
+            animation: fadeIn .5s ease .7s forwards;
+        }
+        @keyframes petalPop {
+            0% {
+                opacity: 0;
+                transform: scale(0.3) translateY(20px);
+            }
+            100% {
+                opacity: 1;
+                transform: scale(1) translateY(0);
+            }
+        }
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+            }
+        }
+        .cloud ellipse {
+            fill: rgba(255, 255, 255, 0.15);
+        }
+        .cloud {
+            animation: floatY 6s ease-in-out infinite;
+        }
+        .cloud2 {
+            animation-duration: 7.5s;
+            animation-delay: .4s;
+        }
+        @keyframes floatY {
+            0%,
+            100% {
+                transform: translate(60px, 320px);
+            }
+            50% {
+                transform: translate(60px, 306px);
+            }
+        }
+
+        .wave-divider {
+            display: block;
+            width: 100%;
+            height: 70px;
+        }
+        .wave-divider path {
+            fill: var(--cream);
+        }
+        .wave-yellow path {
+            fill: var(--cream-soft);
+        }
+        .wave-purple path {
+            fill: var(--cream);
+        }
+        .wave-navy path {
+            fill: var(--navy-2);
+        }
+
+        /* ==========================================================================
+           Why Choose Us
+           ========================================================================== */
+        .why-choose {
+            background: var(--cream);
+        }
+        .why-grid {
+            margin-top: 48px;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 22px;
+        }
+        .why-card {
+            background: #fff;
+            border-radius: var(--radius-md);
+            padding: 30px 24px;
+            text-align: center;
+            box-shadow: var(--shadow-soft);
+            transition: transform .2s ease, box-shadow .2s ease;
+            border-bottom: 4px solid var(--c);
+        }
+        .why-card:hover {
+            transform: translateY(-6px);
+            box-shadow: var(--shadow-pop);
+        }
+        .why-card .why-icon {
+            font-size: 2.4rem;
+            color: var(--c);
+            margin-bottom: 14px;
+        }
+        .why-card h4 {
+            font-size: 1.1rem;
+            color: var(--navy-2);
+            margin-bottom: 8px;
+        }
+        .why-card p {
+            font-size: .9rem;
+            color: #5A628C;
+            line-height: 1.6;
+        }
+
+        /* ==========================================================================
+           Admission Process
+           ========================================================================== */
+        .process {
+            background: var(--cream-soft);
+        }
+        .process-steps {
+            margin-top: 48px;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+            position: relative;
+        }
+        .process-steps::before {
+            content: '';
+            position: absolute;
+            top: 44px;
+            left: 10%;
+            right: 10%;
+            height: 3px;
+            background: linear-gradient(90deg, var(--blue), var(--green), var(--yellow), var(--red));
+            border-radius: 2px;
+            opacity: 0.25;
+        }
+        .step-item {
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+        .step-item .step-circle {
+            width: 64px;
+            height: 64px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.6rem;
+            font-weight: 800;
+            font-family: var(--font-display);
+            color: #fff;
+            margin: 0 auto 16px;
+            background: var(--c);
+            box-shadow: 0 8px 20px -6px rgba(27, 42, 87, 0.3);
+            position: relative;
+        }
+        .step-item .step-circle .step-num {
+            position: absolute;
+            top: -8px;
+            right: -8px;
+            background: var(--navy-2);
+            color: #fff;
+            font-size: .7rem;
+            width: 26px;
+            height: 26px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            font-family: var(--font-body);
+        }
+        .step-item h4 {
+            font-size: 1.1rem;
+            color: var(--navy-2);
+            margin-bottom: 6px;
+        }
+        .step-item p {
+            font-size: .9rem;
+            color: #5A628C;
+            line-height: 1.5;
+            max-width: 220px;
+            margin: 0 auto;
+        }
+
+        /* ==========================================================================
+           Fee Structure
+           ========================================================================== */
+        .fees {
+            background: var(--cream);
+        }
+        .fees-table-wrap {
+            margin-top: 44px;
+            background: #fff;
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow-soft);
+        }
+        .fees-table-wrap table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: .95rem;
+        }
+        .fees-table-wrap thead {
+            background: var(--navy-2);
+            color: #fff;
+        }
+        .fees-table-wrap thead th {
+            padding: 18px 24px;
+            text-align: left;
+            font-weight: 700;
+            font-family: var(--font-display);
+            font-size: 1rem;
+        }
+        .fees-table-wrap tbody tr {
+            border-bottom: 1px solid rgba(27, 42, 87, 0.06);
+            transition: background .15s ease;
+        }
+        .fees-table-wrap tbody tr:hover {
+            background: rgba(46, 90, 172, 0.04);
+        }
+        .fees-table-wrap tbody td {
+            padding: 16px 24px;
+            color: var(--navy-2);
+        }
+        .fees-table-wrap tbody td:last-child {
+            font-weight: 700;
+            color: var(--red);
+        }
+        .fees-table-wrap tbody tr:last-child {
+            border-bottom: none;
+        }
+        .fees-note {
+            margin-top: 20px;
+            padding: 16px 24px;
+            background: var(--cream-soft);
+            border-radius: var(--radius-sm);
+            font-size: .9rem;
+            color: #5A628C;
+            display: flex;
+            gap: 10px;
+            align-items: flex-start;
+        }
+        .fees-note i {
+            color: var(--orange);
+            font-size: 1.2rem;
+            margin-top: 2px;
+        }
+
+        /* ==========================================================================
+           Documents Required
+           ========================================================================== */
+        .documents {
+            background: var(--cream-soft);
+        }
+        .doc-grid {
+            margin-top: 44px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+        .doc-list {
+            background: #fff;
+            border-radius: var(--radius-md);
+            padding: 32px 30px;
+            box-shadow: var(--shadow-soft);
+        }
+        .doc-list h3 {
+            font-size: 1.2rem;
+            color: var(--navy-2);
+            margin-bottom: 18px;
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+        .doc-list h3 i {
+            color: var(--red);
+        }
+        .doc-list ul li {
+            display: flex;
+            gap: 12px;
+            align-items: flex-start;
+            padding: 10px 0;
+            border-bottom: 1px solid rgba(27, 42, 87, 0.05);
+            font-size: .94rem;
+            color: var(--navy-2);
+        }
+        .doc-list ul li:last-child {
+            border-bottom: none;
+        }
+        .doc-list ul li i {
+            color: var(--green);
+            margin-top: 3px;
+            flex: none;
+        }
+        .doc-image {
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            box-shadow: var(--shadow-soft);
+            background: color-mix(in srgb, var(--blue) 8%, #fff);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            aspect-ratio: 4/3;
+            font-size: 4rem;
+            color: var(--blue);
+            border: 2px solid rgba(46, 90, 172, 0.12);
+        }
+        .doc-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* ==========================================================================
+           Campus Visit CTA
+           ========================================================================== */
+        .visit-cta {
+            background: var(--navy-2);
+            color: #fff;
+            position: relative;
+            overflow: hidden;
+        }
+        .visit-cta .visit-blob {
+            position: absolute;
+            width: 400px;
+            height: 400px;
+            border-radius: 50%;
+            filter: blur(60px);
+            opacity: .15;
+        }
+        .visit-cta .visit-blob-1 {
+            background: var(--purple);
+            top: -150px;
+            right: -100px;
+        }
+        .visit-cta .visit-blob-2 {
+            background: var(--orange);
+            bottom: -150px;
+            left: -100px;
+        }
+        .visit-wrap {
+            position: relative;
+            z-index: 1;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+            padding: 80px 0;
+        }
+        .visit-copy h2 {
+            font-size: clamp(1.8rem, 3vw, 2.5rem);
+            color: #fff;
+        }
+        .visit-copy p {
+            color: #C7CFEE;
+            font-size: 1.05rem;
+            line-height: 1.7;
+            margin: 16px 0 28px;
+            max-width: 480px;
+        }
+        .visit-features {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+        }
+        .visit-feature {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: #fff;
+            font-weight: 600;
+            font-size: .92rem;
+        }
+        .visit-feature i {
+            color: var(--yellow);
+            font-size: 1.2rem;
+        }
+        .visit-form {
+            background: #fff;
+            border-radius: var(--radius-lg);
+            padding: 36px 34px;
+            box-shadow: var(--shadow-pop);
+        }
+        .visit-form h3 {
+            font-size: 1.2rem;
+            color: var(--navy-2);
+            margin-bottom: 20px;
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+        .visit-form h3 i {
+            color: var(--red);
+        }
+
+        /* ==========================================================================
+           FAQ
+           ========================================================================== */
+        .faq {
+            background: var(--cream);
+        }
+        .faq-grid {
+            margin-top: 44px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 18px;
+        }
+        .faq-item {
+            background: #fff;
+            border-radius: var(--radius-md);
+            padding: 22px 26px;
+            box-shadow: var(--shadow-soft);
+            cursor: pointer;
+            transition: transform .2s ease, box-shadow .2s ease;
+        }
+        .faq-item:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-pop);
+        }
+        .faq-item .faq-q {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 700;
+            font-size: 1rem;
+            color: var(--navy-2);
+        }
+        .faq-item .faq-q i {
+            color: var(--red);
+            transition: transform .25s ease;
+            font-size: 1.1rem;
+        }
+        .faq-item.open .faq-q i {
+            transform: rotate(180deg);
+        }
+        .faq-item .faq-a {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height .35s ease, padding .25s ease;
+            color: #5A628C;
+            font-size: .92rem;
+            line-height: 1.6;
+        }
+        .faq-item.open .faq-a {
+            max-height: 200px;
+            padding-top: 14px;
+        }
+
+        /* ==========================================================================
+           Footer (identical)
+           ========================================================================== */
+        .site-footer {
+            background: var(--navy-2);
+            color: #C7CFEE;
+            padding-top: 60px;
+        }
+        .footer-wrap {
+            max-width: 1180px;
+            margin: 0 auto;
+            padding: 0 32px 40px;
+            display: grid;
+            grid-template-columns: 1.4fr 1fr 1fr 1fr;
+            gap: 40px;
+        }
+        .footer-logo {
+            height: 90px;
+            width: auto;
+            border-radius: 12px;
+            background: #fff;
+            padding: 6px;
+            margin-bottom: 14px;
+        }
+        .footer-brand p {
+            font-size: .9rem;
+            line-height: 1.6;
+        }
+        .footer-links h4,
+        .footer-cta h4 {
+            color: #fff;
+            font-size: 1rem;
+            margin-bottom: 16px;
+        }
+        .footer-links a {
+            display: block;
+            font-size: .9rem;
+            margin-bottom: 10px;
+            color: #C7CFEE;
+            transition: color .18s ease;
+        }
+        .footer-links a:hover {
+            color: var(--yellow);
+        }
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 22px 32px;
+            text-align: center;
+            font-size: .85rem;
+        }
+
+        /* ==========================================================================
+           Floating Enquire Button (mobile)
+           ========================================================================== */
+        .fab-enquire {
+            position: fixed;
+            bottom: 24px;
+            right: 24px;
+            z-index: 400;
+            width: 58px;
+            height: 58px;
+            border-radius: 50%;
+            background: var(--red);
+            color: #fff;
+            font-size: 1.4rem;
+            box-shadow: 0 14px 30px -8px rgba(230, 57, 70, 0.6);
+            display: none;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* ==========================================================================
+           Admission Enquiry Modal (identical)
+           ========================================================================== */
+        .modal-overlay {
+            position: fixed;
+            inset: 0;
+            z-index: 1000;
+            background: rgba(20, 31, 66, 0.6);
+            backdrop-filter: blur(4px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity .28s ease;
+        }
+        .modal-overlay.open {
+            opacity: 1;
+            visibility: visible;
+        }
+        .modal-card {
+            background: #fff;
+            border-radius: var(--radius-lg);
+            width: 100%;
+            max-width: 880px;
+            max-height: 92vh;
+            overflow: auto;
+            display: grid;
+            grid-template-columns: 0.85fr 1.15fr;
+            box-shadow: 0 40px 80px -20px rgba(0, 0, 0, 0.4);
+            transform: scale(.92) translateY(20px);
+            transition: transform .3s cubic-bezier(.2, .8, .3, 1.2);
+            position: relative;
+        }
+        .modal-overlay.open .modal-card {
+            transform: scale(1) translateY(0);
+        }
+        .modal-close {
+            position: absolute;
+            top: 16px;
+            right: 16px;
+            z-index: 2;
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            background: rgba(27, 42, 87, 0.06);
+            color: var(--navy-2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background .18s ease;
+        }
+        .modal-close:hover {
+            background: rgba(27, 42, 87, 0.14);
+        }
+
+        .modal-side {
+            background: var(--navy-2);
+            color: #fff;
+            padding: 44px 34px;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .modal-side h3 {
+            font-size: 1.5rem;
+            margin-bottom: 14px;
+            position: relative;
+            z-index: 1;
+        }
+        .modal-side p {
+            color: #C7CFEE;
+            font-size: .92rem;
+            line-height: 1.6;
+            position: relative;
+            z-index: 1;
+        }
+        .modal-side-burst {
+            position: absolute;
+            inset: 0;
+        }
+        .modal-side-burst span {
+            position: absolute;
+            width: 120px;
+            height: 220px;
+            border-radius: 50% 50% 0 0;
+            transform-origin: bottom center;
+            opacity: .5;
+        }
+        .modal-side-burst span:nth-child(1) {
+            background: var(--purple);
+            bottom: -40px;
+            left: -30px;
+            transform: rotate(-40deg);
+        }
+        .modal-side-burst span:nth-child(2) {
+            background: var(--blue);
+            bottom: -40px;
+            left: 0px;
+            transform: rotate(-24deg);
+        }
+        .modal-side-burst span:nth-child(3) {
+            background: var(--green);
+            bottom: -40px;
+            left: 30px;
+            transform: rotate(-8deg);
+        }
+        .modal-side-burst span:nth-child(4) {
+            background: var(--yellow);
+            bottom: -40px;
+            left: 60px;
+            transform: rotate(8deg);
+        }
+        .modal-side-burst span:nth-child(5) {
+            background: var(--orange);
+            bottom: -40px;
+            left: 90px;
+            transform: rotate(24deg);
+        }
+        .modal-side-burst span:nth-child(6) {
+            background: var(--red);
+            bottom: -40px;
+            left: 120px;
+            transform: rotate(40deg);
+        }
+
+        .modal-form-wrap {
+            padding: 44px 40px;
+        }
+        .modal-form-wrap h4 {
+            font-size: 1.2rem;
+            margin-bottom: 22px;
+            color: var(--navy-2);
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+
+        .modal-success {
+            display: none;
+            text-align: center;
+            padding: 30px 10px;
+            position: relative;
+        }
+        .modal-success.show {
+            display: block;
+        }
+        .success-icon {
+            font-size: 3.4rem;
+            color: var(--green);
+            margin-bottom: 14px;
+        }
+        .modal-success h4 {
+            justify-content: center;
+            margin-bottom: 8px;
+        }
+        .modal-success p {
+            color: #5A628C;
+            margin-bottom: 22px;
+        }
+        .success-burst {
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
+            overflow: hidden;
+        }
+        .success-burst span {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 8px;
+            height: 20px;
+            border-radius: 4px;
+            opacity: 0;
+        }
+        .modal-success.show .success-burst span {
+            animation: confetti 1s ease-out forwards;
+        }
+        .success-burst span:nth-child(1) {
+            background: var(--purple);
+            animation-delay: 0s;
+        }
+        .success-burst span:nth-child(2) {
+            background: var(--blue);
+            animation-delay: .04s;
+        }
+        .success-burst span:nth-child(3) {
+            background: var(--green);
+            animation-delay: .08s;
+        }
+        .success-burst span:nth-child(4) {
+            background: var(--yellow);
+            animation-delay: .12s;
+        }
+        .success-burst span:nth-child(5) {
+            background: var(--orange);
+            animation-delay: .16s;
+        }
+        .success-burst span:nth-child(6) {
+            background: var(--red);
+            animation-delay: .2s;
+        }
+        @keyframes confetti {
+            0% {
+                opacity: 1;
+                transform: translate(-50%, -50%) rotate(0deg);
+            }
+            100% {
+                opacity: 0;
+                transform: translate(calc(-50% + var(--x, 120px)), calc(-50% - 160px)) rotate(340deg);
+            }
+        }
+        .success-burst span:nth-child(1) {
+            --x: -150px;
+        }
+        .success-burst span:nth-child(2) {
+            --x: -90px;
+        }
+        .success-burst span:nth-child(3) {
+            --x: -30px;
+        }
+        .success-burst span:nth-child(4) {
+            --x: 30px;
+        }
+        .success-burst span:nth-child(5) {
+            --x: 90px;
+        }
+        .success-burst span:nth-child(6) {
+            --x: 150px;
+        }
+
+        /* ==========================================================================
+           Responsive
+           ========================================================================== */
+        @media (max-width: 1080px) {
+            .why-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .process-steps {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .process-steps::before {
+                display: none;
+            }
+            .footer-wrap {
+                grid-template-columns: 1fr 1fr;
+            }
+            .doc-grid {
+                grid-template-columns: 1fr;
+            }
+            .faq-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 900px) {
+            .admission-hero-inner {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            .admission-hero-copy {
+                order: 1;
+            }
+            .admission-hero-art {
+                order: 0;
+            }
+            .admission-hero-sub {
+                margin-left: auto;
+                margin-right: auto;
+            }
+            .admission-hero-actions {
+                justify-content: center;
+            }
+            .visit-wrap {
+                grid-template-columns: 1fr;
+                padding: 60px 0;
+            }
+            .visit-copy p {
+                max-width: 100%;
+            }
+            .modal-card {
+                grid-template-columns: 1fr;
+            }
+            .modal-side {
+                display: none;
+            }
+            .fees-table-wrap {
+                overflow-x: auto;
+            }
+            .fees-table-wrap table {
+                font-size: .85rem;
+                min-width: 600px;
+            }
+            .fees-table-wrap thead th,
+            .fees-table-wrap tbody td {
+                padding: 12px 16px;
+            }
+        }
+
+        @media (max-width: 760px) {
+            .main-nav {
+                position: fixed;
+                top: 78px;
+                left: 0;
+                right: 0;
+                background: var(--cream);
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0;
+                padding: 10px 28px 20px;
+                box-shadow: 0 14px 24px -14px rgba(27, 42, 87, 0.3);
+                transform: translateY(-140%);
+                opacity: 0;
+                transition: transform .25s ease, opacity .2s ease;
+            }
+            .main-nav.open {
+                transform: translateY(0);
+                opacity: 1;
+            }
+            .main-nav a {
+                padding: 12px 0;
+                width: 100%;
+                border-bottom: 1px solid rgba(27, 42, 87, 0.06);
+            }
+            .hamburger {
+                display: flex;
+            }
+            .btn-enquire {
+                display: none;
+            }
+            .fab-enquire {
+                display: flex;
+            }
+
+            .why-grid {
+                grid-template-columns: 1fr;
+            }
+            .process-steps {
+                grid-template-columns: 1fr 1fr;
+                gap: 30px 16px;
+            }
+            .process-steps::before {
+                display: none;
+            }
+            .visit-features {
+                grid-template-columns: 1fr;
+            }
+            .footer-wrap {
+                grid-template-columns: 1fr;
+            }
+            .section-wrap {
+                padding: 70px 22px 50px;
+            }
+            .admission-hero-inner {
+                padding: 40px 22px 80px;
+            }
+            .modal-form-wrap {
+                padding: 30px 22px;
+            }
+            .visit-form {
+                padding: 24px 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ===== Rainbow scroll progress ===== -->
+    <div class="scroll-rainbow" id="scrollRainbow"></div>
+
+    <!-- ===== HEADER ===== -->
+    <header class="site-header" id="siteHeader">
+        <div class="nav-wrap">
+            <a href="index.html" class="brand">
+                <img src="logo1.png" alt="Sri Rainbow School logo" class="brand-logo">
+            </a>
+
+            <nav class="main-nav" id="mainNav">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="academics.html" class="nav-link">Academics</a>
+                <a href="gallery.html" class="nav-link">Gallery</a>
+                <a href="admission.html" class="nav-link active">Admission</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+            </nav>
+
+            <button class="btn-enquire" id="openEnquireBtn1">
+                <i class="bi bi-pencil-square"></i> Enquire Now
+            </button>
+
+            <button class="hamburger" id="hamburgerBtn" aria-label="Toggle menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- ===== ADMISSION HERO ===== -->
+    <section class="admission-hero">
+        <div class="admission-hero-blobs" aria-hidden="true">
+            <span class="blob blob-a"></span>
+            <span class="blob blob-b"></span>
+            <span class="blob blob-c"></span>
+        </div>
+
+        <div class="admission-hero-inner">
+            <div class="admission-hero-copy">
+                <p class="eyebrow"><i class="bi bi-flag"></i> Admissions Open 2026–27</p>
+                <h1 class="admission-hero-title">Give your child a <span class="rainbow-text">colourful start.</span></h1>
+                <p class="admission-hero-sub">At Sri Rainbow School, we welcome every child with warmth and wonder. Join our community where learning is joyful, friendships flourish, and every day brings a new splash of colour.</p>
+                <div class="admission-hero-actions">
+                    <button class="btn-primary" id="openEnquireBtn2"><i class="bi bi-send-check"></i> Enquire Now</button>
+                    <a href="#process" class="btn-ghost">How to Apply <i class="bi bi-arrow-down-right"></i></a>
+                </div>
+            </div>
+
+            <div class="admission-hero-art">
+                <svg class="rainbow-burst" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <g class="petals" transform="translate(200,260)">
+                        <path class="petal p1" d="M0,0 C-10,-90 -30,-160 -70,-210 C-40,-160 -20,-90 -8,-4 Z"/>
+                        <path class="petal p2" d="M0,0 C-20,-110 -40,-180 -30,-250 C0,-190 10,-110 4,-4 Z"/>
+                        <path class="petal p3" d="M0,0 C-2,-120 4,-200 30,-260 C20,-190 8,-110 0,-4 Z"/>
+                        <path class="petal p4" d="M0,0 C14,-110 34,-180 70,-230 C40,-170 22,-100 6,-4 Z"/>
+                        <path class="petal p5" d="M0,0 C24,-90 54,-140 100,-175 C66,-130 40,-80 12,-4 Z"/>
+                        <path class="petal p6" d="M0,0 C34,-60 74,-90 120,-100 C82,-80 50,-50 16,-4 Z"/>
+                        <circle class="petal-core" cx="0" cy="-4" r="14"/>
+                    </g>
+                    <g class="cloud" transform="translate(60,320)">
+                        <ellipse cx="0" cy="0" rx="46" ry="22"/>
+                        <ellipse cx="30" cy="-8" rx="30" ry="20"/>
+                        <ellipse cx="-30" cy="-6" rx="26" ry="16"/>
+                    </g>
+                    <g class="cloud cloud2" transform="translate(320,90)">
+                        <ellipse cx="0" cy="0" rx="36" ry="17"/>
+                        <ellipse cx="24" cy="-6" rx="22" ry="15"/>
+                        <ellipse cx="-22" cy="-4" rx="20" ry="12"/>
+                    </g>
+                </svg>
+            </div>
+        </div>
+
+        <svg class="wave-divider" viewBox="0 0 1440 90" preserveAspectRatio="none" aria-hidden="true">
+            <path d="M0,40 C240,90 480,0 720,30 C960,60 1200,10 1440,40 L1440,90 L0,90 Z"></path>
+        </svg>
+    </section>
+
+    <!-- ===== WHY CHOOSE US ===== -->
+    <section class="why-choose" id="why">
+        <div class="section-wrap">
+            <p class="eyebrow eyebrow-green"><i class="bi bi-star-fill"></i> Why Sri Rainbow</p>
+            <h2 class="section-title">A place where children truly blossom</h2>
+            <p class="section-lead">Parents choose us because we offer more than just education — we offer a nurturing home away from home, where every child is celebrated for who they are.</p>
+
+            <div class="why-grid">
+                <div class="why-card" style="--c:var(--blue);">
+                    <div class="why-icon"><i class="bi bi-heart-fill"></i></div>
+                    <h4>Warm &amp; Caring Environment</h4>
+                    <p>Every child is wrapped in kindness, patience, and individual attention from day one.</p>
+                </div>
+                <div class="why-card" style="--c:var(--green);">
+                    <div class="why-icon"><i class="bi bi-mortarboard"></i></div>
+                    <h4>Play-Based Curriculum</h4>
+                    <p>Learning through play, discovery, and hands-on experiences that spark curiosity.</p>
+                </div>
+                <div class="why-card" style="--c:var(--orange);">
+                    <div class="why-icon"><i class="bi bi-shield-check"></i></div>
+                    <h4>Safe &amp; Secure Campus</h4>
+                    <p>CCTV-monitored premises, trained staff, and a hygienic, child-friendly environment.</p>
+                </div>
+                <div class="why-card" style="--c:var(--purple);">
+                    <div class="why-icon"><i class="bi bi-people-fill"></i></div>
+                    <h4>Qualified &amp; Caring Teachers</h4>
+                    <p>Experienced educators who understand early childhood development and nurture each child's potential.</p>
+                </div>
+            </div>
+        </div>
+
+        <svg class="wave-divider wave-yellow" viewBox="0 0 1440 90" preserveAspectRatio="none" aria-hidden="true">
+            <path d="M0,50 C240,10 480,90 720,50 C960,10 1200,70 1440,30 L1440,90 L0,90 Z"></path>
+        </svg>
+    </section>
+
+    <!-- ===== ADMISSION PROCESS ===== -->
+    <section class="process" id="process">
+        <div class="section-wrap">
+            <p class="eyebrow eyebrow-orange"><i class="bi bi-list-ol"></i> How to Apply</p>
+            <h2 class="section-title">Four simple steps to begin the journey</h2>
+            <p class="section-lead">We've made the admission process as smooth and welcoming as possible. Here's how you can get started.</p>
+
+            <div class="process-steps">
+                <div class="step-item" style="--c:var(--blue);">
+                    <div class="step-circle">
+                        <i class="bi bi-pencil-square"></i>
+                        <span class="step-num">1</span>
+                    </div>
+                    <h4>Enquire</h4>
+                    <p>Fill out our enquiry form or give us a call. We'll connect with you within 24 hours.</p>
+                </div>
+                <div class="step-item" style="--c:var(--green);">
+                    <div class="step-circle">
+                        <i class="bi bi-house-door"></i>
+                        <span class="step-num">2</span>
+                    </div>
+                    <h4>Campus Visit</h4>
+                    <p>Tour our bright classrooms, meet our teachers, and experience the Sri Rainbow warmth.</p>
+                </div>
+                <div class="step-item" style="--c:var(--yellow);">
+                    <div class="step-circle" style="color:var(--navy-2);">
+                        <i class="bi bi-file-text"></i>
+                        <span class="step-num">3</span>
+                    </div>
+                    <h4>Submit Documents</h4>
+                    <p>Complete the admission form and submit the required documents for verification.</p>
+                </div>
+                <div class="step-item" style="--c:var(--red);">
+                    <div class="step-circle">
+                        <i class="bi bi-check-circle"></i>
+                        <span class="step-num">4</span>
+                    </div>
+                    <h4>Confirm Admission</h4>
+                    <p>Secure your child's seat and get ready for a wonderful start to their school journey.</p>
+                </div>
+            </div>
+        </div>
+
+        <svg class="wave-divider wave-purple" viewBox="0 0 1440 90" preserveAspectRatio="none" aria-hidden="true">
+            <path d="M0,30 C240,70 480,10 720,40 C960,70 1200,20 1440,50 L1440,90 L0,90 Z"></path>
+        </svg>
+    </section>
+
+    <!-- ===== FEE STRUCTURE ===== -->
+    <section class="fees" id="fees">
+        <div class="section-wrap">
+            <p class="eyebrow eyebrow-purple"><i class="bi bi-currency-rupee"></i> Fee Structure</p>
+            <h2 class="section-title">Transparent, affordable, and value-driven</h2>
+            <p class="section-lead">We believe every child deserves a quality education. Our fee structure is designed to be accessible while maintaining the highest standards of care and learning.</p>
+
+            <div class="fees-table-wrap">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Programme</th>
+                            <th>Age Group</th>
+                            <th>Annual Fees (approx.)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Play Group</strong></td>
+                            <td>1.5 – 2.5 yrs</td>
+                            <td>₹ 45,000 – 55,000</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Nursery</strong></td>
+                            <td>2.5 – 3.5 yrs</td>
+                            <td>₹ 50,000 – 60,000</td>
+                        </tr>
+                        <tr>
+                            <td><strong>LKG</strong></td>
+                            <td>3.5 – 4.5 yrs</td>
+                            <td>₹ 55,000 – 65,000</td>
+                        </tr>
+                        <tr>
+                            <td><strong>UKG</strong></td>
+                            <td>4.5 – 5.5 yrs</td>
+                            <td>₹ 60,000 – 70,000</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Class 1 – 5 (Primary)</strong></td>
+                            <td>5.5 – 10 yrs</td>
+                            <td>₹ 65,000 – 80,000</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="fees-note">
+                <i class="bi bi-info-circle-fill"></i>
+                <div>
+                    <strong>Note:</strong> Fees are indicative and may vary slightly. Additional charges for transport, meals, and special activities are billed separately. 
+                    Please contact our admissions office for a detailed fee breakdown and payment schedule.
+                </div>
+            </div>
+        </div>
+
+        <svg class="wave-divider" viewBox="0 0 1440 90" preserveAspectRatio="none" aria-hidden="true">
+            <path d="M0,40 C240,90 480,0 720,30 C960,60 1200,10 1440,40 L1440,90 L0,90 Z"></path>
+        </svg>
+    </section>
+
+    <!-- ===== DOCUMENTS REQUIRED ===== -->
+    <section class="documents" id="documents">
+        <div class="section-wrap">
+            <p class="eyebrow eyebrow-red"><i class="bi bi-file-earmark-check"></i> Documents Required</p>
+            <h2 class="section-title">Get your paperwork ready</h2>
+            <p class="section-lead">To make the admission process seamless, please have these documents ready at the time of application.</p>
+
+            <div class="doc-grid">
+                <div class="doc-list">
+                    <h3><i class="bi bi-file-earmark-text"></i> For Admission</h3>
+                    <ul>
+                        <li><i class="bi bi-check-circle-fill"></i> Birth Certificate (original &amp; photocopy)</li>
+                        <li><i class="bi bi-check-circle-fill"></i> Aadhaar Card of child (photocopy)</li>
+                        <li><i class="bi bi-check-circle-fill"></i> Aadhaar Card of parents/guardians (photocopy)</li>
+                        <li><i class="bi bi-check-circle-fill"></i> Recent passport-size photographs (4 copies)</li>
+                        <li><i class="bi bi-check-circle-fill"></i> Parent/Guardian ID proof (PAN, Voter ID, or Passport)</li>
+                        <li><i class="bi bi-check-circle-fill"></i> Previous school records (for LKG onwards)</li>
+                    </ul>
+                </div>
+                <div class="doc-image">
+                    <img src="images/documents.jpg" alt="School documents" />
+                </div>
+            </div>
+        </div>
+
+        <svg class="wave-divider wave-yellow" viewBox="0 0 1440 90" preserveAspectRatio="none" aria-hidden="true">
+            <path d="M0,50 C240,10 480,90 720,50 C960,10 1200,70 1440,30 L1440,90 L0,90 Z"></path>
+        </svg>
+    </section>
+
+    <!-- ===== CAMPUS VISIT CTA ===== -->
+    <section class="visit-cta" id="visit">
+        <div class="section-wrap visit-wrap">
+            <div class="visit-blob visit-blob-1" aria-hidden="true"></div>
+            <div class="visit-blob visit-blob-2" aria-hidden="true"></div>
+
+            <div class="visit-copy">
+                <p class="eyebrow eyebrow-light"><i class="bi bi-calendar-check"></i> Campus Visit</p>
+                <h2>Come see the rainbow for yourself</h2>
+                <p>We'd love to welcome you to our campus. Meet our teachers, tour our classrooms, and experience the warmth that makes Sri Rainbow School so special.</p>
+                <div class="visit-features">
+                    <div class="visit-feature"><i class="bi bi-check-circle-fill"></i> Meet our teachers</div>
+                    <div class="visit-feature"><i class="bi bi-check-circle-fill"></i> Tour the campus</div>
+                    <div class="visit-feature"><i class="bi bi-check-circle-fill"></i> See classrooms in action</div>
+                    <div class="visit-feature"><i class="bi bi-check-circle-fill"></i> Get all your questions answered</div>
+                </div>
+            </div>
+
+            <div class="visit-form">
+                <h3><i class="bi bi-send-check"></i> Book Your Visit</h3>
+                <form id="visitForm">
+                    <div class="field" style="margin-bottom:14px; display:flex; flex-direction:column; gap:4px;">
+                        <label for="vName" style="font-size:.85rem; font-weight:700; color:var(--navy-2);">Full Name</label>
+                        <input type="text" id="vName" required placeholder="Your full name" style="border:2px solid rgba(27,42,87,0.12); border-radius:var(--radius-sm); padding:11px 14px; font-family:inherit; font-size:.95rem; color:var(--navy-2); background:var(--cream);" />
+                    </div>
+                    <div class="field" style="margin-bottom:14px; display:flex; flex-direction:column; gap:4px;">
+                        <label for="vPhone" style="font-size:.85rem; font-weight:700; color:var(--navy-2);">Phone Number</label>
+                        <input type="tel" id="vPhone" required placeholder="10-digit number" pattern="[0-9]{10}" style="border:2px solid rgba(27,42,87,0.12); border-radius:var(--radius-sm); padding:11px 14px; font-family:inherit; font-size:.95rem; color:var(--navy-2); background:var(--cream);" />
+                    </div>
+                    <div class="field" style="margin-bottom:14px; display:flex; flex-direction:column; gap:4px;">
+                        <label for="vEmail" style="font-size:.85rem; font-weight:700; color:var(--navy-2);">Email</label>
+                        <input type="email" id="vEmail" required placeholder="you@email.com" style="border:2px solid rgba(27,42,87,0.12); border-radius:var(--radius-sm); padding:11px 14px; font-family:inherit; font-size:.95rem; color:var(--navy-2); background:var(--cream);" />
+                    </div>
+                    <div class="field" style="margin-bottom:18px; display:flex; flex-direction:column; gap:4px;">
+                        <label for="vClass" style="font-size:.85rem; font-weight:700; color:var(--navy-2);">Interested Class</label>
+                        <select id="vClass" style="border:2px solid rgba(27,42,87,0.12); border-radius:var(--radius-sm); padding:11px 14px; font-family:inherit; font-size:.95rem; color:var(--navy-2); background:var(--cream);">
+                            <option value="" disabled selected>Select a class</option>
+                            <option>Play Group</option>
+                            <option>Nursery</option>
+                            <option>LKG</option>
+                            <option>UKG</option>
+                            <option>Class 1</option>
+                            <option>Class 2</option>
+                            <option>Class 3</option>
+                            <option>Class 4</option>
+                            <option>Class 5</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn-primary full"><i class="bi bi-calendar-check"></i> Request a Visit</button>
+                    <p id="visitNote" style="margin-top:12px; font-size:.9rem; font-weight:700; color:var(--green); min-height:1.2em;"></p>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FAQ ===== -->
+    <section class="faq" id="faq">
+        <div class="section-wrap">
+            <p class="eyebrow eyebrow-orange"><i class="bi bi-question-circle"></i> FAQ</p>
+            <h2 class="section-title">Frequently asked questions</h2>
+            <p class="section-lead">We've answered the most common questions parents have. If you don't find what you're looking for, reach out to us anytime.</p>
+
+            <div class="faq-grid" id="faqGrid">
+                <div class="faq-item">
+                    <div class="faq-q">
+                        <span>What is the age criteria for admission?</span>
+                        <i class="bi bi-chevron-down"></i>
+                    </div>
+                    <div class="faq-a">For Play Group, children should be at least 1.5 years old. For Nursery, the minimum age is 2.5 years, LKG is 3.5 years, UKG is 4.5 years, and Class 1 is 5.5 years as of the academic year starting April.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-q">
+                        <span>What is the student-teacher ratio?</span>
+                        <i class="bi bi-chevron-down"></i>
+                    </div>
+                    <div class="faq-a">We maintain a low student-teacher ratio of 12:1 for Play Group and Nursery, and 18:1 for LKG and above. This ensures every child receives individual attention and care.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-q">
+                        <span>Do you provide transportation?</span>
+                        <i class="bi bi-chevron-down"></i>
+                    </div>
+                    <div class="faq-a">Yes, we provide safe and reliable school transport within a 5-7 km radius of the campus. All vehicles are GPS-tracked and have trained attendants on board.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-q">
+                        <span>What is the admission process?</span>
+                        <i class="bi bi-chevron-down"></i>
+                    </div>
+                    <div class="faq-a">The process is simple: enquire, visit the campus, submit documents, and confirm admission. We guide you through every step and are always available to help.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-q">
+                        <span>Is there an entrance test for admission?</span>
+                        <i class="bi bi-chevron-down"></i>
+                    </div>
+                    <div class="faq-a">For Play Group and Nursery, we have a simple interaction-based assessment to understand your child's readiness. For LKG and above, we have a basic readiness assessment — no high-pressure tests.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-q">
+                        <span>What are the school timings?</span>
+                        <i class="bi bi-chevron-down"></i>
+                    </div>
+                    <div class="faq-a">Our school operates Monday to Saturday, 8:30 AM to 4:30 PM. Timings may vary slightly for different age groups — we'll share the detailed schedule during your campus visit.</div>
+                </div>
+            </div>
+        </div>
+
+        <svg class="wave-divider wave-navy" viewBox="0 0 1440 90" preserveAspectRatio="none" aria-hidden="true">
+            <path d="M0,45 C240,5 480,85 720,45 C960,5 1200,75 1440,35 L1440,90 L0,90 Z"></path>
+        </svg>
+    </section>
+
+    <!-- ===== FINAL CTA ===== -->
+    <section class="cta-banner" style="background:var(--navy-2); color:#fff; padding:70px 32px; text-align:center;">
+        <h2 style="font-size:clamp(1.8rem,3vw,2.5rem); max-width:700px; margin:0 auto 16px; color:#fff;">Ready to give your child a colourful start?</h2>
+        <p style="color:#C7CFEE; font-size:1.05rem; max-width:560px; margin:0 auto 30px; line-height:1.6;">Join the Sri Rainbow School family. We're here to answer your questions, welcome you to our campus, and begin this beautiful journey together.</p>
+        <button class="btn-primary btn-light" id="openEnquireBtn3"><i class="bi bi-send-check"></i> Enquire Now</button>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="site-footer">
+        <div class="footer-wrap">
+            <div class="footer-brand">
+                <img src="logo.jpg" alt="Sri Rainbow School" class="footer-logo" />
+                <p>Recognized by Govt. of Telangana — nurturing curious, kind and confident learners since day one.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Explore</h4>
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="academics.html">Academics</a>
+                <a href="gallery.html">Gallery</a>
+                <a href="admission.html">Admission</a>
+                <a href="contact.html">Contact</a>
+            </div>
+            <div class="footer-links">
+                <h4>Programmes</h4>
+                <a href="academics.html#programs">Play Group / Nursery</a>
+                <a href="academics.html#programs">LKG &amp; UKG</a>
+                <a href="academics.html#programs">Primary Wing</a>
+            </div>
+            <div class="footer-cta">
+                <h4>Ready to visit?</h4>
+                <button class="btn-primary" id="openEnquireBtn4"><i class="bi bi-send-check"></i> Enquire Now</button>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; <span id="year"></span> Sri Rainbow School. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Floating Enquiry Button (mobile) -->
+    <button class="fab-enquire" id="fabEnquireBtn" aria-label="Admission Enquiry"><i class="bi bi-pencil-square"></i></button>
+
+    <!-- ===== ADMISSION ENQUIRY MODAL ===== -->
+    <div class="modal-overlay" id="enquireModal">
+        <div class="modal-card">
+            <button class="modal-close" id="closeEnquireBtn" aria-label="Close form"><i class="bi bi-x-lg"></i></button>
+
+            <div class="modal-side">
+                <div class="modal-side-burst" aria-hidden="true">
+                    <span></span><span></span><span></span><span></span><span></span><span></span>
+                </div>
+                <h3>Let's find your child's<br />perfect fit.</h3>
+                <p>Fill this in and our admissions team will call you within one business day.</p>
+            </div>
+
+            <div class="modal-form-wrap">
+                <h4 id="modalHeading"><i class="bi bi-send-check"></i> Admission Enquiry</h4>
+                <form id="enquireForm">
+                    <div class="field" style="margin-bottom:16px; display:flex; flex-direction:column; gap:6px;">
+                        <label for="pName" style="font-size:.85rem; font-weight:800; color:var(--navy-2);">Parent / Guardian Name</label>
+                        <input type="text" id="pName" required placeholder="Full name" style="border:2px solid rgba(27,42,87,0.12); border-radius:var(--radius-sm); padding:12px 14px; font-family:inherit; font-size:.95rem; color:var(--navy-2); background:var(--cream);" />
+                    </div>
+                    <div class="form-row" style="display:grid; grid-template-columns:1fr 1fr; gap:16px;">
+                        <div class="field" style="margin-bottom:16px; display:flex; flex-direction:column; gap:6px;">
+                            <label for="pPhone" style="font-size:.85rem; font-weight:800; color:var(--navy-2);">Phone Number</label>
+                            <input type="tel" id="pPhone" required placeholder="10-digit number" pattern="[0-9]{10}" style="border:2px solid rgba(27,42,87,0.12); border-radius:var(--radius-sm); padding:12px 14px; font-family:inherit; font-size:.95rem; color:var(--navy-2); background:var(--cream);" />
+                        </div>
+                        <div class="field" style="margin-bottom:16px; display:flex; flex-direction:column; gap:6px;">
+                            <label for="pEmail" style="font-size:.85rem; font-weight:800; color:var(--navy-2);">Email</label>
+                            <input type="email" id="pEmail" placeholder="you@email.com" style="border:2px solid rgba(27,42,87,0.12); border-radius:var(--radius-sm); padding:12px 14px; font-family:inherit; font-size:.95rem; color:var(--navy-2); background:var(--cream);" />
+                        </div>
+                    </div>
+                    <div class="form-row" style="display:grid; grid-template-columns:1fr 1fr; gap:16px;">
+                        <div class="field" style="margin-bottom:16px; display:flex; flex-direction:column; gap:6px;">
+                            <label for="cChild" style="font-size:.85rem; font-weight:800; color:var(--navy-2);">Child's Name</label>
+                            <input type="text" id="cChild" placeholder="Child's name" style="border:2px solid rgba(27,42,87,0.12); border-radius:var(--radius-sm); padding:12px 14px; font-family:inherit; font-size:.95rem; color:var(--navy-2); background:var(--cream);" />
+                        </div>
+                        <div class="field" style="margin-bottom:16px; display:flex; flex-direction:column; gap:6px;">
+                            <label for="pClass" style="font-size:.85rem; font-weight:800; color:var(--navy-2);">Applying For</label>
+                            <select id="pClass" required style="border:2px solid rgba(27,42,87,0.12); border-radius:var(--radius-sm); padding:12px 14px; font-family:inherit; font-size:.95rem; color:var(--navy-2); background:var(--cream);">
+                                <option value="" disabled selected>Select a class</option>
+                                <option>Play Group</option>
+                                <option>Nursery</option>
+                                <option>LKG</option>
+                                <option>UKG</option>
+                                <option>Class 1</option>
+                                <option>Class 2</option>
+                                <option>Class 3</option>
+                                <option>Class 4</option>
+                                <option>Class 5</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="field" style="margin-bottom:16px; display:flex; flex-direction:column; gap:6px;">
+                        <label for="pMsg" style="font-size:.85rem; font-weight:800; color:var(--navy-2);">Message (optional)</label>
+                        <textarea id="pMsg" rows="3" placeholder="Anything you'd like us to know?" style="border:2px solid rgba(27,42,87,0.12); border-radius:var(--radius-sm); padding:12px 14px; font-family:inherit; font-size:.95rem; color:var(--navy-2); background:var(--cream); resize:vertical;"></textarea>
+                    </div>
+                    <button type="submit" class="btn-primary full"><i class="bi bi-send-check"></i> Submit Enquiry</button>
+                </form>
+
+                <div class="modal-success" id="modalSuccess">
+                    <div class="success-burst" aria-hidden="true">
+                        <span></span><span></span><span></span><span></span><span></span><span></span>
+                    </div>
+                    <i class="bi bi-check-circle-fill success-icon"></i>
+                    <h4>Thank you!</h4>
+                    <p>Your enquiry has been received. Our admissions team will call you shortly.</p>
+                    <button class="btn-ghost" id="modalDoneBtn" style="color:var(--navy-2);">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== JAVASCRIPT ===== -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+
+            /* ---------- Footer year ---------- */
+            document.getElementById('year').textContent = new Date().getFullYear();
+
+            /* ---------- Sticky header shadow + scroll progress ---------- */
+            const header = document.getElementById('siteHeader');
+            const scrollRainbow = document.getElementById('scrollRainbow');
+
+            const onScroll = () => {
+                header.classList.toggle('scrolled', window.scrollY > 10);
+                const scrollTop = window.scrollY;
+                const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+                const pct = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+                scrollRainbow.style.width = pct + '%';
+            };
+            window.addEventListener('scroll', onScroll, { passive: true });
+            onScroll();
+
+            /* ---------- Mobile nav toggle ---------- */
+            const hamburgerBtn = document.getElementById('hamburgerBtn');
+            const mainNav = document.getElementById('mainNav');
+            if (hamburgerBtn && mainNav) {
+                hamburgerBtn.addEventListener('click', () => {
+                    mainNav.classList.toggle('open');
+                    hamburgerBtn.classList.toggle('active');
+                });
+                mainNav.querySelectorAll('.nav-link').forEach(link => {
+                    link.addEventListener('click', () => mainNav.classList.remove('open'));
+                });
+            }
+
+            /* ---------- FAQ Accordion ---------- */
+            const faqItems = document.querySelectorAll('.faq-item');
+            faqItems.forEach(item => {
+                const q = item.querySelector('.faq-q');
+                if (!q) return;
+                q.addEventListener('click', () => {
+                    const isOpen = item.classList.contains('open');
+                    faqItems.forEach(i => i.classList.remove('open'));
+                    if (!isOpen) item.classList.add('open');
+                });
+            });
+
+            /* ---------- Admission Enquiry Modal ---------- */
+            const enquireModal = document.getElementById('enquireModal');
+            const enquireForm = document.getElementById('enquireForm');
+            const modalSuccess = document.getElementById('modalSuccess');
+            const modalHeading = document.getElementById('modalHeading');
+
+            if (enquireModal && enquireForm && modalSuccess && modalHeading) {
+                const openTriggers = [
+                    'openEnquireBtn1', 'openEnquireBtn2', 'openEnquireBtn3', 'openEnquireBtn4', 'fabEnquireBtn'
+                ];
+                openTriggers.forEach(id => {
+                    const btn = document.getElementById(id);
+                    if (btn) btn.addEventListener('click', openEnquireModal);
+                });
+
+                function openEnquireModal() {
+                    enquireModal.classList.add('open');
+                    document.body.style.overflow = 'hidden';
+                }
+
+                function closeEnquireModal() {
+                    enquireModal.classList.remove('open');
+                    document.body.style.overflow = '';
+                    setTimeout(() => {
+                        modalSuccess.classList.remove('show');
+                        enquireForm.style.display = '';
+                        modalHeading.style.display = '';
+                        enquireForm.reset();
+                    }, 300);
+                }
+
+                const closeBtn = document.getElementById('closeEnquireBtn');
+                if (closeBtn) closeBtn.addEventListener('click', closeEnquireModal);
+                enquireModal.addEventListener('click', e => { if (e.target === enquireModal) closeEnquireModal(); });
+                document.addEventListener('keydown', e => { if (e.key === 'Escape') closeEnquireModal(); });
+
+                const modalDoneBtn = document.getElementById('modalDoneBtn');
+                if (modalDoneBtn) modalDoneBtn.addEventListener('click', closeEnquireModal);
+
+                enquireForm.addEventListener('submit', e => {
+                    e.preventDefault();
+                    enquireForm.style.display = 'none';
+                    modalHeading.style.display = 'none';
+                    modalSuccess.classList.add('show');
+                });
+            }
+
+            /* ---------- Campus Visit Form ---------- */
+            const visitForm = document.getElementById('visitForm');
+            const visitNote = document.getElementById('visitNote');
+            visitForm.addEventListener('submit', e => {
+                e.preventDefault();
+                visitNote.textContent = '✅ Thank you! We\'ll contact you to confirm your campus visit.';
+                visitNote.style.color = 'var(--green)';
+                visitForm.reset();
+                setTimeout(() => { visitNote.textContent = ''; }, 6000);
+            });
+
+        });
+    </script>
+
+</body>
+</html>
