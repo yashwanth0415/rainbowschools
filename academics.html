@@ -3,18 +3,19 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon"  href="logo2.png">
     <title>Sri Rainbow School | Academics – Curriculum &amp; Programs</title>
     <meta name="description" content="Explore Sri Rainbow School's academic programs from Play Group to Class 5. A joyful, play-based curriculum recognized by Govt. of Telangana." />
 
     <!-- Bootstrap Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
-    <!-- Google Fonts -->
+    <!-- Google Fonts (added a playful display font) -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Nunito:ital,wght@0,400;0,600;0,700;0,800;1,600&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Nunito:ital,wght@0,400;0,600;0,700;0,800;1,600&family=Fredoka+One&display=swap" rel="stylesheet" />
 
     <style>
         /* ==========================================================================
-           Sri Rainbow School — Design Tokens (same as homepage)
+           Sri Rainbow School — Design Tokens (extended)
            ========================================================================== */
         :root {
             --cream: #FFFCF4;
@@ -27,15 +28,19 @@
             --green: #4CAF6D;
             --purple: #7B4FA0;
             --orange: #F4863A;
+            --pink: #F06292;
+            --teal: #26A69A;
 
-            --font-display: 'Baloo 2', 'Nunito', sans-serif;
+            --font-display: 'Baloo 2', 'Fredoka One', cursive;
             --font-body: 'Nunito', sans-serif;
+            --font-accent: 'Fredoka One', cursive;
 
             --radius-lg: 28px;
             --radius-md: 18px;
             --radius-sm: 12px;
             --shadow-soft: 0 14px 34px -14px rgba(27, 42, 87, 0.25);
             --shadow-pop: 0 20px 44px -12px rgba(27, 42, 87, 0.35);
+            --shadow-glow: 0 20px 60px -12px rgba(46, 90, 172, 0.3);
         }
 
         * {
@@ -120,6 +125,15 @@
         .eyebrow-red {
             color: var(--red);
         }
+        .eyebrow-yellow {
+            color: var(--yellow);
+        }
+        .eyebrow-pink {
+            color: var(--pink);
+        }
+        .eyebrow-teal {
+            color: var(--teal);
+        }
         .eyebrow-light {
             color: #FFE59A;
         }
@@ -128,6 +142,7 @@
             font-weight: 800;
             max-width: 760px;
             color: var(--navy-2);
+            font-family: var(--font-display);
         }
         .section-title.light {
             color: #fff;
@@ -156,7 +171,7 @@
         }
 
         /* ==========================================================================
-           Header / Nav (identical to homepage)
+           Header / Nav (identical)
            ========================================================================== */
         .site-header {
             position: sticky;
@@ -241,7 +256,7 @@
         }
 
         /* ==========================================================================
-           Academics Hero
+           Academics Hero — Enhanced with background image
            ========================================================================== */
         .academics-hero {
             position: relative;
@@ -249,6 +264,18 @@
             color: #fff;
             padding-top: 20px;
             overflow: hidden;
+            min-height: 80vh;
+            display: flex;
+            align-items: center;
+        }
+        /* Hero background image (placeholder) */
+        .academics-hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: url('https://picsum.photos/1600/900?random=1') center/cover no-repeat;
+            opacity: 0.15;
+            z-index: 0;
         }
         .academics-hero-blobs {
             position: absolute;
@@ -258,29 +285,47 @@
         .blob {
             position: absolute;
             border-radius: 50%;
-            filter: blur(50px);
-            opacity: .35;
+            filter: blur(60px);
+            opacity: .3;
+            animation: blobFloat 12s ease-in-out infinite alternate;
         }
         .blob-a {
-            width: 380px;
-            height: 380px;
+            width: 400px;
+            height: 400px;
             background: var(--purple);
             top: -120px;
             left: -100px;
+            animation-delay: 0s;
         }
         .blob-b {
-            width: 320px;
-            height: 320px;
+            width: 350px;
+            height: 350px;
             background: var(--blue);
             bottom: -140px;
             right: -80px;
+            animation-delay: 3s;
         }
         .blob-c {
-            width: 220px;
-            height: 220px;
+            width: 250px;
+            height: 250px;
             background: var(--green);
-            top: 40%;
-            right: 12%;
+            top: 30%;
+            right: 5%;
+            animation-delay: 6s;
+        }
+        @keyframes blobFloat {
+            0% {
+                transform: translate(0, 0) scale(1);
+            }
+            33% {
+                transform: translate(30px, -30px) scale(1.1);
+            }
+            66% {
+                transform: translate(-20px, 20px) scale(0.9);
+            }
+            100% {
+                transform: translate(10px, -10px) scale(1.05);
+            }
         }
 
         .academics-hero-inner {
@@ -288,30 +333,42 @@
             z-index: 1;
             max-width: 1240px;
             margin: 0 auto;
-            padding: 64px 32px 110px;
+            padding: 40px 32px 100px;
             display: grid;
             grid-template-columns: 1fr 0.85fr;
-            gap: 40px;
+            gap: 50px;
             align-items: center;
+            width: 100%;
         }
         .academics-hero-copy .eyebrow {
             color: #FFE59A;
         }
         .academics-hero-title {
-            font-size: clamp(2.3rem, 4.6vw, 3.6rem);
+            font-size: clamp(2.5rem, 5vw, 4rem);
             font-weight: 800;
             color: #fff;
+            line-height: 1.1;
         }
         .rainbow-text {
-            background: linear-gradient(90deg, #7B4FA0, #2E5AAC, #4CAF6D, #FFC93C, #F4863A, #E63946);
+            background: linear-gradient(90deg, #FFE59A, #FFC93C, #F4863A, #E63946, #7B4FA0, #2E5AAC);
+            background-size: 300% 100%;
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
+            animation: rainbowShift 6s ease-in-out infinite alternate;
+        }
+        @keyframes rainbowShift {
+            0% {
+                background-position: 0% 50%;
+            }
+            100% {
+                background-position: 100% 50%;
+            }
         }
         .academics-hero-sub {
             margin-top: 20px;
             font-size: 1.1rem;
-            line-height: 1.7;
+            line-height: 1.8;
             color: #C7CFEE;
             max-width: 520px;
         }
@@ -356,25 +413,28 @@
             color: #fff;
             padding: 15px 8px;
             border-bottom: 2px solid rgba(255, 255, 255, 0.4);
-            transition: border-color .18s ease;
+            transition: border-color .18s ease, transform .18s ease;
         }
         .btn-ghost:hover {
             border-color: #fff;
+            transform: translateX(4px);
         }
 
         .academics-hero-art {
             position: relative;
             display: flex;
             justify-content: center;
+            align-items: center;
         }
         .rainbow-burst {
             width: 100%;
-            max-width: 420px;
+            max-width: 440px;
+            filter: drop-shadow(0 20px 60px rgba(123, 79, 160, 0.3));
         }
         .petal {
             transform-origin: 0 0;
             opacity: 0;
-            animation: petalPop .7s cubic-bezier(.2, .8, .3, 1.3) forwards;
+            animation: petalPop .8s cubic-bezier(.2, .8, .3, 1.3) forwards;
         }
         .p1 {
             fill: #7B4FA0;
@@ -401,18 +461,18 @@
             animation-delay: .55s;
         }
         .petal-core {
-            fill: var(--navy-2);
+            fill: #fff;
             opacity: 0;
-            animation: fadeIn .5s ease .7s forwards;
+            animation: fadeIn .5s ease .8s forwards;
         }
         @keyframes petalPop {
             0% {
                 opacity: 0;
-                transform: scale(0.3) translateY(20px);
+                transform: scale(0.2) translateY(30px) rotate(-10deg);
             }
             100% {
                 opacity: 1;
-                transform: scale(1) translateY(0);
+                transform: scale(1) translateY(0) rotate(0deg);
             }
         }
         @keyframes fadeIn {
@@ -420,23 +480,24 @@
                 opacity: 1;
             }
         }
+
         .cloud ellipse {
-            fill: rgba(255, 255, 255, 0.15);
+            fill: rgba(255, 255, 255, 0.12);
         }
         .cloud {
-            animation: floatY 6s ease-in-out infinite;
+            animation: floatCloud 8s ease-in-out infinite;
         }
         .cloud2 {
-            animation-duration: 7.5s;
-            animation-delay: .4s;
+            animation-duration: 10s;
+            animation-delay: .6s;
         }
-        @keyframes floatY {
+        @keyframes floatCloud {
             0%,
             100% {
-                transform: translate(60px, 320px);
+                transform: translate(0, 0);
             }
             50% {
-                transform: translate(60px, 306px);
+                transform: translate(10px, -12px);
             }
         }
 
@@ -459,7 +520,7 @@
         }
 
         /* ==========================================================================
-           Programs (detailed)
+           Programs — with images
            ========================================================================== */
         .programs {
             background: var(--cream);
@@ -473,20 +534,37 @@
         .prog-detailed {
             background: #fff;
             border-radius: var(--radius-lg);
-            padding: 34px 30px;
+            padding: 0 0 30px 0;
             border-top: 6px solid var(--tint);
             box-shadow: var(--shadow-soft);
             transition: transform .2s ease, box-shadow .2s ease;
+            overflow: hidden;
         }
         .prog-detailed:hover {
             transform: translateY(-8px);
             box-shadow: var(--shadow-pop);
         }
+        .prog-detailed .prog-img {
+            height: 180px;
+            overflow: hidden;
+        }
+        .prog-detailed .prog-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform .4s ease;
+        }
+        .prog-detailed:hover .prog-img img {
+            transform: scale(1.05);
+        }
+        .prog-detailed .prog-content {
+            padding: 24px 28px 0;
+        }
         .prog-detailed .prog-header {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-bottom: 16px;
+            margin-bottom: 10px;
         }
         .prog-detailed .prog-header i {
             font-size: 2.2rem;
@@ -531,7 +609,7 @@
         }
 
         /* ==========================================================================
-           Teaching Methodology
+           Teaching Methodology — with images
            ========================================================================== */
         .methodology {
             background: var(--cream-soft);
@@ -549,10 +627,28 @@
             text-align: center;
             box-shadow: var(--shadow-soft);
             transition: transform .2s ease, box-shadow .2s ease;
+            position: relative;
+            overflow: hidden;
         }
         .method-card:hover {
             transform: translateY(-6px);
             box-shadow: var(--shadow-pop);
+        }
+        .method-card .method-img {
+            width: 100%;
+            height: 140px;
+            border-radius: var(--radius-sm);
+            overflow: hidden;
+            margin-bottom: 16px;
+        }
+        .method-card .method-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform .4s ease;
+        }
+        .method-card:hover .method-img img {
+            transform: scale(1.05);
         }
         .method-card .method-icon {
             width: 72px;
@@ -563,8 +659,12 @@
             justify-content: center;
             font-size: 2rem;
             color: #fff;
-            margin: 0 auto 18px;
+            margin: -36px auto 18px;
             background: var(--c);
+            position: relative;
+            z-index: 1;
+            border: 4px solid #fff;
+            box-shadow: var(--shadow-soft);
         }
         .method-card h4 {
             font-size: 1.15rem;
@@ -578,7 +678,7 @@
         }
 
         /* ==========================================================================
-           Co-Curricular
+           Co-Curricular — with images
            ========================================================================== */
         .co-curricular {
             background: var(--cream);
@@ -592,34 +692,59 @@
         .co-card {
             background: #fff;
             border-radius: var(--radius-md);
-            padding: 28px 22px;
+            padding: 0 0 20px 0;
             text-align: center;
             box-shadow: var(--shadow-soft);
             transition: transform .2s ease, box-shadow .2s ease;
             border-bottom: 4px solid var(--c);
+            overflow: hidden;
         }
         .co-card:hover {
             transform: translateY(-6px);
             box-shadow: var(--shadow-pop);
         }
+        .co-card .co-img {
+            height: 120px;
+            overflow: hidden;
+        }
+        .co-card .co-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform .4s ease;
+        }
+        .co-card:hover .co-img img {
+            transform: scale(1.05);
+        }
         .co-card .co-icon {
             font-size: 2.2rem;
             color: var(--c);
-            margin-bottom: 12px;
+            margin: -24px auto 10px;
+            background: #fff;
+            width: 52px;
+            height: 52px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: var(--shadow-soft);
+            position: relative;
+            z-index: 1;
         }
         .co-card h4 {
             font-size: 1.05rem;
             color: var(--navy-2);
-            margin-bottom: 6px;
+            margin-bottom: 4px;
         }
         .co-card p {
             font-size: .88rem;
             color: #5A628C;
             line-height: 1.5;
+            padding: 0 16px;
         }
 
         /* ==========================================================================
-           Assessment
+           Assessment — with image
            ========================================================================== */
         .assessment {
             background: var(--cream-soft);
@@ -663,11 +788,22 @@
             display: flex;
             flex-direction: column;
             gap: 18px;
+            position: relative;
+            overflow: hidden;
+        }
+        .assessment-visual .assess-img {
+            position: absolute;
+            inset: 0;
+            opacity: 0.04;
+            background: url('https://picsum.photos/600/400?random=8') center/cover no-repeat;
+            z-index: 0;
         }
         .assessment-visual .assess-item {
             display: flex;
             align-items: center;
             gap: 16px;
+            position: relative;
+            z-index: 1;
         }
         .assessment-visual .assess-item .bar {
             flex: 1;
@@ -681,7 +817,7 @@
             border-radius: 999px;
             background: var(--c);
             width: 0%;
-            animation: barFill 1s ease forwards;
+            transition: width 1s ease;
         }
         .assessment-visual .assess-item .label {
             font-weight: 700;
@@ -689,14 +825,13 @@
             color: var(--navy-2);
             min-width: 120px;
         }
-        @keyframes barFill {
-            to {
-                width: var(--w);
-            }
+        .assessment-visual p {
+            position: relative;
+            z-index: 1;
         }
 
         /* ==========================================================================
-           Academic Calendar
+           Academic Calendar — with images
            ========================================================================== */
         .calendar {
             background: var(--cream);
@@ -710,32 +845,44 @@
         .cal-item {
             background: #fff;
             border-radius: var(--radius-md);
-            padding: 24px 22px;
-            display: flex;
-            gap: 16px;
-            align-items: flex-start;
+            padding: 0;
+            display: grid;
+            grid-template-columns: 80px 1fr;
             box-shadow: var(--shadow-soft);
             transition: transform .2s ease, box-shadow .2s ease;
+            overflow: hidden;
         }
         .cal-item:hover {
             transform: translateY(-4px);
             box-shadow: var(--shadow-pop);
         }
-        .cal-item .cal-date {
-            background: var(--red);
-            color: #fff;
-            border-radius: var(--radius-sm);
-            padding: 8px 14px;
-            font-weight: 800;
-            font-size: .8rem;
-            text-align: center;
-            flex: none;
-            min-width: 56px;
+        .cal-item .cal-img {
+            height: 100%;
+            min-height: 100px;
+            overflow: hidden;
         }
-        .cal-item .cal-date .day {
-            font-size: 1.4rem;
-            display: block;
-            font-family: var(--font-display);
+        .cal-item .cal-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform .4s ease;
+        }
+        .cal-item:hover .cal-img img {
+            transform: scale(1.05);
+        }
+        .cal-item .cal-detail {
+            padding: 16px 18px 16px 14px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .cal-item .cal-detail .cal-date {
+            font-weight: 800;
+            font-size: .75rem;
+            color: var(--red);
+            text-transform: uppercase;
+            letter-spacing: .04em;
+            margin-bottom: 4px;
         }
         .cal-item .cal-detail h4 {
             font-size: 1rem;
@@ -743,9 +890,9 @@
             margin-bottom: 4px;
         }
         .cal-item .cal-detail p {
-            font-size: .88rem;
+            font-size: .85rem;
             color: #5A628C;
-            line-height: 1.5;
+            line-height: 1.4;
         }
 
         /* ==========================================================================
@@ -756,6 +903,20 @@
             color: #fff;
             padding: 70px 32px;
             text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .cta-banner::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: url('https://picsum.photos/1200/400?random=20') center/cover no-repeat;
+            opacity: 0.08;
+            z-index: 0;
+        }
+        .cta-banner>* {
+            position: relative;
+            z-index: 1;
         }
         .cta-banner h2 {
             font-size: clamp(1.8rem, 3vw, 2.5rem);
@@ -771,7 +932,7 @@
         }
 
         /* ==========================================================================
-           Footer (identical)
+           Footer
            ========================================================================== */
         .site-footer {
             background: var(--navy-2);
@@ -839,10 +1000,14 @@
             display: none;
             align-items: center;
             justify-content: center;
+            transition: transform .2s ease;
+        }
+        .fab-enquire:hover {
+            transform: scale(1.08);
         }
 
         /* ==========================================================================
-           Admission Enquiry Modal (identical)
+           Modal
            ========================================================================== */
         .modal-overlay {
             position: fixed;
@@ -1097,6 +1262,7 @@
             .academics-hero-inner {
                 grid-template-columns: 1fr;
                 text-align: center;
+                padding: 40px 22px 80px;
             }
             .academics-hero-copy {
                 order: 1;
@@ -1122,6 +1288,12 @@
             }
             .modal-side {
                 display: none;
+            }
+            .cal-item {
+                grid-template-columns: 1fr;
+            }
+            .cal-item .cal-img {
+                height: 120px;
             }
         }
 
@@ -1181,13 +1353,46 @@
             .section-wrap {
                 padding: 70px 22px 50px;
             }
-            .academics-hero-inner {
-                padding: 40px 22px 80px;
-            }
             .modal-form-wrap {
                 padding: 30px 22px;
             }
+            .academics-hero {
+                min-height: auto;
+            }
         }
+        /* ==========================================================================
+   Top Announcement Bar
+   ========================================================================== */
+.top-bar {
+  background: linear-gradient(90deg, #E63946, #F4863A);
+  color: #fff;
+  padding: 8px 0;
+  overflow: hidden;
+  white-space: nowrap;
+  font-weight: 700;
+  font-size: .85rem;
+  position: relative;
+  z-index: 501;
+  border-bottom: 2px solid rgba(255,255,255,0.15);
+}
+.top-bar-track {
+  display: flex;
+  width: max-content;
+  animation: scrollMarquee 25s linear infinite;
+}
+.top-bar-track span {
+  padding: 0 40px;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+.top-bar-track i {
+  font-size: 1rem;
+}
+@keyframes scrollMarquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
     </style>
 </head>
 
@@ -1195,6 +1400,22 @@
 
     <!-- ===== Rainbow scroll progress ===== -->
     <div class="scroll-rainbow" id="scrollRainbow"></div>
+    <!-- ============ TOP ANNOUNCEMENT BAR ============ -->
+<div class="top-bar">
+  <div class="top-bar-track">
+    <span><i class="bi bi-megaphone-fill"></i> Admissions Open for 2026-27! </span>
+    <span><i class="bi bi-calendar-check"></i> Book a Campus Visit Today! </span>
+    <span><i class="bi bi-telephone-fill"></i> Call us at +91 90000 00000 </span>
+    <span><i class="bi bi-star-fill"></i> Recognized by Govt. of Telangana </span>
+    <span><i class="bi bi-emoji-smile"></i> Where Little Minds Bloom </span>
+    <!-- Duplicate for seamless loop -->
+    <span><i class="bi bi-megaphone-fill"></i> Admissions Open for 2026-27! </span>
+    <span><i class="bi bi-calendar-check"></i> Book a Campus Visit Today! </span>
+    <span><i class="bi bi-telephone-fill"></i> Call us at +91 90000 00000 </span>
+    <span><i class="bi bi-star-fill"></i> Recognized by Govt. of Telangana </span>
+    <span><i class="bi bi-emoji-smile"></i> Where Little Minds Bloom </span>
+  </div>
+</div>
 
     <!-- ===== HEADER ===== -->
     <header class="site-header" id="siteHeader">
@@ -1222,7 +1443,7 @@
         </div>
     </header>
 
-    <!-- ===== ACADEMICS HERO ===== -->
+    <!-- ===== ACADEMICS HERO — Enhanced ===== -->
     <section class="academics-hero">
         <div class="academics-hero-blobs" aria-hidden="true">
             <span class="blob blob-a"></span>
@@ -1250,7 +1471,8 @@
                         <path class="petal p4" d="M0,0 C14,-110 34,-180 70,-230 C40,-170 22,-100 6,-4 Z"/>
                         <path class="petal p5" d="M0,0 C24,-90 54,-140 100,-175 C66,-130 40,-80 12,-4 Z"/>
                         <path class="petal p6" d="M0,0 C34,-60 74,-90 120,-100 C82,-80 50,-50 16,-4 Z"/>
-                        <circle class="petal-core" cx="0" cy="-4" r="14"/>
+                        <circle class="petal-core" cx="0" cy="-4" r="16"/>
+                        <circle class="petal-core" cx="0" cy="-4" r="8" fill="#FFC93C" opacity="0.3"/>
                     </g>
                     <g class="cloud" transform="translate(60,320)">
                         <ellipse cx="0" cy="0" rx="46" ry="22"/>
@@ -1265,13 +1487,13 @@
                 </svg>
             </div>
         </div>
-
+<!-- 
         <svg class="wave-divider" viewBox="0 0 1440 90" preserveAspectRatio="none" aria-hidden="true">
             <path d="M0,40 C240,90 480,0 720,30 C960,60 1200,10 1440,40 L1440,90 L0,90 Z"></path>
-        </svg>
+        </svg> -->
     </section>
 
-    <!-- ===== PROGRAMS (detailed) ===== -->
+    <!-- ===== PROGRAMS (detailed with images) ===== -->
     <section class="programs" id="programs">
         <div class="section-wrap">
             <p class="eyebrow eyebrow-orange"><i class="bi bi-puzzle"></i> Our Programs</p>
@@ -1281,56 +1503,71 @@
             <div class="programs-grid">
                 <!-- Play Group -->
                 <div class="prog-detailed" style="--tint:#2E5AAC;">
-                    <div class="prog-header">
-                        <i class="bi bi-puzzle"></i>
-                        <span class="prog-age">1.5 – 3 yrs</span>
+                    <div class="prog-img">
+                        <img src="https://picsum.photos/400/200?random=2" alt="Play Group children" loading="lazy" />
                     </div>
-                    <h3>Play Group / Nursery</h3>
-                    <p>A gentle introduction to school life through sensory play, rhythm, and routines that build trust and independence.</p>
-                    <ul class="prog-features">
-                        <li><i class="bi bi-check2"></i> Sensory &amp; motor skill play</li>
-                        <li><i class="bi bi-check2"></i> Music, rhymes &amp; movement</li>
-                        <li><i class="bi bi-check2"></i> Toilet training support</li>
-                        <li><i class="bi bi-check2"></i> Social &amp; emotional bonding</li>
-                        <li><i class="bi bi-check2"></i> Circle time &amp; storytelling</li>
-                        <li><i class="bi bi-check2"></i> Art &amp; messy play</li>
-                    </ul>
+                    <div class="prog-content">
+                        <div class="prog-header">
+                            <i class="bi bi-puzzle"></i>
+                            <span class="prog-age">1.5 – 3 yrs</span>
+                        </div>
+                        <h3>Play Group / Nursery</h3>
+                        <p>A gentle introduction to school life through sensory play, rhythm, and routines that build trust and independence.</p>
+                        <ul class="prog-features">
+                            <li><i class="bi bi-check2"></i> Sensory &amp; motor skill play</li>
+                            <li><i class="bi bi-check2"></i> Music, rhymes &amp; movement</li>
+                            <li><i class="bi bi-check2"></i> Toilet training support</li>
+                            <li><i class="bi bi-check2"></i> Social &amp; emotional bonding</li>
+                            <li><i class="bi bi-check2"></i> Circle time &amp; storytelling</li>
+                            <li><i class="bi bi-check2"></i> Art &amp; messy play</li>
+                        </ul>
+                    </div>
                 </div>
 
                 <!-- LKG / UKG -->
                 <div class="prog-detailed" style="--tint:#4CAF6D;">
-                    <div class="prog-header">
-                        <i class="bi bi-palette"></i>
-                        <span class="prog-age">3 – 5 yrs</span>
+                    <div class="prog-img">
+                        <img src="https://picsum.photos/400/200?random=3" alt="LKG UKG children" loading="lazy" />
                     </div>
-                    <h3>LKG &amp; UKG</h3>
-                    <p>Phonics, numeracy, art and storytelling woven into a structured, playful school day that builds foundational skills.</p>
-                    <ul class="prog-features">
-                        <li><i class="bi bi-check2"></i> Phonics &amp; early literacy</li>
-                        <li><i class="bi bi-check2"></i> Numbers &amp; pattern play</li>
-                        <li><i class="bi bi-check2"></i> Art, craft &amp; storytelling</li>
-                        <li><i class="bi bi-check2"></i> Cognitive &amp; reasoning games</li>
-                        <li><i class="bi bi-check2"></i> Social skills &amp; collaboration</li>
-                        <li><i class="bi bi-check2"></i> Introduction to writing</li>
-                    </ul>
+                    <div class="prog-content">
+                        <div class="prog-header">
+                            <i class="bi bi-palette"></i>
+                            <span class="prog-age">3 – 5 yrs</span>
+                        </div>
+                        <h3>LKG &amp; UKG</h3>
+                        <p>Phonics, numeracy, art and storytelling woven into a structured, playful school day that builds foundational skills.</p>
+                        <ul class="prog-features">
+                            <li><i class="bi bi-check2"></i> Phonics &amp; early literacy</li>
+                            <li><i class="bi bi-check2"></i> Numbers &amp; pattern play</li>
+                            <li><i class="bi bi-check2"></i> Art, craft &amp; storytelling</li>
+                            <li><i class="bi bi-check2"></i> Cognitive &amp; reasoning games</li>
+                            <li><i class="bi bi-check2"></i> Social skills &amp; collaboration</li>
+                            <li><i class="bi bi-check2"></i> Introduction to writing</li>
+                        </ul>
+                    </div>
                 </div>
 
                 <!-- Primary Wing -->
                 <div class="prog-detailed" style="--tint:#F4863A;">
-                    <div class="prog-header">
-                        <i class="bi bi-mortarboard"></i>
-                        <span class="prog-age">5 – 10 yrs</span>
+                    <div class="prog-img">
+                        <img src="https://picsum.photos/400/200?random=4" alt="Primary Wing children" loading="lazy" />
                     </div>
-                    <h3>Primary Wing</h3>
-                    <p>A strong academic core — language, math and science — balanced with sport, art and values education for holistic growth.</p>
-                    <ul class="prog-features">
-                        <li><i class="bi bi-check2"></i> English, Math, EVS &amp; Telugu</li>
-                        <li><i class="bi bi-check2"></i> Computer &amp; spoken skills lab</li>
-                        <li><i class="bi bi-check2"></i> Sports, yoga &amp; value education</li>
-                        <li><i class="bi bi-check2"></i> Science experiments &amp; projects</li>
-                        <li><i class="bi bi-check2"></i> Creative writing &amp; public speaking</li>
-                        <li><i class="bi bi-check2"></i> Field trips &amp; community visits</li>
-                    </ul>
+                    <div class="prog-content">
+                        <div class="prog-header">
+                            <i class="bi bi-mortarboard"></i>
+                            <span class="prog-age">5 – 10 yrs</span>
+                        </div>
+                        <h3>Primary Wing</h3>
+                        <p>A strong academic core — language, math and science — balanced with sport, art and values education for holistic growth.</p>
+                        <ul class="prog-features">
+                            <li><i class="bi bi-check2"></i> English, Math, EVS &amp; Telugu</li>
+                            <li><i class="bi bi-check2"></i> Computer &amp; spoken skills lab</li>
+                            <li><i class="bi bi-check2"></i> Sports, yoga &amp; value education</li>
+                            <li><i class="bi bi-check2"></i> Science experiments &amp; projects</li>
+                            <li><i class="bi bi-check2"></i> Creative writing &amp; public speaking</li>
+                            <li><i class="bi bi-check2"></i> Field trips &amp; community visits</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
@@ -1340,7 +1577,7 @@
         </svg>
     </section>
 
-    <!-- ===== TEACHING METHODOLOGY ===== -->
+    <!-- ===== TEACHING METHODOLOGY — with images ===== -->
     <section class="methodology" id="methodology">
         <div class="section-wrap">
             <p class="eyebrow eyebrow-purple"><i class="bi bi-compass"></i> How We Teach</p>
@@ -1349,31 +1586,49 @@
 
             <div class="method-grid">
                 <div class="method-card" style="--c:var(--blue);">
+                    <div class="method-img">
+                        <img src="https://picsum.photos/300/150?random=5" alt="Play-Based Learning" loading="lazy" />
+                    </div>
                     <div class="method-icon"><i class="bi bi-emoji-smile"></i></div>
                     <h4>Play-Based Learning</h4>
                     <p>We believe play is the highest form of research. Our classrooms are designed for exploration, experimentation, and joyful discovery.</p>
                 </div>
                 <div class="method-card" style="--c:var(--green);">
+                    <div class="method-img">
+                        <img src="https://picsum.photos/300/150?random=6" alt="Child-Centred Approach" loading="lazy" />
+                    </div>
                     <div class="method-icon"><i class="bi bi-person-heart"></i></div>
                     <h4>Child-Centred Approach</h4>
                     <p>Every child is unique. We tailor our methods to individual learning styles, paces, and interests — no two children are the same.</p>
                 </div>
                 <div class="method-card" style="--c:var(--orange);">
+                    <div class="method-img">
+                        <img src="https://picsum.photos/300/150?random=7" alt="Hands-On & Experiential" loading="lazy" />
+                    </div>
                     <div class="method-icon"><i class="bi bi-brain"></i></div>
                     <h4>Hands-On &amp; Experiential</h4>
                     <p>Children learn by doing. From science experiments to art projects, we bring concepts to life through tangible, sensory experiences.</p>
                 </div>
                 <div class="method-card" style="--c:var(--purple);">
+                    <div class="method-img">
+                        <img src="https://picsum.photos/300/150?random=9" alt="Social-Emotional Learning" loading="lazy" />
+                    </div>
                     <div class="method-icon"><i class="bi bi-chat-heart"></i></div>
                     <h4>Social-Emotional Learning</h4>
                     <p>We nurture empathy, resilience, and emotional intelligence alongside academics — because feelings matter as much as facts.</p>
                 </div>
                 <div class="method-card" style="--c:var(--red);">
+                    <div class="method-img">
+                        <img src="https://picsum.photos/300/150?random=10" alt="Integrated Curriculum" loading="lazy" />
+                    </div>
                     <div class="method-icon"><i class="bi bi-arrows-expand"></i></div>
                     <h4>Integrated Curriculum</h4>
                     <p>Subjects are woven together through themes and projects, helping children see connections and think holistically.</p>
                 </div>
                 <div class="method-card" style="--c:var(--yellow);">
+                    <div class="method-img">
+                        <img src="https://picsum.photos/300/150?random=11" alt="Collaborative Learning" loading="lazy" />
+                    </div>
                     <div class="method-icon" style="color:var(--navy-2);"><i class="bi bi-people"></i></div>
                     <h4>Collaborative Learning</h4>
                     <p>Children learn from each other. Group work, peer mentoring, and circle time build communication and teamwork skills.</p>
@@ -1386,7 +1641,7 @@
         </svg>
     </section>
 
-    <!-- ===== CO-CURRICULAR ===== -->
+    <!-- ===== CO-CURRICULAR — with images ===== -->
     <section class="co-curricular" id="co-curricular">
         <div class="section-wrap">
             <p class="eyebrow eyebrow-green"><i class="bi bi-controller"></i> Beyond the Classroom</p>
@@ -1395,41 +1650,49 @@
 
             <div class="co-grid">
                 <div class="co-card" style="--c:var(--blue);">
+                    <div class="co-img"><img src="https://picsum.photos/200/120?random=12" alt="Music & Dance" loading="lazy" /></div>
                     <div class="co-icon"><i class="bi bi-music-note-beamed"></i></div>
                     <h4>Music &amp; Dance</h4>
                     <p>From rhythm to melody, children explore sound, movement, and expression through joyful sessions.</p>
                 </div>
                 <div class="co-card" style="--c:var(--orange);">
+                    <div class="co-img"><img src="https://picsum.photos/200/120?random=13" alt="Art & Craft" loading="lazy" /></div>
                     <div class="co-icon"><i class="bi bi-easel2"></i></div>
                     <h4>Art &amp; Craft</h4>
                     <p>Painting, clay work, collage — every child discovers their inner artist in our creative studio.</p>
                 </div>
                 <div class="co-card" style="--c:var(--red);">
+                    <div class="co-img"><img src="https://picsum.photos/200/120?random=14" alt="Sports & Athletics" loading="lazy" /></div>
                     <div class="co-icon"><i class="bi bi-trophy"></i></div>
                     <h4>Sports &amp; Athletics</h4>
                     <p>Team games, yoga, and fitness activities that build strength, coordination, and sportsmanship.</p>
                 </div>
                 <div class="co-card" style="--c:var(--green);">
+                    <div class="co-img"><img src="https://picsum.photos/200/120?random=15" alt="Nature & Gardening" loading="lazy" /></div>
                     <div class="co-icon"><i class="bi bi-tree"></i></div>
                     <h4>Nature &amp; Gardening</h4>
                     <p>Children connect with the natural world through gardening, nature walks, and environmental projects.</p>
                 </div>
                 <div class="co-card" style="--c:var(--purple);">
+                    <div class="co-img"><img src="https://picsum.photos/200/120?random=16" alt="Storytelling & Drama" loading="lazy" /></div>
                     <div class="co-icon"><i class="bi bi-book-half"></i></div>
                     <h4>Storytelling &amp; Drama</h4>
                     <p>Imagination comes alive through stories, role-play, and puppet shows that build language and confidence.</p>
                 </div>
                 <div class="co-card" style="--c:var(--yellow);">
+                    <div class="co-img"><img src="https://picsum.photos/200/120?random=17" alt="Public Speaking" loading="lazy" /></div>
                     <div class="co-icon" style="color:var(--navy-2);"><i class="bi bi-mic"></i></div>
                     <h4>Public Speaking</h4>
                     <p>Show &amp; Tell, poetry recitation, and class presentations help children find their voice and express themselves.</p>
                 </div>
                 <div class="co-card" style="--c:var(--blue);">
+                    <div class="co-img"><img src="https://picsum.photos/200/120?random=18" alt="Yoga & Mindfulness" loading="lazy" /></div>
                     <div class="co-icon"><i class="bi bi-heart-pulse"></i></div>
                     <h4>Yoga &amp; Mindfulness</h4>
                     <p>Simple breathing exercises, stretches, and mindfulness practices that promote calm and focus.</p>
                 </div>
                 <div class="co-card" style="--c:var(--orange);">
+                    <div class="co-img"><img src="https://picsum.photos/200/120?random=19" alt="Computer & Tech" loading="lazy" /></div>
                     <div class="co-icon"><i class="bi bi-laptop"></i></div>
                     <h4>Computer &amp; Tech</h4>
                     <p>Age-appropriate introduction to computers, digital literacy, and creative tech projects.</p>
@@ -1442,7 +1705,7 @@
         </svg>
     </section>
 
-    <!-- ===== ASSESSMENT ===== -->
+    <!-- ===== ASSESSMENT — with image ===== -->
     <section class="assessment" id="assessment">
         <div class="section-wrap">
             <p class="eyebrow eyebrow-red"><i class="bi bi-clipboard-check"></i> Assessment</p>
@@ -1463,25 +1726,26 @@
                 </div>
 
                 <div class="assessment-visual">
+                    <div class="assess-img"></div>
                     <div class="assess-item">
                         <span class="label">Observations</span>
-                        <div class="bar"><div class="fill" style="--c:var(--blue); --w:95%;"></div></div>
+                        <div class="bar"><div class="fill" style="--c:var(--blue); width:0%;" data-width="95"></div></div>
                     </div>
                     <div class="assess-item">
                         <span class="label">Portfolios</span>
-                        <div class="bar"><div class="fill" style="--c:var(--green); --w:90%;"></div></div>
+                        <div class="bar"><div class="fill" style="--c:var(--green); width:0%;" data-width="90"></div></div>
                     </div>
                     <div class="assess-item">
                         <span class="label">Worksheets</span>
-                        <div class="bar"><div class="fill" style="--c:var(--orange); --w:80%;"></div></div>
+                        <div class="bar"><div class="fill" style="--c:var(--orange); width:0%;" data-width="80"></div></div>
                     </div>
                     <div class="assess-item">
                         <span class="label">Parent Feedback</span>
-                        <div class="bar"><div class="fill" style="--c:var(--purple); --w:88%;"></div></div>
+                        <div class="bar"><div class="fill" style="--c:var(--purple); width:0%;" data-width="88"></div></div>
                     </div>
                     <div class="assess-item">
                         <span class="label">Self-Expression</span>
-                        <div class="bar"><div class="fill" style="--c:var(--red); --w:85%;"></div></div>
+                        <div class="bar"><div class="fill" style="--c:var(--red); width:0%;" data-width="85"></div></div>
                     </div>
                     <p style="font-size:.85rem; color:#5A628C; text-align:center; margin-top:8px;">Our balanced approach ensures every child feels seen and supported.</p>
                 </div>
@@ -1493,7 +1757,7 @@
         </svg>
     </section>
 
-    <!-- ===== ACADEMIC CALENDAR ===== -->
+    <!-- ===== ACADEMIC CALENDAR — with images ===== -->
     <section class="calendar" id="calendar">
         <div class="section-wrap">
             <p class="eyebrow eyebrow-orange"><i class="bi bi-calendar3"></i> Calendar</p>
@@ -1502,43 +1766,49 @@
 
             <div class="calendar-grid">
                 <div class="cal-item">
-                    <div class="cal-date"><span class="day">1</span>Apr</div>
+                    <div class="cal-img"><img src="https://picsum.photos/100/100?random=21" alt="Academic Year Begins" loading="lazy" /></div>
                     <div class="cal-detail">
+                        <div class="cal-date">1 April</div>
                         <h4>Academic Year Begins</h4>
                         <p>Welcome assembly, orientation, and the first day of school for all students.</p>
                     </div>
                 </div>
                 <div class="cal-item">
-                    <div class="cal-date"><span class="day">15</span>Jun</div>
+                    <div class="cal-img"><img src="https://picsum.photos/100/100?random=22" alt="Sports Day" loading="lazy" /></div>
                     <div class="cal-detail">
+                        <div class="cal-date">15 June</div>
                         <h4>Summer Splash – Sports Day</h4>
                         <p>Fun sports events, races, and team games celebrating fitness and teamwork.</p>
                     </div>
                 </div>
                 <div class="cal-item">
-                    <div class="cal-date"><span class="day">5</span>Aug</div>
+                    <div class="cal-img"><img src="https://picsum.photos/100/100?random=23" alt="Art Exhibition" loading="lazy" /></div>
                     <div class="cal-detail">
+                        <div class="cal-date">5 August</div>
                         <h4>Colour Carnival – Art Exhibition</h4>
                         <p>A vibrant showcase of children's artwork, crafts, and creative projects.</p>
                     </div>
                 </div>
                 <div class="cal-item">
-                    <div class="cal-date"><span class="day">15</span>Sep</div>
+                    <div class="cal-img"><img src="https://picsum.photos/100/100?random=24" alt="Grandparents Day" loading="lazy" /></div>
                     <div class="cal-detail">
+                        <div class="cal-date">15 September</div>
                         <h4>Grandparents' Day</h4>
                         <p>A heart-warming celebration where children honour their grandparents with songs and stories.</p>
                     </div>
                 </div>
                 <div class="cal-item">
-                    <div class="cal-date"><span class="day">25</span>Nov</div>
+                    <div class="cal-img"><img src="https://picsum.photos/100/100?random=25" alt="Annual Day" loading="lazy" /></div>
                     <div class="cal-detail">
+                        <div class="cal-date">25 November</div>
                         <h4>Annual Day – The Rainbow Show</h4>
                         <p>Our biggest celebration of the year — music, dance, drama, and proud parents.</p>
                     </div>
                 </div>
                 <div class="cal-item">
-                    <div class="cal-date"><span class="day">15</span>Mar</div>
+                    <div class="cal-img"><img src="https://picsum.photos/100/100?random=26" alt="Graduation" loading="lazy" /></div>
                     <div class="cal-detail">
+                        <div class="cal-date">15 March</div>
                         <h4>Graduation &amp; Farewell</h4>
                         <p>A warm send-off for our graduating students as they step into the next chapter of their journey.</p>
                     </div>
@@ -1745,10 +2015,9 @@
                 if (barsAnimated) return;
                 barsAnimated = true;
                 bars.forEach(bar => {
-                    const w = bar.style.getPropertyValue('--w');
-                    bar.style.width = '0%';
+                    const w = bar.getAttribute('data-width');
                     setTimeout(() => {
-                        bar.style.width = w;
+                        bar.style.width = w + '%';
                     }, 200);
                 });
             }

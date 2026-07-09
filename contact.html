@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon"  href="logo2.png">
     <title>Sri Rainbow School | Contact – Let's Connect</title>
     <meta name="description" content="Get in touch with Sri Rainbow School. We'd love to hear from you — whether it's about admissions, a campus visit, or just a friendly hello." />
 
@@ -1547,6 +1548,39 @@
                 gap: 4px;
             }
         }
+        /* ==========================================================================
+   Top Announcement Bar
+   ========================================================================== */
+.top-bar {
+  background: linear-gradient(90deg, #E63946, #F4863A);
+  color: #fff;
+  padding: 8px 0;
+  overflow: hidden;
+  white-space: nowrap;
+  font-weight: 700;
+  font-size: .85rem;
+  position: relative;
+  z-index: 501;
+  border-bottom: 2px solid rgba(255,255,255,0.15);
+}
+.top-bar-track {
+  display: flex;
+  width: max-content;
+  animation: scrollMarquee 25s linear infinite;
+}
+.top-bar-track span {
+  padding: 0 40px;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+.top-bar-track i {
+  font-size: 1rem;
+}
+@keyframes scrollMarquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
     </style>
 </head>
 
@@ -1554,6 +1588,22 @@
 
     <!-- ===== Rainbow scroll progress ===== -->
     <div class="scroll-rainbow" id="scrollRainbow"></div>
+    <!-- ============ TOP ANNOUNCEMENT BAR ============ -->
+<div class="top-bar">
+  <div class="top-bar-track">
+    <span><i class="bi bi-megaphone-fill"></i> Admissions Open for 2026-27! </span>
+    <span><i class="bi bi-calendar-check"></i> Book a Campus Visit Today! </span>
+    <span><i class="bi bi-telephone-fill"></i> Call us at +91 90000 00000 </span>
+    <span><i class="bi bi-star-fill"></i> Recognized by Govt. of Telangana </span>
+    <span><i class="bi bi-emoji-smile"></i> Where Little Minds Bloom </span>
+    <!-- Duplicate for seamless loop -->
+    <span><i class="bi bi-megaphone-fill"></i> Admissions Open for 2026-27! </span>
+    <span><i class="bi bi-calendar-check"></i> Book a Campus Visit Today! </span>
+    <span><i class="bi bi-telephone-fill"></i> Call us at +91 90000 00000 </span>
+    <span><i class="bi bi-star-fill"></i> Recognized by Govt. of Telangana </span>
+    <span><i class="bi bi-emoji-smile"></i> Where Little Minds Bloom </span>
+  </div>
+</div>
 
     <!-- ===== HEADER ===== -->
     <header class="site-header" id="siteHeader">

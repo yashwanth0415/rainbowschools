@@ -1,1832 +1,1480 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Sri Rainbow School | About Us – Our Story &amp; Values</title>
-    <meta name="description" content="Learn about Sri Rainbow School's mission, vision, values, and our journey of nurturing young minds in Telangana." />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" href="logo2.png">
+  <title>Sri Rainbow School | About Us – Our Story &amp; Values</title>
+  <meta name="description" content="Learn about Sri Rainbow School's mission, vision, values, and our journey of nurturing young minds in Telangana." />
 
-    <!-- Bootstrap Icons -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Nunito:ital,wght@0,400;0,600;0,700;0,800;1,600&display=swap" rel="stylesheet" />
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Nunito:ital,wght@0,400;0,600;0,700;0,800;1,600&family=Fredoka+One&display=swap" rel="stylesheet" />
 
-    <style>
-        /* ==========================================================================
-           Sri Rainbow School — Design Tokens (same as homepage)
-           ========================================================================== */
-        :root {
-            --cream: #FFFCF4;
-            --cream-soft: #FFF6E0;
-            --navy: #1B2A57;
-            --navy-2: #141F42;
-            --blue: #2E5AAC;
-            --red: #E63946;
-            --yellow: #FFC93C;
-            --green: #4CAF6D;
-            --purple: #7B4FA0;
-            --orange: #F4863A;
+  <style>
+    /* ==========================================================================
+       Sri Rainbow School — Design Tokens
+       ========================================================================== */
+    :root {
+      --cream: #FFFCF4;
+      --cream-soft: #FFF6E0;
+      --navy: #1B2A57;
+      --navy-2: #141F42;
+      --blue: #2E5AAC;
+      --red: #E63946;
+      --yellow: #FFC93C;
+      --green: #4CAF6D;
+      --purple: #7B4FA0;
+      --orange: #F4863A;
+      --pink: #F06292;
+      --teal: #26A69A;
 
-            --font-display: 'Baloo 2', 'Nunito', sans-serif;
-            --font-body: 'Nunito', sans-serif;
+      --font-display: 'Baloo 2', 'Fredoka One', cursive;
+      --font-body: 'Nunito', sans-serif;
+      --font-accent: 'Fredoka One', cursive;
 
-            --radius-lg: 28px;
-            --radius-md: 18px;
-            --radius-sm: 12px;
-            --shadow-soft: 0 14px 34px -14px rgba(27, 42, 87, 0.25);
-            --shadow-pop: 0 20px 44px -12px rgba(27, 42, 87, 0.35);
-        }
+      --radius-lg: 28px;
+      --radius-md: 18px;
+      --radius-sm: 12px;
+      --shadow-soft: 0 14px 34px -14px rgba(27, 42, 87, 0.25);
+      --shadow-pop: 0 20px 44px -12px rgba(27, 42, 87, 0.35);
+      --shadow-glow: 0 20px 60px -12px rgba(46, 90, 172, 0.3);
+    }
 
-        * {
-            box-sizing: border-box;
-        }
-        html {
-            scroll-behavior: smooth;
-        }
-        body {
-            margin: 0;
-            font-family: var(--font-body);
-            color: var(--navy);
-            background: var(--cream);
-            overflow-x: hidden;
-        }
-        img {
-            max-width: 100%;
-            display: block;
-        }
-        a {
-            text-decoration: none;
-            color: inherit;
-        }
-        ul {
-            list-style: none;
-            margin: 0;
-            padding: 0;
-        }
-        button {
-            font-family: inherit;
-            cursor: pointer;
-            border: none;
-            background: none;
-        }
-        h1,
-        h2,
-        h3,
-        h4 {
-            font-family: var(--font-display);
-            margin: 0;
-            line-height: 1.15;
-        }
-        p {
-            margin: 0;
-        }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: var(--font-body);
+      color: var(--navy);
+      background: var(--cream);
+      overflow-x: hidden;
+    }
+    img { max-width: 100%; display: block; }
+    a { text-decoration: none; color: inherit; }
+    ul { list-style: none; margin: 0; padding: 0; }
+    button { font-family: inherit; cursor: pointer; border: none; background: none; }
+    h1, h2, h3, h4 { font-family: var(--font-display); margin: 0; line-height: 1.15; }
+    p { margin: 0; }
 
-        @media (prefers-reduced-motion: reduce) {
-            * {
-                animation-duration: 0.001ms !important;
-                animation-iteration-count: 1 !important;
-                transition-duration: 0.001ms !important;
-                scroll-behavior: auto !important;
-            }
-        }
+    @media (prefers-reduced-motion: reduce) {
+      * { animation-duration: 0.001ms !important; animation-iteration-count: 1 !important; transition-duration: 0.001ms !important; scroll-behavior: auto !important; }
+    }
 
-        /* ---- shared section styles ---- */
-        .section-wrap {
-            max-width: 1180px;
-            margin: 0 auto;
-            padding: 100px 32px 70px;
-        }
-        .eyebrow {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            font-weight: 800;
-            letter-spacing: .06em;
-            text-transform: uppercase;
-            font-size: .78rem;
-            color: var(--blue);
-            margin-bottom: 14px;
-        }
-        .eyebrow-green {
-            color: var(--green);
-        }
-        .eyebrow-orange {
-            color: var(--orange);
-        }
-        .eyebrow-purple {
-            color: var(--purple);
-        }
-        .eyebrow-red {
-            color: var(--red);
-        }
-        .eyebrow-light {
-            color: #FFE59A;
-        }
-        .section-title {
-            font-size: clamp(1.9rem, 3.6vw, 2.7rem);
-            font-weight: 800;
-            max-width: 760px;
-            color: var(--navy-2);
-        }
-        .section-title.light {
-            color: #fff;
-        }
-        .section-lead {
-            margin-top: 16px;
-            max-width: 640px;
-            font-size: 1.08rem;
-            line-height: 1.65;
-            color: #44507A;
-        }
-        .section-lead.light {
-            color: #D6DEFF;
-        }
+    /* ---- shared section styles ---- */
+    .section-wrap { max-width: 1180px; margin: 0 auto; padding: 100px 32px 70px; }
+    .eyebrow {
+      display: inline-flex; align-items: center; gap: 8px;
+      font-weight: 800; letter-spacing: .06em; text-transform: uppercase;
+      font-size: .78rem; color: var(--blue); margin-bottom: 14px;
+    }
+    .eyebrow-green { color: var(--green); }
+    .eyebrow-orange { color: var(--orange); }
+    .eyebrow-purple { color: var(--purple); }
+    .eyebrow-red { color: var(--red); }
+    .eyebrow-yellow { color: var(--yellow); }
+    .eyebrow-pink { color: var(--pink); }
+    .eyebrow-teal { color: var(--teal); }
+    .eyebrow-light { color: #FFE59A; }
+    .section-title {
+      font-size: clamp(1.9rem, 3.6vw, 2.7rem);
+      font-weight: 800;
+      max-width: 760px;
+      color: var(--navy-2);
+      font-family: var(--font-display);
+    }
+    .section-title.light { color: #fff; }
+    .section-lead {
+      margin-top: 16px;
+      max-width: 640px;
+      font-size: 1.08rem;
+      line-height: 1.65;
+      color: #44507A;
+    }
+    .section-lead.light { color: #D6DEFF; }
 
-        /* ---- rainbow scroll progress ---- */
-        .scroll-rainbow {
-            position: fixed;
-            top: 0;
-            left: 0;
-            height: 4px;
-            width: 0%;
-            z-index: 1000;
-            background: linear-gradient(90deg, #7B4FA0, #2E5AAC, #4CAF6D, #FFC93C, #F4863A, #E63946);
-            transition: width .08s linear;
-        }
+    /* ---- rainbow scroll progress ---- */
+    .scroll-rainbow {
+      position: fixed; top: 0; left: 0; height: 4px; width: 0%;
+      z-index: 1000;
+      background: linear-gradient(90deg, #7B4FA0, #2E5AAC, #4CAF6D, #FFC93C, #F4863A, #E63946);
+      transition: width .08s linear;
+    }
 
-        /* ==========================================================================
-           Header / Nav (identical to homepage)
-           ========================================================================== */
-        .site-header {
-            position: sticky;
-            top: 0;
-            z-index: 500;
-            background: rgba(255, 252, 244, 0.85);
-            backdrop-filter: blur(10px);
-            border-bottom: 1px solid rgba(27, 42, 87, 0.08);
-            transition: box-shadow .25s ease;
-        }
-        .site-header.scrolled {
-            box-shadow: 0 8px 24px -12px rgba(27, 42, 87, 0.25);
-        }
-        .nav-wrap {
-            max-width: 1280px;
-            margin: 0 auto;
-            padding: 10px 28px;
-            display: flex;
-            align-items: center;
-            gap: 24px;
-        }
-        .brand-logo {
-            height: 78px;
-            width: 180px;
-        }
-        .main-nav {
-            display: flex;
-            align-items: center;
-            gap: 28px;
-            margin-left: auto;
-        }
-        .nav-link {
-            font-weight: 700;
-            font-size: .96rem;
-            color: var(--navy);
-            position: relative;
-            padding: 6px 2px;
-        }
-        .nav-link::after {
-            content: '';
-            position: absolute;
-            left: 0;
-            bottom: -2px;
-            height: 3px;
-            width: 0;
-            background: var(--red);
-            border-radius: 2px;
-            transition: width .2s ease;
-        }
-        .nav-link:hover::after,
-        .nav-link.active::after {
-            width: 100%;
-        }
-        .btn-enquire {
-            background: var(--navy);
-            color: #fff;
-            font-weight: 800;
-            font-size: .9rem;
-            padding: 12px 20px;
-            border-radius: 999px;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            box-shadow: var(--shadow-soft);
-            transition: transform .18s ease, background .18s ease;
-        }
-        .btn-enquire:hover {
-            transform: translateY(-2px);
-            background: var(--red);
-        }
-        .hamburger {
-            display: none;
-            flex-direction: column;
-            gap: 5px;
-            padding: 6px;
-        }
-        .hamburger span {
-            width: 24px;
-            height: 3px;
-            border-radius: 2px;
-            background: var(--navy);
-        }
+    /* ==========================================================================
+       Header / Nav
+       ========================================================================== */
+    .site-header {
+      position: sticky; top: 0; z-index: 500;
+      background: rgba(255, 252, 244, 0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(27, 42, 87, 0.08);
+      transition: transform .35s ease, box-shadow .25s ease;
+      will-change: transform;
+    }
+    .site-header.scrolled { box-shadow: 0 8px 24px -12px rgba(27, 42, 87, 0.25); }
+    .site-header.nav-hidden { transform: translateY(-115%); }
+    .nav-wrap {
+      max-width: 1280px; margin: 0 auto; padding: 10px 28px;
+      display: flex; align-items: center; gap: 24px;
+    }
+    .brand-logo { height: 78px; width: 180px; }
+    .main-nav { display: flex; align-items: center; gap: 28px; margin-left: auto; }
+    .nav-link {
+      font-weight: 700; font-size: .96rem; color: var(--navy);
+      position: relative; padding: 6px 2px;
+      transition: color .25s ease;
+    }
+    .nav-link::after {
+      content: ''; position: absolute; left: 0; bottom: -2px; height: 3px; width: 0;
+      background: var(--red); border-radius: 2px; transition: width .2s ease;
+    }
+    .nav-link:hover::after, .nav-link.active::after { width: 100%; }
+    .btn-enquire {
+      background: var(--navy); color: #fff; font-weight: 800; font-size: .9rem;
+      padding: 12px 20px; border-radius: 999px; display: flex; align-items: center; gap: 8px;
+      box-shadow: var(--shadow-soft);
+      transition: transform .18s ease, background .18s ease;
+    }
+    .btn-enquire:hover { transform: translateY(-2px); background: var(--red); }
+    .hamburger { display: none; flex-direction: column; gap: 5px; padding: 6px; }
+    .hamburger span { width: 24px; height: 3px; border-radius: 2px; background: var(--navy); }
 
-        /* ==========================================================================
-           About Page Hero
-           ========================================================================== */
-        .about-hero {
-            position: relative;
-            background: var(--navy-2);
-            color: #fff;
-            padding-top: 20px;
-            overflow: hidden;
-        }
-        .about-hero-blobs {
-            position: absolute;
-            inset: 0;
-            z-index: 0;
-        }
-        .blob {
-            position: absolute;
-            border-radius: 50%;
-            filter: blur(50px);
-            opacity: .35;
-        }
-        .blob-a {
-            width: 380px;
-            height: 380px;
-            background: var(--purple);
-            top: -120px;
-            left: -100px;
-        }
-        .blob-b {
-            width: 320px;
-            height: 320px;
-            background: var(--blue);
-            bottom: -140px;
-            right: -80px;
-        }
-        .blob-c {
-            width: 220px;
-            height: 220px;
-            background: var(--green);
-            top: 40%;
-            right: 12%;
-        }
+    /* ==========================================================================
+       Top Announcement Bar
+       ========================================================================== */
+    .top-bar {
+      background: linear-gradient(90deg, #E63946, #F4863A);
+      color: #fff;
+      padding: 8px 0;
+      overflow: hidden;
+      white-space: nowrap;
+      font-weight: 700;
+      font-size: .85rem;
+      position: relative;
+      z-index: 501;
+      border-bottom: 2px solid rgba(255, 255, 255, 0.15);
+    }
+    .top-bar-track {
+      display: flex;
+      width: max-content;
+      animation: scrollMarquee 25s linear infinite;
+    }
+    .top-bar-track span {
+      padding: 0 40px;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .top-bar-track i { font-size: 1rem; }
+    @keyframes scrollMarquee {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
 
-        .about-hero-inner {
-            position: relative;
-            z-index: 1;
-            max-width: 1240px;
-            margin: 0 auto;
-            padding: 64px 32px 110px;
-            display: grid;
-            grid-template-columns: 1fr 0.85fr;
-            gap: 40px;
-            align-items: center;
-        }
-        .about-hero-copy .eyebrow {
-            color: #FFE59A;
-        }
-        .about-hero-title {
-            font-size: clamp(2.3rem, 4.6vw, 3.6rem);
-            font-weight: 800;
-            color: #fff;
-        }
-        .rainbow-text {
-            background: linear-gradient(90deg, #7B4FA0, #2E5AAC, #4CAF6D, #FFC93C, #F4863A, #E63946);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-        }
-        .about-hero-sub {
-            margin-top: 20px;
-            font-size: 1.1rem;
-            line-height: 1.7;
-            color: #C7CFEE;
-            max-width: 520px;
-        }
-        .about-hero-actions {
-            display: flex;
-            gap: 16px;
-            margin-top: 34px;
-            flex-wrap: wrap;
-        }
+    /* ==========================================================================
+       About Hero — Clean Centered
+       ========================================================================== */
+    .about-hero {
+      position: relative;
+      background: var(--navy-2);
+      color: #fff;
+      min-height: 50vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+    .about-hero::before {
+      content: ''; position: absolute; inset: 0;
+      background: url('https://picsum.photos/1600/900?random=80') center/cover no-repeat;
+      opacity: 0.08; z-index: 0;
+    }
+    /* Decorative rings */
+    .about-hero .rings {
+      position: absolute; inset: 0; pointer-events: none; z-index: 0;
+    }
+    .about-hero .ring {
+      position: absolute; border-radius: 50%;
+      border: 2px solid rgba(255, 255, 255, 0.04);
+      animation: ringPulse 8s ease-in-out infinite;
+    }
+    .about-hero .ring:nth-child(1) { width: 400px; height: 400px; top: 10%; right: -5%; animation-delay: 0s; }
+    .about-hero .ring:nth-child(2) { width: 300px; height: 300px; bottom: 10%; left: -5%; animation-delay: 3s; border-color: rgba(255, 255, 255, 0.03); }
+    .about-hero .ring:nth-child(3) { width: 200px; height: 200px; top: 50%; left: 50%; transform: translate(-50%, -50%); animation-delay: 5s; border-color: rgba(255, 255, 255, 0.02); }
+    @keyframes ringPulse { 0%,100% { transform: scale(1); opacity: 0.4; } 50% { transform: scale(1.15); opacity: 1; } }
 
-        .btn-primary {
-            background: var(--red);
-            color: #fff;
-            font-weight: 800;
-            font-size: 1rem;
-            padding: 15px 26px;
-            border-radius: 999px;
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            box-shadow: 0 14px 30px -10px rgba(230, 57, 70, 0.55);
-            transition: transform .18s ease, box-shadow .18s ease;
-        }
-        .btn-primary:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 18px 34px -8px rgba(230, 57, 70, 0.6);
-        }
-        .btn-primary.btn-light {
-            background: #fff;
-            color: var(--navy-2);
-            box-shadow: 0 14px 30px -10px rgba(0, 0, 0, 0.25);
-        }
-        .btn-primary.full {
-            width: 100%;
-            justify-content: center;
-        }
-        .btn-ghost {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            font-weight: 800;
-            color: #fff;
-            padding: 15px 8px;
-            border-bottom: 2px solid rgba(255, 255, 255, 0.4);
-            transition: border-color .18s ease;
-        }
-        .btn-ghost:hover {
-            border-color: #fff;
-        }
+    .about-hero-inner {
+      position: relative; z-index: 1;
+      max-width: 1240px; margin: 0 auto; padding: 60px 32px;
+      display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center;
+      width: 100%;
+    }
+    .about-hero-inner .eyebrow {
+      color: #FFE59A;
+      margin-bottom: 14px;
+      justify-content: center;
+    }
+    .about-hero-title {
+      font-size: clamp(2.5rem, 5vw, 4rem);
+      font-weight: 800; color: #fff; line-height: 1.1;
+      max-width: 800px; margin: 0 auto;
+    }
+    .rainbow-text {
+      background: linear-gradient(90deg, #FFE59A, #FFC93C, #F4863A, #E63946, #7B4FA0, #2E5AAC);
+      background-size: 300% 100%;
+      -webkit-background-clip: text; background-clip: text;
+      color: transparent;
+      animation: rainbowShift 6s ease-in-out infinite alternate;
+    }
+    @keyframes rainbowShift { 0% { background-position: 0% 50%; } 100% { background-position: 100% 50%; } }
 
-        /* Hero illustration (rainbow burst) */
-        .about-hero-art {
-            position: relative;
-            display: flex;
-            justify-content: center;
-        }
-        .rainbow-burst {
-            width: 100%;
-            max-width: 420px;
-        }
-        .petal {
-            transform-origin: 0 0;
-            opacity: 0;
-            animation: petalPop .7s cubic-bezier(.2, .8, .3, 1.3) forwards;
-        }
-        .p1 {
-            fill: #7B4FA0;
-            animation-delay: .05s;
-        }
-        .p2 {
-            fill: #2E5AAC;
-            animation-delay: .15s;
-        }
-        .p3 {
-            fill: #4CAF6D;
-            animation-delay: .25s;
-        }
-        .p4 {
-            fill: #FFC93C;
-            animation-delay: .35s;
-        }
-        .p5 {
-            fill: #F4863A;
-            animation-delay: .45s;
-        }
-        .p6 {
-            fill: #E63946;
-            animation-delay: .55s;
-        }
-        .petal-core {
-            fill: var(--navy-2);
-            opacity: 0;
-            animation: fadeIn .5s ease .7s forwards;
-        }
-        @keyframes petalPop {
-            0% {
-                opacity: 0;
-                transform: scale(0.3) translateY(20px);
-            }
-            100% {
-                opacity: 1;
-                transform: scale(1) translateY(0);
-            }
-        }
-        @keyframes fadeIn {
-            to {
-                opacity: 1;
-            }
-        }
-        .cloud ellipse {
-            fill: rgba(255, 255, 255, 0.15);
-        }
-        .cloud {
-            animation: floatY 6s ease-in-out infinite;
-        }
-        .cloud2 {
-            animation-duration: 7.5s;
-            animation-delay: .4s;
-        }
-        @keyframes floatY {
-            0%,
-            100% {
-                transform: translate(60px, 320px);
-            }
-            50% {
-                transform: translate(60px, 306px);
-            }
-        }
+    /* ==========================================================================
+       Global Buttons
+       ========================================================================== */
+    .btn-primary {
+      background: var(--red); color: #fff; font-weight: 800; font-size: 1rem;
+      padding: 15px 26px; border-radius: 999px; display: inline-flex; align-items: center; gap: 10px;
+      box-shadow: 0 14px 30px -10px rgba(230, 57, 70, 0.55);
+      transition: transform .18s ease, box-shadow .18s ease;
+    }
+    .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 18px 34px -8px rgba(230, 57, 70, 0.6); }
+    .btn-primary.btn-light { background: #fff; color: var(--navy-2); box-shadow: 0 14px 30px -10px rgba(0, 0, 0, 0.25); }
+    .btn-primary.full { width: 100%; justify-content: center; }
+    .btn-ghost {
+      display: inline-flex; align-items: center; gap: 8px; font-weight: 800; color: #fff;
+      padding: 15px 8px; border-bottom: 2px solid rgba(255, 255, 255, 0.4);
+      transition: border-color .18s ease, transform .18s ease;
+    }
+    .btn-ghost:hover { border-color: #fff; transform: translateX(4px); }
 
-        .wave-divider {
-            display: block;
-            width: 100%;
-            height: 70px;
-        }
-        .wave-divider path {
-            fill: var(--cream);
-        }
-        .wave-yellow path {
-            fill: var(--cream-soft);
-        }
-        .wave-purple path {
-            fill: var(--cream);
-        }
-        .wave-navy path {
-            fill: var(--navy-2);
-        }
+    .wave-divider { display: block; width: 100%; height: 70px; }
+    .wave-divider path { fill: var(--cream); }
+    .wave-yellow path { fill: var(--cream-soft); }
+    .wave-purple path { fill: var(--cream); }
+    .wave-navy path { fill: var(--navy-2); }
 
-        /* ==========================================================================
-           About Story
-           ========================================================================== */
-        .story {
-            background: var(--cream);
-        }
-        .story-grid {
-            margin-top: 48px;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 50px;
-            align-items: center;
-        }
-        .story-text h3 {
-            font-size: 1.6rem;
-            margin-bottom: 18px;
-            color: var(--navy-2);
-        }
-        .story-text p {
-            font-size: 1rem;
-            line-height: 1.7;
-            color: #5A628C;
-            margin-bottom: 16px;
-        }
-        .story-text p:last-child {
-            margin-bottom: 0;
-        }
-        .story-image {
-            border-radius: var(--radius-lg);
-            overflow: hidden;
-            box-shadow: var(--shadow-pop);
-            background: #fff;
-            aspect-ratio: 4/3;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 4rem;
-            color: var(--blue);
-            background: color-mix(in srgb, var(--blue) 8%, #fff);
-            border: 2px solid rgba(46, 90, 172, 0.12);
-        }
-        .story-image i {
-            opacity: 0.5;
-        }
+    /* ==========================================================================
+       Stats Bar
+       ========================================================================== */
+    .stats-bar {
+      background: #fff; padding: 40px 0;
+      border-bottom: 1px solid rgba(27, 42, 87, 0.06);
+      margin-top: -2px; position: relative; z-index: 2;
+    }
+    .stats-grid {
+      max-width: 1180px; margin: 0 auto; padding: 0 32px;
+      display: grid; grid-template-columns: repeat(4, 1fr); gap: 30px;
+    }
+    .stat-item { text-align: center; }
+    .stat-number { font-family: var(--font-display); font-size: 2.6rem; font-weight: 800; color: var(--navy-2); line-height: 1; }
+    .stat-number .accent { color: var(--red); }
+    .stat-label { font-size: .92rem; color: #5A628C; margin-top: 6px; font-weight: 600; }
+    .stat-item .stat-icon { font-size: 1.6rem; color: var(--blue); opacity: 0.5; margin-bottom: 4px; }
 
-        /* ==========================================================================
-           Mission & Vision
-           ========================================================================== */
-        .mission-vision {
-            background: var(--cream-soft);
-        }
-        .mv-grid {
-            margin-top: 48px;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 30px;
-        }
-        .mv-card {
-            background: #fff;
-            border-radius: var(--radius-lg);
-            padding: 38px 32px;
-            box-shadow: var(--shadow-soft);
-            border-top: 6px solid var(--c);
-            transition: transform .2s ease, box-shadow .2s ease;
-        }
-        .mv-card:hover {
-            transform: translateY(-6px);
-            box-shadow: var(--shadow-pop);
-        }
-        .mv-card .mv-icon {
-            font-size: 2.4rem;
-            color: var(--c);
-            margin-bottom: 16px;
-        }
-        .mv-card h3 {
-            font-size: 1.4rem;
-            color: var(--navy-2);
-            margin-bottom: 12px;
-        }
-        .mv-card p {
-            color: #5A628C;
-            line-height: 1.7;
-            font-size: 1rem;
-        }
-        .mv-card ul {
-            margin-top: 14px;
-        }
-        .mv-card ul li {
-            display: flex;
-            gap: 10px;
-            align-items: flex-start;
-            font-size: .95rem;
-            color: var(--navy-2);
-            margin-bottom: 8px;
-        }
-        .mv-card ul li i {
-            color: var(--c);
-            margin-top: 3px;
-        }
+    /* ==========================================================================
+       Story — Warm gradient background
+       ========================================================================== */
+    .story {
+      background: linear-gradient(180deg, #FFFCF4 0%, #FFF6E0 100%);
+      position: relative;
+    }
+    .story::before {
+      content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23F4863A' fill-opacity='0.03'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3C/g%3E%3C/svg%3E");
+      pointer-events: none;
+    }
+    .story-grid {
+      margin-top: 48px;
+      display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center;
+      position: relative; z-index: 1;
+    }
+    .story-text h3 {
+      font-size: 1.6rem; margin-bottom: 18px; color: var(--navy-2);
+      display: flex; align-items: center; gap: 12px;
+    }
+    .story-text h3 i { color: var(--red); font-size: 1.8rem; }
+    .story-text p {
+      font-size: 1rem; line-height: 1.8; color: #5A628C; margin-bottom: 16px;
+    }
+    .story-text p:last-child { margin-bottom: 0; }
 
-        /* ==========================================================================
-           Core Values
-           ========================================================================== */
-        .values {
-            background: var(--cream);
-        }
-        .values-grid {
-            margin-top: 48px;
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 22px;
-        }
-        .value-card {
-            background: #fff;
-            border-radius: var(--radius-md);
-            padding: 30px 24px;
-            text-align: center;
-            box-shadow: var(--shadow-soft);
-            transition: transform .2s ease, box-shadow .2s ease;
-        }
-        .value-card:hover {
-            transform: translateY(-6px);
-            box-shadow: var(--shadow-pop);
-        }
-        .value-card .val-icon {
-            width: 64px;
-            height: 64px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.6rem;
-            color: #fff;
-            margin: 0 auto 16px;
-        }
-        .val-blue {
-            background: var(--blue);
-        }
-        .val-green {
-            background: var(--green);
-        }
-        .val-yellow {
-            background: var(--yellow);
-            color: var(--navy-2);
-        }
-        .val-purple {
-            background: var(--purple);
-        }
-        .val-red {
-            background: var(--red);
-        }
-        .val-orange {
-            background: var(--orange);
-        }
-        .value-card h4 {
-            font-size: 1.1rem;
-            margin-bottom: 10px;
-            color: var(--navy-2);
-        }
-        .value-card p {
-            font-size: .92rem;
-            line-height: 1.6;
-            color: #5A628C;
-        }
+    .story-timeline {
+      margin-top: 24px; display: flex; gap: 20px; flex-wrap: wrap;
+    }
+    .story-timeline .milestone {
+      display: flex; align-items: center; gap: 8px;
+      background: #fff; padding: 8px 16px 8px 12px;
+      border-radius: 999px; box-shadow: var(--shadow-soft);
+      font-weight: 700; font-size: .85rem; color: var(--navy-2);
+    }
+    .story-timeline .milestone .dot { width: 10px; height: 10px; border-radius: 50%; display: inline-block; }
+    .dot-purple { background: var(--purple); }
+    .dot-blue { background: var(--blue); }
+    .dot-green { background: var(--green); }
+    .dot-orange { background: var(--orange); }
 
-        /* ==========================================================================
-           Team / Teachers
-           ========================================================================== */
-        .team {
-            background: var(--cream-soft);
-        }
-        .team-grid {
-            margin-top: 48px;
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 26px;
-        }
-        .team-card {
-            background: #fff;
-            border-radius: var(--radius-lg);
-            padding: 28px 22px 24px;
-            text-align: center;
-            box-shadow: var(--shadow-soft);
-            transition: transform .2s ease, box-shadow .2s ease;
-        }
-        .team-card:hover {
-            transform: translateY(-6px);
-            box-shadow: var(--shadow-pop);
-        }
-        .team-avatar {
-            width: 96px;
-            height: 96px;
-            border-radius: 50%;
-            margin: 0 auto 16px;
-            background: color-mix(in srgb, var(--c) 18%, #fff);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 2.6rem;
-            color: var(--c);
-            border: 3px solid var(--c);
-        }
-        .team-card h4 {
-            font-size: 1.1rem;
-            color: var(--navy-2);
-        }
-        .team-card .role {
-            font-size: .85rem;
-            font-weight: 700;
-            color: var(--c);
-            margin-top: 4px;
-        }
-        .team-card p {
-            font-size: .88rem;
-            color: #5A628C;
-            margin-top: 10px;
-            line-height: 1.5;
-        }
+    .story-image {
+      border-radius: var(--radius-lg); overflow: hidden;
+      box-shadow: var(--shadow-pop);
+      aspect-ratio: 4/3;
+    }
+    .story-image img {
+      width: 100%; height: 100%; object-fit: cover;
+      transition: transform .4s ease;
+    }
+    .story-image:hover img { transform: scale(1.03); }
 
-        /* ==========================================================================
-           Facilities
-           ========================================================================== */
-        .facilities {
-            background: var(--cream);
-        }
-        .fac-grid {
-            margin-top: 48px;
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 24px;
-        }
-        .fac-card {
-            background: #fff;
-            border-radius: var(--radius-md);
-            padding: 28px 24px;
-            display: flex;
-            gap: 16px;
-            align-items: flex-start;
-            box-shadow: var(--shadow-soft);
-            transition: transform .2s ease, box-shadow .2s ease;
-        }
-        .fac-card:hover {
-            transform: translateY(-4px);
-            box-shadow: var(--shadow-pop);
-        }
-        .fac-card .fac-icon {
-            font-size: 1.8rem;
-            color: var(--red);
-            flex: none;
-            margin-top: 2px;
-        }
-        .fac-card h4 {
-            font-size: 1.05rem;
-            color: var(--navy-2);
-            margin-bottom: 4px;
-        }
-        .fac-card p {
-            font-size: .9rem;
-            color: #5A628C;
-            line-height: 1.5;
-        }
+    /* ==========================================================================
+       Mission & Vision — Soft purple/blue gradient
+       ========================================================================== */
+    .mission-vision {
+      background: linear-gradient(180deg, #F0EDF7 0%, #FFF6E0 100%);
+      position: relative;
+    }
+    .mission-vision::before {
+      content: ''; position: absolute; inset: 0;
+      background: url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%237B4FA0' fill-opacity='0.03'%3E%3Cpath d='M40 0L50 30H80L55 50L65 80L40 60L15 80L25 50L0 30H30Z'/%3E%3C/g%3E%3C/svg%3E");
+      pointer-events: none;
+    }
+    .mv-grid {
+      margin-top: 48px;
+      display: grid; grid-template-columns: 1fr 1fr; gap: 30px;
+      position: relative; z-index: 1;
+    }
+    .mv-card {
+      background: #fff; border-radius: var(--radius-lg); padding: 0 0 36px 0;
+      box-shadow: var(--shadow-soft);
+      border-top: 6px solid var(--c);
+      transition: transform .3s ease, box-shadow .3s ease;
+      overflow: hidden;
+    }
+    .mv-card:hover { transform: translateY(-8px); box-shadow: var(--shadow-pop); }
+    .mv-card .mv-img { height: 160px; overflow: hidden; }
+    .mv-card .mv-img img { width: 100%; height: 100%; object-fit: cover; transition: transform .4s ease; }
+    .mv-card:hover .mv-img img { transform: scale(1.05); }
+    .mv-card .mv-content { padding: 24px 30px 0; }
+    .mv-card .mv-icon {
+      font-size: 2.4rem; color: var(--c);
+      margin-top: -32px; display: inline-block;
+      background: #fff; padding: 12px;
+      border-radius: var(--radius-md);
+      box-shadow: var(--shadow-soft);
+      position: relative;
+      z-index: 1;
+    }
+    .mv-card h3 { font-size: 1.4rem; color: var(--navy-2); margin: 12px 0 10px; }
+    .mv-card p { color: #5A628C; line-height: 1.7; font-size: 1rem; }
+    .mv-card ul { margin-top: 14px; }
+    .mv-card ul li {
+      display: flex; gap: 10px; align-items: flex-start;
+      font-size: .95rem; color: var(--navy-2); margin-bottom: 8px;
+    }
+    .mv-card ul li i { color: var(--c); margin-top: 3px; }
 
-        /* ==========================================================================
-           Testimonials
-           ========================================================================== */
-        .testimonials {
-            background: var(--cream-soft);
-        }
-        .testimonial-grid {
-            margin-top: 48px;
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 26px;
-        }
-        .testimonial-card {
-            background: #fff;
-            border-radius: var(--radius-lg);
-            padding: 30px 28px;
-            box-shadow: var(--shadow-soft);
-            position: relative;
-            transition: transform .2s ease;
-        }
-        .testimonial-card:hover {
-            transform: translateY(-4px);
-        }
-        .testimonial-card .quote-icon {
-            font-size: 2rem;
-            color: var(--yellow);
-            opacity: 0.4;
-            margin-bottom: 8px;
-        }
-        .testimonial-card blockquote {
-            font-size: .98rem;
-            line-height: 1.7;
-            color: var(--navy-2);
-            margin: 0 0 14px 0;
-            font-style: italic;
-        }
-        .testimonial-card .testi-author {
-            display: flex;
-            align-items: center;
-            gap: 14px;
-        }
-        .testi-author .testi-avatar {
-            width: 44px;
-            height: 44px;
-            border-radius: 50%;
-            background: color-mix(in srgb, var(--c) 16%, #fff);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.2rem;
-            color: var(--c);
-            font-weight: 800;
-        }
-        .testi-author .testi-name {
-            font-weight: 700;
-            color: var(--navy-2);
-            font-size: .92rem;
-        }
-        .testi-author .testi-relation {
-            font-size: .78rem;
-            color: #5A628C;
-        }
+    /* ==========================================================================
+       Core Values — Warm rainbow gradient background
+       ========================================================================== */
+    .values {
+      background: linear-gradient(180deg, #FFF6E0 0%, #FFFCF4 100%);
+      position: relative;
+    }
+    .values::before {
+      content: ''; position: absolute; top: 0; left: 0; right: 0;
+      height: 6px;
+      background: linear-gradient(90deg, var(--purple), var(--blue), var(--green), var(--yellow), var(--orange), var(--red));
+    }
+    .values::after {
+      content: ''; position: absolute; inset: 0;
+      background: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23FFC93C' fill-opacity='0.03'%3E%3Ccircle cx='20' cy='20' r='8'/%3E%3Ccircle cx='80' cy='80' r='12'/%3E%3Ccircle cx='50' cy='50' r='6'/%3E%3C/g%3E%3C/svg%3E");
+      pointer-events: none;
+    }
+    .values-grid {
+      margin-top: 48px;
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;
+      position: relative; z-index: 1;
+    }
+    .value-card {
+      background: #fff; border-radius: var(--radius-md); padding: 0 0 24px 0;
+      text-align: center; box-shadow: var(--shadow-soft);
+      transition: transform .3s ease, box-shadow .3s ease;
+      border-bottom: 4px solid var(--c);
+      overflow: hidden;
+    }
+    .value-card:hover { transform: translateY(-8px); box-shadow: var(--shadow-pop); }
+    .value-card .val-img { height: 120px; overflow: hidden; }
+    .value-card .val-img img { width: 100%; height: 100%; object-fit: cover; transition: transform .4s ease; }
+    .value-card:hover .val-img img { transform: scale(1.05); }
+    .value-card .val-icon {
+      width: 72px; height: 72px; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.8rem; color: #fff;
+      margin: -36px auto 12px;
+      background: var(--c);
+      border: 4px solid #fff;
+      box-shadow: var(--shadow-soft);
+      position: relative; z-index: 1;
+    }
+    .value-card h4 { font-size: 1.1rem; margin-bottom: 8px; color: var(--navy-2); }
+    .value-card p { font-size: .92rem; line-height: 1.6; color: #5A628C; padding: 0 16px; }
 
-        /* ==========================================================================
-           CTA Banner (admission)
-           ========================================================================== */
-        .cta-banner {
-            background: var(--navy-2);
-            color: #fff;
-            padding: 70px 32px;
-            text-align: center;
-        }
-        .cta-banner h2 {
-            font-size: clamp(1.8rem, 3vw, 2.5rem);
-            max-width: 700px;
-            margin: 0 auto 16px;
-        }
-        .cta-banner p {
-            color: #C7CFEE;
-            font-size: 1.05rem;
-            max-width: 560px;
-            margin: 0 auto 30px;
-            line-height: 1.6;
-        }
+    /* ==========================================================================
+       Facilities — Clean white with subtle pattern
+       ========================================================================== */
+    .facilities {
+      background: #fff;
+      position: relative;
+    }
+    .facilities::before {
+      content: ''; position: absolute; inset: 0;
+      background: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%232E5AAC' fill-opacity='0.02'%3E%3Crect width='40' height='40'/%3E%3C/g%3E%3C/svg%3E");
+      pointer-events: none;
+    }
+    .fac-grid {
+      margin-top: 48px;
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;
+      position: relative; z-index: 1;
+    }
+    .fac-card {
+      background: #fff; border-radius: var(--radius-md); padding: 0 0 20px 0;
+      box-shadow: var(--shadow-soft);
+      transition: transform .3s ease, box-shadow .3s ease;
+      overflow: hidden;
+      border-left: 4px solid var(--red);
+    }
+    .fac-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-pop); }
+    .fac-card .fac-img { height: 140px; overflow: hidden; }
+    .fac-card .fac-img img { width: 100%; height: 100%; object-fit: cover; transition: transform .4s ease; }
+    .fac-card:hover .fac-img img { transform: scale(1.05); }
+    .fac-card .fac-content { padding: 16px 20px 0; display: flex; gap: 14px; align-items: flex-start; }
+    .fac-card .fac-icon {
+      font-size: 1.8rem; color: var(--red); flex: none;
+      width: 48px; height: 48px;
+      background: color-mix(in srgb, var(--red) 8%, #fff);
+      border-radius: var(--radius-sm);
+      display: flex; align-items: center; justify-content: center;
+    }
+    .fac-card h4 { font-size: 1.05rem; color: var(--navy-2); margin-bottom: 4px; }
+    .fac-card p { font-size: .9rem; color: #5A628C; line-height: 1.5; }
 
-        /* ==========================================================================
-           Contact (short)
-           ========================================================================== */
-        .contact-short {
-            background: var(--cream);
-        }
-        .contact-short-grid {
-            margin-top: 40px;
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 22px;
-        }
-        .contact-short-item {
-            background: #fff;
-            border-radius: var(--radius-md);
-            padding: 24px 20px;
-            display: flex;
-            align-items: center;
-            gap: 16px;
-            box-shadow: var(--shadow-soft);
-            transition: transform .2s ease;
-        }
-        .contact-short-item:hover {
-            transform: translateY(-4px);
-        }
-        .contact-short-item i {
-            font-size: 1.6rem;
-            color: var(--red);
-            flex: none;
-        }
-        .contact-short-item strong {
-            display: block;
-            font-size: .82rem;
-            color: var(--navy-2);
-        }
-        .contact-short-item span {
-            font-size: .9rem;
-            color: #5A628C;
-        }
+    /* ==========================================================================
+       Team — Soft green/blue gradient
+       ========================================================================== */
+    .team {
+      background: linear-gradient(180deg, #E8F5E9 0%, #FFF6E0 100%);
+      position: relative;
+    }
+    .team::before {
+      content: ''; position: absolute; inset: 0;
+      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%234CAF6D' fill-opacity='0.04'%3E%3Cpath d='M30 0L36 24H60L40 38L46 60L30 46L14 60L20 38L0 24H24Z'/%3E%3C/g%3E%3C/svg%3E");
+      pointer-events: none;
+    }
+    .team-grid {
+      margin-top: 48px;
+      display: grid; grid-template-columns: repeat(4, 1fr); gap: 26px;
+      position: relative; z-index: 1;
+    }
+    .team-card {
+      background: #fff; border-radius: var(--radius-lg); padding: 0 0 24px 0;
+      text-align: center; box-shadow: var(--shadow-soft);
+      transition: transform .3s ease, box-shadow .3s ease;
+      overflow: hidden;
+    }
+    .team-card:hover { transform: translateY(-8px); box-shadow: var(--shadow-pop); }
+    .team-card .team-img { height: 140px; overflow: hidden; }
+    .team-card .team-img img { width: 100%; height: 100%; object-fit: cover; transition: transform .4s ease; }
+    .team-card:hover .team-img img { transform: scale(1.05); }
+    .team-card .team-avatar {
+      width: 90px; height: 90px; border-radius: 50%;
+      margin: -45px auto 12px;
+      background: color-mix(in srgb, var(--c) 14%, #fff);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 2.6rem; color: var(--c);
+      border: 4px solid #fff;
+      box-shadow: var(--shadow-soft);
+      position: relative; z-index: 1;
+    }
+    .team-card h4 { font-size: 1.1rem; color: var(--navy-2); margin-top: 4px; }
+    .team-card .role { font-size: .85rem; font-weight: 700; color: var(--c); margin-top: 2px; }
+    .team-card p { font-size: .88rem; color: #5A628C; margin-top: 8px; line-height: 1.5; padding: 0 16px; }
+    .team-card .social-links {
+      display: flex; justify-content: center; gap: 12px; margin-top: 12px;
+    }
+    .team-card .social-links a {
+      width: 34px; height: 34px; border-radius: 50%;
+      background: rgba(27, 42, 87, 0.06);
+      display: flex; align-items: center; justify-content: center;
+      color: var(--navy-2); font-size: .85rem;
+      transition: background .2s ease, color .2s ease;
+    }
+    .team-card .social-links a:hover { background: var(--c); color: #fff; }
 
-        /* ==========================================================================
-           Footer (identical)
-           ========================================================================== */
-        .site-footer {
-            background: var(--navy-2);
-            color: #C7CFEE;
-            padding-top: 60px;
-        }
-        .footer-wrap {
-            max-width: 1180px;
-            margin: 0 auto;
-            padding: 0 32px 40px;
-            display: grid;
-            grid-template-columns: 1.4fr 1fr 1fr 1fr;
-            gap: 40px;
-        }
-        .footer-logo {
-            height: 60px;
-            width: auto;
-            border-radius: 12px;
-            background: #fff;
-            padding: 6px;
-            margin-bottom: 14px;
-        }
-        .footer-brand p {
-            font-size: .9rem;
-            line-height: 1.6;
-        }
-        .footer-links h4,
-        .footer-cta h4 {
-            color: #fff;
-            font-size: 1rem;
-            margin-bottom: 16px;
-        }
-        .footer-links a {
-            display: block;
-            font-size: .9rem;
-            margin-bottom: 10px;
-            color: #C7CFEE;
-            transition: color .18s ease;
-        }
-        .footer-links a:hover {
-            color: var(--yellow);
-        }
-        .footer-bottom {
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            padding: 22px 32px;
-            text-align: center;
-            font-size: .85rem;
-        }
+    /* ==========================================================================
+       Testimonials — Warm peachy gradient
+       ========================================================================== */
+    .testimonials {
+      background: linear-gradient(180deg, #FFF6E0 0%, #FEF3E2 100%);
+      position: relative;
+    }
+    .testimonials::before {
+      content: ''; position: absolute; inset: 0;
+      background: url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23E63946' fill-opacity='0.02'%3E%3Cpath d='M40 10L45 35H70L50 50L55 75L40 60L25 75L30 50L10 35H35Z'/%3E%3C/g%3E%3C/svg%3E");
+      pointer-events: none;
+    }
+    .testimonial-grid {
+      margin-top: 48px;
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 26px;
+      position: relative; z-index: 1;
+    }
+    .testimonial-card {
+      background: #fff; border-radius: var(--radius-lg); padding: 28px 26px;
+      box-shadow: var(--shadow-soft);
+      transition: transform .3s ease, box-shadow .3s ease;
+      border-top: 4px solid var(--c);
+    }
+    .testimonial-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-pop); }
+    .testimonial-card .stars { color: var(--yellow); letter-spacing: 2px; font-size: .9rem; margin-bottom: 6px; }
+    .testimonial-card .quote-icon { font-size: 2rem; color: var(--c); opacity: 0.2; margin-bottom: 4px; }
+    .testimonial-card blockquote {
+      font-size: .96rem; line-height: 1.7; color: var(--navy-2);
+      margin: 0 0 12px 0; font-style: italic;
+    }
+    .testi-author { display: flex; align-items: center; gap: 14px; }
+    .testi-author .testi-avatar {
+      width: 48px; height: 48px; border-radius: 50%;
+      background: color-mix(in srgb, var(--c) 14%, #fff);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.2rem; color: var(--c); font-weight: 800;
+    }
+    .testi-author .testi-name { font-weight: 700; color: var(--navy-2); font-size: .92rem; }
+    .testi-author .testi-relation { font-size: .78rem; color: #5A628C; }
 
-        /* ==========================================================================
-           Floating Enquire Button (mobile)
-           ========================================================================== */
-        .fab-enquire {
-            position: fixed;
-            bottom: 24px;
-            right: 24px;
-            z-index: 400;
-            width: 58px;
-            height: 58px;
-            border-radius: 50%;
-            background: var(--red);
-            color: #fff;
-            font-size: 1.4rem;
-            box-shadow: 0 14px 30px -8px rgba(230, 57, 70, 0.6);
-            display: none;
-            align-items: center;
-            justify-content: center;
-        }
+    /* ==========================================================================
+       CTA Banner — Navy with subtle pattern
+       ========================================================================== */
+    .cta-banner {
+      background: var(--navy-2); color: #fff;
+      padding: 80px 32px; text-align: center;
+      position: relative; overflow: hidden;
+    }
+    .cta-banner::before {
+      content: ''; position: absolute; inset: 0;
+      background: radial-gradient(circle at 30% 50%, rgba(123, 79, 160, 0.15), transparent 60%),
+                  radial-gradient(circle at 70% 50%, rgba(46, 90, 172, 0.15), transparent 60%),
+                  url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.02'%3E%3Ccircle cx='20' cy='20' r='2'/%3E%3C/g%3E%3C/svg%3E");
+      pointer-events: none;
+    }
+    .cta-banner h2 {
+      font-size: clamp(1.8rem, 3vw, 2.5rem);
+      max-width: 700px; margin: 0 auto 16px; position: relative;
+    }
+    .cta-banner p {
+      color: #C7CFEE; font-size: 1.05rem;
+      max-width: 560px; margin: 0 auto 30px; line-height: 1.6;
+      position: relative;
+    }
+    .cta-banner .btn-primary { position: relative; }
 
-        /* ==========================================================================
-           Admission Enquiry Modal (identical)
-           ========================================================================== */
-        .modal-overlay {
-            position: fixed;
-            inset: 0;
-            z-index: 1000;
-            background: rgba(20, 31, 66, 0.6);
-            backdrop-filter: blur(4px);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 20px;
-            opacity: 0;
-            visibility: hidden;
-            transition: opacity .28s ease;
-        }
-        .modal-overlay.open {
-            opacity: 1;
-            visibility: visible;
-        }
-        .modal-card {
-            background: #fff;
-            border-radius: var(--radius-lg);
-            width: 100%;
-            max-width: 880px;
-            max-height: 92vh;
-            overflow: auto;
-            display: grid;
-            grid-template-columns: 0.85fr 1.15fr;
-            box-shadow: 0 40px 80px -20px rgba(0, 0, 0, 0.4);
-            transform: scale(.92) translateY(20px);
-            transition: transform .3s cubic-bezier(.2, .8, .3, 1.2);
-            position: relative;
-        }
-        .modal-overlay.open .modal-card {
-            transform: scale(1) translateY(0);
-        }
-        .modal-close {
-            position: absolute;
-            top: 16px;
-            right: 16px;
-            z-index: 2;
-            width: 38px;
-            height: 38px;
-            border-radius: 50%;
-            background: rgba(27, 42, 87, 0.06);
-            color: var(--navy-2);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: background .18s ease;
-        }
-        .modal-close:hover {
-            background: rgba(27, 42, 87, 0.14);
-        }
+    /* ==========================================================================
+       Contact Short
+       ========================================================================== */
+    .contact-short {
+      background: #fff;
+      position: relative;
+    }
+    .contact-short::before {
+      content: ''; position: absolute; inset: 0;
+      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23E63946' fill-opacity='0.02'%3E%3Ccircle cx='30' cy='30' r='3'/%3E%3C/g%3E%3C/svg%3E");
+      pointer-events: none;
+    }
+    .contact-short-grid {
+      margin-top: 40px;
+      display: grid; grid-template-columns: repeat(4, 1fr); gap: 22px;
+      position: relative; z-index: 1;
+    }
+    .contact-short-item {
+      background: #fff; border-radius: var(--radius-md); padding: 24px 20px;
+      display: flex; align-items: center; gap: 16px;
+      box-shadow: var(--shadow-soft);
+      transition: transform .3s ease, box-shadow .3s ease;
+      border: 1px solid rgba(27, 42, 87, 0.04);
+    }
+    .contact-short-item:hover { transform: translateY(-4px); box-shadow: var(--shadow-pop); }
+    .contact-short-item i {
+      font-size: 1.6rem; color: var(--red); flex: none;
+      width: 44px; height: 44px;
+      background: color-mix(in srgb, var(--red) 8%, #fff);
+      border-radius: var(--radius-sm);
+      display: flex; align-items: center; justify-content: center;
+    }
+    .contact-short-item strong { display: block; font-size: .82rem; color: var(--navy-2); }
+    .contact-short-item span { font-size: .9rem; color: #5A628C; }
 
-        .modal-side {
-            background: var(--navy-2);
-            color: #fff;
-            padding: 44px 34px;
-            position: relative;
-            overflow: hidden;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
-        .modal-side h3 {
-            font-size: 1.5rem;
-            margin-bottom: 14px;
-            position: relative;
-            z-index: 1;
-        }
-        .modal-side p {
-            color: #C7CFEE;
-            font-size: .92rem;
-            line-height: 1.6;
-            position: relative;
-            z-index: 1;
-        }
-        .modal-side-burst {
-            position: absolute;
-            inset: 0;
-        }
-        .modal-side-burst span {
-            position: absolute;
-            width: 120px;
-            height: 220px;
-            border-radius: 50% 50% 0 0;
-            transform-origin: bottom center;
-            opacity: .5;
-        }
-        .modal-side-burst span:nth-child(1) {
-            background: var(--purple);
-            bottom: -40px;
-            left: -30px;
-            transform: rotate(-40deg);
-        }
-        .modal-side-burst span:nth-child(2) {
-            background: var(--blue);
-            bottom: -40px;
-            left: 0px;
-            transform: rotate(-24deg);
-        }
-        .modal-side-burst span:nth-child(3) {
-            background: var(--green);
-            bottom: -40px;
-            left: 30px;
-            transform: rotate(-8deg);
-        }
-        .modal-side-burst span:nth-child(4) {
-            background: var(--yellow);
-            bottom: -40px;
-            left: 60px;
-            transform: rotate(8deg);
-        }
-        .modal-side-burst span:nth-child(5) {
-            background: var(--orange);
-            bottom: -40px;
-            left: 90px;
-            transform: rotate(24deg);
-        }
-        .modal-side-burst span:nth-child(6) {
-            background: var(--red);
-            bottom: -40px;
-            left: 120px;
-            transform: rotate(40deg);
-        }
+    /* ==========================================================================
+       Footer — (loaded from footer.html)
+       ========================================================================== */
+    .site-footer {
+      background: var(--navy-2);
+      color: #C7CFEE;
+      padding-top: 60px;
+    }
+    .footer-wrap {
+      max-width: 1180px; margin: 0 auto; padding: 0 32px 40px;
+      display: grid; grid-template-columns: 1.4fr 1fr 1fr 1fr; gap: 40px;
+    }
+    .footer-logo { height: 90px; width: auto; border-radius: 12px; background: #fff; padding: 6px; margin-bottom: 14px; }
+    .footer-brand p { font-size: .9rem; line-height: 1.6; }
+    .footer-links h4, .footer-cta h4 { color: #fff; font-size: 1rem; margin-bottom: 16px; }
+    .footer-links a { display: block; font-size: .9rem; margin-bottom: 10px; color: #C7CFEE; transition: color .18s ease; }
+    .footer-links a:hover { color: var(--yellow); }
+    .footer-bottom { border-top: 1px solid rgba(255, 255, 255, 0.1); padding: 22px 32px; text-align: center; font-size: .85rem; }
 
-        .modal-form-wrap {
-            padding: 44px 40px;
-        }
-        .modal-form-wrap h4 {
-            font-size: 1.2rem;
-            margin-bottom: 22px;
-            color: var(--navy-2);
-            display: flex;
-            gap: 10px;
-            align-items: center;
-        }
+    /* ==========================================================================
+       Floating Enquire Button (mobile)
+       ========================================================================== */
+    .fab-enquire {
+      position: fixed; bottom: 24px; right: 24px; z-index: 400;
+      width: 58px; height: 58px; border-radius: 50%;
+      background: var(--red); color: #fff;
+      font-size: 1.4rem; box-shadow: 0 14px 30px -8px rgba(230, 57, 70, 0.6);
+      display: none; align-items: center; justify-content: center;
+      transition: transform .2s ease;
+    }
+    .fab-enquire:hover { transform: scale(1.08); }
 
-        .modal-success {
-            display: none;
-            text-align: center;
-            padding: 30px 10px;
-            position: relative;
-        }
-        .modal-success.show {
-            display: block;
-        }
-        .success-icon {
-            font-size: 3.4rem;
-            color: var(--green);
-            margin-bottom: 14px;
-        }
-        .modal-success h4 {
-            justify-content: center;
-            margin-bottom: 8px;
-        }
-        .modal-success p {
-            color: #5A628C;
-            margin-bottom: 22px;
-        }
-        .success-burst {
-            position: absolute;
-            inset: 0;
-            pointer-events: none;
-            overflow: hidden;
-        }
-        .success-burst span {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            width: 8px;
-            height: 20px;
-            border-radius: 4px;
-            opacity: 0;
-        }
-        .modal-success.show .success-burst span {
-            animation: confetti 1s ease-out forwards;
-        }
-        .success-burst span:nth-child(1) {
-            background: var(--purple);
-            animation-delay: 0s;
-        }
-        .success-burst span:nth-child(2) {
-            background: var(--blue);
-            animation-delay: .04s;
-        }
-        .success-burst span:nth-child(3) {
-            background: var(--green);
-            animation-delay: .08s;
-        }
-        .success-burst span:nth-child(4) {
-            background: var(--yellow);
-            animation-delay: .12s;
-        }
-        .success-burst span:nth-child(5) {
-            background: var(--orange);
-            animation-delay: .16s;
-        }
-        .success-burst span:nth-child(6) {
-            background: var(--red);
-            animation-delay: .2s;
-        }
-        @keyframes confetti {
-            0% {
-                opacity: 1;
-                transform: translate(-50%, -50%) rotate(0deg);
-            }
-            100% {
-                opacity: 0;
-                transform: translate(calc(-50% + var(--x, 120px)), calc(-50% - 160px)) rotate(340deg);
-            }
-        }
-        .success-burst span:nth-child(1) {
-            --x: -150px;
-        }
-        .success-burst span:nth-child(2) {
-            --x: -90px;
-        }
-        .success-burst span:nth-child(3) {
-            --x: -30px;
-        }
-        .success-burst span:nth-child(4) {
-            --x: 30px;
-        }
-        .success-burst span:nth-child(5) {
-            --x: 90px;
-        }
-        .success-burst span:nth-child(6) {
-            --x: 150px;
-        }
+    /* ==========================================================================
+       Admission Enquiry Modal
+       ========================================================================== */
+    .modal-overlay {
+      position: fixed; inset: 0; z-index: 1000;
+      background: rgba(20, 31, 66, 0.6);
+      backdrop-filter: blur(4px);
+      display: flex; align-items: center; justify-content: center;
+      padding: 20px;
+      opacity: 0; visibility: hidden;
+      transition: opacity .28s ease;
+    }
+    .modal-overlay.open { opacity: 1; visibility: visible; }
+    .modal-card {
+      background: #fff; border-radius: var(--radius-lg);
+      width: 100%; max-width: 880px; max-height: 92vh; overflow: auto;
+      display: grid; grid-template-columns: 0.85fr 1.15fr;
+      box-shadow: 0 40px 80px -20px rgba(0, 0, 0, 0.4);
+      transform: scale(.92) translateY(20px);
+      transition: transform .3s cubic-bezier(.2, .8, .3, 1.2);
+      position: relative;
+    }
+    .modal-overlay.open .modal-card { transform: scale(1) translateY(0); }
+    .modal-close {
+      position: absolute; top: 16px; right: 16px; z-index: 2;
+      width: 38px; height: 38px; border-radius: 50%;
+      background: rgba(27, 42, 87, 0.06);
+      color: var(--navy-2);
+      display: flex; align-items: center; justify-content: center;
+      transition: background .18s ease;
+    }
+    .modal-close:hover { background: rgba(27, 42, 87, 0.14); }
 
-        /* ==========================================================================
-           Responsive
-           ========================================================================== */
-        @media (max-width:1080px) {
-            .values-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            .team-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            .fac-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            .testimonial-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            .contact-short-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            .footer-wrap {
-                grid-template-columns: 1fr 1fr;
-            }
-        }
+    .modal-side {
+      background: var(--navy-2); color: #fff;
+      padding: 44px 34px; position: relative; overflow: hidden;
+      display: flex; flex-direction: column; justify-content: center;
+    }
+    .modal-side h3 { font-size: 1.5rem; margin-bottom: 14px; position: relative; z-index: 1; }
+    .modal-side p { color: #C7CFEE; font-size: .92rem; line-height: 1.6; position: relative; z-index: 1; }
+    .modal-side-burst { position: absolute; inset: 0; }
+    .modal-side-burst span {
+      position: absolute; width: 120px; height: 220px;
+      border-radius: 50% 50% 0 0;
+      transform-origin: bottom center; opacity: .5;
+    }
+    .modal-side-burst span:nth-child(1) { background: var(--purple); bottom: -40px; left: -30px; transform: rotate(-40deg); }
+    .modal-side-burst span:nth-child(2) { background: var(--blue); bottom: -40px; left: 0px; transform: rotate(-24deg); }
+    .modal-side-burst span:nth-child(3) { background: var(--green); bottom: -40px; left: 30px; transform: rotate(-8deg); }
+    .modal-side-burst span:nth-child(4) { background: var(--yellow); bottom: -40px; left: 60px; transform: rotate(8deg); }
+    .modal-side-burst span:nth-child(5) { background: var(--orange); bottom: -40px; left: 90px; transform: rotate(24deg); }
+    .modal-side-burst span:nth-child(6) { background: var(--red); bottom: -40px; left: 120px; transform: rotate(40deg); }
 
-        @media (max-width:900px) {
-            .about-hero-inner {
-                grid-template-columns: 1fr;
-                text-align: center;
-            }
-            .about-hero-copy {
-                order: 1;
-            }
-            .about-hero-art {
-                order: 0;
-            }
-            .about-hero-sub {
-                margin-left: auto;
-                margin-right: auto;
-            }
-            .about-hero-actions {
-                justify-content: center;
-            }
-            .story-grid {
-                grid-template-columns: 1fr;
-            }
-            .mv-grid {
-                grid-template-columns: 1fr;
-            }
-            .modal-card {
-                grid-template-columns: 1fr;
-            }
-            .modal-side {
-                display: none;
-            }
-        }
+    .modal-form-wrap { padding: 44px 40px; }
+    .modal-form-wrap h4 { font-size: 1.2rem; margin-bottom: 22px; color: var(--navy-2); display: flex; gap: 10px; align-items: center; }
 
-        @media (max-width:760px) {
-            .main-nav {
-                position: fixed;
-                top: 78px;
-                left: 0;
-                right: 0;
-                background: var(--cream);
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 0;
-                padding: 10px 28px 20px;
-                box-shadow: 0 14px 24px -14px rgba(27, 42, 87, 0.3);
-                transform: translateY(-140%);
-                opacity: 0;
-                transition: transform .25s ease, opacity .2s ease;
-            }
-            .main-nav.open {
-                transform: translateY(0);
-                opacity: 1;
-            }
-            .main-nav a {
-                padding: 12px 0;
-                width: 100%;
-                border-bottom: 1px solid rgba(27, 42, 87, 0.06);
-            }
-            .hamburger {
-                display: flex;
-            }
-            .btn-enquire {
-                display: none;
-            }
-            .fab-enquire {
-                display: flex;
-            }
+    .modal-success { display: none; text-align: center; padding: 30px 10px; position: relative; }
+    .modal-success.show { display: block; }
+    .success-icon { font-size: 3.4rem; color: var(--green); margin-bottom: 14px; }
+    .modal-success h4 { justify-content: center; margin-bottom: 8px; }
+    .modal-success p { color: #5A628C; margin-bottom: 22px; }
+    .success-burst { position: absolute; inset: 0; pointer-events: none; overflow: hidden; }
+    .success-burst span {
+      position: absolute; top: 50%; left: 50%; width: 8px; height: 20px; border-radius: 4px; opacity: 0;
+    }
+    .modal-success.show .success-burst span { animation: confetti 1s ease-out forwards; }
+    .success-burst span:nth-child(1) { background: var(--purple); animation-delay: 0s; }
+    .success-burst span:nth-child(2) { background: var(--blue); animation-delay: .04s; }
+    .success-burst span:nth-child(3) { background: var(--green); animation-delay: .08s; }
+    .success-burst span:nth-child(4) { background: var(--yellow); animation-delay: .12s; }
+    .success-burst span:nth-child(5) { background: var(--orange); animation-delay: .16s; }
+    .success-burst span:nth-child(6) { background: var(--red); animation-delay: .2s; }
+    @keyframes confetti {
+      0% { opacity: 1; transform: translate(-50%, -50%) rotate(0deg); }
+      100% { opacity: 0; transform: translate(calc(-50% + var(--x, 120px)), calc(-50% - 160px)) rotate(340deg); }
+    }
+    .success-burst span:nth-child(1) { --x: -150px; }
+    .success-burst span:nth-child(2) { --x: -90px; }
+    .success-burst span:nth-child(3) { --x: -30px; }
+    .success-burst span:nth-child(4) { --x: 30px; }
+    .success-burst span:nth-child(5) { --x: 90px; }
+    .success-burst span:nth-child(6) { --x: 150px; }
 
-            .values-grid {
-                grid-template-columns: 1fr;
-            }
-            .team-grid {
-                grid-template-columns: 1fr;
-            }
-            .fac-grid {
-                grid-template-columns: 1fr;
-            }
-            .testimonial-grid {
-                grid-template-columns: 1fr;
-            }
-            .contact-short-grid {
-                grid-template-columns: 1fr;
-            }
-            .footer-wrap {
-                grid-template-columns: 1fr;
-            }
-            .section-wrap {
-                padding: 70px 22px 50px;
-            }
-            .about-hero-inner {
-                padding: 40px 22px 80px;
-            }
-            .modal-form-wrap {
-                padding: 30px 22px;
-            }
-        }
-    </style>
+    .field { margin-bottom: 16px; display: flex; flex-direction: column; gap: 6px; }
+    .field label { font-size: .85rem; font-weight: 800; color: var(--navy-2); }
+    .field input, .field select, .field textarea {
+      border: 2px solid rgba(27, 42, 87, 0.12); border-radius: var(--radius-sm);
+      padding: 12px 14px; font-family: inherit; font-size: .95rem; color: var(--navy-2);
+      background: var(--cream); transition: border-color .18s ease;
+      width: 100%;
+    }
+    .field input:focus, .field select:focus, .field textarea:focus {
+      outline: none; border-color: var(--blue);
+    }
+    .field textarea { resize: vertical; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+
+    /* ==========================================================================
+       Responsive
+       ========================================================================== */
+    @media (max-width: 1080px) {
+      .values-grid { grid-template-columns: repeat(2, 1fr); }
+      .team-grid { grid-template-columns: repeat(2, 1fr); }
+      .fac-grid { grid-template-columns: repeat(2, 1fr); }
+      .testimonial-grid { grid-template-columns: repeat(2, 1fr); }
+      .contact-short-grid { grid-template-columns: repeat(2, 1fr); }
+      .stats-grid { grid-template-columns: repeat(2, 1fr); }
+      .mv-grid { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 900px) {
+      .about-hero-inner { padding: 40px 22px; }
+      .story-grid { grid-template-columns: 1fr; }
+      .modal-card { grid-template-columns: 1fr; }
+      .modal-side { display: none; }
+    }
+
+    @media (max-width: 760px) {
+      .main-nav {
+        position: fixed; top: 78px; left: 0; right: 0;
+        background: var(--cream);
+        flex-direction: column; align-items: flex-start; gap: 0;
+        padding: 10px 28px 20px;
+        box-shadow: 0 14px 24px -14px rgba(27, 42, 87, 0.3);
+        transform: translateY(-140%); opacity: 0;
+        transition: transform .25s ease, opacity .2s ease;
+      }
+      .main-nav.open { transform: translateY(0); opacity: 1; }
+      .main-nav a { padding: 12px 0; width: 100%; border-bottom: 1px solid rgba(27, 42, 87, 0.06); }
+      .hamburger { display: flex; }
+      .btn-enquire { display: none; }
+      .fab-enquire { display: flex; }
+
+      .values-grid { grid-template-columns: 1fr; }
+      .team-grid { grid-template-columns: 1fr; }
+      .fac-grid { grid-template-columns: 1fr; }
+      .testimonial-grid { grid-template-columns: 1fr; }
+      .contact-short-grid { grid-template-columns: 1fr; }
+      .section-wrap { padding: 70px 22px 50px; }
+      .stats-grid { grid-template-columns: 1fr 1fr; gap: 16px; }
+      .stat-number { font-size: 2rem; }
+      .modal-form-wrap { padding: 30px 22px; }
+      .form-row { grid-template-columns: 1fr; }
+    }
+    /* ==========================================================================
+   Footer
+   ========================================================================== */
+.site-footer{background:var(--navy-2); color:#C7CFEE; padding-top:60px;}
+.footer-wrap{
+  max-width:1180px; margin:0 auto; padding:0 32px 40px;
+  display:grid; grid-template-columns:1.4fr 1fr 1fr 1fr; gap:40px;
+}
+.footer-logo{height:90px; width:auto; border-radius:12px; background:#fff; padding:6px; margin-bottom:14px;}
+.footer-brand p{font-size:.9rem; line-height:1.6;}
+.footer-links h4, .footer-cta h4{color:#fff; font-size:1rem; margin-bottom:16px;}
+.footer-links a{display:block; font-size:.9rem; margin-bottom:10px; color:#C7CFEE; transition:color .18s ease;}
+.footer-links a:hover{color:var(--yellow);}
+.footer-bottom{
+  border-top:1px solid rgba(255,255,255,0.1); padding:22px 32px; text-align:center; font-size:.85rem;
+}
+  </style>
 </head>
 
 <body>
 
-    <!-- ===== Rainbow scroll progress ===== -->
-    <div class="scroll-rainbow" id="scrollRainbow"></div>
+  <!-- Rainbow scroll progress -->
+  <div class="scroll-rainbow" id="scrollRainbow"></div>
 
-    <!-- ===== HEADER ===== -->
-    <header class="site-header" id="siteHeader">
-        <div class="nav-wrap">
-            <a href="index.html" class="brand">
-               <img src="logo1.png" alt="Sri Rainbow School logo" class="brand-logo">
-            </a>
+  <!-- ============ TOP ANNOUNCEMENT BAR ============ -->
+  <div class="top-bar">
+    <div class="top-bar-track">
+      <span><i class="bi bi-megaphone-fill"></i> Admissions Open for 2026-27! </span>
+      <span><i class="bi bi-calendar-check"></i> Book a Campus Visit Today! </span>
+      <span><i class="bi bi-telephone-fill"></i> Call us at +91 90000 00000 </span>
+      <span><i class="bi bi-star-fill"></i> Recognized by Govt. of Telangana </span>
+      <span><i class="bi bi-emoji-smile"></i> Where Little Minds Bloom </span>
+      <span><i class="bi bi-megaphone-fill"></i> Admissions Open for 2026-27! </span>
+      <span><i class="bi bi-calendar-check"></i> Book a Campus Visit Today! </span>
+      <span><i class="bi bi-telephone-fill"></i> Call us at +91 90000 00000 </span>
+      <span><i class="bi bi-star-fill"></i> Recognized by Govt. of Telangana </span>
+      <span><i class="bi bi-emoji-smile"></i> Where Little Minds Bloom </span>
+    </div>
+  </div>
 
-            <nav class="main-nav" id="mainNav">
-      <a href="index.html" class="nav-link">Home</a>
-      <a href="about.html" class="nav-link active">About</a>
-      <a href="academics.html" class="nav-link">Academics</a>
-      <a href="gallery.html" class="nav-link">Gallery</a>
-      <a href="admission.html" class="nav-link">Admission</a>
-      <a href="contact.html" class="nav-link">Contact</a>
-    </nav>
+  <!-- ============ NAV ============ -->
+  <header class="site-header" id="siteHeader">
+    <div class="nav-wrap">
+      <a href="index.html" class="brand">
+        <img src="logo1.png" alt="Sri Rainbow School logo" class="brand-logo">
+      </a>
+      <nav class="main-nav" id="mainNav">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="about.html" class="nav-link active">About</a>
+        <a href="academics.html" class="nav-link">Academics</a>
+        <a href="gallery.html" class="nav-link">Gallery</a>
+        <a href="admission.html" class="nav-link">Admission</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </nav>
+      <button class="btn-enquire" id="openEnquireBtn1">
+        <i class="bi bi-pencil-square"></i> Enquire Now
+      </button>
+      <button class="hamburger" id="hamburgerBtn" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
 
-            <button class="btn-enquire" id="openEnquireBtn1">
-                <i class="bi bi-pencil-square"></i> Enquire Now
-            </button>
+  <!-- ============ ABOUT HERO ============ -->
+  <section class="about-hero">
+    <div class="rings" aria-hidden="true">
+      <span class="ring"></span>
+      <span class="ring"></span>
+      <span class="ring"></span>
+    </div>
+    <div class="about-hero-inner">
+      <p class="eyebrow"><i class="bi bi-stars"></i> About Sri Rainbow School</p>
+      <h1 class="about-hero-title">About <span class="rainbow-text">Us</span></h1>
+    </div>
+  </section>
 
-            <button class="hamburger" id="hamburgerBtn" aria-label="Toggle menu">
-                <span></span><span></span><span></span>
-            </button>
+  <!-- ===== STATS BAR ===== -->
+  <section class="stats-bar">
+    <div class="stats-grid">
+      <div class="stat-item">
+        <div class="stat-icon"><i class="bi bi-calendar-heart"></i></div>
+        <div class="stat-number"><span class="accent">18</span>+</div>
+        <div class="stat-label">Years of Excellence</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-icon"><i class="bi bi-people"></i></div>
+        <div class="stat-number"><span class="accent">1,200</span>+</div>
+        <div class="stat-label">Happy Students</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-icon"><i class="bi bi-person-heart"></i></div>
+        <div class="stat-number"><span class="accent">60</span>+</div>
+        <div class="stat-label">Dedicated Teachers</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-icon"><i class="bi bi-trophy"></i></div>
+        <div class="stat-number"><span class="accent">100</span>%</div>
+        <div class="stat-label">Joyful Learning</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== STORY ===== -->
+  <section class="story" id="story">
+    <div class="section-wrap">
+      <p class="eyebrow eyebrow-green"><i class="bi bi-journal-text"></i> Our Story</p>
+      <h2 class="section-title">How a small dream grew into a colourful community</h2>
+      <p class="section-lead">Sri Rainbow School began in 2006 with a handful of children, a single bright classroom, and a big belief: that every child deserves a childhood filled with curiosity, kindness, and colour.</p>
+
+      <div class="story-grid">
+        <div class="story-text">
+          <h3><i class="bi bi-rainbow"></i> From one classroom to a whole rainbow</h3>
+          <p>What started as a tiny preschool in Hyderabad quickly became a trusted name in early education. Parents loved the warm atmosphere, the caring teachers, and the way their children blossomed — not just academically, but emotionally and socially.</p>
+          <p>Today, Sri Rainbow School is a vibrant community of over 1,200 students, 60 dedicated teachers, and a curriculum that spans from Play Group to Class 5. But we've never lost the heart of what made us special: a school where every child feels seen, celebrated, and safe.</p>
+          <p>We remain proudly recognised by the Government of Telangana and guided by the belief that learning should be joyful, inclusive, and full of wonder.</p>
+
+          <div class="story-timeline">
+            <span class="milestone"><span class="dot dot-purple"></span> 2006 — Founded</span>
+            <span class="milestone"><span class="dot dot-blue"></span> 2012 — Primary Wing</span>
+            <span class="milestone"><span class="dot dot-green"></span> 2018 — 1000+ Students</span>
+            <span class="milestone"><span class="dot dot-orange"></span> 2024 — 18 Years Strong</span>
+          </div>
         </div>
-    </header>
-
-    <!-- ===== ABOUT HERO ===== -->
-    <section class="about-hero">
-        <div class="about-hero-blobs" aria-hidden="true">
-            <span class="blob blob-a"></span>
-            <span class="blob blob-b"></span>
-            <span class="blob blob-c"></span>
+        <div class="story-image">
+          <img src="https://picsum.photos/600/450?random=81" alt="Sri Rainbow School campus" loading="lazy" />
         </div>
-
-        <div class="about-hero-inner">
-            <div class="about-hero-copy">
-                <p class="eyebrow"><i class="bi bi-stars"></i> About Sri Rainbow School</p>
-                <h1 class="about-hero-title">A story of <span class="rainbow-text">colour &amp; care.</span></h1>
-                <p class="about-hero-sub">For nearly two decades, we've been the place where little learners take their first steps into a world of wonder &mdash; guided by warmth, rooted in values, and alive with the joy of discovery.</p>
-                <div class="about-hero-actions">
-                    <button class="btn-primary" id="openEnquireBtn2"><i class="bi bi-send-check"></i> Meet Our Team</button>
-                    <a href="#story" class="btn-ghost">Read Our Story <i class="bi bi-arrow-down-right"></i></a>
-                </div>
-            </div>
-
-            <div class="about-hero-art">
-                <svg class="rainbow-burst" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                    <g class="petals" transform="translate(200,260)">
-                        <path class="petal p1" d="M0,0 C-10,-90 -30,-160 -70,-210 C-40,-160 -20,-90 -8,-4 Z"/>
-                        <path class="petal p2" d="M0,0 C-20,-110 -40,-180 -30,-250 C0,-190 10,-110 4,-4 Z"/>
-                        <path class="petal p3" d="M0,0 C-2,-120 4,-200 30,-260 C20,-190 8,-110 0,-4 Z"/>
-                        <path class="petal p4" d="M0,0 C14,-110 34,-180 70,-230 C40,-170 22,-100 6,-4 Z"/>
-                        <path class="petal p5" d="M0,0 C24,-90 54,-140 100,-175 C66,-130 40,-80 12,-4 Z"/>
-                        <path class="petal p6" d="M0,0 C34,-60 74,-90 120,-100 C82,-80 50,-50 16,-4 Z"/>
-                        <circle class="petal-core" cx="0" cy="-4" r="14"/>
-                    </g>
-                    <g class="cloud" transform="translate(60,320)">
-                        <ellipse cx="0" cy="0" rx="46" ry="22"/>
-                        <ellipse cx="30" cy="-8" rx="30" ry="20"/>
-                        <ellipse cx="-30" cy="-6" rx="26" ry="16"/>
-                    </g>
-                    <g class="cloud cloud2" transform="translate(320,90)">
-                        <ellipse cx="0" cy="0" rx="36" ry="17"/>
-                        <ellipse cx="24" cy="-6" rx="22" ry="15"/>
-                        <ellipse cx="-22" cy="-4" rx="20" ry="12"/>
-                    </g>
-                </svg>
-            </div>
-        </div>
-
-        <svg class="wave-divider" viewBox="0 0 1440 90" preserveAspectRatio="none" aria-hidden="true">
-            <path d="M0,40 C240,90 480,0 720,30 C960,60 1200,10 1440,40 L1440,90 L0,90 Z"></path>
-        </svg>
-    </section>
-
-    <!-- ===== STORY ===== -->
-    <section class="story" id="story">
-        <div class="section-wrap">
-            <p class="eyebrow eyebrow-green"><i class="bi bi-journal-text"></i> Our Story</p>
-            <h2 class="section-title">How a small dream grew into a colourful community</h2>
-            <p class="section-lead">Sri Rainbow School began in 2006 with a handful of children, a single bright classroom, and a big belief: that every child deserves a childhood filled with curiosity, kindness, and colour.</p>
-
-            <div class="story-grid">
-                <div class="story-text">
-                    <h3>From one classroom to a whole rainbow</h3>
-                    <p>What started as a tiny preschool in Hyderabad quickly became a trusted name in early education. Parents loved the warm atmosphere, the caring teachers, and the way their children blossomed &mdash; not just academically, but emotionally and socially.</p>
-                    <p>Today, Sri Rainbow School is a vibrant community of over 1,200 students, 60 dedicated teachers, and a curriculum that spans from Play Group to Class 5. But we've never lost the heart of what made us special: a school where every child feels seen, celebrated, and safe.</p>
-                    <p>We remain proudly recognised by the Government of Telangana and guided by the belief that learning should be joyful, inclusive, and full of wonder.</p>
-                </div>
-                <div class="story-image">
-                    <i class="bi bi-building"></i>
-                </div>
-            </div>
-        </div>
-
-        <svg class="wave-divider wave-yellow" viewBox="0 0 1440 90" preserveAspectRatio="none" aria-hidden="true">
-            <path d="M0,50 C240,10 480,90 720,50 C960,10 1200,70 1440,30 L1440,90 L0,90 Z"></path>
-        </svg>
-    </section>
-
-    <!-- ===== MISSION & VISION ===== -->
-    <section class="mission-vision" id="mission">
-        <div class="section-wrap">
-            <p class="eyebrow eyebrow-purple"><i class="bi bi-compass"></i> Mission &amp; Vision</p>
-            <h2 class="section-title">What drives us, every single day</h2>
-            <p class="section-lead">Our mission and vision are the colours that guide everything we do — from how we design our classrooms to how we welcome each family.</p>
-
-            <div class="mv-grid">
-                <div class="mv-card" style="--c:var(--blue);">
-                    <div class="mv-icon"><i class="bi bi-heart-fill"></i></div>
-                    <h3>Our Mission</h3>
-                    <p>To nurture confident, kind, and curious children through play-based, joyful learning experiences that respect each child's own pace and personality.</p>
-                    <ul>
-                        <li><i class="bi bi-check2"></i> Foster a love for learning from the very first day</li>
-                        <li><i class="bi bi-check2"></i> Build emotional and social skills alongside academics</li>
-                        <li><i class="bi bi-check2"></i> Create a safe, inclusive space for every child</li>
-                    </ul>
-                </div>
-                <div class="mv-card" style="--c:var(--orange);">
-                    <div class="mv-icon"><i class="bi bi-eye-fill"></i></div>
-                    <h3>Our Vision</h3>
-                    <p>A school where every colour of every child is celebrated — and where learning feels like discovery, not duty. A place where children grow into confident, compassionate individuals ready to embrace the world.</p>
-                    <ul>
-                        <li><i class="bi bi-check2"></i> A school that feels like a second home</li>
-                        <li><i class="bi bi-check2"></i> Where curiosity is the curriculum</li>
-                        <li><i class="bi bi-check2"></i> Building a foundation for lifelong learning</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-
-        <svg class="wave-divider wave-purple" viewBox="0 0 1440 90" preserveAspectRatio="none" aria-hidden="true">
-            <path d="M0,30 C240,70 480,10 720,40 C960,70 1200,20 1440,50 L1440,90 L0,90 Z"></path>
-        </svg>
-    </section>
-
-    <!-- ===== CORE VALUES ===== -->
-    <section class="values" id="values">
-        <div class="section-wrap">
-            <p class="eyebrow eyebrow-orange"><i class="bi bi-diamond"></i> Our Values</p>
-            <h2 class="section-title">The colours that guide us</h2>
-            <p class="section-lead">At Sri Rainbow School, values aren't just words on a wall — they live in our classrooms, our playgrounds, and in every interaction.</p>
-
-            <div class="values-grid">
-                <div class="value-card">
-                    <div class="val-icon val-blue"><i class="bi bi-heart"></i></div>
-                    <h4>Love &amp; Care</h4>
-                    <p>Every child is wrapped in warmth and kindness, building trust and emotional security from day one.</p>
-                </div>
-                <div class="value-card">
-                    <div class="val-icon val-green"><i class="bi bi-tree"></i></div>
-                    <h4>Curiosity &amp; Wonder</h4>
-                    <p>We encourage questions, exploration, and the joy of discovery in every subject and activity.</p>
-                </div>
-                <div class="value-card">
-                    <div class="val-icon val-yellow"><i class="bi bi-people"></i></div>
-                    <h4>Inclusion &amp; Respect</h4>
-                    <p>Every child is unique, and we celebrate those differences while nurturing mutual respect and friendship.</p>
-                </div>
-                <div class="value-card">
-                    <div class="val-icon val-purple"><i class="bi bi-trophy"></i></div>
-                    <h4>Excellence &amp; Effort</h4>
-                    <p>We believe in doing our best — not just in academics, but in character, creativity, and community.</p>
-                </div>
-                <div class="value-card">
-                    <div class="val-icon val-red"><i class="bi bi-shield-check"></i></div>
-                    <h4>Safety &amp; Trust</h4>
-                    <p>A secure environment where children and parents alike feel confident and at ease.</p>
-                </div>
-                <div class="value-card">
-                    <div class="val-icon val-orange"><i class="bi bi-palette"></i></div>
-                    <h4>Joy &amp; Play</h4>
-                    <p>We believe childhood should be filled with laughter, movement, and the freedom to imagine.</p>
-                </div>
-            </div>
-        </div>
-
-        <svg class="wave-divider wave-yellow" viewBox="0 0 1440 90" preserveAspectRatio="none" aria-hidden="true">
-            <path d="M0,50 C240,10 480,90 720,50 C960,10 1200,70 1440,30 L1440,90 L0,90 Z"></path>
-        </svg>
-    </section>
-
-    <!-- ===== FACILITIES ===== -->
-    <section class="facilities" id="facilities">
-        <div class="section-wrap">
-            <p class="eyebrow eyebrow-blue"><i class="bi bi-building"></i> Facilities</p>
-            <h2 class="section-title">A campus made for little hands and big ideas</h2>
-            <p class="section-lead">Every corner of our school is designed with children in mind — bright, safe, and full of possibilities.</p>
-
-            <div class="fac-grid">
-                <div class="fac-card">
-                    <div class="fac-icon"><i class="bi bi-house-door"></i></div>
-                    <div>
-                        <h4>Bright, Spacious Classrooms</h4>
-                        <p>Colourful, well-ventilated rooms with child-sized furniture and learning corners for every subject.</p>
-                    </div>
-                </div>
-                <div class="fac-card">
-                    <div class="fac-icon"><i class="bi bi-play"></i></div>
-                    <div>
-                        <h4>Safe Playground</h4>
-                        <p>A large, shaded outdoor space with age-appropriate swings, slides, and climbing structures.</p>
-                    </div>
-                </div>
-                <div class="fac-card">
-                    <div class="fac-icon"><i class="bi bi-book"></i></div>
-                    <div>
-                        <h4>Library &amp; Reading Nook</h4>
-                        <p>A cosy library filled with picture books, storybooks, and early readers to spark a love for reading.</p>
-                    </div>
-                </div>
-                <div class="fac-card">
-                    <div class="fac-icon"><i class="bi bi-easel2"></i></div>
-                    <div>
-                        <h4>Art &amp; Craft Studio</h4>
-                        <p>A dedicated space for painting, clay work, crafts and creative expression.</p>
-                    </div>
-                </div>
-                <div class="fac-card">
-                    <div class="fac-icon"><i class="bi bi-music-note-beamed"></i></div>
-                    <div>
-                        <h4>Music &amp; Movement Room</h4>
-                        <p>Instruments, rhythm, and dance — a space where children explore sound and motion.</p>
-                    </div>
-                </div>
-                <div class="fac-card">
-                    <div class="fac-icon"><i class="bi bi-shield-lock"></i></div>
-                    <div>
-                        <h4>CCTV &amp; Security</h4>
-                        <p>24/7 monitored campus with trained staff and secure entry protocols for complete peace of mind.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <svg class="wave-divider wave-purple" viewBox="0 0 1440 90" preserveAspectRatio="none" aria-hidden="true">
-            <path d="M0,30 C240,70 480,10 720,40 C960,70 1200,20 1440,50 L1440,90 L0,90 Z"></path>
-        </svg>
-    </section>
-
-    <!-- ===== TEAM ===== -->
-    <section class="team" id="team">
-        <div class="section-wrap">
-            <p class="eyebrow eyebrow-red"><i class="bi bi-people-fill"></i> Our Team</p>
-            <h2 class="section-title">The hearts and hands behind the rainbow</h2>
-            <p class="section-lead">Our teachers are the soul of Sri Rainbow School — warm, skilled, and deeply committed to every child's growth.</p>
-
-            <div class="team-grid">
-                <div class="team-card" style="--c:var(--blue);">
-                    <div class="team-avatar"><i class="bi bi-person"></i></div>
-                    <h4>Mrs. Lakshmi Reddy</h4>
-                    <div class="role">Founder &amp; Principal</div>
-                    <p>Over 25 years of experience in early childhood education. A passionate believer in learning through play.</p>
-                </div>
-                <div class="team-card" style="--c:var(--green);">
-                    <div class="team-avatar"><i class="bi bi-person"></i></div>
-                    <h4>Mrs. Sunita Rao</h4>
-                    <div class="role">Head of Academics</div>
-                    <p>Curriculum specialist with a focus on phonics, numeracy, and child-centred assessment.</p>
-                </div>
-                <div class="team-card" style="--c:var(--orange);">
-                    <div class="team-avatar"><i class="bi bi-person"></i></div>
-                    <h4>Mr. Vikram Singh</h4>
-                    <div class="role">Sports &amp; Activities Coordinator</div>
-                    <p>Making movement fun — from yoga to team sports, Vikram ensures every child stays active and joyful.</p>
-                </div>
-                <div class="team-card" style="--c:var(--purple);">
-                    <div class="team-avatar"><i class="bi bi-person"></i></div>
-                    <h4>Mrs. Priya Menon</h4>
-                    <div class="role">Art &amp; Music Teacher</div>
-                    <p>An artist at heart, Priya brings creativity into every session — from painting to rhythm and rhyme.</p>
-                </div>
-            </div>
-        </div>
-
-        <svg class="wave-divider" viewBox="0 0 1440 90" preserveAspectRatio="none" aria-hidden="true">
-            <path d="M0,40 C240,90 480,0 720,30 C960,60 1200,10 1440,40 L1440,90 L0,90 Z"></path>
-        </svg>
-    </section>
-
-    <!-- ===== TESTIMONIALS ===== -->
-    <section class="testimonials" id="testimonials">
-        <div class="section-wrap">
-            <p class="eyebrow eyebrow-yellow" style="color:var(--yellow);"><i class="bi bi-chat-quote"></i> Testimonials</p>
-            <h2 class="section-title">What parents say about us</h2>
-            <p class="section-lead">The best reflections of our school come from the families who trust us with their children every day.</p>
-
-            <div class="testimonial-grid">
-                <div class="testimonial-card" style="--c:var(--blue);">
-                    <div class="quote-icon"><i class="bi bi-quote"></i></div>
-                    <blockquote>"My daughter was shy and hesitant before joining Sri Rainbow. Now she sings, shares stories, and runs to school every morning. The warmth of the teachers has made all the difference."</blockquote>
-                    <div class="testi-author">
-                        <div class="testi-avatar" style="--c:var(--blue);">S</div>
-                        <div>
-                            <div class="testi-name">Sneha Patel</div>
-                            <div class="testi-relation">Parent of UKG student</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="testimonial-card" style="--c:var(--green);">
-                    <div class="quote-icon"><i class="bi bi-quote"></i></div>
-                    <blockquote>"We chose Sri Rainbow for its values — and we've never looked back. Our son has grown in confidence, kindness, and curiosity. The school truly feels like an extension of our family."</blockquote>
-                    <div class="testi-author">
-                        <div class="testi-avatar" style="--c:var(--green);">R</div>
-                        <div>
-                            <div class="testi-name">Rajesh Kumar</div>
-                            <div class="testi-relation">Parent of Class 2 student</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="testimonial-card" style="--c:var(--orange);">
-                    <div class="quote-icon"><i class="bi bi-quote"></i></div>
-                    <blockquote>"The teachers know my child by name, by personality, and by what makes her tick. It's not just a school — it's a community that truly cares."</blockquote>
-                    <div class="testi-author">
-                        <div class="testi-avatar" style="--c:var(--orange);">M</div>
-                        <div>
-                            <div class="testi-name">Meera Iyer</div>
-                            <div class="testi-relation">Parent of Nursery student</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <svg class="wave-divider wave-yellow" viewBox="0 0 1440 90" preserveAspectRatio="none" aria-hidden="true">
-            <path d="M0,50 C240,10 480,90 720,50 C960,10 1200,70 1440,30 L1440,90 L0,90 Z"></path>
-        </svg>
-    </section>
-
-    <!-- ===== CTA BANNER ===== -->
-    <section class="cta-banner">
-        <h2>Come see the rainbow for yourself</h2>
-        <p>Visit our campus, meet our teachers, and experience the warmth of Sri Rainbow School. We'd love to welcome you.</p>
-        <button class="btn-primary btn-light" id="openEnquireBtn3"><i class="bi bi-send-check"></i> Book a Campus Visit</button>
-    </section>
-
-    <!-- ===== CONTACT SHORT ===== -->
-    <section class="contact-short" id="contact">
-        <div class="section-wrap">
-            <p class="eyebrow eyebrow-red"><i class="bi bi-chat-dots"></i> Get in Touch</p>
-            <h2 class="section-title">We're here to help</h2>
-            <p class="section-lead">Have questions about admissions, curriculum, or a campus tour? Reach out to us anytime.</p>
-
-            <div class="contact-short-grid">
-                <div class="contact-short-item">
-                    <i class="bi bi-geo-alt-fill"></i>
-                    <div><strong>Address</strong><span>Hyderabad, Telangana</span></div>
-                </div>
-                <div class="contact-short-item">
-                    <i class="bi bi-telephone-fill"></i>
-                    <div><strong>Phone</strong><span>+91 90000 00000</span></div>
-                </div>
-                <div class="contact-short-item">
-                    <i class="bi bi-envelope-fill"></i>
-                    <div><strong>Email</strong><span>hello@srirainbowschool.edu.in</span></div>
-                </div>
-                <div class="contact-short-item">
-                    <i class="bi bi-clock-fill"></i>
-                    <div><strong>Hours</strong><span>Mon–Sat, 8:30 AM – 4:30 PM</span></div>
-                </div>
-            </div>
-        </div>
-
-        <svg class="wave-divider wave-navy" viewBox="0 0 1440 90" preserveAspectRatio="none" aria-hidden="true">
-            <path d="M0,45 C240,5 480,85 720,45 C960,5 1200,75 1440,35 L1440,90 L0,90 Z"></path>
-        </svg>
-    </section>
-
-    <!-- ===== FOOTER ===== -->
-    <footer class="site-footer">
-        <div class="footer-wrap">
-            <div class="footer-brand">
-                <img src="logo.jpg" alt="Sri Rainbow School" class="footer-logo" />
-                <p>Recognized by Govt. of Telangana — nurturing curious, kind and confident learners since day one.</p>
-            </div>
-            <div class="footer-links">
-                <h4>Explore</h4>
-                <a href="index.html">Home</a>
-                <a href="about.html">About</a>
-                <a href="index.html#academics">Academics</a>
-                <a href="index.html#gallery">Gallery</a>
-                <a href="index.html#admission">Admission</a>
-                <a href="index.html#contact">Contact</a>
-            </div>
-            <div class="footer-links">
-                <h4>Programmes</h4>
-                <a href="index.html#academics">Play Group / Nursery</a>
-                <a href="index.html#academics">LKG &amp; UKG</a>
-                <a href="index.html#academics">Primary Wing</a>
-            </div>
-            <div class="footer-cta">
-                <h4>Ready to visit?</h4>
-                <button class="btn-primary" id="openEnquireBtn4"><i class="bi bi-send-check"></i> Enquire Now</button>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>&copy; <span id="year"></span> Sri Rainbow School. All rights reserved.</p>
-        </div>
-    </footer>
-
-    <!-- Floating Enquiry Button (mobile) -->
-    <button class="fab-enquire" id="fabEnquireBtn" aria-label="Admission Enquiry"><i class="bi bi-pencil-square"></i></button>
-
-    <!-- ===== ADMISSION ENQUIRY MODAL ===== -->
-    <div class="modal-overlay" id="enquireModal">
-        <div class="modal-card">
-            <button class="modal-close" id="closeEnquireBtn" aria-label="Close form"><i class="bi bi-x-lg"></i></button>
-
-            <div class="modal-side">
-                <div class="modal-side-burst" aria-hidden="true">
-                    <span></span><span></span><span></span><span></span><span></span><span></span>
-                </div>
-                <h3>Let's find your child's<br />perfect fit.</h3>
-                <p>Fill this in and our admissions team will call you within one business day.</p>
-            </div>
-
-            <div class="modal-form-wrap">
-                <h4 id="modalHeading"><i class="bi bi-send-check"></i> Admission Enquiry</h4>
-                <form id="enquireForm">
-                    <div class="field" style="margin-bottom:16px; display:flex; flex-direction:column; gap:6px;">
-                        <label for="pName" style="font-size:.85rem; font-weight:800; color:var(--navy-2);">Parent / Guardian Name</label>
-                        <input type="text" id="pName" required placeholder="Full name" style="border:2px solid rgba(27,42,87,0.12); border-radius:var(--radius-sm); padding:12px 14px; font-family:inherit; font-size:.95rem; color:var(--navy-2); background:var(--cream);" />
-                    </div>
-                    <div class="form-row" style="display:grid; grid-template-columns:1fr 1fr; gap:16px;">
-                        <div class="field" style="margin-bottom:16px; display:flex; flex-direction:column; gap:6px;">
-                            <label for="pPhone" style="font-size:.85rem; font-weight:800; color:var(--navy-2);">Phone Number</label>
-                            <input type="tel" id="pPhone" required placeholder="10-digit number" pattern="[0-9]{10}" style="border:2px solid rgba(27,42,87,0.12); border-radius:var(--radius-sm); padding:12px 14px; font-family:inherit; font-size:.95rem; color:var(--navy-2); background:var(--cream);" />
-                        </div>
-                        <div class="field" style="margin-bottom:16px; display:flex; flex-direction:column; gap:6px;">
-                            <label for="pEmail" style="font-size:.85rem; font-weight:800; color:var(--navy-2);">Email</label>
-                            <input type="email" id="pEmail" placeholder="you@email.com" style="border:2px solid rgba(27,42,87,0.12); border-radius:var(--radius-sm); padding:12px 14px; font-family:inherit; font-size:.95rem; color:var(--navy-2); background:var(--cream);" />
-                        </div>
-                    </div>
-                    <div class="form-row" style="display:grid; grid-template-columns:1fr 1fr; gap:16px;">
-                        <div class="field" style="margin-bottom:16px; display:flex; flex-direction:column; gap:6px;">
-                            <label for="cChild" style="font-size:.85rem; font-weight:800; color:var(--navy-2);">Child's Name</label>
-                            <input type="text" id="cChild" placeholder="Child's name" style="border:2px solid rgba(27,42,87,0.12); border-radius:var(--radius-sm); padding:12px 14px; font-family:inherit; font-size:.95rem; color:var(--navy-2); background:var(--cream);" />
-                        </div>
-                        <div class="field" style="margin-bottom:16px; display:flex; flex-direction:column; gap:6px;">
-                            <label for="pClass" style="font-size:.85rem; font-weight:800; color:var(--navy-2);">Applying For</label>
-                            <select id="pClass" required style="border:2px solid rgba(27,42,87,0.12); border-radius:var(--radius-sm); padding:12px 14px; font-family:inherit; font-size:.95rem; color:var(--navy-2); background:var(--cream);">
-                                <option value="" disabled selected>Select a class</option>
-                                <option>Play Group</option>
-                                <option>Nursery</option>
-                                <option>LKG</option>
-                                <option>UKG</option>
-                                <option>Class 1</option>
-                                <option>Class 2</option>
-                                <option>Class 3</option>
-                                <option>Class 4</option>
-                                <option>Class 5</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="field" style="margin-bottom:16px; display:flex; flex-direction:column; gap:6px;">
-                        <label for="pMsg" style="font-size:.85rem; font-weight:800; color:var(--navy-2);">Message (optional)</label>
-                        <textarea id="pMsg" rows="3" placeholder="Anything you'd like us to know?" style="border:2px solid rgba(27,42,87,0.12); border-radius:var(--radius-sm); padding:12px 14px; font-family:inherit; font-size:.95rem; color:var(--navy-2); background:var(--cream); resize:vertical;"></textarea>
-                    </div>
-                    <button type="submit" class="btn-primary full"><i class="bi bi-send-check"></i> Submit Enquiry</button>
-                </form>
-
-                <div class="modal-success" id="modalSuccess">
-                    <div class="success-burst" aria-hidden="true">
-                        <span></span><span></span><span></span><span></span><span></span><span></span>
-                    </div>
-                    <i class="bi bi-check-circle-fill success-icon"></i>
-                    <h4>Thank you!</h4>
-                    <p>Your enquiry has been received. Our admissions team will call you shortly.</p>
-                    <button class="btn-ghost" id="modalDoneBtn" style="color:var(--navy-2);">Close</button>
-                </div>
-            </div>
-        </div>
+      </div>
     </div>
 
-    <!-- ===== JAVASCRIPT ===== -->
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
+    <svg class="wave-divider wave-yellow" viewBox="0 0 1440 90" preserveAspectRatio="none" aria-hidden="true">
+      <path d="M0,50 C240,10 480,90 720,50 C960,10 1200,70 1440,30 L1440,90 L0,90 Z"></path>
+    </svg>
+  </section>
 
-            /* ---------- Footer year ---------- */
-            document.getElementById('year').textContent = new Date().getFullYear();
+  <!-- ===== MISSION & VISION ===== -->
+  <section class="mission-vision" id="mission">
+    <div class="section-wrap">
+      <p class="eyebrow eyebrow-purple"><i class="bi bi-compass"></i> Mission &amp; Vision</p>
+      <h2 class="section-title">What drives us, every single day</h2>
+      <p class="section-lead">Our mission and vision are the colours that guide everything we do — from how we design our classrooms to how we welcome each family.</p>
 
-            /* ---------- Sticky header shadow + scroll progress ---------- */
-            const header = document.getElementById('siteHeader');
-            const scrollRainbow = document.getElementById('scrollRainbow');
+      <div class="mv-grid">
+        <div class="mv-card" style="--c:var(--blue);">
+          <div class="mv-img">
+            <img src="https://picsum.photos/600/200?random=82" alt="Our Mission" loading="lazy" />
+          </div>
+          <div class="mv-content">
+            <div class="mv-icon"><i class="bi bi-heart-fill"></i></div>
+            <h3>Our Mission</h3>
+            <p>To nurture confident, kind, and curious children through play-based, joyful learning experiences that respect each child's own pace and personality.</p>
+            <ul>
+              <li><i class="bi bi-check2"></i> Foster a love for learning from the very first day</li>
+              <li><i class="bi bi-check2"></i> Build emotional and social skills alongside academics</li>
+              <li><i class="bi bi-check2"></i> Create a safe, inclusive space for every child</li>
+            </ul>
+          </div>
+        </div>
+        <div class="mv-card" style="--c:var(--orange);">
+          <div class="mv-img">
+            <img src="https://picsum.photos/600/200?random=83" alt="Our Vision" loading="lazy" />
+          </div>
+          <div class="mv-content">
+            <div class="mv-icon"><i class="bi bi-eye-fill"></i></div>
+            <h3>Our Vision</h3>
+            <p>A school where every colour of every child is celebrated — and where learning feels like discovery, not duty. A place where children grow into confident, compassionate individuals ready to embrace the world.</p>
+            <ul>
+              <li><i class="bi bi-check2"></i> A school that feels like a second home</li>
+              <li><i class="bi bi-check2"></i> Where curiosity is the curriculum</li>
+              <li><i class="bi bi-check2"></i> Building a foundation for lifelong learning</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
 
-            const onScroll = () => {
-                header.classList.toggle('scrolled', window.scrollY > 10);
-                const scrollTop = window.scrollY;
-                const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-                const pct = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
-                scrollRainbow.style.width = pct + '%';
-            };
-            window.addEventListener('scroll', onScroll, { passive: true });
-            onScroll();
+    <svg class="wave-divider wave-purple" viewBox="0 0 1440 90" preserveAspectRatio="none" aria-hidden="true">
+      <path d="M0,30 C240,70 480,10 720,40 C960,70 1200,20 1440,50 L1440,90 L0,90 Z"></path>
+    </svg>
+  </section>
 
-            /* ---------- Mobile nav toggle ---------- */
-            const hamburgerBtn = document.getElementById('hamburgerBtn');
-            const mainNav = document.getElementById('mainNav');
-            hamburgerBtn.addEventListener('click', () => {
-                mainNav.classList.toggle('open');
-                hamburgerBtn.classList.toggle('active');
-            });
-            mainNav.querySelectorAll('.nav-link').forEach(link => {
-                link.addEventListener('click', () => mainNav.classList.remove('open'));
-            });
+  <!-- ===== CORE VALUES ===== -->
+  <section class="values" id="values">
+    <div class="section-wrap">
+      <p class="eyebrow eyebrow-orange"><i class="bi bi-diamond"></i> Our Values</p>
+      <h2 class="section-title">The colours that guide us</h2>
+      <p class="section-lead">At Sri Rainbow School, values aren't just words on a wall — they live in our classrooms, our playgrounds, and in every interaction.</p>
 
-            /* ---------- Admission Enquiry Modal ---------- */
-            const enquireModal = document.getElementById('enquireModal');
-            const enquireForm = document.getElementById('enquireForm');
-            const modalSuccess = document.getElementById('modalSuccess');
-            const modalHeading = document.getElementById('modalHeading');
+      <div class="values-grid">
+        <div class="value-card" style="--c:var(--blue);">
+          <div class="val-img"><img src="https://picsum.photos/300/150?random=84" alt="Love & Care" loading="lazy" /></div>
+          <div class="val-icon val-blue"><i class="bi bi-heart"></i></div>
+          <h4>Love &amp; Care</h4>
+          <p>Every child is wrapped in warmth and kindness, building trust and emotional security from day one.</p>
+        </div>
+        <div class="value-card" style="--c:var(--green);">
+          <div class="val-img"><img src="https://picsum.photos/300/150?random=85" alt="Curiosity & Wonder" loading="lazy" /></div>
+          <div class="val-icon val-green"><i class="bi bi-tree"></i></div>
+          <h4>Curiosity &amp; Wonder</h4>
+          <p>We encourage questions, exploration, and the joy of discovery in every subject and activity.</p>
+        </div>
+        <div class="value-card" style="--c:var(--yellow);">
+          <div class="val-img"><img src="https://picsum.photos/300/150?random=86" alt="Inclusion & Respect" loading="lazy" /></div>
+          <div class="val-icon val-yellow"><i class="bi bi-people"></i></div>
+          <h4>Inclusion &amp; Respect</h4>
+          <p>Every child is unique, and we celebrate those differences while nurturing mutual respect.</p>
+        </div>
+        <div class="value-card" style="--c:var(--purple);">
+          <div class="val-img"><img src="https://picsum.photos/300/150?random=87" alt="Excellence & Effort" loading="lazy" /></div>
+          <div class="val-icon val-purple"><i class="bi bi-trophy"></i></div>
+          <h4>Excellence &amp; Effort</h4>
+          <p>We believe in doing our best — not just in academics, but in character, creativity, and community.</p>
+        </div>
+        <div class="value-card" style="--c:var(--red);">
+          <div class="val-img"><img src="https://picsum.photos/300/150?random=88" alt="Safety & Trust" loading="lazy" /></div>
+          <div class="val-icon val-red"><i class="bi bi-shield-check"></i></div>
+          <h4>Safety &amp; Trust</h4>
+          <p>A secure environment where children and parents alike feel confident and at ease.</p>
+        </div>
+        <div class="value-card" style="--c:var(--orange);">
+          <div class="val-img"><img src="https://picsum.photos/300/150?random=89" alt="Joy & Play" loading="lazy" /></div>
+          <div class="val-icon val-orange"><i class="bi bi-palette"></i></div>
+          <h4>Joy &amp; Play</h4>
+          <p>We believe childhood should be filled with laughter, movement, and the freedom to imagine.</p>
+        </div>
+      </div>
+    </div>
 
-            const openTriggers = [
-                'openEnquireBtn1', 'openEnquireBtn2', 'openEnquireBtn3', 'openEnquireBtn4', 'fabEnquireBtn'
-            ];
-            openTriggers.forEach(id => {
-                const btn = document.getElementById(id);
-                if (btn) btn.addEventListener('click', openEnquireModal);
-            });
+    <svg class="wave-divider wave-yellow" viewBox="0 0 1440 90" preserveAspectRatio="none" aria-hidden="true">
+      <path d="M0,50 C240,10 480,90 720,50 C960,10 1200,70 1440,30 L1440,90 L0,90 Z"></path>
+    </svg>
+  </section>
 
-            function openEnquireModal() {
-                enquireModal.classList.add('open');
-                document.body.style.overflow = 'hidden';
-            }
+  <!-- ===== FACILITIES ===== -->
+  <section class="facilities" id="facilities">
+    <div class="section-wrap">
+      <p class="eyebrow eyebrow-blue"><i class="bi bi-building"></i> Facilities</p>
+      <h2 class="section-title">A campus made for little hands and big ideas</h2>
+      <p class="section-lead">Every corner of our school is designed with children in mind — bright, safe, and full of possibilities.</p>
 
-            function closeEnquireModal() {
-                enquireModal.classList.remove('open');
-                document.body.style.overflow = '';
-                setTimeout(() => {
-                    modalSuccess.classList.remove('show');
-                    enquireForm.style.display = '';
-                    modalHeading.style.display = '';
-                    enquireForm.reset();
-                }, 300);
-            }
-            document.getElementById('closeEnquireBtn').addEventListener('click', closeEnquireModal);
-            enquireModal.addEventListener('click', e => { if (e.target === enquireModal) closeEnquireModal(); });
-            document.addEventListener('keydown', e => { if (e.key === 'Escape') closeEnquireModal(); });
-            document.getElementById('modalDoneBtn').addEventListener('click', closeEnquireModal);
+      <div class="fac-grid">
+        <div class="fac-card">
+          <div class="fac-img"><img src="https://picsum.photos/400/180?random=90" alt="Classrooms" loading="lazy" /></div>
+          <div class="fac-content">
+            <div class="fac-icon"><i class="bi bi-house-door"></i></div>
+            <div>
+              <h4>Bright, Spacious Classrooms</h4>
+              <p>Colourful, well-ventilated rooms with child-sized furniture and learning corners for every subject.</p>
+            </div>
+          </div>
+        </div>
+        <div class="fac-card">
+          <div class="fac-img"><img src="https://picsum.photos/400/180?random=91" alt="Playground" loading="lazy" /></div>
+          <div class="fac-content">
+            <div class="fac-icon"><i class="bi bi-play"></i></div>
+            <div>
+              <h4>Safe Playground</h4>
+              <p>A large, shaded outdoor space with age-appropriate swings, slides, and climbing structures.</p>
+            </div>
+          </div>
+        </div>
+        <div class="fac-card">
+          <div class="fac-img"><img src="https://picsum.photos/400/180?random=92" alt="Library" loading="lazy" /></div>
+          <div class="fac-content">
+            <div class="fac-icon"><i class="bi bi-book"></i></div>
+            <div>
+              <h4>Library &amp; Reading Nook</h4>
+              <p>A cosy library filled with picture books, storybooks, and early readers to spark a love for reading.</p>
+            </div>
+          </div>
+        </div>
+        <div class="fac-card">
+          <div class="fac-img"><img src="https://picsum.photos/400/180?random=93" alt="Art Studio" loading="lazy" /></div>
+          <div class="fac-content">
+            <div class="fac-icon"><i class="bi bi-easel2"></i></div>
+            <div>
+              <h4>Art &amp; Craft Studio</h4>
+              <p>A dedicated space for painting, clay work, crafts and creative expression.</p>
+            </div>
+          </div>
+        </div>
+        <div class="fac-card">
+          <div class="fac-img"><img src="https://picsum.photos/400/180?random=94" alt="Music Room" loading="lazy" /></div>
+          <div class="fac-content">
+            <div class="fac-icon"><i class="bi bi-music-note-beamed"></i></div>
+            <div>
+              <h4>Music &amp; Movement Room</h4>
+              <p>Instruments, rhythm, and dance — a space where children explore sound and motion.</p>
+            </div>
+          </div>
+        </div>
+        <div class="fac-card">
+          <div class="fac-img"><img src="https://picsum.photos/400/180?random=95" alt="Security" loading="lazy" /></div>
+          <div class="fac-content">
+            <div class="fac-icon"><i class="bi bi-shield-lock"></i></div>
+            <div>
+              <h4>CCTV &amp; Security</h4>
+              <p>24/7 monitored campus with trained staff and secure entry protocols for complete peace of mind.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
-            enquireForm.addEventListener('submit', e => {
-                e.preventDefault();
-                enquireForm.style.display = 'none';
-                modalHeading.style.display = 'none';
-                modalSuccess.classList.add('show');
-            });
+    <svg class="wave-divider wave-purple" viewBox="0 0 1440 90" preserveAspectRatio="none" aria-hidden="true">
+      <path d="M0,30 C240,70 480,10 720,40 C960,70 1200,20 1440,50 L1440,90 L0,90 Z"></path>
+    </svg>
+  </section>
 
+  <!-- ===== TEAM ===== -->
+  <section class="team" id="team">
+    <div class="section-wrap">
+      <p class="eyebrow eyebrow-red"><i class="bi bi-people-fill"></i> Our Team</p>
+      <h2 class="section-title">The hearts and hands behind the rainbow</h2>
+      <p class="section-lead">Our teachers are the soul of Sri Rainbow School — warm, skilled, and deeply committed to every child's growth.</p>
+
+      <div class="team-grid">
+        <div class="team-card" style="--c:var(--blue);">
+          <div class="team-img"><img src="https://picsum.photos/300/150?random=96" alt="Lakshmi Reddy" loading="lazy" /></div>
+          <div class="team-avatar"><i class="bi bi-person"></i></div>
+          <h4>Mrs. Lakshmi Reddy</h4>
+          <div class="role">Founder &amp; Principal</div>
+          <p>Over 25 years of experience in early childhood education. A passionate believer in learning through play.</p>
+          <div class="social-links">
+            <a href="#"><i class="bi bi-linkedin"></i></a>
+            <a href="#"><i class="bi bi-envelope"></i></a>
+          </div>
+        </div>
+        <div class="team-card" style="--c:var(--green);">
+          <div class="team-img"><img src="https://picsum.photos/300/150?random=97" alt="Sunita Rao" loading="lazy" /></div>
+          <div class="team-avatar"><i class="bi bi-person"></i></div>
+          <h4>Mrs. Sunita Rao</h4>
+          <div class="role">Head of Academics</div>
+          <p>Curriculum specialist with a focus on phonics, numeracy, and child-centred assessment.</p>
+          <div class="social-links">
+            <a href="#"><i class="bi bi-linkedin"></i></a>
+            <a href="#"><i class="bi bi-envelope"></i></a>
+          </div>
+        </div>
+        <div class="team-card" style="--c:var(--orange);">
+          <div class="team-img"><img src="https://picsum.photos/300/150?random=98" alt="Vikram Singh" loading="lazy" /></div>
+          <div class="team-avatar"><i class="bi bi-person"></i></div>
+          <h4>Mr. Vikram Singh</h4>
+          <div class="role">Sports &amp; Activities Coordinator</div>
+          <p>Making movement fun — from yoga to team sports, Vikram ensures every child stays active and joyful.</p>
+          <div class="social-links">
+            <a href="#"><i class="bi bi-linkedin"></i></a>
+            <a href="#"><i class="bi bi-envelope"></i></a>
+          </div>
+        </div>
+        <div class="team-card" style="--c:var(--purple);">
+          <div class="team-img"><img src="https://picsum.photos/300/150?random=99" alt="Priya Menon" loading="lazy" /></div>
+          <div class="team-avatar"><i class="bi bi-person"></i></div>
+          <h4>Mrs. Priya Menon</h4>
+          <div class="role">Art &amp; Music Teacher</div>
+          <p>An artist at heart, Priya brings creativity into every session — from painting to rhythm and rhyme.</p>
+          <div class="social-links">
+            <a href="#"><i class="bi bi-linkedin"></i></a>
+            <a href="#"><i class="bi bi-envelope"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <svg class="wave-divider" viewBox="0 0 1440 90" preserveAspectRatio="none" aria-hidden="true">
+      <path d="M0,40 C240,90 480,0 720,30 C960,60 1200,10 1440,40 L1440,90 L0,90 Z"></path>
+    </svg>
+  </section>
+
+  <!-- ===== TESTIMONIALS ===== -->
+  <section class="testimonials" id="testimonials">
+    <div class="section-wrap">
+      <p class="eyebrow eyebrow-yellow" style="color:var(--yellow);"><i class="bi bi-chat-quote"></i> Testimonials</p>
+      <h2 class="section-title">What parents say about us</h2>
+      <p class="section-lead">The best reflections of our school come from the families who trust us with their children every day.</p>
+
+      <div class="testimonial-grid">
+        <div class="testimonial-card" style="--c:var(--blue);">
+          <div class="stars"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></div>
+          <div class="quote-icon"><i class="bi bi-quote"></i></div>
+          <blockquote>"My daughter was shy and hesitant before joining Sri Rainbow. Now she sings, shares stories, and runs to school every morning. The warmth of the teachers has made all the difference."</blockquote>
+          <div class="testi-author">
+            <div class="testi-avatar" style="--c:var(--blue);">S</div>
+            <div>
+              <div class="testi-name">Sneha Patel</div>
+              <div class="testi-relation">Parent of UKG student</div>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card" style="--c:var(--green);">
+          <div class="stars"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></div>
+          <div class="quote-icon"><i class="bi bi-quote"></i></div>
+          <blockquote>"We chose Sri Rainbow for its values — and we've never looked back. Our son has grown in confidence, kindness, and curiosity. The school truly feels like an extension of our family."</blockquote>
+          <div class="testi-author">
+            <div class="testi-avatar" style="--c:var(--green);">R</div>
+            <div>
+              <div class="testi-name">Rajesh Kumar</div>
+              <div class="testi-relation">Parent of Class 2 student</div>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card" style="--c:var(--orange);">
+          <div class="stars"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></div>
+          <div class="quote-icon"><i class="bi bi-quote"></i></div>
+          <blockquote>"The teachers know my child by name, by personality, and by what makes her tick. It's not just a school — it's a community that truly cares."</blockquote>
+          <div class="testi-author">
+            <div class="testi-avatar" style="--c:var(--orange);">M</div>
+            <div>
+              <div class="testi-name">Meera Iyer</div>
+              <div class="testi-relation">Parent of Nursery student</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <svg class="wave-divider wave-yellow" viewBox="0 0 1440 90" preserveAspectRatio="none" aria-hidden="true">
+      <path d="M0,50 C240,10 480,90 720,50 C960,10 1200,70 1440,30 L1440,90 L0,90 Z"></path>
+    </svg>
+  </section>
+
+  <!-- ===== CTA BANNER ===== -->
+  <!-- <section class="cta-banner">
+    <h2>Come see the rainbow for yourself</h2>
+    <p>Visit our campus, meet our teachers, and experience the warmth of Sri Rainbow School. We'd love to welcome you.</p>
+    <button class="btn-primary btn-light" id="openEnquireBtn3"><i class="bi bi-send-check"></i> Book a Campus Visit</button>
+  </section> -->
+
+  <!-- ===== CONTACT SHORT ===== -->
+  <section class="contact-short" id="contact">
+    <div class="section-wrap">
+      <p class="eyebrow eyebrow-red"><i class="bi bi-chat-dots"></i> Get in Touch</p>
+      <h2 class="section-title">We're here to help</h2>
+      <p class="section-lead">Have questions about admissions, curriculum, or a campus tour? Reach out to us anytime.</p>
+
+      <div class="contact-short-grid">
+        <div class="contact-short-item">
+          <i class="bi bi-geo-alt-fill"></i>
+          <div><strong>Address</strong><span>Hyderabad, Telangana</span></div>
+        </div>
+        <div class="contact-short-item">
+          <i class="bi bi-telephone-fill"></i>
+          <div><strong>Phone</strong><span>+91 90000 00000</span></div>
+        </div>
+        <div class="contact-short-item">
+          <i class="bi bi-envelope-fill"></i>
+          <div><strong>Email</strong><span>hello@srirainbowschool.edu.in</span></div>
+        </div>
+        <div class="contact-short-item">
+          <i class="bi bi-clock-fill"></i>
+          <div><strong>Hours</strong><span>Mon–Sat, 8:30 AM – 4:30 PM</span></div>
+        </div>
+      </div>
+    </div>
+
+    <svg class="wave-divider wave-navy" viewBox="0 0 1440 90" preserveAspectRatio="none" aria-hidden="true">
+      <path d="M0,45 C240,5 480,85 720,45 C960,5 1200,75 1440,35 L1440,90 L0,90 Z"></path>
+    </svg>
+  </section>
+
+  <!-- ============ FOOTER (loaded from footer.html) ============ -->
+  <!-- ============ FOOTER ============ -->
+<footer class="site-footer">
+  <div class="footer-wrap">
+    <div class="footer-brand">
+      <img src="logo.jpg" alt="Sri Rainbow School" class="footer-logo">
+      <p>Recognized by Govt. of Telangana &mdash; nurturing curious, kind and confident learners since day one.</p>
+    </div>
+    <div class="footer-links">
+      <h4>Explore</h4>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="academics.html">Academics</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="admission.html">Admission</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <div class="footer-links">
+      <h4>Programmes</h4>
+      <a href="#academics">Play Group / Nursery</a>
+      <a href="#academics">LKG &amp; UKG</a>
+      <a href="#academics">Primary Wing</a>
+    </div>
+    <div class="footer-cta">
+      <h4>Ready to visit?</h4>
+      <button class="btn-primary" id="openEnquireBtn4"><i class="bi bi-send-check"></i> Enquire Now</button>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; <span id="year"></span> Sri Rainbow School. All rights reserved.</p>
+  </div>
+</footer>
+
+  <!-- ============ ADMISSION ENQUIRY MODAL ============ -->
+  <div class="modal-overlay" id="enquireModal">
+    <div class="modal-card">
+      <button class="modal-close" id="closeEnquireBtn" aria-label="Close form"><i class="bi bi-x-lg"></i></button>
+
+      <div class="modal-side">
+        <div class="modal-side-burst" aria-hidden="true">
+          <span></span><span></span><span></span><span></span><span></span><span></span>
+        </div>
+        <h3>Let's find your child's<br />perfect fit.</h3>
+        <p>Fill this in and our admissions team will call you within one business day.</p>
+      </div>
+
+      <div class="modal-form-wrap">
+        <h4 id="modalHeading"><i class="bi bi-send-check"></i> Admission Enquiry</h4>
+        <form id="enquireForm">
+          <div class="field">
+            <label for="pName">Parent / Guardian Name</label>
+            <input type="text" id="pName" required placeholder="Full name" />
+          </div>
+          <div class="form-row">
+            <div class="field">
+              <label for="pPhone">Phone Number</label>
+              <input type="tel" id="pPhone" required placeholder="10-digit number" pattern="[0-9]{10}" />
+            </div>
+            <div class="field">
+              <label for="pEmail">Email</label>
+              <input type="email" id="pEmail" placeholder="you@email.com" />
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="field">
+              <label for="cChild">Child's Name</label>
+              <input type="text" id="cChild" placeholder="Child's name" />
+            </div>
+            <div class="field">
+              <label for="pClass">Applying For</label>
+              <select id="pClass" required>
+                <option value="" disabled selected>Select a class</option>
+                <option>Play Group</option>
+                <option>Nursery</option>
+                <option>LKG</option>
+                <option>UKG</option>
+                <option>Class 1</option>
+                <option>Class 2</option>
+                <option>Class 3</option>
+                <option>Class 4</option>
+                <option>Class 5</option>
+              </select>
+            </div>
+          </div>
+          <div class="field">
+            <label for="pMsg">Message (optional)</label>
+            <textarea id="pMsg" rows="3" placeholder="Anything you'd like us to know?"></textarea>
+          </div>
+          <button type="submit" class="btn-primary full"><i class="bi bi-send-check"></i> Submit Enquiry</button>
+        </form>
+
+        <div class="modal-success" id="modalSuccess">
+          <div class="success-burst" aria-hidden="true">
+            <span></span><span></span><span></span><span></span><span></span><span></span>
+          </div>
+          <i class="bi bi-check-circle-fill success-icon"></i>
+          <h4>Thank you!</h4>
+          <p>Your enquiry has been received. Our admissions team will call you shortly.</p>
+          <button class="btn-ghost" id="modalDoneBtn" style="color:var(--navy-2);">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Floating Enquiry Button (mobile) -->
+  <button class="fab-enquire" id="fabEnquireBtn" aria-label="Admission Enquiry"><i class="bi bi-pencil-square"></i></button>
+
+  <!-- ============ SCRIPTS ============ -->
+  <script>
+    // --- Load footer from home page ---
+    async function loadComponent(id, url) {
+      try {
+        const res = await fetch(url);
+        if (!res.ok) throw new Error(`HTTP ${res.status}`);
+        const html = await res.text();
+        document.getElementById(id).innerHTML = html;
+      } catch (err) {
+        console.warn(`Failed to load ${url}:`, err);
+      }
+    }
+
+    loadComponent('footer-placeholder', 'footer.html');
+
+    // --- Main functionality ---
+    document.addEventListener('DOMContentLoaded', () => {
+
+      // ---- Sticky header shadow + scroll progress ----
+      const header = document.getElementById('siteHeader');
+      const scrollRainbow = document.getElementById('scrollRainbow');
+
+      const onScroll = () => {
+        if (header) header.classList.toggle('scrolled', window.scrollY > 10);
+        const scrollTop = window.scrollY;
+        const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+        const pct = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+        if (scrollRainbow) scrollRainbow.style.width = pct + '%';
+      };
+      window.addEventListener('scroll', onScroll, { passive: true });
+      setTimeout(onScroll, 100);
+
+      // ---- Mobile nav toggle ----
+      const hamburgerBtn = document.getElementById('hamburgerBtn');
+      const mainNav = document.getElementById('mainNav');
+      if (hamburgerBtn && mainNav) {
+        hamburgerBtn.addEventListener('click', () => {
+          mainNav.classList.toggle('open');
+          hamburgerBtn.classList.toggle('active');
         });
-    </script>
+        mainNav.querySelectorAll('.nav-link').forEach(link => {
+          link.addEventListener('click', () => mainNav.classList.remove('open'));
+        });
+      }
+
+      // ---- Stats counter animation ----
+      const stats = document.querySelectorAll('.stats-bar .stat-number');
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const el = entry.target;
+            const text = el.textContent;
+            const num = parseInt(text.replace(/[^0-9]/g, ''));
+            if (num) {
+              let current = 0;
+              const step = Math.ceil(num / 40);
+              const interval = setInterval(() => {
+                current += step;
+                if (current >= num) { current = num; clearInterval(interval); }
+                el.innerHTML = text.replace(/[0-9,]+/, current.toLocaleString());
+              }, 30);
+            }
+            observer.unobserve(el);
+          }
+        });
+      }, { threshold: 0.3 });
+      stats.forEach(stat => observer.observe(stat));
+
+      // ---- Admission Enquiry Modal ----
+      const enquireModal = document.getElementById('enquireModal');
+      const enquireForm = document.getElementById('enquireForm');
+      const modalSuccess = document.getElementById('modalSuccess');
+      const modalHeading = document.getElementById('modalHeading');
+
+      if (enquireModal && enquireForm && modalSuccess && modalHeading) {
+        const openTriggers = [
+          'openEnquireBtn1', 'openEnquireBtn2', 'openEnquireBtn3', 'openEnquireBtn4', 'fabEnquireBtn'
+        ];
+        openTriggers.forEach(id => {
+          const btn = document.getElementById(id);
+          if (btn) {
+            btn.addEventListener('click', openEnquireModal);
+          }
+        });
+
+        function openEnquireModal() {
+          enquireModal.classList.add('open');
+          document.body.style.overflow = 'hidden';
+        }
+
+        function closeEnquireModal() {
+          enquireModal.classList.remove('open');
+          document.body.style.overflow = '';
+          setTimeout(() => {
+            modalSuccess.classList.remove('show');
+            enquireForm.style.display = '';
+            modalHeading.style.display = '';
+            enquireForm.reset();
+          }, 300);
+        }
+
+        document.getElementById('closeEnquireBtn').addEventListener('click', closeEnquireModal);
+        enquireModal.addEventListener('click', e => { if (e.target === enquireModal) closeEnquireModal(); });
+        document.addEventListener('keydown', e => { if (e.key === 'Escape') closeEnquireModal(); });
+        document.getElementById('modalDoneBtn').addEventListener('click', closeEnquireModal);
+
+        enquireForm.addEventListener('submit', e => {
+          e.preventDefault();
+          enquireForm.style.display = 'none';
+          modalHeading.style.display = 'none';
+          modalSuccess.classList.add('show');
+        });
+      }
+
+      // ---- Footer year ----
+      const yearEl = document.getElementById('year');
+      if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+    });
+  </script>
 
 </body>
-</html>     
+</html>
