@@ -181,7 +181,7 @@
         }
         .brand-logo {
             height: 78px;
-            width: 180px;
+            width: 148px;
         }
         .main-nav {
             display: flex;
@@ -239,49 +239,87 @@
             height: 3px;
             border-radius: 2px;
             background: var(--navy);
+            transition: 0.2s ease;
+        }
+        .hamburger.active span:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 6px);
+        }
+        .hamburger.active span:nth-child(2) {
+            opacity: 0;
+        }
+        .hamburger.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(5px, -6px);
         }
 
         /* ==========================================================================
-           Gallery Hero
+           Gallery Hero — Clean Centered (matching Admission page)
            ========================================================================== */
         .gallery-hero {
             position: relative;
             background: var(--navy-2);
             color: #fff;
-            padding-top: 20px;
+            min-height: 50vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             overflow: hidden;
         }
-        .gallery-hero-blobs {
+        .gallery-hero::before {
+            content: '';
             position: absolute;
             inset: 0;
+            background: url('bg.jpg') center/cover no-repeat;
+            opacity: 0.08;
             z-index: 0;
         }
-        .blob {
+
+        /* Decorative rings — same as Admission page */
+        .gallery-hero .rings {
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
+            z-index: 0;
+        }
+        .gallery-hero .ring {
             position: absolute;
             border-radius: 50%;
-            filter: blur(50px);
-            opacity: .35;
+            border: 2px solid rgba(255, 255, 255, 0.04);
+            animation: ringPulse 8s ease-in-out infinite;
         }
-        .blob-a {
-            width: 380px;
-            height: 380px;
-            background: var(--purple);
-            top: -120px;
-            left: -100px;
+        .gallery-hero .ring:nth-child(1) {
+            width: 400px;
+            height: 400px;
+            top: 10%;
+            right: -5%;
+            animation-delay: 0s;
         }
-        .blob-b {
-            width: 320px;
-            height: 320px;
-            background: var(--blue);
-            bottom: -140px;
-            right: -80px;
+        .gallery-hero .ring:nth-child(2) {
+            width: 300px;
+            height: 300px;
+            bottom: 10%;
+            left: -5%;
+            animation-delay: 3s;
+            border-color: rgba(255, 255, 255, 0.03);
         }
-        .blob-c {
-            width: 220px;
-            height: 220px;
-            background: var(--green);
-            top: 40%;
-            right: 12%;
+        .gallery-hero .ring:nth-child(3) {
+            width: 200px;
+            height: 200px;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            animation-delay: 5s;
+            border-color: rgba(255, 255, 255, 0.02);
+        }
+        @keyframes ringPulse {
+            0%,
+            100% {
+                transform: scale(1);
+                opacity: 0.4;
+            }
+            50% {
+                transform: scale(1.15);
+                opacity: 1;
+            }
         }
 
         .gallery-hero-inner {
@@ -289,38 +327,51 @@
             z-index: 1;
             max-width: 1240px;
             margin: 0 auto;
-            padding: 64px 32px 110px;
-            display: grid;
-            grid-template-columns: 1fr 0.85fr;
-            gap: 40px;
+            padding: 60px 32px;
+            display: flex;
+            flex-direction: column;
             align-items: center;
+            justify-content: center;
+            text-align: center;
+            width: 100%;
         }
-        .gallery-hero-copy .eyebrow {
+        .gallery-hero-inner .eyebrow {
             color: #FFE59A;
+            margin-bottom: 14px;
+            justify-content: center;
         }
         .gallery-hero-title {
-            font-size: clamp(2.3rem, 4.6vw, 3.6rem);
+            font-size: clamp(2.5rem, 5vw, 4rem);
             font-weight: 800;
             color: #fff;
+            line-height: 1.1;
+            max-width: 800px;
+            margin: 0 auto;
         }
         .rainbow-text {
-            background: linear-gradient(90deg, #7B4FA0, #2E5AAC, #4CAF6D, #FFC93C, #F4863A, #E63946);
+            background: linear-gradient(90deg, #FFE59A, #FFC93C, #F4863A, #E63946, #7B4FA0, #2E5AAC);
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
+            animation: rainbowShift 6s ease-in-out infinite alternate;
+        }
+        @keyframes rainbowShift {
+            0% { background-position: 0% 50%; }
+            100% { background-position: 100% 50%; }
         }
         .gallery-hero-sub {
             margin-top: 20px;
             font-size: 1.1rem;
             line-height: 1.7;
             color: #C7CFEE;
-            max-width: 520px;
+            max-width: 560px;
         }
         .gallery-hero-actions {
             display: flex;
             gap: 16px;
             margin-top: 34px;
             flex-wrap: wrap;
+            justify-content: center;
         }
 
         .btn-primary {
@@ -494,11 +545,10 @@
 
         .gallery-grid {
             display: grid;
-            grid-template-columns: repeat(4, 1fr);
+            grid-template-columns: repeat(2, 1fr);
             gap: 20px;
         }
         .gal-item {
-            aspect-ratio: 1/1;
             border-radius: var(--radius-md);
             background: color-mix(in srgb, var(--c) 14%, white);
             display: flex;
@@ -510,11 +560,13 @@
             position: relative;
             overflow: hidden;
             transition: transform .25s ease, box-shadow .25s ease;
+            aspect-ratio: 4/3;
+            min-height: 250px;
         }
         .gal-item img {
             width: 100%;
-            height: 100%;
-            object-fit: cover;
+            height: auto;
+            object-fit: contain;
             transition: transform .4s ease;
         }
         .gal-item:hover img {
@@ -1093,38 +1145,25 @@
 
         @media (max-width: 760px) {
             .main-nav {
-                position: fixed;
-                top: 78px;
-                left: 0;
-                right: 0;
+                position: fixed; top: 100%; left: 0; right: 0;
                 background: var(--cream);
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 0;
-                padding: 10px 28px 20px;
+                flex-direction: column; align-items: stretch; gap: 0;
+                margin-left: 0; padding: 8px 24px 32px;
                 box-shadow: 0 14px 24px -14px rgba(27, 42, 87, 0.3);
-                transform: translateY(-140%);
-                opacity: 0;
-                transition: transform .25s ease, opacity .2s ease;
+                transform: translateY(-100%); opacity: 0;
+                transition: transform .3s cubic-bezier(0.4, 0, 0.2, 1), opacity .3s;
+                z-index: 502; border-bottom: none; overflow-y: auto;
+                -webkit-overflow-scrolling: touch;
             }
-            .main-nav.open {
-                transform: translateY(0);
-                opacity: 1;
-            }
-            .main-nav a {
-                padding: 12px 0;
-                width: 100%;
-                border-bottom: 1px solid rgba(27, 42, 87, 0.06);
-            }
+            .main-nav.open { transform: translateY(0); opacity: 1; }
+            .main-nav a { padding: 14px 0; width: 100%; border-bottom: 1px solid rgba(27, 42, 87, 0.06); font-size: 1rem; }
             .hamburger {
-                display: flex;
+                display: flex; min-width: 44px; min-height: 44px;
+                align-items: center; justify-content: center; z-index: 503; margin-left: auto;
             }
-            .btn-enquire {
-                display: none;
-            }
-            .fab-enquire {
-                display: flex;
-            }
+            .nav-wrap { position: relative; z-index: 503; }
+            .btn-enquire { display: none; }
+            .fab-enquire { display: flex; }
 
             .gallery-grid {
                 grid-template-columns: repeat(2, 1fr);
@@ -1132,6 +1171,12 @@
             }
             .stats-grid {
                 grid-template-columns: 1fr 1fr;
+            }
+            .gallery-hero {
+                min-height: 25vh;
+            }
+            .gallery-hero-inner {
+                padding: 40px 22px;
             }
             .filter-bar {
                 gap: 8px;
@@ -1250,51 +1295,20 @@
 
     <!-- ===== GALLERY HERO ===== -->
     <section class="gallery-hero">
-        <div class="gallery-hero-blobs" aria-hidden="true">
-            <span class="blob blob-a"></span>
-            <span class="blob blob-b"></span>
-            <span class="blob blob-c"></span>
+        <div class="rings" aria-hidden="true">
+            <span class="ring"></span>
+            <span class="ring"></span>
+            <span class="ring"></span>
         </div>
-
         <div class="gallery-hero-inner">
-            <div class="gallery-hero-copy">
-                <p class="eyebrow"><i class="bi bi-images"></i> Gallery</p>
-                <h1 class="gallery-hero-title">Moments in <span class="rainbow-text">full colour.</span></h1>
-                <p class="gallery-hero-sub">A peek into our everyday — painted hands, sports days, story circles, and all the little wins in between. Every image tells a story of joy, discovery, and belonging.</p>
-                <div class="gallery-hero-actions">
-                    <button class="btn-primary" id="openEnquireBtn2"><i class="bi bi-send-check"></i> Enquire About Admissions</button>
-                    <a href="#galleryGrid" class="btn-ghost">Explore Photos <i class="bi bi-arrow-down-right"></i></a>
-                </div>
-            </div>
-
-            <div class="gallery-hero-art">
-                <svg class="rainbow-burst" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                    <g class="petals" transform="translate(200,260)">
-                        <path class="petal p1" d="M0,0 C-10,-90 -30,-160 -70,-210 C-40,-160 -20,-90 -8,-4 Z"/>
-                        <path class="petal p2" d="M0,0 C-20,-110 -40,-180 -30,-250 C0,-190 10,-110 4,-4 Z"/>
-                        <path class="petal p3" d="M0,0 C-2,-120 4,-200 30,-260 C20,-190 8,-110 0,-4 Z"/>
-                        <path class="petal p4" d="M0,0 C14,-110 34,-180 70,-230 C40,-170 22,-100 6,-4 Z"/>
-                        <path class="petal p5" d="M0,0 C24,-90 54,-140 100,-175 C66,-130 40,-80 12,-4 Z"/>
-                        <path class="petal p6" d="M0,0 C34,-60 74,-90 120,-100 C82,-80 50,-50 16,-4 Z"/>
-                        <circle class="petal-core" cx="0" cy="-4" r="14"/>
-                    </g>
-                    <g class="cloud" transform="translate(60,320)">
-                        <ellipse cx="0" cy="0" rx="46" ry="22"/>
-                        <ellipse cx="30" cy="-8" rx="30" ry="20"/>
-                        <ellipse cx="-30" cy="-6" rx="26" ry="16"/>
-                    </g>
-                    <g class="cloud cloud2" transform="translate(320,90)">
-                        <ellipse cx="0" cy="0" rx="36" ry="17"/>
-                        <ellipse cx="24" cy="-6" rx="22" ry="15"/>
-                        <ellipse cx="-22" cy="-4" rx="20" ry="12"/>
-                    </g>
-                </svg>
+            <p class="eyebrow"><i class="bi bi-images"></i> Gallery</p>
+            <h1 class="gallery-hero-title">Moments in <span class="rainbow-text">full colour</span></h1>
+            <!-- <p class="gallery-hero-sub">A peek into our everyday — painted hands, sports days, story circles and all the little wins in between.</p> -->
+            <div class="gallery-hero-actions">
+                <button class="btn-primary" id="openEnquireBtn2"><i class="bi bi-send-check"></i> Admission Enquiry</button>
+                <!-- <a href="#contact" class="btn-ghost">Visit Us <i class="bi bi-arrow-down-right"></i></a> -->
             </div>
         </div>
-
-        <svg class="wave-divider" viewBox="0 0 1440 90" preserveAspectRatio="none" aria-hidden="true">
-            <path d="M0,40 C240,90 480,0 720,30 C960,60 1200,10 1440,40 L1440,90 L0,90 Z"></path>
-        </svg>
     </section>
 
     <!-- ===== GALLERY GRID ===== -->
@@ -1314,111 +1328,111 @@
                 <button class="filter-btn" data-filter="outdoor">Outdoor</button>
             </div>
 
-            <div class="gallery-grid" id="galleryGridContainer">
+<div class="gallery-grid" id="galleryGridContainer">
                 <!-- ====== IMAGES — Replace src with your own images ====== -->
                 <!-- Category: events -->
                 <div class="gal-item" data-category="events" style="--c:#2E5AAC;" data-caption="Annual Sports Day 2025">
                     <span class="gal-tag" style="background:var(--c);">Events</span>
-                    <img src="images/sports-day.jpg" alt="Annual Sports Day" />
+                    <img src="images/1.jpeg" alt="Annual Sports Day" />
                 </div>
 
                 <div class="gal-item" data-category="events" style="--c:#E63946;" data-caption="Annual Day – The Rainbow Show">
                     <span class="gal-tag" style="background:var(--c);">Events</span>
-                    <img src="images/annual-day.jpg" alt="Annual Day Celebration" />
+                    <img src="images/2.jpeg" alt="Annual Day Celebration" />
                 </div>
 
                 <!-- Category: classroom -->
                 <div class="gal-item" data-category="classroom" style="--c:#4CAF6D;" data-caption="Story Circle Time">
                     <span class="gal-tag" style="background:var(--c);">Classroom</span>
-                    <img src="images/story-circle.jpg" alt="Story Circle Time" />
+                    <img src="images/3.jpeg" alt="Story Circle Time" />
                 </div>
 
-                <div class="gal-item" data-category="classroom" style="--c:#FFC93C;" data-caption="Phonics &amp; Literacy Session">
+                <div class="gal-item" data-category="classroom" style="--c:#FFC93C;" data-caption="Phonics & Literacy Session">
                     <span class="gal-tag" style="background:var(--c); color:var(--navy-2);">Classroom</span>
-                    <img src="images/phonics-session.jpg" alt="Phonics Session" />
+                    <img src="images/4.jpeg" alt="Phonics Session" />
                 </div>
 
                 <div class="gal-item" data-category="classroom" style="--c:#7B4FA0;" data-caption="Maths Through Play">
                     <span class="gal-tag" style="background:var(--c);">Classroom</span>
-                    <img src="images/maths-play.jpg" alt="Maths Through Play" />
+                    <img src="images/5.jpeg" alt="Maths Through Play" />
                 </div>
 
                 <!-- Category: activities -->
-                <div class="gal-item" data-category="activities" style="--c:#F4863A;" data-caption="Art &amp; Craft Studio">
+                <div class="gal-item" data-category="activities" style="--c:#F4863A;" data-caption="Art & Craft Studio">
                     <span class="gal-tag" style="background:var(--c);">Activities</span>
-                    <img src="images/art-craft.jpg" alt="Art and Craft" />
+                    <img src="images/6.jpeg" alt="Art and Craft" />
                 </div>
 
-                <div class="gal-item" data-category="activities" style="--c:#2E5AAC;" data-caption="Music &amp; Movement Class">
+                <div class="gal-item" data-category="activities" style="--c:#2E5AAC;" data-caption="Music & Movement Class">
                     <span class="gal-tag" style="background:var(--c);">Activities</span>
-                    <img src="images/music-class.jpg" alt="Music Class" />
+                    <img src="images/7.jpeg" alt="Music Class" />
                 </div>
 
                 <div class="gal-item" data-category="activities" style="--c:#E63946;" data-caption="Little Chef Day">
                     <span class="gal-tag" style="background:var(--c);">Activities</span>
-                    <img src="images/little-chef.jpg" alt="Little Chef Day" />
+                    <img src="images/8.jpeg" alt="Little Chef Day" />
                 </div>
 
                 <!-- Category: celebrations -->
                 <div class="gal-item" data-category="celebrations" style="--c:#FFC93C;" data-caption="Colour Carnival – Art Exhibition">
                     <span class="gal-tag" style="background:var(--c); color:var(--navy-2);">Celebrations</span>
-                    <img src="images/colour-carnival.jpg" alt="Colour Carnival" />
+                    <img src="images/9.jpeg" alt="Colour Carnival" />
                 </div>
 
                 <div class="gal-item" data-category="celebrations" style="--c:#4CAF6D;" data-caption="Grandparents' Day">
                     <span class="gal-tag" style="background:var(--c);">Celebrations</span>
-                    <img src="images/grandparents-day.jpg" alt="Grandparents Day" />
+                    <img src="images/10.jpeg" alt="Grandparents Day" />
                 </div>
 
                 <div class="gal-item" data-category="celebrations" style="--c:#7B4FA0;" data-caption="Graduation Ceremony">
                     <span class="gal-tag" style="background:var(--c);">Celebrations</span>
-                    <img src="images/graduation.jpg" alt="Graduation Ceremony" />
+                    <img src="images/11.jpeg" alt="Graduation Ceremony" />
                 </div>
 
                 <!-- Category: outdoor -->
-                <div class="gal-item" data-category="outdoor" style="--c:#F4863A;" data-caption="Nature Walk &amp; Gardening">
+                <div class="gal-item" data-category="outdoor" style="--c:#F4863A;" data-caption="Nature Walk & Gardening">
                     <span class="gal-tag" style="background:var(--c);">Outdoor</span>
-                    <img src="images/nature-walk.jpg" alt="Nature Walk" />
+                    <img src="images/12.jpeg" alt="Nature Walk" />
                 </div>
 
                 <div class="gal-item" data-category="outdoor" style="--c:#2E5AAC;" data-caption="Playground Adventures">
                     <span class="gal-tag" style="background:var(--c);">Outdoor</span>
-                    <img src="images/playground.jpg" alt="Playground" />
+                    <img src="images/1.jpeg" alt="Playground" />
                 </div>
 
-                <div class="gal-item" data-category="outdoor" style="--c:#E63946;" data-caption="Yoga &amp; Mindfulness Session">
+                <div class="gal-item" data-category="outdoor" style="--c:#E63946;" data-caption="Yoga & Mindfulness Session">
                     <span class="gal-tag" style="background:var(--c);">Outdoor</span>
-                    <img src="images/yoga-session.jpg" alt="Yoga Session" />
+                    <img src="images/2.jpeg" alt="Yoga Session" />
                 </div>
 
                 <!-- Extra: events -->
-                <div class="gal-item" data-category="events" style="--c:#4CAF6D;" data-caption="Puppet Show &amp; Storytelling">
+                <div class="gal-item" data-category="events" style="--c:#4CAF6D;" data-caption="Puppet Show & Storytelling">
                     <span class="gal-tag" style="background:var(--c);">Events</span>
-                    <img src="images/puppet-show.jpg" alt="Puppet Show" />
+                    <img src="images/3.jpeg" alt="Puppet Show" />
                 </div>
 
                 <!-- Extra: classroom -->
-                <div class="gal-item" data-category="classroom" style="--c:#F4863A;" data-caption="Show &amp; Tell Session">
+                <div class="gal-item" data-category="classroom" style="--c:#F4863A;" data-caption="Show & Tell Session">
                     <span class="gal-tag" style="background:var(--c);">Classroom</span>
-                    <img src="images/show-tell.jpg" alt="Show and Tell" />
+                    <img src="images/4.jpeg" alt="Show and Tell" />
                 </div>
 
                 <!-- Extra: activities -->
-                <div class="gal-item" data-category="activities" style="--c:#FFC93C;" data-caption="Clay Modelling &amp; Sensory Play">
+                <div class="gal-item" data-category="activities" style="--c:#FFC93C;" data-caption="Clay Modelling & Sensory Play">
                     <span class="gal-tag" style="background:var(--c); color:var(--navy-2);">Activities</span>
-                    <img src="images/clay-play.jpg" alt="Clay Modelling" />
+                    <img src="images/5.jpeg" alt="Clay Modelling" />
                 </div>
 
                 <!-- Extra: celebrations -->
                 <div class="gal-item" data-category="celebrations" style="--c:#2E5AAC;" data-caption="Independence Day Celebration">
                     <span class="gal-tag" style="background:var(--c);">Celebrations</span>
-                    <img src="images/independence-day.jpg" alt="Independence Day" />
+                    <img src="images/6.jpeg" alt="Independence Day" />
                 </div>
 
                 <!-- Extra: outdoor -->
                 <div class="gal-item" data-category="outdoor" style="--c:#7B4FA0;" data-caption="Field Trip – Farm Visit">
                     <span class="gal-tag" style="background:var(--c);">Outdoor</span>
-                    <img src="images/field-trip.jpg" alt="Field Trip" />
+                    <img src="images/7.jpeg" alt="Field Trip" />
                 </div>
             </div>
 

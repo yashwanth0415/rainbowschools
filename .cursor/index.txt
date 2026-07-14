@@ -1,0 +1,2579 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="logo2.png" />
+    <title>Sri Rainbow School | Where Little Minds Bloom</title>
+    <meta name="description" content="Sri Rainbow School - a joyful place for children to learn, play and grow. Recognized by Govt. of Telangana." />
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Nunito:ital,wght@0,400;0,600;0,700;0,800;1,600&family=Fredoka+One&display=swap" rel="stylesheet" />
+
+    <style>
+        /* ==========================================================================
+           Sri Rainbow School — Design Tokens + Animations
+           ========================================================================== */
+        :root {
+            --cream: #FFFCF4;
+            --cream-soft: #FFF6E0;
+            --cream-cool: #F5F7FF;
+            --cream-warm: #FFF8EE;
+            --navy: #1B2A57;
+            --navy-2: #141F42;
+            --blue: #2E5AAC;
+            --red: #E63946;
+            --yellow: #FFC93C;
+            --green: #4CAF6D;
+            --purple: #7B4FA0;
+            --orange: #F4863A;
+            --pink: #F06292;
+            --teal: #26A69A;
+
+            --font-display: 'Baloo 2', 'Fredoka One', cursive;
+            --font-body: 'Nunito', sans-serif;
+            --font-accent: 'Fredoka One', cursive;
+
+            --radius-lg: 28px;
+            --radius-md: 18px;
+            --radius-sm: 12px;
+            --shadow-soft: 0 14px 34px -14px rgba(27, 42, 87, 0.25);
+            --shadow-pop: 0 20px 44px -12px rgba(27, 42, 87, 0.35);
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+        body {
+            margin: 0;
+            font-family: var(--font-body);
+            color: var(--navy);
+            background: var(--cream);
+            overflow-x: hidden;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+        ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        button {
+            font-family: inherit;
+            cursor: pointer;
+            border: none;
+            background: none;
+        }
+        h1,
+        h2,
+        h3,
+        h4 {
+            font-family: var(--font-display);
+            margin: 0;
+            line-height: 1.15;
+        }
+        p {
+            margin: 0;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                animation-duration: 0.001ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.001ms !important;
+                scroll-behavior: auto !important;
+            }
+        }
+
+        /* ==========================================================================
+           ANIMATIONS — Page Load
+           ========================================================================== */
+        .anim-fade-up {
+            opacity: 0;
+            transform: translateY(36px);
+            animation: fadeUp 0.7s cubic-bezier(0.2, 0.8, 0.3, 1) forwards;
+        }
+        .anim-fade-in {
+            opacity: 0;
+            animation: fadeIn 0.8s ease forwards;
+        }
+        .anim-scale-in {
+            opacity: 0;
+            transform: scale(0.88);
+            animation: scaleIn 0.7s cubic-bezier(0.2, 0.8, 0.3, 1) forwards;
+        }
+        .anim-rainbow-text {
+            background: linear-gradient(90deg, #FFE59A, #FFC93C, #F4863A, #E63946, #7B4FA0, #2E5AAC);
+            background-size: 300% 100%;
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            animation: rainbowShift 6s ease-in-out infinite alternate, fadeIn 0.8s ease 0.2s forwards;
+            opacity: 0;
+        }
+        .anim-stagger-children>* {
+            opacity: 0;
+            transform: translateY(28px);
+            animation: fadeUp 0.6s cubic-bezier(0.2, 0.8, 0.3, 1) forwards;
+        }
+        .anim-stagger-children>*:nth-child(1) {
+            animation-delay: 0.05s;
+        }
+        .anim-stagger-children>*:nth-child(2) {
+            animation-delay: 0.15s;
+        }
+        .anim-stagger-children>*:nth-child(3) {
+            animation-delay: 0.25s;
+        }
+        .anim-stagger-children>*:nth-child(4) {
+            animation-delay: 0.35s;
+        }
+        .anim-stagger-children>*:nth-child(5) {
+            animation-delay: 0.45s;
+        }
+        .anim-stagger-children>*:nth-child(6) {
+            animation-delay: 0.55s;
+        }
+        .anim-stagger-children>*:nth-child(7) {
+            animation-delay: 0.65s;
+        }
+        .anim-stagger-children>*:nth-child(8) {
+            animation-delay: 0.75s;
+        }
+        .anim-stagger-children>*:nth-child(9) {
+            animation-delay: 0.85s;
+        }
+        .anim-stagger-children>*:nth-child(10) {
+            animation-delay: 0.95s;
+        }
+        .anim-stagger-children>*:nth-child(11) {
+            animation-delay: 1.05s;
+        }
+        .anim-stagger-children>*:nth-child(12) {
+            animation-delay: 1.15s;
+        }
+
+        .anim-delay-1 {
+            animation-delay: 0.1s !important;
+        }
+        .anim-delay-2 {
+            animation-delay: 0.25s !important;
+        }
+        .anim-delay-3 {
+            animation-delay: 0.4s !important;
+        }
+        .anim-delay-4 {
+            animation-delay: 0.55s !important;
+        }
+        .anim-delay-5 {
+            animation-delay: 0.7s !important;
+        }
+        .anim-delay-6 {
+            animation-delay: 0.85s !important;
+        }
+        .anim-delay-7 {
+            animation-delay: 1.0s !important;
+        }
+        .anim-delay-8 {
+            animation-delay: 1.15s !important;
+        }
+
+        @keyframes fadeUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+            }
+        }
+        @keyframes scaleIn {
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+        @keyframes rainbowShift {
+            0% {
+                background-position: 0% 50%;
+            }
+            100% {
+                background-position: 100% 50%;
+            }
+        }
+
+        /* ==========================================================================
+           Shared section styles
+           ========================================================================== */
+        .section-wrap {
+            max-width: 1180px;
+            margin: 0 auto;
+            padding: 100px 32px 70px;
+        }
+        .eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-weight: 800;
+            letter-spacing: .06em;
+            text-transform: uppercase;
+            font-size: .78rem;
+            color: var(--blue);
+            margin-bottom: 14px;
+        }
+        .eyebrow-green {
+            color: var(--green);
+        }
+        .eyebrow-orange {
+            color: var(--orange);
+        }
+        .eyebrow-purple {
+            color: var(--purple);
+        }
+        .eyebrow-red {
+            color: var(--red);
+        }
+        .eyebrow-yellow {
+            color: var(--yellow);
+        }
+        .eyebrow-pink {
+            color: var(--pink);
+        }
+        .eyebrow-teal {
+            color: var(--teal);
+        }
+        .eyebrow-light {
+            color: #FFE59A;
+        }
+        .section-title {
+            font-size: clamp(1.9rem, 3.6vw, 2.7rem);
+            font-weight: 800;
+            max-width: 760px;
+            color: var(--navy-2);
+            font-family: var(--font-display);
+        }
+        .section-title.light {
+            color: #fff;
+        }
+        .section-lead {
+            margin-top: 16px;
+            max-width: 640px;
+            font-size: 1.08rem;
+            line-height: 1.65;
+            color: #44507A;
+        }
+        .section-lead.light {
+            color: #D6DEFF;
+        }
+
+        /* ---- scroll progress ---- */
+        .scroll-rainbow {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 4px;
+            width: 0%;
+            z-index: 1000;
+            background: linear-gradient(90deg, #7B4FA0, #2E5AAC, #4CAF6D, #FFC93C, #F4863A, #E63946);
+            transition: width .08s linear;
+        }
+
+        /* ==========================================================================
+           Top Announcement Bar
+           ========================================================================== */
+        .top-bar {
+            background: linear-gradient(90deg, #E63946, #F4863A);
+            color: #fff;
+            padding: 8px 0;
+            overflow: hidden;
+            white-space: nowrap;
+            font-weight: 700;
+            font-size: .85rem;
+            position: relative;
+            z-index: 501;
+            border-bottom: 2px solid rgba(255, 255, 255, 0.15);
+        }
+        .top-bar-track {
+            display: flex;
+            width: max-content;
+            animation: scrollMarquee 25s linear infinite;
+        }
+        .top-bar-track span {
+            padding: 0 40px;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .top-bar-track i {
+            font-size: 1rem;
+        }
+        @keyframes scrollMarquee {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+
+        /* ==========================================================================
+           Header / Nav (from academics.html)
+           ========================================================================== */
+        .site-header {
+            position: sticky;
+            top: 0;
+            z-index: 500;
+            background: rgba(255, 252, 244, 0.92);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(27, 42, 87, 0.08);
+            transition: transform .35s ease, box-shadow .25s ease;
+            will-change: transform;
+        }
+        .site-header.scrolled {
+            box-shadow: 0 8px 24px -12px rgba(27, 42, 87, 0.25);
+        }
+        .site-header.nav-hidden {
+            transform: translateY(-115%);
+        }
+        .nav-wrap {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 10px 28px;
+            display: flex;
+            align-items: center;
+            gap: 24px;
+        }
+        .brand-logo {
+            height: 78px;
+            width: 180px;
+        }
+        .main-nav {
+            display: flex;
+            align-items: center;
+            gap: 28px;
+            margin-left: auto;
+        }
+        .nav-link {
+            font-weight: 700;
+            font-size: .96rem;
+            color: var(--navy);
+            position: relative;
+            padding: 6px 2px;
+            transition: color .25s ease;
+        }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -2px;
+            height: 3px;
+            width: 0;
+            background: var(--red);
+            border-radius: 2px;
+            transition: width .2s ease;
+        }
+        .nav-link:hover::after,
+        .nav-link.active::after {
+            width: 100%;
+        }
+        .btn-enquire {
+      background: var(--navy); color: #fff; font-weight: 800; font-size: .9rem;
+      padding: 12px 20px; border-radius: 999px; display: flex; align-items: center; gap: 8px;
+      box-shadow: var(--shadow-soft);
+      transition: transform .18s ease, background .18s ease;
+    }
+    .btn-enquire:hover { transform: translateY(-2px); background: var(--red); }
+    .hamburger { display: none; flex-direction: column; gap: 5px; padding: 6px; }
+    .hamburger span { width: 24px; height: 3px; border-radius: 2px; background: var(--navy); }
+
+        /* ==========================================================================
+           Hero — Enhanced with animations
+           ========================================================================== */
+        .hero {
+            position: relative;
+            background: var(--navy-2);
+            color: #fff;
+            padding-top: 20px;
+            overflow: hidden;
+            min-height: 80vh;
+            display: flex;
+            align-items: center;
+        }
+        .hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: url('https://picsum.photos/1600/900?random=60') center/cover no-repeat;
+            opacity: 0.08;
+            z-index: 0;
+        }
+        .hero-blobs {
+            position: absolute;
+            inset: 0;
+            z-index: 0;
+        }
+        .blob {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(60px);
+            opacity: .3;
+            animation: blobFloat 14s ease-in-out infinite alternate;
+        }
+        .blob-a {
+            width: 400px;
+            height: 400px;
+            background: var(--purple);
+            top: -120px;
+            left: -100px;
+            animation-delay: 0s;
+        }
+        .blob-b {
+            width: 350px;
+            height: 350px;
+            background: var(--blue);
+            bottom: -140px;
+            right: -80px;
+            animation-delay: 3s;
+        }
+        .blob-c {
+            width: 250px;
+            height: 250px;
+            background: var(--green);
+            top: 30%;
+            right: 5%;
+            animation-delay: 6s;
+        }
+        .blob-d {
+            width: 200px;
+            height: 200px;
+            background: var(--orange);
+            bottom: 20%;
+            left: 5%;
+            animation-delay: 9s;
+        }
+        @keyframes blobFloat {
+            0% {
+                transform: translate(0, 0) scale(1);
+            }
+            33% {
+                transform: translate(30px, -30px) scale(1.1);
+            }
+            66% {
+                transform: translate(-20px, 20px) scale(0.9);
+            }
+            100% {
+                transform: translate(10px, -10px) scale(1.05);
+            }
+        }
+
+        /* Sparkle particles */
+        .sparkles {
+            position: absolute;
+            inset: 0;
+            z-index: 0;
+            pointer-events: none;
+            overflow: hidden;
+        }
+        .sparkle {
+            position: absolute;
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: #fff;
+            opacity: 0;
+            animation: sparkleFade 5s ease-in-out infinite;
+        }
+        .sparkle:nth-child(1) {
+            top: 15%;
+            left: 20%;
+            animation-delay: 0.2s;
+            width: 4px;
+            height: 4px;
+            background: var(--yellow);
+        }
+        .sparkle:nth-child(2) {
+            top: 60%;
+            left: 80%;
+            animation-delay: 1.5s;
+            width: 8px;
+            height: 8px;
+            background: var(--pink);
+        }
+        .sparkle:nth-child(3) {
+            top: 30%;
+            left: 70%;
+            animation-delay: 2.8s;
+            width: 5px;
+            height: 5px;
+            background: var(--teal);
+        }
+        .sparkle:nth-child(4) {
+            top: 75%;
+            left: 15%;
+            animation-delay: 0.9s;
+            width: 6px;
+            height: 6px;
+            background: var(--orange);
+        }
+        .sparkle:nth-child(5) {
+            top: 45%;
+            left: 45%;
+            animation-delay: 3.5s;
+            width: 10px;
+            height: 10px;
+            background: var(--yellow);
+            opacity: 0.15;
+        }
+        @keyframes sparkleFade {
+            0%,
+            100% {
+                opacity: 0;
+                transform: scale(0.3);
+            }
+            50% {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        .hero-inner {
+            position: relative;
+            z-index: 1;
+            max-width: 1240px;
+            margin: 0 auto;
+            padding: 40px 32px 100px;
+            display: grid;
+            grid-template-columns: 1.15fr 0.85fr;
+            gap: 50px;
+            align-items: center;
+            width: 100%;
+        }
+        .hero-copy .eyebrow {
+            color: #FFE59A;
+        }
+        .hero-title {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 800;
+            color: #fff;
+            line-height: 1.1;
+        }
+        .rainbow-text {
+            background: linear-gradient(90deg, #FFE59A, #FFC93C, #F4863A, #E63946, #7B4FA0, #2E5AAC);
+            background-size: 300% 100%;
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            animation: rainbowShift 6s ease-in-out infinite alternate;
+        }
+        @keyframes rainbowShift {
+            0% {
+                background-position: 0% 50%;
+            }
+            100% {
+                background-position: 100% 50%;
+            }
+        }
+        .hero-sub {
+            margin-top: 20px;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #C7CFEE;
+            max-width: 520px;
+        }
+        .hero-actions {
+            display: flex;
+            gap: 16px;
+            margin-top: 34px;
+            flex-wrap: wrap;
+        }
+        .btn-primary {
+            background: var(--red);
+            color: #fff;
+            font-weight: 800;
+            font-size: 1rem;
+            padding: 15px 26px;
+            border-radius: 999px;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            box-shadow: 0 14px 30px -10px rgba(230, 57, 70, 0.55);
+            transition: transform .18s ease, box-shadow .18s ease;
+        }
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 18px 34px -8px rgba(230, 57, 70, 0.6);
+        }
+        .btn-primary.btn-light {
+            background: #fff;
+            color: var(--navy-2);
+            box-shadow: 0 14px 30px -10px rgba(0, 0, 0, 0.25);
+        }
+        .btn-primary.full {
+            width: 100%;
+            justify-content: center;
+        }
+        .btn-ghost {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-weight: 800;
+            color: #fff;
+            padding: 15px 8px;
+            border-bottom: 2px solid rgba(255, 255, 255, 0.4);
+            transition: border-color .18s ease, transform .18s ease;
+        }
+        .btn-ghost:hover {
+            border-color: #fff;
+            transform: translateX(4px);
+        }
+
+        .hero-stats {
+            display: flex;
+            gap: 44px;
+            margin-top: 52px;
+            flex-wrap: wrap;
+        }
+        .stat {
+            display: flex;
+            flex-direction: column;
+        }
+        .stat-num {
+            font-family: var(--font-display);
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: var(--yellow);
+        }
+        .hero-stats .stat-label {
+            font-size: .85rem;
+            color: #C7CFEE;
+            font-weight: 600;
+        }
+
+        .hero-art {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .rainbow-burst {
+            width: 800px;
+            max-width: 600px;
+            height: auto;
+            display: block;
+            filter: drop-shadow(0 12px 25px rgba(0, 0, 0, .18));
+            animation: burstPop .9s ease 0.3s forwards;
+            opacity: 0;
+            transform: scale(0.75);
+        }
+        @keyframes burstPop {
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        .cloud ellipse {
+            fill: rgba(255, 255, 255, 0.12);
+        }
+        .cloud {
+            animation: floatCloud 8s ease-in-out infinite;
+        }
+        .cloud2 {
+            animation-duration: 10s;
+            animation-delay: .6s;
+        }
+        @keyframes floatCloud {
+            0%,
+            100% {
+                transform: translate(0, 0);
+            }
+            50% {
+                transform: translate(10px, -12px);
+            }
+        }
+
+        .wave-divider {
+            display: block;
+            width: 100%;
+            height: 70px;
+        }
+        .wave-divider path {
+            fill: var(--cream);
+        }
+        .wave-yellow path {
+            fill: var(--cream-soft);
+        }
+        .wave-purple path {
+            fill: var(--cream-cool);
+        }
+        .wave-navy path {
+            fill: var(--navy-2);
+        }
+        .wave-cream path {
+            fill: var(--cream-warm);
+        }
+
+        /* ==========================================================================
+           About — distinct background
+           ========================================================================== */
+        .about {
+            background: var(--cream);
+            position: relative;
+        }
+        .about::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at 10% 20%, rgba(46, 90, 172, 0.04) 0%, transparent 60%),
+                radial-gradient(circle at 90% 80%, rgba(123, 79, 160, 0.04) 0%, transparent 60%);
+            pointer-events: none;
+        }
+        .about-grid {
+            margin-top: 48px;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 22px;
+            position: relative;
+            z-index: 1;
+        }
+        .about-card {
+            background: #fff;
+            border-radius: var(--radius-md);
+            padding: 28px 24px;
+            box-shadow: var(--shadow-soft);
+            transition: transform .2s ease, box-shadow .2s ease;
+            border-bottom: 4px solid var(--c);
+        }
+        .about-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-pop);
+        }
+        .about-icon {
+            width: 52px;
+            height: 52px;
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.4rem;
+            color: #fff;
+            margin-bottom: 16px;
+            background: var(--c);
+        }
+        .about-card h3 {
+            font-size: 1.15rem;
+            margin-bottom: 10px;
+            color: var(--navy-2);
+        }
+        .about-card p {
+            font-size: .95rem;
+            line-height: 1.6;
+            color: #5A628C;
+        }
+
+        /* ==========================================================================
+           Academics — distinct background
+           ========================================================================== */
+        .academics {
+            background: var(--cream-soft);
+            position: relative;
+        }
+        .academics::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%232E5AAC' fill-opacity='0.04'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            pointer-events: none;
+        }
+        .academic-tabs {
+            margin-top: 48px;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 26px;
+            position: relative;
+            z-index: 1;
+        }
+        .prog-card {
+            background: #fff;
+            border-radius: var(--radius-lg);
+            padding: 0 0 26px 0;
+            border-top: 6px solid var(--tint);
+            box-shadow: var(--shadow-soft);
+            overflow: hidden;
+            transition: transform .2s ease, box-shadow .2s ease;
+        }
+        .prog-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-pop);
+        }
+        .prog-card .prog-img {
+            height: 140px;
+            overflow: hidden;
+        }
+        .prog-card .prog-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform .4s ease;
+        }
+        .prog-card:hover .prog-img img {
+            transform: scale(1.05);
+        }
+        .prog-card .prog-content {
+            padding: 20px 24px 0;
+        }
+        .prog-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 12px;
+        }
+        .prog-top i {
+            font-size: 1.8rem;
+            color: var(--tint);
+        }
+        .prog-age {
+            font-size: .78rem;
+            font-weight: 800;
+            background: var(--tint);
+            color: #fff;
+            padding: 5px 12px;
+            border-radius: 999px;
+        }
+        .prog-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 8px;
+            color: var(--navy-2);
+        }
+        .prog-card p {
+            color: #5A628C;
+            font-size: .95rem;
+            line-height: 1.6;
+            margin-bottom: 14px;
+        }
+        .prog-list li {
+            display: flex;
+            gap: 8px;
+            align-items: flex-start;
+            font-size: .9rem;
+            color: var(--navy-2);
+            margin-bottom: 6px;
+        }
+        .prog-list i {
+            color: var(--tint);
+            margin-top: 3px;
+        }
+
+        .activities-strip {
+            margin-top: 56px;
+            position: relative;
+            z-index: 1;
+        }
+        .activities-title {
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            color: var(--navy-2);
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+        .activities-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 14px;
+        }
+        .activity-pill {
+            background: #fff;
+            border: 2px solid rgba(27, 42, 87, 0.08);
+            border-radius: 999px;
+            padding: 12px 20px;
+            font-weight: 700;
+            font-size: .92rem;
+            display: flex;
+            gap: 9px;
+            align-items: center;
+            color: var(--navy-2);
+            transition: border-color .2s ease, transform .2s ease, box-shadow .2s ease;
+        }
+        .activity-pill i {
+            color: var(--orange);
+        }
+        .activity-pill:hover {
+            border-color: var(--orange);
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-soft);
+        }
+
+        /* ==========================================================================
+           Gallery — distinct background
+           ========================================================================== */
+        .gallery {
+            background: var(--cream-cool);
+            position: relative;
+        }
+        .gallery::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at 30% 70%, rgba(244, 134, 58, 0.04) 0%, transparent 50%),
+                radial-gradient(circle at 70% 30%, rgba(46, 90, 172, 0.04) 0%, transparent 50%);
+            pointer-events: none;
+        }
+        .gallery-grid {
+            margin-top: 48px;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            position: relative;
+            z-index: 1;
+        }
+        .gal-item {
+            aspect-ratio: 1/1;
+            border-radius: var(--radius-md);
+            background: color-mix(in srgb, var(--c) 14%, white);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.6rem;
+            color: var(--c);
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            transition: transform .25s ease, box-shadow .25s ease;
+        }
+        .gal-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform .4s ease;
+        }
+        .gal-item:hover {
+            transform: translateY(-6px) scale(1.02);
+            box-shadow: var(--shadow-pop);
+        }
+        .gal-item:hover img {
+            transform: scale(1.05);
+        }
+        .gal-item::after {
+            content: attr(data-caption);
+            position: absolute;
+            inset: auto 0 0 0;
+            padding: 10px 14px;
+            background: rgba(27, 42, 87, 0.7);
+            color: #fff;
+            font-size: .82rem;
+            font-weight: 700;
+            text-align: center;
+            transform: translateY(100%);
+            transition: transform .25s ease;
+            backdrop-filter: blur(4px);
+        }
+        .gal-item:hover::after {
+            transform: translateY(0);
+        }
+
+        .lightbox {
+            position: fixed;
+            inset: 0;
+            background: rgba(20, 31, 66, 0.85);
+            z-index: 900;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity .25s ease;
+        }
+        .lightbox.open {
+            opacity: 1;
+            visibility: visible;
+        }
+        .lightbox-card {
+            background: #fff;
+            border-radius: var(--radius-lg);
+            padding: 16px;
+            text-align: center;
+            max-width: min(92vw, 720px);
+            width: 100%;
+            transform: scale(.9);
+            transition: transform .25s ease;
+            overflow: hidden;
+        }
+        .lightbox.open .lightbox-card {
+            transform: scale(1);
+        }
+        .lightbox-card img {
+            width: 100%;
+            max-height: 70vh;
+            object-fit: contain;
+            border-radius: var(--radius-sm);
+            display: block;
+        }
+        .lightbox-card p {
+            font-weight: 800;
+            font-size: 1rem;
+            color: var(--navy-2);
+            margin-top: 14px;
+            padding: 0 8px 8px;
+        }
+        .lightbox-close {
+            position: absolute;
+            top: 26px;
+            right: 30px;
+            color: #fff;
+            font-size: 1.4rem;
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.12);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background .2s ease;
+        }
+        .lightbox-close:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        /* ==========================================================================
+           Admission banner — distinct background
+           ========================================================================== */
+        .admission {
+            background: var(--navy-2);
+            color: #fff;
+            position: relative;
+            overflow: hidden;
+        }
+        .admission::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: url('https://picsum.photos/1200/600?random=70') center/cover no-repeat;
+            opacity: 0.04;
+            z-index: 0;
+        }
+        .admission::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at 20% 50%, rgba(123, 79, 160, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 80% 50%, rgba(46, 90, 172, 0.15) 0%, transparent 50%);
+            pointer-events: none;
+            z-index: 0;
+        }
+        .admission-wrap {
+            position: relative;
+            z-index: 1;
+            display: grid;
+            grid-template-columns: 1.1fr 0.9fr;
+            gap: 50px;
+            align-items: center;
+            padding-top: 80px;
+            padding-bottom: 80px;
+        }
+        .admission-steps {
+            display: flex;
+            flex-direction: column;
+            gap: 22px;
+        }
+        .step {
+            display: flex;
+            gap: 18px;
+            align-items: flex-start;
+        }
+        .step-num {
+            width: 40px;
+            height: 40px;
+            flex: none;
+            border-radius: 12px;
+            background: var(--yellow);
+            color: var(--navy-2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            font-family: var(--font-display);
+            font-size: 1.1rem;
+        }
+        .step h4 {
+            font-size: 1.05rem;
+            margin-bottom: 4px;
+            color: #fff;
+        }
+        .step p {
+            color: #C7CFEE;
+            font-size: .92rem;
+            line-height: 1.55;
+        }
+
+        /* ==========================================================================
+           Contact — distinct background
+           ========================================================================== */
+        .contact {
+            background: var(--cream-warm);
+            position: relative;
+        }
+        .contact::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at 80% 20%, rgba(230, 57, 70, 0.04) 0%, transparent 50%),
+                radial-gradient(circle at 20% 80%, rgba(46, 90, 172, 0.04) 0%, transparent 50%);
+            pointer-events: none;
+        }
+        .contact-grid {
+            margin-top: 48px;
+            display: grid;
+            grid-template-columns: 0.85fr 1.15fr;
+            gap: 40px;
+            position: relative;
+            z-index: 1;
+        }
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 22px;
+        }
+        .info-row {
+            display: flex;
+            gap: 16px;
+            align-items: flex-start;
+        }
+        .info-row i {
+            font-size: 1.3rem;
+            color: var(--red);
+            margin-top: 4px;
+            width: 24px;
+            text-align: center;
+        }
+        .info-row strong {
+            display: block;
+            font-size: .95rem;
+            color: var(--navy-2);
+            margin-bottom: 2px;
+        }
+        .info-row p {
+            color: #5A628C;
+            font-size: .92rem;
+        }
+        .social-row {
+            display: flex;
+            gap: 12px;
+            margin-top: 10px;
+        }
+        .social-row a {
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            background: #fff;
+            color: var(--navy-2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: var(--shadow-soft);
+            transition: background .2s ease, color .2s ease, transform .2s ease;
+        }
+        .social-row a:hover {
+            background: var(--red);
+            color: #fff;
+            transform: translateY(-3px);
+        }
+
+        .contact-form {
+            margin-top: -100px;
+            margin-bottom: 100px;
+            background: #fff;
+            border-radius: var(--radius-lg);
+            padding: 32px;
+            box-shadow: var(--shadow-soft);
+        }
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+        }
+        .field {
+            margin-bottom: 16px;
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+        .field label {
+            font-size: .85rem;
+            font-weight: 800;
+            color: var(--navy-2);
+        }
+        .field input,
+        .field select,
+        .field textarea {
+            border: 2px solid rgba(27, 42, 87, 0.12);
+            border-radius: var(--radius-sm);
+            padding: 12px 14px;
+            font-family: inherit;
+            font-size: .95rem;
+            color: var(--navy-2);
+            background: var(--cream);
+            transition: border-color .18s ease;
+        }
+        .field input:focus,
+        .field select:focus,
+        .field textarea:focus {
+            outline: none;
+            border-color: var(--blue);
+        }
+        .field textarea {
+            resize: vertical;
+        }
+        .form-note {
+            margin-top: 12px;
+            font-size: .9rem;
+            font-weight: 700;
+            color: var(--green);
+            min-height: 1.2em;
+        }
+
+        .map-embed {
+            margin-top: 44px;
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow-soft);
+            height: 300px;
+        }
+        .map-embed iframe {
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        /* ==========================================================================
+           Footer
+           ========================================================================== */
+        .site-footer {
+            background: var(--navy-2);
+            color: #C7CFEE;
+            padding-top: 60px;
+        }
+        .footer-wrap {
+            max-width: 1180px;
+            margin: 0 auto;
+            padding: 0 32px 40px;
+            display: grid;
+            grid-template-columns: 1.4fr 1fr 1fr 1fr;
+            gap: 40px;
+        }
+        .footer-logo {
+            height: 90px;
+            width: auto;
+            border-radius: 12px;
+            background: #fff;
+            padding: 6px;
+            margin-bottom: 14px;
+            object-fit: contain;
+        }
+        .footer-brand p {
+            font-size: .9rem;
+            line-height: 1.6;
+        }
+        .footer-links h4,
+        .footer-cta h4 {
+            color: #fff;
+            font-size: 1rem;
+            margin-bottom: 16px;
+        }
+        .footer-links a {
+            display: block;
+            font-size: .9rem;
+            margin-bottom: 10px;
+            color: #C7CFEE;
+            transition: color .18s ease;
+        }
+        .footer-links a:hover {
+            color: var(--yellow);
+        }
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 22px 32px;
+            text-align: center;
+            font-size: .85rem;
+        }
+
+        /* ==========================================================================
+           Floating Enquire Button (mobile)
+           ========================================================================== */
+        .fab-enquire {
+      position: fixed; bottom: 24px; right: 24px; z-index: 400;
+      width: 58px; height: 58px; border-radius: 50%;
+      background: var(--red); color: #fff;
+      font-size: 1.4rem; box-shadow: 0 14px 30px -8px rgba(230, 57, 70, 0.6);
+      display: none; align-items: center; justify-content: center;
+      transition: transform .2s ease;
+    }
+    .fab-enquire:hover { transform: scale(1.08); }
+
+    /* ==========================================================================
+       Admission Enquiry Modal
+       ========================================================================== */
+    .modal-overlay {
+      position: fixed; inset: 0; z-index: 1000;
+      background: rgba(20, 31, 66, 0.6);
+      backdrop-filter: blur(4px);
+      display: flex; align-items: center; justify-content: center;
+      padding: 20px;
+      opacity: 0; visibility: hidden;
+      transition: opacity .28s ease;
+    }
+    .modal-overlay.open { opacity: 1; visibility: visible; }
+    .modal-card {
+      background: #fff; border-radius: var(--radius-lg);
+      width: 100%; max-width: 880px; max-height: 92vh; overflow: auto;
+      display: grid; grid-template-columns: 0.85fr 1.15fr;
+      box-shadow: 0 40px 80px -20px rgba(0, 0, 0, 0.4);
+      transform: scale(.92) translateY(20px);
+      transition: transform .3s cubic-bezier(.2, .8, .3, 1.2);
+      position: relative;
+    }
+    .modal-overlay.open .modal-card { transform: scale(1) translateY(0); }
+    .modal-close {
+      position: absolute; top: 16px; right: 16px; z-index: 2;
+      width: 38px; height: 38px; border-radius: 50%;
+      background: rgba(27, 42, 87, 0.06);
+      color: var(--navy-2);
+      display: flex; align-items: center; justify-content: center;
+      transition: background .18s ease;
+    }
+    .modal-close:hover { background: rgba(27, 42, 87, 0.14); }
+
+    .modal-side {
+      background: var(--navy-2); color: #fff;
+      padding: 44px 34px; position: relative; overflow: hidden;
+      display: flex; flex-direction: column; justify-content: center;
+    }
+    .modal-side h3 { font-size: 1.5rem; margin-bottom: 14px; position: relative; z-index: 1; }
+    .modal-side p { color: #C7CFEE; font-size: .92rem; line-height: 1.6; position: relative; z-index: 1; }
+    .modal-side-burst { position: absolute; inset: 0; }
+    .modal-side-burst span {
+      position: absolute; width: 120px; height: 220px;
+      border-radius: 50% 50% 0 0;
+      transform-origin: bottom center; opacity: .5;
+    }
+    .modal-side-burst span:nth-child(1) { background: var(--purple); bottom: -40px; left: -30px; transform: rotate(-40deg); }
+    .modal-side-burst span:nth-child(2) { background: var(--blue); bottom: -40px; left: 0px; transform: rotate(-24deg); }
+    .modal-side-burst span:nth-child(3) { background: var(--green); bottom: -40px; left: 30px; transform: rotate(-8deg); }
+    .modal-side-burst span:nth-child(4) { background: var(--yellow); bottom: -40px; left: 60px; transform: rotate(8deg); }
+    .modal-side-burst span:nth-child(5) { background: var(--orange); bottom: -40px; left: 90px; transform: rotate(24deg); }
+    .modal-side-burst span:nth-child(6) { background: var(--red); bottom: -40px; left: 120px; transform: rotate(40deg); }
+
+    .modal-form-wrap { padding: 44px 40px; }
+    .modal-form-wrap h4 { font-size: 1.2rem; margin-bottom: 22px; color: var(--navy-2); display: flex; gap: 10px; align-items: center; }
+
+    .modal-success { display: none; text-align: center; padding: 30px 10px; position: relative; }
+    .modal-success.show { display: block; }
+    .success-icon { font-size: 3.4rem; color: var(--green); margin-bottom: 14px; }
+    .modal-success h4 { justify-content: center; margin-bottom: 8px; }
+    .modal-success p { color: #5A628C; margin-bottom: 22px; }
+    .success-burst { position: absolute; inset: 0; pointer-events: none; overflow: hidden; }
+    .success-burst span {
+      position: absolute; top: 50%; left: 50%; width: 8px; height: 20px; border-radius: 4px; opacity: 0;
+    }
+    .modal-success.show .success-burst span { animation: confetti 1s ease-out forwards; }
+    .success-burst span:nth-child(1) { background: var(--purple); animation-delay: 0s; }
+    .success-burst span:nth-child(2) { background: var(--blue); animation-delay: .04s; }
+    .success-burst span:nth-child(3) { background: var(--green); animation-delay: .08s; }
+    .success-burst span:nth-child(4) { background: var(--yellow); animation-delay: .12s; }
+    .success-burst span:nth-child(5) { background: var(--orange); animation-delay: .16s; }
+    .success-burst span:nth-child(6) { background: var(--red); animation-delay: .2s; }
+    @keyframes confetti {
+      0% { opacity: 1; transform: translate(-50%, -50%) rotate(0deg); }
+      100% { opacity: 0; transform: translate(calc(-50% + var(--x, 120px)), calc(-50% - 160px)) rotate(340deg); }
+    }
+    .success-burst span:nth-child(1) { --x: -150px; }
+    .success-burst span:nth-child(2) { --x: -90px; }
+    .success-burst span:nth-child(3) { --x: -30px; }
+    .success-burst span:nth-child(4) { --x: 30px; }
+    .success-burst span:nth-child(5) { --x: 90px; }
+    .success-burst span:nth-child(6) { --x: 150px; }
+
+    .field { margin-bottom: 16px; display: flex; flex-direction: column; gap: 6px; }
+    .field label { font-size: .85rem; font-weight: 800; color: var(--navy-2); }
+    .field input, .field select, .field textarea {
+      border: 2px solid rgba(27, 42, 87, 0.12); border-radius: var(--radius-sm);
+      padding: 12px 14px; font-family: inherit; font-size: .95rem; color: var(--navy-2);
+      background: var(--cream); transition: border-color .18s ease;
+      width: 100%;
+    }
+    .field input:focus, .field select:focus, .field textarea:focus {
+      outline: none; border-color: var(--blue);
+    }
+    .field textarea { resize: vertical; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+
+        /* ==========================================================================
+           Responsive — Enhanced for mobile
+           ========================================================================== */
+        @media (max-width: 1080px) {
+            .about-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .academic-tabs {
+                grid-template-columns: 1fr;
+            }
+            .gallery-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+            .footer-wrap {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 900px) {
+            .hero-inner {
+                grid-template-columns: 1fr;
+                text-align: center;
+                padding: 40px 22px 80px;
+            }
+            .hero-copy {
+                order: 1;
+            }
+            .hero-art {
+                order: 0;
+            }
+            .hero-sub {
+                margin-left: auto;
+                margin-right: auto;
+            }
+            .hero-actions {
+                justify-content: center;
+            }
+            .hero-stats {
+                justify-content: center;
+            }
+            .admission-wrap {
+                grid-template-columns: 1fr;
+                padding: 60px 0;
+            }
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+            .modal-card {
+                grid-template-columns: 1fr;
+            }
+            .modal-side {
+                display: none;
+            }
+            .top-bar {
+                font-size: .75rem;
+                padding: 6px 0;
+            }
+            .section-wrap {
+                padding: 80px 22px 50px;
+            }
+            .hero {
+                min-height: auto;
+            }
+            .modal-form-wrap {
+                padding: 30px 22px;
+            }
+            .rainbow-burst {
+                max-width: 380px;
+            }
+            .brand-logo {
+                height: 60px;
+                width: 140px;
+            }
+        }
+
+        @media (max-width: 760px) {
+            /* Mobile nav (from academics.html) */
+            .main-nav {
+                position: fixed;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: var(--cream);
+                flex-direction: column;
+                align-items: stretch;
+                gap: 0;
+                margin-left: 0;
+                padding: 8px 24px 32px;
+                box-shadow: 0 14px 24px -14px rgba(27, 42, 87, 0.3);
+                transform: translateY(-100%);
+                opacity: 0;
+                visibility: hidden;
+                transition: transform .3s cubic-bezier(0.4, 0, 0.2, 1), opacity .3s, visibility .3s;
+                z-index: 502;
+                border-bottom: none;
+                overflow-y: auto;
+                -webkit-overflow-scrolling: touch;
+            }
+            .main-nav.open {
+                transform: translateY(0);
+                opacity: 1;
+                visibility: visible;
+            }
+            .main-nav a {
+                padding: 14px 0;
+                width: 100%;
+                border-bottom: 1px solid rgba(27, 42, 87, 0.06);
+                font-size: 1rem;
+            }
+            .hamburger {
+                display: flex;
+                min-width: 44px;
+                min-height: 44px;
+                align-items: center;
+                justify-content: center;
+                z-index: 503;
+                margin-left: auto;
+            }
+            .nav-wrap {
+                position: relative;
+                z-index: 503;
+            }
+            .btn-enquire {
+                display: none;
+            }
+            .fab-enquire {
+                display: flex;
+            }
+
+            /* Layouts */
+            .about-grid {
+                grid-template-columns: 1fr;
+            }
+            .gallery-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 12px;
+            }
+            .footer-wrap {
+                grid-template-columns: 1fr;
+                gap: 28px;
+            }
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+            .top-bar-track {
+                animation-duration: 15s;
+            }
+            .top-bar-track span {
+                padding: 0 20px;
+            }
+            .section-wrap {
+                padding: 60px 16px 40px;
+            }
+            .hero-inner {
+                padding: 30px 16px 60px;
+                gap: 20px;
+            }
+            .hero-title {
+                font-size: 2.2rem;
+            }
+            .hero-stats {
+                gap: 24px;
+            }
+            .stat-num {
+                font-size: 1.6rem;
+            }
+            .admission-wrap {
+                padding: 40px 0;
+            }
+            .contact-form {
+                padding: 20px 16px;
+            }
+            .map-embed {
+                height: 200px;
+            }
+            .rainbow-burst {
+                max-width: 260px;
+            }
+            .brand-logo {
+                height: 50px;
+                width: 120px;
+            }
+            .nav-wrap {
+                padding: 8px 16px;
+                gap: 12px;
+            }
+            .site-header {
+                top: 0;
+            }
+            .top-bar {
+                font-size: .65rem;
+                padding: 4px 0;
+            }
+            .top-bar-track span {
+                padding: 0 12px;
+                gap: 4px;
+            }
+            .hero-actions {
+                flex-direction: column;
+                align-items: center;
+            }
+            .hero-actions .btn-primary,
+            .hero-actions .btn-ghost {
+                width: 100%;
+                justify-content: center;
+            }
+            .admission-steps {
+                gap: 16px;
+            }
+            .step {
+                gap: 12px;
+            }
+            .step-num {
+                width: 32px;
+                height: 32px;
+                font-size: .9rem;
+            }
+            .lightbox-card {
+                padding: 32px 20px;
+                max-width: 300px;
+            }
+            .modal-card {
+                max-height: 98vh;
+                border-radius: var(--radius-md);
+            }
+            .modal-form-wrap {
+                padding: 20px 16px;
+            }
+            .modal-form-wrap h4 {
+                font-size: 1rem;
+                margin-bottom: 16px;
+            }
+            .footer-wrap {
+                padding: 0 16px 30px;
+            }
+            .footer-bottom {
+                padding: 16px;
+                font-size: .75rem;
+            }
+            .footer-logo {
+                height: 70px;
+            }
+            .activities-row {
+                gap: 10px;
+            }
+            .activity-pill {
+                padding: 8px 14px;
+                font-size: .8rem;
+            }
+            .about-card {
+                padding: 20px 16px;
+            }
+            .prog-card .prog-content {
+                padding: 16px 16px 0;
+            }
+            .prog-card .prog-img {
+                height: 100px;
+            }
+            .prog-top i {
+                font-size: 1.4rem;
+            }
+            .prog-age {
+                font-size: .7rem;
+                padding: 3px 10px;
+            }
+            .hero-stats .stat-label {
+                font-size: .8rem;
+            }
+            .info-row {
+                gap: 12px;
+            }
+            .info-row i {
+                font-size: 1.1rem;
+                width: 20px;
+            }
+            .social-row a {
+                width: 36px;
+                height: 36px;
+                font-size: .9rem;
+            }
+            .fab-enquire {
+                width: 50px;
+                height: 50px;
+                font-size: 1.2rem;
+                bottom: 16px;
+                right: 16px;
+            }
+            .wave-divider {
+                height: 40px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .gallery-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 8px;
+            }
+            .hero-title {
+                font-size: 1.8rem;
+            }
+            .hero-sub {
+                font-size: .95rem;
+            }
+            .section-title {
+                font-size: 1.6rem;
+            }
+            .section-lead {
+                font-size: .95rem;
+            }
+            .rainbow-burst {
+                max-width: 200px;
+            }
+            .brand-logo {
+                height: 42px;
+                width: 100px;
+            }
+            .nav-wrap {
+                padding: 6px 12px;
+            }
+            .main-nav {
+                padding: 6px 16px 24px;
+            }
+            .main-nav a {
+                padding: 10px 0;
+                font-size: .9rem;
+            }
+            .top-bar {
+                font-size: .55rem;
+            }
+            .top-bar-track span {
+                padding: 0 8px;
+            }
+            .btn-primary {
+                padding: 12px 18px;
+                font-size: .9rem;
+            }
+            .btn-ghost {
+                font-size: .9rem;
+                padding: 12px 6px;
+            }
+            .modal-form-wrap {
+                padding: 16px 12px;
+            }
+            .field input,
+            .field select,
+            .field textarea {
+                padding: 10px 12px;
+                font-size: .88rem;
+            }
+            .contact-form {
+                padding: 16px 12px;
+            }
+            .footer-wrap {
+                padding: 0 12px 24px;
+            }
+            .footer-bottom {
+                padding: 14px 12px;
+                font-size: .7rem;
+            }
+            .about-card {
+                padding: 16px 14px;
+            }
+            .about-icon {
+                width: 44px;
+                height: 44px;
+                font-size: 1.2rem;
+            }
+            .about-card h3 {
+                font-size: 1rem;
+            }
+            .about-card p {
+                font-size: .88rem;
+            }
+            .prog-card h3 {
+                font-size: 1.1rem;
+            }
+            .prog-card p {
+                font-size: .88rem;
+            }
+            .prog-list li {
+                font-size: .82rem;
+            }
+            .activity-pill {
+                padding: 6px 12px;
+                font-size: .75rem;
+            }
+            .activities-title {
+                font-size: 1.1rem;
+            }
+            .gal-item::after {
+                font-size: .7rem;
+                padding: 6px 10px;
+            }
+            .lightbox-card {
+                padding: 24px 16px;
+                max-width: 260px;
+            }
+            .lightbox-card i {
+                font-size: 2.2rem;
+            }
+            .lightbox-card p {
+                font-size: .95rem;
+            }
+            .lightbox-close {
+                top: 16px;
+                right: 16px;
+                width: 36px;
+                height: 36px;
+                font-size: 1.1rem;
+            }
+            .fab-enquire {
+                width: 44px;
+                height: 44px;
+                font-size: 1rem;
+                bottom: 12px;
+                right: 12px;
+            }
+            .step-num {
+                width: 28px;
+                height: 28px;
+                font-size: .8rem;
+            }
+            .step h4 {
+                font-size: .9rem;
+            }
+            .step p {
+                font-size: .82rem;
+            }
+            .modal-side {
+                display: none;
+            }
+            .modal-card {
+                max-width: 100%;
+                border-radius: var(--radius-sm);
+            }
+            .hero-stats {
+                gap: 16px;
+            }
+            .stat-num {
+                font-size: 1.3rem;
+            }
+            .hero-stats .stat-label {
+                font-size: .7rem;
+            }
+            .info-row strong {
+                font-size: .85rem;
+            }
+            .info-row p {
+                font-size: .82rem;
+            }
+            .social-row a {
+                width: 32px;
+                height: 32px;
+                font-size: .8rem;
+            }
+            .map-embed {
+                height: 160px;
+            }
+            .wave-divider {
+                height: 30px;
+            }
+        }
+
+        /* Extra small devices */
+        @media (max-width: 380px) {
+            .hero-title {
+                font-size: 1.5rem;
+            }
+            .hero-sub {
+                font-size: .85rem;
+            }
+            .rainbow-burst {
+                max-width: 160px;
+            }
+            .brand-logo {
+                height: 36px;
+                width: 86px;
+            }
+            .gallery-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 6px;
+            }
+            .section-title {
+                font-size: 1.3rem;
+            }
+            .btn-primary {
+                font-size: .8rem;
+                padding: 10px 14px;
+            }
+            .top-bar {
+                font-size: .5rem;
+            }
+            .top-bar-track span {
+                padding: 0 6px;
+                gap: 3px;
+            }
+            .modal-form-wrap h4 {
+                font-size: .9rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Rainbow scroll progress -->
+    <div class="scroll-rainbow" id="scrollRainbow"></div>
+
+    <!-- ============ TOP ANNOUNCEMENT BAR ============ -->
+    <div class="top-bar anim-fade-in anim-delay-1">
+        <div class="top-bar-track">
+            <span><i class="bi bi-megaphone-fill"></i> Admissions Open for 2026-27! </span>
+            <span><i class="bi bi-calendar-check"></i> Book a Campus Visit Today! </span>
+            <span><i class="bi bi-telephone-fill"></i> Call us at +91 90000 00000 </span>
+            <span><i class="bi bi-star-fill"></i> Recognized by Govt. of Telangana </span>
+            <span><i class="bi bi-emoji-smile"></i> Where Little Minds Bloom </span>
+            <!-- duplicate for seamless loop -->
+            <span><i class="bi bi-megaphone-fill"></i> Admissions Open for 2026-27! </span>
+            <span><i class="bi bi-calendar-check"></i> Book a Campus Visit Today! </span>
+            <span><i class="bi bi-telephone-fill"></i> Call us at +91 90000 00000 </span>
+            <span><i class="bi bi-star-fill"></i> Recognized by Govt. of Telangana </span>
+            <span><i class="bi bi-emoji-smile"></i> Where Little Minds Bloom </span>
+        </div>
+    </div>
+
+    <!-- ============ NAV (from academics.html) ============ -->
+    <header class="site-header" id="siteHeader">
+        <div class="nav-wrap">
+            <a href="#home" class="brand anim-fade-in anim-delay-1">
+                <img src="logo1.png" alt="Sri Rainbow School logo" class="brand-logo" />
+            </a>
+
+            <nav class="main-nav" id="mainNav">
+                <a href="index.html" class="nav-link active anim-fade-up anim-delay-2">Home</a>
+                <a href="about.html" class="nav-link anim-fade-up anim-delay-3">About</a>
+                <a href="academics.html" class="nav-link anim-fade-up anim-delay-4">Academics</a>
+                <a href="gallery.html" class="nav-link anim-fade-up anim-delay-5">Gallery</a>
+                <a href="admission.html" class="nav-link anim-fade-up anim-delay-6">Admission</a>
+                <a href="contact.html" class="nav-link anim-fade-up anim-delay-7">Contact</a>
+            </nav>
+
+            <button class="btn-enquire" id="openEnquireBtn1">
+        <i class="bi bi-pencil-square"></i> Enquire Now
+      </button>
+      <button class="hamburger" id="hamburgerBtn" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+        </div>
+    </header>
+
+    <!-- ============ HOME / HERO ============ -->
+    <section class="hero" id="home">
+        <div class="hero-blobs" aria-hidden="true">
+            <span class="blob blob-a"></span>
+            <span class="blob blob-b"></span>
+            <span class="blob blob-c"></span>
+            <span class="blob blob-d"></span>
+        </div>
+
+        <div class="sparkles" aria-hidden="true">
+            <span class="sparkle"></span>
+            <span class="sparkle"></span>
+            <span class="sparkle"></span>
+            <span class="sparkle"></span>
+            <span class="sparkle"></span>
+        </div>
+
+        <div class="hero-inner">
+            <div class="hero-copy">
+                <p class="eyebrow anim-fade-up anim-delay-1"><i class="bi bi-stars"></i> Recognized by Govt. of Telangana</p>
+                <h1 class="hero-title anim-fade-up anim-delay-2">Every child is a <span class="rainbow-text">splash of colour.</span></h1>
+                <p class="hero-sub anim-fade-up anim-delay-3">Sri Rainbow School gives little learners a bright, joyful start &mdash; where curiosity is celebrated, friendships bloom, and every day feels like a new colour to explore.</p>
+                <div class="hero-actions anim-fade-up anim-delay-4">
+                    <button class="btn-primary" id="openEnquireBtn2"><i class="bi bi-send-check"></i> Admission Enquiry</button>
+                    <a href="#academics" class="btn-ghost">See Academics <i class="bi bi-arrow-down-right"></i></a>
+                </div>
+                <div class="hero-stats anim-stagger-children anim-delay-5" id="heroStats">
+                    <div class="stat"><span class="stat-num" data-count="18" data-suffix="+">0</span><span class="stat-label">Years of Joy</span></div>
+                    <div class="stat"><span class="stat-num" data-count="1200" data-suffix="+">0</span><span class="stat-label">Happy Students</span></div>
+                    <div class="stat"><span class="stat-num" data-count="60" data-suffix="+">0</span><span class="stat-label">Caring Teachers</span></div>
+                </div>
+            </div>
+
+            <div class="hero-art">
+                <img src="logo2.png" alt="Rainbow Burst" class="rainbow-burst" />
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ ABOUT ============ -->
+    <section class="about" id="about">
+        <div class="section-wrap">
+            <p class="eyebrow eyebrow-green anim-fade-up anim-delay-1"><i class="bi bi-flower1"></i> About Us</p>
+            <h2 class="section-title anim-fade-up anim-delay-2">A little school with a big heart</h2>
+            <p class="section-lead anim-fade-up anim-delay-3">Sri Rainbow School was built on one simple belief: children learn best when they feel safe, seen, and delighted by what's in front of them. Our classrooms are bright, our teachers are warm, and our days are full of wonder.</p>
+
+            <div class="about-grid anim-stagger-children anim-delay-4">
+                <div class="about-card" style="--c:var(--blue);">
+                    <div class="about-icon" style="--c:var(--blue);"><i class="bi bi-heart"></i></div>
+                    <h3>Our Mission</h3>
+                    <p>To nurture confident, kind and curious children through play-based, joyful learning experiences that respect each child's own pace.</p>
+                </div>
+                <div class="about-card" style="--c:var(--yellow);">
+                    <div class="about-icon" style="--c:var(--yellow); color:var(--navy-2);"><i class="bi bi-brightness-high"></i></div>
+                    <h3>Our Vision</h3>
+                    <p>A school where every colour of every child is celebrated &mdash; and where learning feels like discovery, not duty.</p>
+                </div>
+                <div class="about-card" style="--c:var(--red);">
+                    <div class="about-icon" style="--c:var(--red);"><i class="bi bi-shield-check"></i></div>
+                    <h3>Safe & Caring</h3>
+                    <p>CCTV-monitored campus, trained caregivers, hygienic meals and a nurse on call &mdash; because peace of mind matters to parents too.</p>
+                </div>
+                <div class="about-card" style="--c:var(--green);">
+                    <div class="about-icon" style="--c:var(--green);"><i class="bi bi-people"></i></div>
+                    <h3>Small Class Sizes</h3>
+                    <p>Low student-teacher ratios mean every child gets seen, heard, and encouraged &mdash; every single day.</p>
+                </div>
+            </div>
+        </div>
+
+        <svg class="wave-divider wave-yellow" viewBox="0 0 1440 90" preserveAspectRatio="none" aria-hidden="true">
+            <path d="M0,50 C240,10 480,90 720,50 C960,10 1200,70 1440,30 L1440,90 L0,90 Z"></path>
+        </svg>
+    </section>
+
+    <!-- ============ ACADEMICS ============ -->
+    <section class="academics" id="academics">
+        <div class="section-wrap">
+            <p class="eyebrow eyebrow-orange anim-fade-up anim-delay-1"><i class="bi bi-book"></i> Academics</p>
+            <h2 class="section-title anim-fade-up anim-delay-2">A curriculum that grows with them</h2>
+            <p class="section-lead anim-fade-up anim-delay-3">From first steps into a classroom to confident, curious little learners &mdash; our programmes are designed stage by stage, colour by colour.</p>
+
+            <div class="academic-tabs anim-stagger-children anim-delay-4">
+                <div class="prog-card" style="--tint:#2E5AAC">
+                    <div class="prog-img">
+                        <img src="images/1.jpeg" alt="Play Group" loading="lazy" />
+                    </div>
+                    <div class="prog-content">
+                        <div class="prog-top"><i class="bi bi-puzzle"></i><span class="prog-age">1.5 &ndash; 3 yrs</span></div>
+                        <h3>Play Group / Nursery</h3>
+                        <p>Sensory play, rhymes, and gentle first routines that build trust and independence.</p>
+                        <ul class="prog-list">
+                            <li><i class="bi bi-check2"></i> Sensory & motor skill play</li>
+                            <li><i class="bi bi-check2"></i> Music, rhymes & movement</li>
+                            <li><i class="bi bi-check2"></i> Toilet training support</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="prog-card" style="--tint:#4CAF6D">
+                    <div class="prog-img">
+                        <img src="images/2.jpeg" alt="LKG UKG" loading="lazy" />
+                    </div>
+                    <div class="prog-content">
+                        <div class="prog-top"><i class="bi bi-palette"></i><span class="prog-age">3 &ndash; 5 yrs</span></div>
+                        <h3>LKG & UKG</h3>
+                        <p>Phonics, numeracy, art and storytelling woven into a structured, playful school day.</p>
+                        <ul class="prog-list">
+                            <li><i class="bi bi-check2"></i> Phonics & early literacy</li>
+                            <li><i class="bi bi-check2"></i> Numbers & pattern play</li>
+                            <li><i class="bi bi-check2"></i> Art, craft & storytelling</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="prog-card" style="--tint:#F4863A">
+                    <div class="prog-img">
+                        <img src="images/1.jpeg" alt="Primary Wing" loading="lazy" />
+                    </div>
+                    <div class="prog-content">
+                        <div class="prog-top"><i class="bi bi-mortarboard"></i><span class="prog-age">5 &ndash; 10 yrs</span></div>
+                        <h3>Primary Wing</h3>
+                        <p>A strong academic core &mdash; language, math and science &mdash; balanced with sport, art and values.</p>
+                        <ul class="prog-list">
+                            <li><i class="bi bi-check2"></i> English, Math, EVS & Telugu</li>
+                            <li><i class="bi bi-check2"></i> Computer & spoken skills lab</li>
+                            <li><i class="bi bi-check2"></i> Sports, yoga & value education</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="activities-strip anim-fade-up anim-delay-5">
+                <h3 class="activities-title"><i class="bi bi-controller"></i> Beyond the classroom</h3>
+                <div class="activities-row">
+                    <div class="activity-pill"><i class="bi bi-music-note-beamed"></i> Music & Dance</div>
+                    <div class="activity-pill"><i class="bi bi-easel2"></i> Art & Craft</div>
+                    <div class="activity-pill"><i class="bi bi-trophy"></i> Sports Day</div>
+                    <div class="activity-pill"><i class="bi bi-book-half"></i> Story Time</div>
+                    <div class="activity-pill"><i class="bi bi-tree"></i> Nature Walks</div>
+                    <div class="activity-pill"><i class="bi bi-mic"></i> Show & Tell</div>
+                </div>
+            </div>
+        </div>
+
+        <svg class="wave-divider wave-purple" viewBox="0 0 1440 90" preserveAspectRatio="none" aria-hidden="true">
+            <path d="M0,30 C240,70 480,10 720,40 C960,70 1200,20 1440,50 L1440,90 L0,90 Z"></path>
+        </svg>
+    </section>
+
+    <!-- ============ GALLERY ============ -->
+    <section class="gallery" id="gallery">
+        <div class="section-wrap">
+            <p class="eyebrow eyebrow-purple anim-fade-up anim-delay-1"><i class="bi bi-images"></i> Gallery</p>
+            <h2 class="section-title anim-fade-up anim-delay-2">Moments in full colour</h2>
+            <p class="section-lead anim-fade-up anim-delay-3">A peek into our everyday &mdash; painted hands, sports days, story circles and all the little wins in between.</p>
+
+            <div class="gallery-grid anim-stagger-children anim-delay-4" id="galleryGrid">
+                <div class="gal-item" style="--c:#2E5AAC" data-caption="Story Circle Time">
+                    <img src="images/1.jpeg" alt="Story Circle Time" loading="lazy" />
+                </div>
+                <div class="gal-item" style="--c:#E63946" data-caption="Annual Sports Day">
+                    <img src="images/2.jpeg" alt="Annual Sports Day" loading="lazy" />
+                </div>
+                <div class="gal-item" style="--c:#FFC93C" data-caption="Colours & Craft">
+                    <img src="images/3.jpeg" alt="Colours & Craft" loading="lazy" />
+                </div>
+                <div class="gal-item" style="--c:#4CAF6D" data-caption="Nature Walk">
+                    <img src="images/4.jpeg" alt="Nature Walk" loading="lazy" />
+                </div>
+                <div class="gal-item" style="--c:#7B4FA0" data-caption="Music Class">
+                    <img src="images/5.jpeg" alt="Music Class" loading="lazy" />
+                </div>
+                <div class="gal-item" style="--c:#F4863A" data-caption="Little Chef Day">
+                    <img src="images/6.jpeg" alt="Little Chef Day" loading="lazy" />
+                </div>
+                <div class="gal-item" style="--c:#E63946" data-caption="Puppet Show">
+                    <img src="images/7.jpeg" alt="Puppet Show" loading="lazy" />
+                </div>
+                <div class="gal-item" style="--c:#2E5AAC" data-caption="Annual Day">
+                    <img src="images/8.jpeg" alt="Annual Day" loading="lazy" />
+                </div>
+                <div class="gal-item" style="--c:#4CAF6D" data-caption="Classroom Fun">
+                    <img src="images/9.jpeg" alt="Classroom Fun" loading="lazy" />
+                </div>
+                <div class="gal-item" style="--c:#FFC93C" data-caption="Art & Creativity">
+                    <img src="images/10.jpeg" alt="Art & Creativity" loading="lazy" />
+                </div>
+                <div class="gal-item" style="--c:#7B4FA0" data-caption="Outdoor Play">
+                    <img src="images/11.jpeg" alt="Outdoor Play" loading="lazy" />
+                </div>
+                <div class="gal-item" style="--c:#F4863A" data-caption="School Celebrations">
+                    <img src="images/12.jpeg" alt="School Celebrations" loading="lazy" />
+                </div>
+            </div>
+        </div>
+
+        <svg class="wave-divider wave-navy" viewBox="0 0 1440 90" preserveAspectRatio="none" aria-hidden="true">
+            <path d="M0,45 C240,5 480,85 720,45 C960,5 1200,75 1440,35 L1440,90 L0,90 Z"></path>
+        </svg>
+    </section>
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox">
+        <button class="lightbox-close" id="lightboxClose" aria-label="Close"><i class="bi bi-x-lg"></i></button>
+        <div class="lightbox-card" id="lightboxCard">
+            <img src="" alt="" id="lightboxImg" />
+            <p id="lightboxCaption"></p>
+        </div>
+    </div>
+
+    <!-- ============ ADMISSION BANNER ============ -->
+    <section class="admission" id="admission">
+        <div class="section-wrap admission-wrap">
+            <div class="admission-copy">
+                <p class="eyebrow eyebrow-light anim-fade-up anim-delay-1"><i class="bi bi-flag"></i> Admissions Open</p>
+                <h2 class="section-title light anim-fade-up anim-delay-2">2026&ndash;27 seats are filling up fast</h2>
+                <p class="section-lead light anim-fade-up anim-delay-3">Give your little one a colourful start. Book a campus visit or send an enquiry and our admissions team will reach out within 24 hours.</p>
+                <button class="btn-primary btn-light anim-fade-up anim-delay-4" id="openEnquireBtn3"><i class="bi bi-send-check"></i> Start Admission Enquiry</button>
+            </div>
+
+            <div class="admission-steps anim-stagger-children anim-delay-5">
+                <div class="step"><span class="step-num">1</span><div><h4>Enquire</h4><p>Share your child's details through our quick form.</p></div></div>
+                <div class="step"><span class="step-num">2</span><div><h4>Visit</h4><p>Tour the campus and meet our teachers.</p></div></div>
+                <div class="step"><span class="step-num">3</span><div><h4>Confirm</h4><p>Complete documentation and secure the seat.</p></div></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ CONTACT ============ -->
+    <section class="contact" id="contact">
+        <div class="section-wrap">
+            <p class="eyebrow eyebrow-red anim-fade-up anim-delay-1"><i class="bi bi-chat-dots"></i> Contact</p>
+            <h2 class="section-title anim-fade-up anim-delay-2">Let's talk</h2>
+
+            <div class="contact-grid">
+                <div class="contact-info anim-stagger-children anim-delay-4">
+                    <div class="info-row"><i class="bi bi-geo-alt-fill"></i><div><strong>Address</strong><p>Sri Rainbow School Campus, Hyderabad, Telangana, India</p></div></div>
+                    <div class="info-row"><i class="bi bi-telephone-fill"></i><div><strong>Phone</strong><p>+91 90000 00000</p></div></div>
+                    <div class="info-row"><i class="bi bi-envelope-fill"></i><div><strong>Email</strong><p>hello@srirainbowschool.edu.in</p></div></div>
+                    <div class="info-row"><i class="bi bi-clock-fill"></i><div><strong>Office Hours</strong><p>Mon &ndash; Sat, 8:30 AM &ndash; 4:30 PM</p></div></div>
+                    <div class="social-row">
+                        <a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+                        <a href="#" aria-label="WhatsApp"><i class="bi bi-whatsapp"></i></a>
+                    </div>
+                </div>
+                <form class="contact-form anim-fade-up anim-delay-5" id="contactForm">
+                    <div class="form-row">
+                        <div class="field">
+                            <label for="cName">Your Name</label>
+                            <input type="text" id="cName" required placeholder="Anitha Reddy" />
+                        </div>
+                        <div class="field">
+                            <label for="cPhone">Phone Number</label>
+                            <input type="tel" id="cPhone" required placeholder="98765 43210" />
+                        </div>
+                    </div>
+                    <div class="field">
+                        <label for="cEmail">Email</label>
+                        <input type="email" id="cEmail" required placeholder="you@email.com" />
+                    </div>
+                    <div class="field">
+                        <label for="cMsg">Message</label>
+                        <textarea id="cMsg" rows="4" placeholder="Tell us a little about your query..."></textarea>
+                    </div>
+                    <button type="submit" class="btn-primary full"><i class="bi bi-send"></i> Send Message</button>
+                    <p class="form-note" id="contactNote"></p>
+                </form>
+            </div>
+
+            <div class="map-embed anim-fade-up anim-delay-6">
+                <iframe title="School location map" src="https://maps.google.com/maps?q=Hyderabad%2C%20Telangana&t=&z=12&ie=UTF8&iwloc=&output=embed" loading="lazy"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ FOOTER ============ -->
+    <footer class="site-footer">
+        <div class="footer-wrap">
+            <div class="footer-brand anim-fade-up anim-delay-1">
+                <img src="logo.jpg" alt="Sri Rainbow School" class="footer-logo" />
+                <p>Recognized by Govt. of Telangana &mdash; nurturing curious, kind and confident learners since day one.</p>
+            </div>
+            <div class="footer-links anim-fade-up anim-delay-2">
+                <h4>Explore</h4>
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="academics.html">Academics</a>
+                <a href="gallery.html">Gallery</a>
+                <a href="admission.html">Admission</a>
+                <a href="contact.html">Contact</a>
+            </div>
+            <div class="footer-links anim-fade-up anim-delay-3">
+                <h4>Programmes</h4>
+                <a href="#academics">Play Group / Nursery</a>
+                <a href="#academics">LKG & UKG</a>
+                <a href="#academics">Primary Wing</a>
+            </div>
+            <div class="footer-cta anim-fade-up anim-delay-4">
+                <h4>Ready to visit?</h4>
+                <button class="btn-primary" id="openEnquireBtn4"><i class="bi bi-send-check"></i> Enquire Now</button>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; <span id="year"></span> Sri Rainbow School. All rights reserved.</p>
+        </div>
+    </footer>
+
+   <!-- ============ ADMISSION ENQUIRY MODAL ============ -->
+  <div class="modal-overlay" id="enquireModal">
+    <div class="modal-card">
+      <button class="modal-close" id="closeEnquireBtn" aria-label="Close form"><i class="bi bi-x-lg"></i></button>
+
+      <div class="modal-side">
+        <div class="modal-side-burst" aria-hidden="true">
+          <span></span><span></span><span></span><span></span><span></span><span></span>
+        </div>
+        <h3>Let's find your child's<br />perfect fit.</h3>
+        <p>Fill this in and our admissions team will call you within one business day.</p>
+      </div>
+
+      <div class="modal-form-wrap">
+        <h4 id="modalHeading"><i class="bi bi-send-check"></i> Admission Enquiry</h4>
+        <form id="enquireForm">
+          <div class="field">
+            <label for="pName">Parent / Guardian Name</label>
+            <input type="text" id="pName" required placeholder="Full name" />
+          </div>
+          <div class="form-row">
+            <div class="field">
+              <label for="pPhone">Phone Number</label>
+              <input type="tel" id="pPhone" required placeholder="10-digit number" pattern="[0-9]{10}" />
+            </div>
+            <div class="field">
+              <label for="pEmail">Email</label>
+              <input type="email" id="pEmail" placeholder="you@email.com" />
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="field">
+              <label for="cChild">Child's Name</label>
+              <input type="text" id="cChild" placeholder="Child's name" />
+            </div>
+            <div class="field">
+              <label for="pClass">Applying For</label>
+              <select id="pClass" required>
+                <option value="" disabled selected>Select a class</option>
+                <option>Play Group</option>
+                <option>Nursery</option>
+                <option>LKG</option>
+                <option>UKG</option>
+                <option>Class 1</option>
+                <option>Class 2</option>
+                <option>Class 3</option>
+                <option>Class 4</option>
+                <option>Class 5</option>
+              </select>
+            </div>
+          </div>
+          <div class="field">
+            <label for="pMsg">Message (optional)</label>
+            <textarea id="pMsg" rows="3" placeholder="Anything you'd like us to know?"></textarea>
+          </div>
+          <button type="submit" class="btn-primary full"><i class="bi bi-send-check"></i> Submit Enquiry</button>
+        </form>
+
+        <div class="modal-success" id="modalSuccess">
+          <div class="success-burst" aria-hidden="true">
+            <span></span><span></span><span></span><span></span><span></span><span></span>
+          </div>
+          <i class="bi bi-check-circle-fill success-icon"></i>
+          <h4>Thank you!</h4>
+          <p>Your enquiry has been received. Our admissions team will call you shortly.</p>
+          <button class="btn-ghost" id="modalDoneBtn" style="color:var(--navy-2);">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Floating Enquiry Button (mobile) -->
+  <button class="fab-enquire" id="fabEnquireBtn" aria-label="Admission Enquiry"><i class="bi bi-pencil-square"></i></button>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+
+            /* ---------- Footer year ---------- */
+            document.getElementById('year').textContent = new Date().getFullYear();
+
+            /* ---------- Sticky header shadow + scroll progress ---------- */
+            var header = document.getElementById('siteHeader');
+            var scrollRainbow = document.getElementById('scrollRainbow');
+
+            function onScroll() {
+                if (header) header.classList.toggle('scrolled', window.scrollY > 10);
+                var scrollTop = window.scrollY;
+                var docHeight = document.documentElement.scrollHeight - window.innerHeight;
+                var pct = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+                if (scrollRainbow) scrollRainbow.style.width = pct + '%';
+                updateActiveNav();
+            }
+            window.addEventListener('scroll', onScroll, { passive: true });
+            onScroll();
+
+            /* ---------- Mobile nav toggle (from academics.html) ---------- */
+            var hamburgerBtn = document.getElementById('hamburgerBtn');
+            var mainNav = document.getElementById('mainNav');
+            hamburgerBtn.addEventListener('click', function() {
+                mainNav.classList.toggle('open');
+                hamburgerBtn.classList.toggle('active');
+            });
+            mainNav.querySelectorAll('.nav-link').forEach(function(link) {
+                link.addEventListener('click', function() {
+                    mainNav.classList.remove('open');
+                });
+            });
+
+            /* ---------- Active nav link on scroll ---------- */
+            var sections = ['home', 'about', 'academics', 'gallery', 'admission', 'contact']
+                .map(function(id) { return document.getElementById(id); })
+                .filter(function(el) { return el !== null; });
+            var navLinks = Array.from(document.querySelectorAll('.nav-link'));
+
+            function updateActiveNav() {
+                var current = sections.length ? sections[0].id : 'home';
+                var scrollPos = window.scrollY + 140;
+                sections.forEach(function(sec) {
+                    if (sec && sec.offsetTop <= scrollPos) current = sec.id;
+                });
+                navLinks.forEach(function(link) {
+                    var href = link.getAttribute('href');
+                    if (href === '#' + current || (current === 'home' && href === 'index.html')) {
+                        link.classList.add('active');
+                    } else {
+                        link.classList.remove('active');
+                    }
+                });
+            }
+
+            /* ============================================================
+               STATS COUNTERS — Hero
+               ============================================================ */
+            function animateCounter(el, target, duration) {
+                duration = duration || 1400;
+                var suffix = el.getAttribute('data-suffix') || '';
+                var startTime = performance.now();
+
+                function tick(now) {
+                    var progress = Math.min((now - startTime) / duration, 1);
+                    var eased = 1 - Math.pow(1 - progress, 3);
+                    var current = Math.round(eased * target);
+                    el.textContent = current.toLocaleString() + suffix;
+                    if (progress < 1) {
+                        requestAnimationFrame(tick);
+                    } else {
+                        el.textContent = target.toLocaleString() + suffix;
+                    }
+                }
+                requestAnimationFrame(tick);
+            }
+
+            var heroStatNums = document.querySelectorAll('.hero-stats .stat-num');
+            var heroStatsEl = document.getElementById('heroStats');
+            var heroStatsAnimated = false;
+
+            function animateHeroStats() {
+                if (heroStatsAnimated || !heroStatNums.length) return;
+                heroStatsAnimated = true;
+                heroStatNums.forEach(function(el) {
+                    var target = parseInt(el.getAttribute('data-count'), 10) || 0;
+                    animateCounter(el, target, 1600);
+                });
+            }
+
+            function checkHeroStatsVisibility() {
+                if (!heroStatsEl || heroStatsAnimated) return;
+                var rect = heroStatsEl.getBoundingClientRect();
+                var windowHeight = window.innerHeight || document.documentElement.clientHeight;
+                // Trigger if element is at least 50px into viewport or page is at top
+                if (rect.top < windowHeight - 50 || window.scrollY < 100) {
+                    setTimeout(animateHeroStats, 700);
+                    return true;
+                }
+                return false;
+            }
+
+            if (heroStatsEl && heroStatNums.length) {
+                // First check immediately (for fast loads/no scroll)
+                if (!checkHeroStatsVisibility()) {
+                    // Then observe
+                    if ('IntersectionObserver' in window) {
+                        var heroStatsObserver = new IntersectionObserver(function(entries) {
+                            entries.forEach(function(entry) {
+                                if (entry.isIntersecting) {
+                                    setTimeout(animateHeroStats, 700);
+                                    heroStatsObserver.disconnect();
+                                }
+                            });
+                        }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+                        heroStatsObserver.observe(heroStatsEl);
+                    } else {
+                        // Fallback for older browsers
+                        setTimeout(animateHeroStats, 900);
+                    }
+                }
+            }
+
+            /* ---------- Gallery lightbox ---------- */
+            var lightbox = document.getElementById('lightbox');
+            var lightboxCaption = document.getElementById('lightboxCaption');
+            var lightboxCard = document.getElementById('lightboxCard');
+            var lightboxImg = document.getElementById('lightboxImg');
+            if (lightbox && lightboxCaption && lightboxCard && lightboxImg) {
+                document.querySelectorAll('.gal-item').forEach(function(item) {
+                    item.addEventListener('click', function() {
+                        var caption = item.dataset.caption || 'Gallery photo';
+                        var img = item.querySelector('img');
+                        lightboxCaption.textContent = caption;
+                        if (img) {
+                            lightboxImg.src = img.src;
+                            lightboxImg.alt = img.alt || caption;
+                        }
+                        lightbox.classList.add('open');
+                        document.body.style.overflow = 'hidden';
+                    });
+                });
+                var lightboxClose = document.getElementById('lightboxClose');
+                function closeLightbox() {
+                    lightbox.classList.remove('open');
+                    document.body.style.overflow = '';
+                    lightboxImg.src = '';
+                }
+                if (lightboxClose) {
+                    lightboxClose.addEventListener('click', closeLightbox);
+                }
+                lightbox.addEventListener('click', function(e) {
+                    if (e.target === lightbox) closeLightbox();
+                });
+            }
+
+            /* ============================================================
+               ADMISSION ENQUIRY MODAL — SIMPLIFIED (from academics.html)
+               ============================================================ */
+            /* ---------- Admission Enquiry Modal ---------- */
+            const enquireModal = document.getElementById('enquireModal');
+            const enquireForm = document.getElementById('enquireForm');
+            const modalSuccess = document.getElementById('modalSuccess');
+            const modalHeading = document.getElementById('modalHeading');
+
+            if (enquireModal && enquireForm && modalSuccess && modalHeading) {
+                const openTriggers = [
+                    'openEnquireBtn1', 'openEnquireBtn2', 'openEnquireBtn3', 'openEnquireBtn4',
+                    'openEnquireBtnScholarship', 'fabEnquireBtn'
+                ];
+                openTriggers.forEach(id => {
+                    const btn = document.getElementById(id);
+                    if (btn) btn.addEventListener('click', openEnquireModal);
+                });
+
+                function openEnquireModal() {
+                    enquireModal.classList.add('open');
+                    document.body.style.overflow = 'hidden';
+                }
+
+                function closeEnquireModal() {
+                    enquireModal.classList.remove('open');
+                    document.body.style.overflow = '';
+                    setTimeout(() => {
+                        modalSuccess.classList.remove('show');
+                        enquireForm.style.display = '';
+                        modalHeading.style.display = '';
+                        enquireForm.reset();
+                    }, 300);
+                }
+
+                const closeBtn = document.getElementById('closeEnquireBtn');
+                if (closeBtn) closeBtn.addEventListener('click', closeEnquireModal);
+                enquireModal.addEventListener('click', e => { if (e.target === enquireModal) closeEnquireModal(); });
+                document.addEventListener('keydown', e => { if (e.key === 'Escape') closeEnquireModal(); });
+
+                const modalDoneBtn = document.getElementById('modalDoneBtn');
+                if (modalDoneBtn) modalDoneBtn.addEventListener('click', closeEnquireModal);
+
+                enquireForm.addEventListener('submit', e => {
+                    e.preventDefault();
+                    enquireForm.style.display = 'none';
+                    modalHeading.style.display = 'none';
+                    modalSuccess.classList.add('show');
+                });
+            }
+            /* ---------- Contact form ---------- */
+            var contactForm = document.getElementById('contactForm');
+            var contactNote = document.getElementById('contactNote');
+            if (contactForm && contactNote) {
+                contactForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    contactNote.textContent = '✅ Thanks! We\u2019ve received your message and will get back to you soon.';
+                    contactForm.reset();
+                    setTimeout(function() { contactNote.textContent = ''; }, 6000);
+                });
+            }
+
+        });
+    </script>
+
+</body>
+</html>

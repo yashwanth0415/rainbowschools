@@ -120,7 +120,7 @@
       max-width: 1280px; margin: 0 auto; padding: 10px 28px;
       display: flex; align-items: center; gap: 24px;
     }
-    .brand-logo { height: 78px; width: 180px; }
+    .brand-logo { height: 78px; width: 148px; }
     .main-nav { display: flex; align-items: center; gap: 28px; margin-left: auto; }
     .nav-link {
       font-weight: 700; font-size: .96rem; color: var(--navy);
@@ -140,7 +140,10 @@
     }
     .btn-enquire:hover { transform: translateY(-2px); background: var(--red); }
     .hamburger { display: none; flex-direction: column; gap: 5px; padding: 6px; }
-    .hamburger span { width: 24px; height: 3px; border-radius: 2px; background: var(--navy); }
+    .hamburger span { width: 24px; height: 3px; border-radius: 2px; background: var(--navy); transition: 0.2s ease; }
+    .hamburger.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 6px); }
+    .hamburger.active span:nth-child(2) { opacity: 0; }
+    .hamburger.active span:nth-child(3) { transform: rotate(-45deg) translate(5px, -6px); }
 
     /* ==========================================================================
        Top Announcement Bar
@@ -189,7 +192,7 @@
     }
     .about-hero::before {
       content: ''; position: absolute; inset: 0;
-      background: url('https://picsum.photos/1600/900?random=80') center/cover no-repeat;
+      background: url('bg.jpg') center/cover no-repeat;
       opacity: 0.08; z-index: 0;
     }
     /* Decorative rings */
@@ -763,17 +766,23 @@
 
     @media (max-width: 760px) {
       .main-nav {
-        position: fixed; top: 78px; left: 0; right: 0;
+        position: fixed; top: 100%; left: 0; right: 0;
         background: var(--cream);
-        flex-direction: column; align-items: flex-start; gap: 0;
-        padding: 10px 28px 20px;
+        flex-direction: column; align-items: stretch; gap: 0;
+        margin-left: 0; padding: 8px 24px 32px;
         box-shadow: 0 14px 24px -14px rgba(27, 42, 87, 0.3);
-        transform: translateY(-140%); opacity: 0;
-        transition: transform .25s ease, opacity .2s ease;
+        transform: translateY(-100%); opacity: 0;
+        transition: transform .3s cubic-bezier(0.4, 0, 0.2, 1), opacity .3s;
+        z-index: 502; border-bottom: none; overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
       }
       .main-nav.open { transform: translateY(0); opacity: 1; }
-      .main-nav a { padding: 12px 0; width: 100%; border-bottom: 1px solid rgba(27, 42, 87, 0.06); }
-      .hamburger { display: flex; }
+      .main-nav a { padding: 14px 0; width: 100%; border-bottom: 1px solid rgba(27, 42, 87, 0.06); font-size: 1rem; }
+      .hamburger {
+        display: flex; min-width: 44px; min-height: 44px;
+        align-items: center; justify-content: center; z-index: 503; margin-left: auto;
+      }
+      .nav-wrap { position: relative; z-index: 503; }
       .btn-enquire { display: none; }
       .fab-enquire { display: flex; }
 
@@ -785,8 +794,15 @@
       .section-wrap { padding: 70px 22px 50px; }
       .stats-grid { grid-template-columns: 1fr 1fr; gap: 16px; }
       .stat-number { font-size: 2rem; }
+      .about-hero {
+        min-height: 25vh;
+      }
+      .about-hero-inner {
+        padding: 40px 22px;
+      }
       .modal-form-wrap { padding: 30px 22px; }
       .form-row { grid-template-columns: 1fr; }
+    }
     }
     /* ==========================================================================
    Footer
@@ -861,6 +877,10 @@
     <div class="about-hero-inner">
       <p class="eyebrow"><i class="bi bi-stars"></i> About Sri Rainbow School</p>
       <h1 class="about-hero-title">About <span class="rainbow-text">Us</span></h1>
+      <div class="about-hero-actions"><br>
+                <button class="btn-primary" id="openEnquireBtn2"><i class="bi bi-send-check"></i> Enquire Now</button>
+                <!-- <a href="#process" class="btn-ghost">How to Apply <i class="bi bi-arrow-down-right"></i></a> -->
+            </div>
     </div>
   </section>
 
@@ -912,7 +932,7 @@
           </div>
         </div>
         <div class="story-image">
-          <img src="https://picsum.photos/600/450?random=81" alt="Sri Rainbow School campus" loading="lazy" />
+          <img src="images/1.jpeg" alt="Sri Rainbow School campus" loading="lazy" />
         </div>
       </div>
     </div>
@@ -932,7 +952,7 @@
       <div class="mv-grid">
         <div class="mv-card" style="--c:var(--blue);">
           <div class="mv-img">
-            <img src="https://picsum.photos/600/200?random=82" alt="Our Mission" loading="lazy" />
+            <img src="images/2.jpeg" alt="Our Mission" loading="lazy" />
           </div>
           <div class="mv-content">
             <div class="mv-icon"><i class="bi bi-heart-fill"></i></div>
@@ -947,7 +967,7 @@
         </div>
         <div class="mv-card" style="--c:var(--orange);">
           <div class="mv-img">
-            <img src="https://picsum.photos/600/200?random=83" alt="Our Vision" loading="lazy" />
+            <img src="images/3.jpeg" alt="Our Vision" loading="lazy" />
           </div>
           <div class="mv-content">
             <div class="mv-icon"><i class="bi bi-eye-fill"></i></div>
@@ -977,37 +997,37 @@
 
       <div class="values-grid">
         <div class="value-card" style="--c:var(--blue);">
-          <div class="val-img"><img src="https://picsum.photos/300/150?random=84" alt="Love & Care" loading="lazy" /></div>
+          <div class="val-img"><img src="images/4.jpeg" alt="Love & Care" loading="lazy" /></div>
           <div class="val-icon val-blue"><i class="bi bi-heart"></i></div>
           <h4>Love &amp; Care</h4>
           <p>Every child is wrapped in warmth and kindness, building trust and emotional security from day one.</p>
         </div>
         <div class="value-card" style="--c:var(--green);">
-          <div class="val-img"><img src="https://picsum.photos/300/150?random=85" alt="Curiosity & Wonder" loading="lazy" /></div>
+          <div class="val-img"><img src="images/5.jpeg" alt="Curiosity & Wonder" loading="lazy" /></div>
           <div class="val-icon val-green"><i class="bi bi-tree"></i></div>
           <h4>Curiosity &amp; Wonder</h4>
           <p>We encourage questions, exploration, and the joy of discovery in every subject and activity.</p>
         </div>
         <div class="value-card" style="--c:var(--yellow);">
-          <div class="val-img"><img src="https://picsum.photos/300/150?random=86" alt="Inclusion & Respect" loading="lazy" /></div>
+          <div class="val-img"><img src="images/6.jpeg" alt="Inclusion & Respect" loading="lazy" /></div>
           <div class="val-icon val-yellow"><i class="bi bi-people"></i></div>
           <h4>Inclusion &amp; Respect</h4>
           <p>Every child is unique, and we celebrate those differences while nurturing mutual respect.</p>
         </div>
         <div class="value-card" style="--c:var(--purple);">
-          <div class="val-img"><img src="https://picsum.photos/300/150?random=87" alt="Excellence & Effort" loading="lazy" /></div>
+          <div class="val-img"><img src="images/7.jpeg" alt="Excellence & Effort" loading="lazy" /></div>
           <div class="val-icon val-purple"><i class="bi bi-trophy"></i></div>
           <h4>Excellence &amp; Effort</h4>
           <p>We believe in doing our best — not just in academics, but in character, creativity, and community.</p>
         </div>
         <div class="value-card" style="--c:var(--red);">
-          <div class="val-img"><img src="https://picsum.photos/300/150?random=88" alt="Safety & Trust" loading="lazy" /></div>
+          <div class="val-img"><img src="images/8.jpeg" alt="Safety & Trust" loading="lazy" /></div>
           <div class="val-icon val-red"><i class="bi bi-shield-check"></i></div>
           <h4>Safety &amp; Trust</h4>
           <p>A secure environment where children and parents alike feel confident and at ease.</p>
         </div>
         <div class="value-card" style="--c:var(--orange);">
-          <div class="val-img"><img src="https://picsum.photos/300/150?random=89" alt="Joy & Play" loading="lazy" /></div>
+          <div class="val-img"><img src="images/9.jpeg" alt="Joy & Play" loading="lazy" /></div>
           <div class="val-icon val-orange"><i class="bi bi-palette"></i></div>
           <h4>Joy &amp; Play</h4>
           <p>We believe childhood should be filled with laughter, movement, and the freedom to imagine.</p>
@@ -1029,7 +1049,7 @@
 
       <div class="fac-grid">
         <div class="fac-card">
-          <div class="fac-img"><img src="https://picsum.photos/400/180?random=90" alt="Classrooms" loading="lazy" /></div>
+          <div class="fac-img"><img src="images/10.jpeg" alt="Classrooms" loading="lazy" /></div>
           <div class="fac-content">
             <div class="fac-icon"><i class="bi bi-house-door"></i></div>
             <div>
@@ -1039,7 +1059,7 @@
           </div>
         </div>
         <div class="fac-card">
-          <div class="fac-img"><img src="https://picsum.photos/400/180?random=91" alt="Playground" loading="lazy" /></div>
+          <div class="fac-img"><img src="images/11.jpeg" alt="Playground" loading="lazy" /></div>
           <div class="fac-content">
             <div class="fac-icon"><i class="bi bi-play"></i></div>
             <div>
@@ -1049,7 +1069,7 @@
           </div>
         </div>
         <div class="fac-card">
-          <div class="fac-img"><img src="https://picsum.photos/400/180?random=92" alt="Library" loading="lazy" /></div>
+          <div class="fac-img"><img src="images/12.jpeg" alt="Library" loading="lazy" /></div>
           <div class="fac-content">
             <div class="fac-icon"><i class="bi bi-book"></i></div>
             <div>
@@ -1059,7 +1079,7 @@
           </div>
         </div>
         <div class="fac-card">
-          <div class="fac-img"><img src="https://picsum.photos/400/180?random=93" alt="Art Studio" loading="lazy" /></div>
+          <div class="fac-img"><img src="images/1.jpeg" alt="Art Studio" loading="lazy" /></div>
           <div class="fac-content">
             <div class="fac-icon"><i class="bi bi-easel2"></i></div>
             <div>
@@ -1069,7 +1089,7 @@
           </div>
         </div>
         <div class="fac-card">
-          <div class="fac-img"><img src="https://picsum.photos/400/180?random=94" alt="Music Room" loading="lazy" /></div>
+          <div class="fac-img"><img src="images/2.jpeg" alt="Music Room" loading="lazy" /></div>
           <div class="fac-content">
             <div class="fac-icon"><i class="bi bi-music-note-beamed"></i></div>
             <div>
@@ -1079,7 +1099,7 @@
           </div>
         </div>
         <div class="fac-card">
-          <div class="fac-img"><img src="https://picsum.photos/400/180?random=95" alt="Security" loading="lazy" /></div>
+          <div class="fac-img"><img src="images/3.jpeg" alt="Security" loading="lazy" /></div>
           <div class="fac-content">
             <div class="fac-icon"><i class="bi bi-shield-lock"></i></div>
             <div>
@@ -1105,7 +1125,6 @@
 
       <div class="team-grid">
         <div class="team-card" style="--c:var(--blue);">
-          <div class="team-img"><img src="https://picsum.photos/300/150?random=96" alt="Lakshmi Reddy" loading="lazy" /></div>
           <div class="team-avatar"><i class="bi bi-person"></i></div>
           <h4>Mrs. Lakshmi Reddy</h4>
           <div class="role">Founder &amp; Principal</div>
@@ -1116,7 +1135,6 @@
           </div>
         </div>
         <div class="team-card" style="--c:var(--green);">
-          <div class="team-img"><img src="https://picsum.photos/300/150?random=97" alt="Sunita Rao" loading="lazy" /></div>
           <div class="team-avatar"><i class="bi bi-person"></i></div>
           <h4>Mrs. Sunita Rao</h4>
           <div class="role">Head of Academics</div>
@@ -1127,7 +1145,6 @@
           </div>
         </div>
         <div class="team-card" style="--c:var(--orange);">
-          <div class="team-img"><img src="https://picsum.photos/300/150?random=98" alt="Vikram Singh" loading="lazy" /></div>
           <div class="team-avatar"><i class="bi bi-person"></i></div>
           <h4>Mr. Vikram Singh</h4>
           <div class="role">Sports &amp; Activities Coordinator</div>
@@ -1138,7 +1155,6 @@
           </div>
         </div>
         <div class="team-card" style="--c:var(--purple);">
-          <div class="team-img"><img src="https://picsum.photos/300/150?random=99" alt="Priya Menon" loading="lazy" /></div>
           <div class="team-avatar"><i class="bi bi-person"></i></div>
           <h4>Mrs. Priya Menon</h4>
           <div class="role">Art &amp; Music Teacher</div>
@@ -1272,7 +1288,7 @@
     </div>
     <div class="footer-cta">
       <h4>Ready to visit?</h4>
-      <button class="btn-primary" id="openEnquireBtn4"><i class="bi bi-send-check"></i> Enquire Now</button>
+      <button class="btn-primary" id="openeBtn4"><i class="bi bi-send-check"></i> Enquire Now</button>
     </div>
   </div>
   <div class="footer-bottom">

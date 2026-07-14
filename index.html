@@ -3,25 +3,20 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" href="logo2.png" />
-    <title>Sri Rainbow School | Where Little Minds Bloom</title>
-    <meta name="description" content="Sri Rainbow School - a joyful place for children to learn, play and grow. Recognized by Govt. of Telangana." />
+    <link rel="icon" href="logo2.png">
+    <title>Sri Rainbow School | Where Little Minds Bloom in Full Colour</title>
+    <meta name="description" content="Sri Rainbow School — a nurturing preschool and primary school in Telangana where curiosity, creativity, and confidence flourish. Admissions open for 2026-27." />
 
     <!-- Bootstrap Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Nunito:ital,wght@0,400;0,600;0,700;0,800;1,600&family=Fredoka+One&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Nunito:ital,wght@0,400;0,600;0,700;0,800;1,600&display=swap" rel="stylesheet" />
 
     <style>
-        /* ==========================================================================
-           Sri Rainbow School — Design Tokens + Animations
-           ========================================================================== */
         :root {
             --cream: #FFFCF4;
             --cream-soft: #FFF6E0;
-            --cream-cool: #F5F7FF;
-            --cream-warm: #FFF8EE;
             --navy: #1B2A57;
             --navy-2: #141F42;
             --blue: #2E5AAC;
@@ -30,13 +25,8 @@
             --green: #4CAF6D;
             --purple: #7B4FA0;
             --orange: #F4863A;
-            --pink: #F06292;
-            --teal: #26A69A;
-
-            --font-display: 'Baloo 2', 'Fredoka One', cursive;
+            --font-display: 'Baloo 2', 'Nunito', sans-serif;
             --font-body: 'Nunito', sans-serif;
-            --font-accent: 'Fredoka One', cursive;
-
             --radius-lg: 28px;
             --radius-md: 18px;
             --radius-sm: 12px;
@@ -56,9 +46,7 @@
             color: var(--navy);
             background: var(--cream);
             overflow-x: hidden;
-            /* No fade-in animation – instant load */
         }
-
         img {
             max-width: 100%;
             display: block;
@@ -100,7 +88,7 @@
         }
 
         /* ==========================================================================
-           ANIMATIONS — Page Load (no body fade, just element fades)
+           INTRO ANIMATIONS — Copied from the enhanced code
            ========================================================================== */
         .anim-fade-up {
             opacity: 0;
@@ -147,6 +135,24 @@
         }
         .anim-stagger-children>*:nth-child(6) {
             animation-delay: 0.55s;
+        }
+        .anim-stagger-children>*:nth-child(7) {
+            animation-delay: 0.65s;
+        }
+        .anim-stagger-children>*:nth-child(8) {
+            animation-delay: 0.75s;
+        }
+        .anim-stagger-children>*:nth-child(9) {
+            animation-delay: 0.85s;
+        }
+        .anim-stagger-children>*:nth-child(10) {
+            animation-delay: 0.95s;
+        }
+        .anim-stagger-children>*:nth-child(11) {
+            animation-delay: 1.05s;
+        }
+        .anim-stagger-children>*:nth-child(12) {
+            animation-delay: 1.15s;
         }
 
         .anim-delay-1 {
@@ -200,9 +206,6 @@
             }
         }
 
-        /* ==========================================================================
-           Shared section styles
-           ========================================================================== */
         .section-wrap {
             max-width: 1180px;
             margin: 0 auto;
@@ -232,23 +235,13 @@
             color: var(--red);
         }
         .eyebrow-yellow {
-            color: var(--yellow);
-        }
-        .eyebrow-pink {
-            color: var(--pink);
-        }
-        .eyebrow-teal {
-            color: var(--teal);
-        }
-        .eyebrow-light {
-            color: #FFE59A;
+            color: #C7900B;
         }
         .section-title {
             font-size: clamp(1.9rem, 3.6vw, 2.7rem);
             font-weight: 800;
             max-width: 760px;
             color: var(--navy-2);
-            font-family: var(--font-display);
         }
         .section-title.light {
             color: #fff;
@@ -264,7 +257,7 @@
             color: #D6DEFF;
         }
 
-        /* ---- scroll progress ---- */
+        /* scroll progress */
         .scroll-rainbow {
             position: fixed;
             top: 0;
@@ -276,62 +269,18 @@
             transition: width .08s linear;
         }
 
-        /* ==========================================================================
-           Top Announcement Bar
-           ========================================================================== */
-        .top-bar {
-            background: linear-gradient(90deg, #E63946, #F4863A);
-            color: #fff;
-            padding: 8px 0;
-            overflow: hidden;
-            white-space: nowrap;
-            font-weight: 700;
-            font-size: .85rem;
-            position: relative;
-            z-index: 501;
-            border-bottom: 2px solid rgba(255, 255, 255, 0.15);
-        }
-        .top-bar-track {
-            display: flex;
-            width: max-content;
-            animation: scrollMarquee 25s linear infinite;
-        }
-        .top-bar-track span {
-            padding: 0 40px;
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-        }
-        .top-bar-track i {
-            font-size: 1rem;
-        }
-        @keyframes scrollMarquee {
-            0% {
-                transform: translateX(0);
-            }
-            100% {
-                transform: translateX(-50%);
-            }
-        }
-
-        /* ==========================================================================
-           Header / Nav
-           ========================================================================== */
+        /* header */
         .site-header {
             position: sticky;
             top: 0;
             z-index: 500;
-            background: rgba(255, 252, 244, 0.92);
-            backdrop-filter: blur(12px);
+            background: rgba(255, 252, 244, 0.85);
+            backdrop-filter: blur(10px);
             border-bottom: 1px solid rgba(27, 42, 87, 0.08);
-            transition: transform .35s ease, box-shadow .25s ease;
-            will-change: transform;
+            transition: box-shadow .25s ease;
         }
         .site-header.scrolled {
             box-shadow: 0 8px 24px -12px rgba(27, 42, 87, 0.25);
-        }
-        .site-header.nav-hidden {
-            transform: translateY(-115%);
         }
         .nav-wrap {
             max-width: 1280px;
@@ -343,8 +292,7 @@
         }
         .brand-logo {
             height: 78px;
-            width: 180px;
-            object-fit: contain;
+            width: 148px;
         }
         .main-nav {
             display: flex;
@@ -358,7 +306,6 @@
             color: var(--navy);
             position: relative;
             padding: 6px 2px;
-            transition: color .25s ease;
         }
         .nav-link::after {
             content: '';
@@ -415,14 +362,63 @@
             transform: rotate(-45deg) translate(5px, -6px);
         }
 
+        /* Hide hero section buttons on desktop */
+        @media (min-width: 761px) {
+            .hero-actions .btn-primary,
+            .admission-hero .btn-primary,
+            .about-hero .btn-primary,
+            .academics-hero .btn-primary,
+            .gallery-hero .btn-primary,
+            .contact-hero .btn-primary,
+            .cta-banner .btn-primary,
+            .footer-cta .btn-primary {
+                display: none !important;
+            }
+        }
+
+        /* top bar */
+        .top-bar {
+            background: linear-gradient(90deg, #E63946, #F4863A);
+            color: #fff;
+            padding: 8px 0;
+            overflow: hidden;
+            white-space: nowrap;
+            font-weight: 700;
+            font-size: .85rem;
+            position: relative;
+            z-index: 501;
+            border-bottom: 2px solid rgba(255, 255, 255, 0.15);
+        }
+        .top-bar-track {
+            display: flex;
+            width: max-content;
+            animation: scrollMarquee 25s linear infinite;
+        }
+        .top-bar-track span {
+            padding: 0 40px;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .top-bar-track i {
+            font-size: 1rem;
+        }
+        @keyframes scrollMarquee {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+
         /* ==========================================================================
-           Hero — Enhanced with animations
+           HERO — Enhanced with blobs, sparkles, rainbow text animation, stats
            ========================================================================== */
         .hero {
             position: relative;
             background: var(--navy-2);
             color: #fff;
-            padding-top: 20px;
             overflow: hidden;
             min-height: 80vh;
             display: flex;
@@ -432,7 +428,7 @@
             content: '';
             position: absolute;
             inset: 0;
-            background: url('https://picsum.photos/1600/900?random=60') center/cover no-repeat;
+            background: url('bg1.jpg') center/cover no-repeat;
             opacity: 0.08;
             z-index: 0;
         }
@@ -440,6 +436,7 @@
             position: absolute;
             inset: 0;
             z-index: 0;
+            pointer-events: none;
         }
         .blob {
             position: absolute;
@@ -672,7 +669,7 @@
             font-weight: 800;
             color: var(--yellow);
         }
-        .stat-label {
+        .hero-stats .stat-label {
             font-size: .85rem;
             color: #C7CFEE;
             font-weight: 600;
@@ -731,590 +728,267 @@
         .wave-yellow path {
             fill: var(--cream-soft);
         }
-        .wave-purple path {
-            fill: var(--cream-cool);
-        }
-        .wave-navy path {
-            fill: var(--navy-2);
-        }
-        .wave-cream path {
-            fill: var(--cream-warm);
-        }
 
-        /* ==========================================================================
-           Stats Bar
-           ========================================================================== */
-        .stats-bar {
-            background: #fff;
-            padding: 40px 0;
-            border-bottom: 1px solid rgba(27, 42, 87, 0.06);
-            margin-top: -2px;
-            position: relative;
-            z-index: 2;
+        /* features strip */
+        .features-strip {
+            background: var(--cream);
+            padding: 40px 32px 50px;
         }
-        .stats-grid {
+        .features-grid {
             max-width: 1180px;
             margin: 0 auto;
-            padding: 0 32px;
             display: grid;
             grid-template-columns: repeat(4, 1fr);
-            gap: 30px;
+            gap: 24px;
         }
-        .stat-item {
-            text-align: center;
-        }
-        .stat-number {
-            font-family: var(--font-display);
-            font-size: 2.6rem;
-            font-weight: 800;
-            color: var(--navy-2);
-            line-height: 1;
-        }
-        .stat-number .accent {
-            color: var(--red);
-        }
-        .stat-label {
-            font-size: .92rem;
-            color: #5A628C;
-            margin-top: 6px;
-            font-weight: 600;
-        }
-        .stat-item .stat-icon {
-            font-size: 1.6rem;
-            color: var(--blue);
-            opacity: 0.5;
-            margin-bottom: 4px;
-        }
-
-        /* ==========================================================================
-           About — distinct background
-           ========================================================================== */
-        .about {
-            background: var(--cream);
-            position: relative;
-        }
-        .about::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: radial-gradient(circle at 10% 20%, rgba(46, 90, 172, 0.04) 0%, transparent 60%),
-                radial-gradient(circle at 90% 80%, rgba(123, 79, 160, 0.04) 0%, transparent 60%);
-            pointer-events: none;
-        }
-        .about-grid {
-            margin-top: 48px;
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 22px;
-            position: relative;
-            z-index: 1;
-        }
-        .about-card {
+        .feat-card {
             background: #fff;
             border-radius: var(--radius-md);
-            padding: 28px 24px;
+            padding: 28px 22px;
+            text-align: center;
             box-shadow: var(--shadow-soft);
             transition: transform .2s ease, box-shadow .2s ease;
-            border-bottom: 4px solid var(--c);
-        }
-        .about-card:hover {
-            transform: translateY(-8px);
-            box-shadow: var(--shadow-pop);
-        }
-        .about-icon {
-            width: 52px;
-            height: 52px;
-            border-radius: 14px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.4rem;
-            color: #fff;
-            margin-bottom: 16px;
-            background: var(--c);
-        }
-        .about-card h3 {
-            font-size: 1.15rem;
-            margin-bottom: 10px;
-            color: var(--navy-2);
-        }
-        .about-card p {
-            font-size: .95rem;
-            line-height: 1.6;
-            color: #5A628C;
-        }
-
-        /* ==========================================================================
-           Academics — distinct background
-           ========================================================================== */
-        .academics {
-            background: var(--cream-soft);
             position: relative;
-        }
-        .academics::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%232E5AAC' fill-opacity='0.04'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-            pointer-events: none;
-        }
-        .academic-tabs {
-            margin-top: 48px;
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 26px;
-            position: relative;
-            z-index: 1;
-        }
-        .prog-card {
-            background: #fff;
-            border-radius: var(--radius-lg);
-            padding: 0 0 26px 0;
-            border-top: 6px solid var(--tint);
-            box-shadow: var(--shadow-soft);
-            overflow: hidden;
-            transition: transform .2s ease, box-shadow .2s ease;
-        }
-        .prog-card:hover {
-            transform: translateY(-8px);
-            box-shadow: var(--shadow-pop);
-        }
-        .prog-card .prog-img {
-            height: 140px;
             overflow: hidden;
         }
-        .prog-card .prog-img img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform .4s ease;
+        .feat-card:hover {
+            transform: translateY(-6px);
+            box-shadow: var(--shadow-pop);
         }
-        .prog-card:hover .prog-img img {
-            transform: scale(1.05);
-        }
-        .prog-card .prog-content {
-            padding: 20px 24px 0;
-        }
-        .prog-top {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+        .feat-card .feat-icon {
+            font-size: 2.6rem;
             margin-bottom: 12px;
+            color: var(--c);
         }
-        .prog-top i {
-            font-size: 1.8rem;
-            color: var(--tint);
-        }
-        .prog-age {
-            font-size: .78rem;
-            font-weight: 800;
-            background: var(--tint);
-            color: #fff;
-            padding: 5px 12px;
-            border-radius: 999px;
-        }
-        .prog-card h3 {
-            font-size: 1.3rem;
-            margin-bottom: 8px;
-            color: var(--navy-2);
-        }
-        .prog-card p {
-            color: #5A628C;
-            font-size: .95rem;
-            line-height: 1.6;
-            margin-bottom: 14px;
-        }
-        .prog-list li {
-            display: flex;
-            gap: 8px;
-            align-items: flex-start;
-            font-size: .9rem;
+        .feat-card h4 {
+            font-size: 1.05rem;
             color: var(--navy-2);
             margin-bottom: 6px;
         }
-        .prog-list i {
-            color: var(--tint);
-            margin-top: 3px;
+        .feat-card p {
+            font-size: .85rem;
+            color: #5A628C;
+            line-height: 1.5;
         }
 
-        .activities-strip {
-            margin-top: 56px;
-            position: relative;
-            z-index: 1;
+        /* about glimpse */
+        .about-glimpse {
+            background: var(--cream-soft);
         }
-        .activities-title {
-            font-size: 1.3rem;
-            margin-bottom: 20px;
-            color: var(--navy-2);
-            display: flex;
-            gap: 10px;
-            align-items: center;
-        }
-        .activities-row {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 14px;
-        }
-        .activity-pill {
-            background: #fff;
-            border: 2px solid rgba(27, 42, 87, 0.08);
-            border-radius: 999px;
-            padding: 12px 20px;
-            font-weight: 700;
-            font-size: .92rem;
-            display: flex;
-            gap: 9px;
-            align-items: center;
-            color: var(--navy-2);
-            transition: border-color .2s ease, transform .2s ease, box-shadow .2s ease;
-        }
-        .activity-pill i {
-            color: var(--orange);
-        }
-        .activity-pill:hover {
-            border-color: var(--orange);
-            transform: translateY(-3px);
-            box-shadow: var(--shadow-soft);
-        }
-
-        /* ==========================================================================
-           Gallery — distinct background
-           ========================================================================== */
-        .gallery {
-            background: var(--cream-cool);
-            position: relative;
-        }
-        .gallery::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: radial-gradient(circle at 30% 70%, rgba(244, 134, 58, 0.04) 0%, transparent 50%),
-                radial-gradient(circle at 70% 30%, rgba(46, 90, 172, 0.04) 0%, transparent 50%);
-            pointer-events: none;
-        }
-        .gallery-grid {
-            margin-top: 48px;
+        .about-glimpse .section-wrap {
             display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 20px;
-            position: relative;
-            z-index: 1;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
         }
-        .gal-item {
-            aspect-ratio: 1/1;
+        .about-glimpse-image {
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow-pop);
+            position: relative;
+        }
+        .about-glimpse-image img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            aspect-ratio: 4/3;
+            border-radius: var(--radius-lg);
+        }
+        .about-glimpse-image .img-badge {
+            position: absolute;
+            bottom: 16px;
+            right: 16px;
+            background: var(--red);
+            color: #fff;
+            font-weight: 800;
+            font-size: .78rem;
+            padding: 8px 16px;
+            border-radius: 999px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        /* programs */
+        .programs-section {
+            background: #fff;
+        }
+        .program-cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 22px;
+            margin-top: 40px;
+        }
+        .prog-card {
+            background: var(--cream);
             border-radius: var(--radius-md);
-            background: color-mix(in srgb, var(--c) 14%, white);
+            padding: 30px 24px;
+            text-align: center;
+            transition: transform .2s ease, box-shadow .2s ease;
+            border: 2px solid transparent;
+        }
+        .prog-card:hover {
+            transform: translateY(-6px);
+            box-shadow: var(--shadow-pop);
+            border-color: var(--c);
+        }
+        .prog-card .prog-icon {
+            width: 64px;
+            height: 64px;
+            border-radius: 50%;
+            margin: 0 auto 16px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 2.6rem;
-            color: var(--c);
+            font-size: 1.8rem;
+            color: #fff;
+            background: var(--c);
+        }
+        .prog-card h4 {
+            font-size: 1.15rem;
+            color: var(--navy-2);
+            margin-bottom: 8px;
+        }
+        .prog-card p {
+            font-size: .88rem;
+            color: #5A628C;
+            line-height: 1.6;
+        }
+        .prog-card .prog-age {
+            display: inline-block;
+            margin-top: 12px;
+            background: var(--c);
+            color: #fff;
+            font-size: .75rem;
+            font-weight: 800;
+            padding: 5px 14px;
+            border-radius: 999px;
+            letter-spacing: .04em;
+        }
+
+        /* gallery teaser */
+        .gallery-teaser {
+            background: var(--cream-soft);
+        }
+        .teaser-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 16px;
+            margin-top: 36px;
+        }
+        .teaser-item {
+            aspect-ratio: 1/1;
+            border-radius: var(--radius-md);
+            overflow: hidden;
             cursor: pointer;
             position: relative;
-            overflow: hidden;
             transition: transform .25s ease, box-shadow .25s ease;
         }
-        .gal-item img {
+        .teaser-item:hover {
+            transform: translateY(-5px) scale(1.03);
+            box-shadow: var(--shadow-pop);
+        }
+        .teaser-item img {
             width: 100%;
             height: 100%;
             object-fit: cover;
             transition: transform .4s ease;
         }
-        .gal-item:hover {
-            transform: translateY(-6px) scale(1.02);
-            box-shadow: var(--shadow-pop);
+        .teaser-item:hover img {
+            transform: scale(1.08);
         }
-        .gal-item:hover img {
-            transform: scale(1.05);
-        }
-        .gal-item::after {
-            content: attr(data-caption);
+        .teaser-item::after {
+            content: '';
             position: absolute;
-            inset: auto 0 0 0;
-            padding: 10px 14px;
-            background: rgba(27, 42, 87, 0.7);
-            color: #fff;
-            font-size: .82rem;
-            font-weight: 700;
-            text-align: center;
-            transform: translateY(100%);
-            transition: transform .25s ease;
-            backdrop-filter: blur(4px);
+            inset: 0;
+            background: linear-gradient(0deg, rgba(20, 31, 66, 0.5) 0%, transparent 60%);
+            opacity: 0;
+            transition: opacity .3s ease;
         }
-        .gal-item:hover::after {
+        .teaser-item:hover::after {
+            opacity: 1;
+        }
+        .teaser-item .teaser-label {
+            position: absolute;
+            bottom: 12px;
+            left: 12px;
+            z-index: 2;
+            color: #fff;
+            font-weight: 700;
+            font-size: .82rem;
+            opacity: 0;
+            transform: translateY(8px);
+            transition: opacity .3s ease, transform .3s ease;
+        }
+        .teaser-item:hover .teaser-label {
+            opacity: 1;
             transform: translateY(0);
         }
 
-        .lightbox {
-            position: fixed;
-            inset: 0;
-            background: rgba(20, 31, 66, 0.85);
-            z-index: 900;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            opacity: 0;
-            visibility: hidden;
-            transition: opacity .25s ease;
-        }
-        .lightbox.open {
-            opacity: 1;
-            visibility: visible;
-        }
-        .lightbox-card {
+        /* testimonials */
+        .testimonials {
             background: #fff;
-            border-radius: var(--radius-lg);
-            padding: 50px;
-            text-align: center;
-            max-width: 380px;
-            transform: scale(.9);
-            transition: transform .25s ease;
         }
-        .lightbox.open .lightbox-card {
-            transform: scale(1);
+        .testi-cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            margin-top: 36px;
         }
-        .lightbox-card i {
-            font-size: 3rem;
-            color: var(--purple);
-            margin-bottom: 16px;
+        .testi-card {
+            background: var(--cream);
+            border-radius: var(--radius-md);
+            padding: 28px 24px;
+            position: relative;
+            border-left: 4px solid var(--c);
         }
-        .lightbox-card p {
+        .testi-card .testi-quote {
+            font-size: 2rem;
+            color: var(--c);
+            opacity: .5;
+            line-height: 1;
+            margin-bottom: 8px;
+        }
+        .testi-card p {
+            font-size: .92rem;
+            color: #44507A;
+            line-height: 1.65;
+            font-style: italic;
+        }
+        .testi-card .testi-author {
+            margin-top: 14px;
             font-weight: 800;
-            font-size: 1.1rem;
             color: var(--navy-2);
+            font-size: .88rem;
+            font-style: normal;
         }
-        .lightbox-close {
-            position: absolute;
-            top: 26px;
-            right: 30px;
-            color: #fff;
-            font-size: 1.4rem;
-            width: 44px;
-            height: 44px;
-            border-radius: 50%;
-            background: rgba(255, 255, 255, 0.12);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: background .2s ease;
-        }
-        .lightbox-close:hover {
-            background: rgba(255, 255, 255, 0.2);
+        .testi-card .testi-role {
+            font-size: .78rem;
+            color: #5A628C;
+            font-style: normal;
         }
 
-        /* ==========================================================================
-           Admission banner — distinct background
-           ========================================================================== */
-        .admission {
+        /* CTA banner */
+        .cta-banner {
             background: var(--navy-2);
             color: #fff;
-            position: relative;
-            overflow: hidden;
-        }
-        .admission::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: url('https://picsum.photos/1200/600?random=70') center/cover no-repeat;
-            opacity: 0.04;
-            z-index: 0;
-        }
-        .admission::after {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: radial-gradient(circle at 20% 50%, rgba(123, 79, 160, 0.15) 0%, transparent 50%),
-                radial-gradient(circle at 80% 50%, rgba(46, 90, 172, 0.15) 0%, transparent 50%);
-            pointer-events: none;
-            z-index: 0;
-        }
-        .admission-wrap {
-            position: relative;
-            z-index: 1;
-            display: grid;
-            grid-template-columns: 1.1fr 0.9fr;
-            gap: 50px;
-            align-items: center;
-            padding-top: 80px;
-            padding-bottom: 80px;
-        }
-        .admission-steps {
-            display: flex;
-            flex-direction: column;
-            gap: 22px;
-        }
-        .step {
-            display: flex;
-            gap: 18px;
-            align-items: flex-start;
-        }
-        .step-num {
-            width: 40px;
-            height: 40px;
-            flex: none;
-            border-radius: 12px;
-            background: var(--yellow);
-            color: var(--navy-2);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 800;
-            font-family: var(--font-display);
-            font-size: 1.1rem;
-        }
-        .step h4 {
-            font-size: 1.05rem;
-            margin-bottom: 4px;
-            color: #fff;
-        }
-        .step p {
-            color: #C7CFEE;
-            font-size: .92rem;
-            line-height: 1.55;
-        }
-
-        /* ==========================================================================
-           Contact — distinct background
-           ========================================================================== */
-        .contact {
-            background: var(--cream-warm);
-            position: relative;
-        }
-        .contact::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: radial-gradient(circle at 80% 20%, rgba(230, 57, 70, 0.04) 0%, transparent 50%),
-                radial-gradient(circle at 20% 80%, rgba(46, 90, 172, 0.04) 0%, transparent 50%);
-            pointer-events: none;
-        }
-        .contact-grid {
-            margin-top: 48px;
-            display: grid;
-            grid-template-columns: 0.85fr 1.15fr;
-            gap: 40px;
-            position: relative;
-            z-index: 1;
-        }
-        .contact-info {
-            display: flex;
-            flex-direction: column;
-            gap: 22px;
-        }
-        .info-row {
-            display: flex;
-            gap: 16px;
-            align-items: flex-start;
-        }
-        .info-row i {
-            font-size: 1.3rem;
-            color: var(--red);
-            margin-top: 4px;
-            width: 24px;
+            padding: 70px 32px;
             text-align: center;
         }
-        .info-row strong {
-            display: block;
-            font-size: .95rem;
-            color: var(--navy-2);
-            margin-bottom: 2px;
+        .cta-banner h2 {
+            font-size: clamp(1.8rem, 3vw, 2.5rem);
+            max-width: 700px;
+            margin: 0 auto 16px;
         }
-        .info-row p {
-            color: #5A628C;
-            font-size: .92rem;
-        }
-        .social-row {
-            display: flex;
-            gap: 12px;
-            margin-top: 10px;
-        }
-        .social-row a {
-            width: 42px;
-            height: 42px;
-            border-radius: 50%;
-            background: #fff;
-            color: var(--navy-2);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: var(--shadow-soft);
-            transition: background .2s ease, color .2s ease, transform .2s ease;
-        }
-        .social-row a:hover {
-            background: var(--red);
-            color: #fff;
-            transform: translateY(-3px);
+        .cta-banner p {
+            color: #C7CFEE;
+            font-size: 1.05rem;
+            max-width: 560px;
+            margin: 0 auto 30px;
+            line-height: 1.6;
         }
 
-        .contact-form {
-            margin-top: -100px;
-            margin-bottom: 100px;
-            background: #fff;
-            border-radius: var(--radius-lg);
-            padding: 32px;
-            box-shadow: var(--shadow-soft);
-        }
-        .form-row {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 16px;
-        }
-        .field {
-            margin-bottom: 16px;
-            display: flex;
-            flex-direction: column;
-            gap: 6px;
-        }
-        .field label {
-            font-size: .85rem;
-            font-weight: 800;
-            color: var(--navy-2);
-        }
-        .field input,
-        .field select,
-        .field textarea {
-            border: 2px solid rgba(27, 42, 87, 0.12);
-            border-radius: var(--radius-sm);
-            padding: 12px 14px;
-            font-family: inherit;
-            font-size: .95rem;
-            color: var(--navy-2);
-            background: var(--cream);
-            transition: border-color .18s ease;
-        }
-        .field input:focus,
-        .field select:focus,
-        .field textarea:focus {
-            outline: none;
-            border-color: var(--blue);
-        }
-        .field textarea {
-            resize: vertical;
-        }
-        .form-note {
-            margin-top: 12px;
-            font-size: .9rem;
-            font-weight: 700;
-            color: var(--green);
-            min-height: 1.2em;
-        }
-
-        .map-embed {
-            margin-top: 44px;
-            border-radius: var(--radius-lg);
-            overflow: hidden;
-            box-shadow: var(--shadow-soft);
-            height: 300px;
-        }
-        .map-embed iframe {
-            width: 100%;
-            height: 100%;
-            border: 0;
-        }
-
-        /* ==========================================================================
-           Footer
-           ========================================================================== */
+        /* footer */
         .site-footer {
             background: var(--navy-2);
             color: #C7CFEE;
@@ -1335,7 +1009,6 @@
             background: #fff;
             padding: 6px;
             margin-bottom: 14px;
-            object-fit: contain;
         }
         .footer-brand p {
             font-size: .9rem;
@@ -1364,9 +1037,7 @@
             font-size: .85rem;
         }
 
-        /* ==========================================================================
-           Floating Enquire Button (mobile)
-           ========================================================================== */
+        /* fab */
         .fab-enquire {
             position: fixed;
             bottom: 24px;
@@ -1382,15 +1053,9 @@
             display: none;
             align-items: center;
             justify-content: center;
-            transition: transform .2s ease;
-        }
-        .fab-enquire:hover {
-            transform: scale(1.08);
         }
 
-        /* ==========================================================================
-           Admission Enquiry Modal — FIXED (inherited from about page)
-           ========================================================================== */
+        /* modal */
         .modal-overlay {
             position: fixed;
             inset: 0;
@@ -1403,7 +1068,7 @@
             padding: 20px;
             opacity: 0;
             visibility: hidden;
-            transition: opacity .28s ease, visibility .28s ease;
+            transition: opacity .28s ease;
         }
         .modal-overlay.open {
             opacity: 1;
@@ -1440,12 +1105,10 @@
             align-items: center;
             justify-content: center;
             transition: background .18s ease;
-            font-size: 1.1rem;
         }
         .modal-close:hover {
             background: rgba(27, 42, 87, 0.14);
         }
-
         .modal-side {
             background: var(--navy-2);
             color: #fff;
@@ -1517,7 +1180,6 @@
             left: 120px;
             transform: rotate(40deg);
         }
-
         .modal-form-wrap {
             padding: 44px 40px;
         }
@@ -1529,7 +1191,6 @@
             gap: 10px;
             align-items: center;
         }
-
         .modal-success {
             display: none;
             text-align: center;
@@ -1623,38 +1284,36 @@
             --x: 150px;
         }
 
-        /* ==========================================================================
-           RESPONSIVE — Enhanced for mobile
-           ========================================================================== */
+        /* responsive */
         @media (max-width: 1080px) {
-            .about-grid {
+            .features-grid {
                 grid-template-columns: repeat(2, 1fr);
             }
-            .academic-tabs {
-                grid-template-columns: 1fr;
+            .program-cards {
+                grid-template-columns: repeat(2, 1fr);
             }
-            .gallery-grid {
-                grid-template-columns: repeat(3, 1fr);
+            .teaser-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .testi-cards {
+                grid-template-columns: repeat(2, 1fr);
             }
             .footer-wrap {
                 grid-template-columns: 1fr 1fr;
             }
-            .stats-grid {
-                grid-template-columns: repeat(2, 1fr);
+            .about-glimpse .section-wrap {
+                grid-template-columns: 1fr;
             }
         }
-
         @media (max-width: 900px) {
             .hero-inner {
                 grid-template-columns: 1fr;
                 text-align: center;
-                padding: 40px 22px 80px;
-            }
-            .hero-copy {
-                order: 1;
             }
             .hero-art {
-                order: 0;
+                order: -1;
+                max-width: 320px;
+                margin: 0 auto 20px;
             }
             .hero-sub {
                 margin-left: auto;
@@ -1666,71 +1325,65 @@
             .hero-stats {
                 justify-content: center;
             }
-            .admission-wrap {
-                grid-template-columns: 1fr;
-                padding: 60px 0;
-            }
-            .contact-grid {
-                grid-template-columns: 1fr;
-            }
             .modal-card {
                 grid-template-columns: 1fr;
             }
             .modal-side {
                 display: none;
             }
-            .top-bar {
-                font-size: .75rem;
-                padding: 6px 0;
-            }
-            .section-wrap {
-                padding: 80px 22px 50px;
-            }
-            .hero {
-                min-height: auto;
-            }
-            .modal-form-wrap {
-                padding: 30px 22px;
+            .program-cards {
+                grid-template-columns: 1fr 1fr;
             }
             .rainbow-burst {
                 max-width: 380px;
             }
-            .brand-logo {
-                height: 60px;
-                width: 140px;
-            }
         }
-
         @media (max-width: 760px) {
             /* Mobile nav */
             .main-nav {
                 position: fixed;
-                top: 78px;
+                top: 100%;
                 left: 0;
                 right: 0;
                 background: var(--cream);
                 flex-direction: column;
-                align-items: flex-start;
+                align-items: stretch;
                 gap: 0;
-                padding: 10px 28px 20px;
+                margin-left: 0;
+                padding: 8px 24px 32px;
                 box-shadow: 0 14px 24px -14px rgba(27, 42, 87, 0.3);
-                transform: translateY(-140%);
+                transform: translateY(-100%);
                 opacity: 0;
-                transition: transform .25s ease, opacity .2s ease;
-                z-index: 499;
-                border-bottom: 2px solid rgba(27, 42, 87, 0.06);
+                visibility: hidden;
+                transition: transform .3s cubic-bezier(0.4, 0, 0.2, 1), opacity .3s, visibility .3s;
+                z-index: 502;
+                border-bottom: none;
+                overflow-y: auto;
+                -webkit-overflow-scrolling: touch;
             }
             .main-nav.open {
                 transform: translateY(0);
                 opacity: 1;
+                visibility: visible;
             }
             .main-nav a {
-                padding: 12px 0;
+                padding: 14px 0;
                 width: 100%;
                 border-bottom: 1px solid rgba(27, 42, 87, 0.06);
+                font-size: 1rem;
             }
             .hamburger {
                 display: flex;
+                min-width: 44px;
+                min-height: 44px;
+                align-items: center;
+                justify-content: center;
+                z-index: 503;
+                margin-left: auto;
+            }
+            .nav-wrap {
+                position: relative;
+                z-index: 503;
             }
             .btn-enquire {
                 display: none;
@@ -1738,45 +1391,36 @@
             .fab-enquire {
                 display: flex;
             }
-
-            /* Layouts */
-            .about-grid {
+            .features-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+            .program-cards {
                 grid-template-columns: 1fr;
             }
-            .gallery-grid {
+            .teaser-grid {
                 grid-template-columns: repeat(2, 1fr);
-                gap: 12px;
+                gap: 10px;
+            }
+            .testi-cards {
+                grid-template-columns: 1fr;
             }
             .footer-wrap {
                 grid-template-columns: 1fr;
-                gap: 28px;
-            }
-            .form-row {
-                grid-template-columns: 1fr;
-            }
-            .stats-grid {
-                grid-template-columns: 1fr 1fr;
-                gap: 16px;
-                padding: 0 16px;
-            }
-            .stat-number {
-                font-size: 2rem;
-            }
-            .top-bar-track {
-                animation-duration: 15s;
-            }
-            .top-bar-track span {
-                padding: 0 20px;
             }
             .section-wrap {
-                padding: 60px 16px 40px;
+                padding: 70px 22px 50px;
             }
             .hero-inner {
-                padding: 30px 16px 60px;
-                gap: 20px;
+                padding: 40px 22px 80px;
             }
-            .hero-title {
-                font-size: 2.2rem;
+            .modal-form-wrap {
+                padding: 30px 22px;
+            }
+            .hero {
+                min-height: auto;
+            }
+            .rainbow-burst {
+                max-width: 260px;
             }
             .hero-stats {
                 gap: 24px;
@@ -1784,366 +1428,16 @@
             .stat-num {
                 font-size: 1.6rem;
             }
-            .admission-wrap {
-                padding: 40px 0;
-            }
-            .contact-form {
-                padding: 20px 16px;
-            }
-            .map-embed {
-                height: 200px;
-            }
-            .rainbow-burst {
-                max-width: 260px;
-            }
-            .brand-logo {
-                height: 50px;
-                width: 120px;
-            }
-            .nav-wrap {
-                padding: 8px 16px;
-                gap: 12px;
-            }
-            .site-header {
-                top: 0;
-            }
-            .top-bar {
-                font-size: .65rem;
-                padding: 4px 0;
-            }
-            .top-bar-track span {
-                padding: 0 12px;
-                gap: 4px;
-            }
-            .hero-actions {
-                flex-direction: column;
-                align-items: center;
-            }
-            .hero-actions .btn-primary,
-            .hero-actions .btn-ghost {
-                width: 100%;
-                justify-content: center;
-            }
-            .admission-steps {
-                gap: 16px;
-            }
-            .step {
-                gap: 12px;
-            }
-            .step-num {
-                width: 32px;
-                height: 32px;
-                font-size: .9rem;
-            }
-            .lightbox-card {
-                padding: 32px 20px;
-                max-width: 300px;
-            }
-            .modal-card {
-                max-height: 98vh;
-                border-radius: var(--radius-md);
-            }
-            .modal-form-wrap {
-                padding: 20px 16px;
-            }
-            .modal-form-wrap h4 {
-                font-size: 1rem;
-                margin-bottom: 16px;
-            }
-            .footer-wrap {
-                padding: 0 16px 30px;
-            }
-            .footer-bottom {
-                padding: 16px;
-                font-size: .75rem;
-            }
-            .footer-logo {
-                height: 70px;
-            }
-            .activities-row {
-                gap: 10px;
-            }
-            .activity-pill {
-                padding: 8px 14px;
-                font-size: .8rem;
-            }
-            .about-card {
-                padding: 20px 16px;
-            }
-            .prog-card .prog-content {
-                padding: 16px 16px 0;
-            }
-            .prog-card .prog-img {
-                height: 100px;
-            }
-            .prog-top i {
-                font-size: 1.4rem;
-            }
-            .prog-age {
-                font-size: .7rem;
-                padding: 3px 10px;
-            }
-            .stat-item .stat-icon {
-                font-size: 1.2rem;
-            }
-            .stat-label {
-                font-size: .8rem;
-            }
-            .info-row {
-                gap: 12px;
-            }
-            .info-row i {
-                font-size: 1.1rem;
-                width: 20px;
-            }
-            .social-row a {
-                width: 36px;
-                height: 36px;
-                font-size: .9rem;
-            }
-            .fab-enquire {
-                width: 50px;
-                height: 50px;
-                font-size: 1.2rem;
-                bottom: 16px;
-                right: 16px;
-            }
-            .wave-divider {
-                height: 40px;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .gallery-grid {
-                grid-template-columns: 1fr 1fr;
-                gap: 8px;
-            }
-            .stats-grid {
-                grid-template-columns: 1fr 1fr;
-                gap: 12px;
-            }
-            .stat-number {
-                font-size: 1.6rem;
-            }
-            .hero-title {
-                font-size: 1.8rem;
-            }
-            .hero-sub {
-                font-size: .95rem;
-            }
-            .section-title {
-                font-size: 1.6rem;
-            }
-            .section-lead {
-                font-size: .95rem;
-            }
-            .rainbow-burst {
-                max-width: 200px;
-            }
-            .brand-logo {
-                height: 42px;
-                width: 100px;
-            }
-            .nav-wrap {
-                padding: 6px 12px;
-            }
-            .main-nav {
-                top: 62px;
-                padding: 8px 16px 16px;
-            }
-            .main-nav a {
-                padding: 10px 0;
-                font-size: .9rem;
-            }
-            .top-bar {
-                font-size: .55rem;
-            }
-            .top-bar-track span {
-                padding: 0 8px;
-            }
-            .btn-primary {
-                padding: 12px 18px;
-                font-size: .9rem;
-            }
-            .btn-ghost {
-                font-size: .9rem;
-                padding: 12px 6px;
-            }
-            .modal-form-wrap {
-                padding: 16px 12px;
-            }
-            .field input,
-            .field select,
-            .field textarea {
-                padding: 10px 12px;
-                font-size: .88rem;
-            }
-            .contact-form {
-                padding: 16px 12px;
-            }
-            .footer-wrap {
-                padding: 0 12px 24px;
-            }
-            .footer-bottom {
-                padding: 14px 12px;
-                font-size: .7rem;
-            }
-            .about-card {
-                padding: 16px 14px;
-            }
-            .about-icon {
-                width: 44px;
-                height: 44px;
-                font-size: 1.2rem;
-            }
-            .about-card h3 {
-                font-size: 1rem;
-            }
-            .about-card p {
-                font-size: .88rem;
-            }
-            .prog-card h3 {
-                font-size: 1.1rem;
-            }
-            .prog-card p {
-                font-size: .88rem;
-            }
-            .prog-list li {
-                font-size: .82rem;
-            }
-            .activity-pill {
-                padding: 6px 12px;
-                font-size: .75rem;
-            }
-            .activities-title {
-                font-size: 1.1rem;
-            }
-            .gal-item::after {
-                font-size: .7rem;
-                padding: 6px 10px;
-            }
-            .lightbox-card {
-                padding: 24px 16px;
-                max-width: 260px;
-            }
-            .lightbox-card i {
-                font-size: 2.2rem;
-            }
-            .lightbox-card p {
-                font-size: .95rem;
-            }
-            .lightbox-close {
-                top: 16px;
-                right: 16px;
-                width: 36px;
-                height: 36px;
-                font-size: 1.1rem;
-            }
-            .fab-enquire {
-                width: 44px;
-                height: 44px;
-                font-size: 1rem;
-                bottom: 12px;
-                right: 12px;
-            }
-            .step-num {
-                width: 28px;
-                height: 28px;
-                font-size: .8rem;
-            }
-            .step h4 {
-                font-size: .9rem;
-            }
-            .step p {
-                font-size: .82rem;
-            }
-            .modal-side {
-                display: none;
-            }
-            .modal-card {
-                max-width: 100%;
-                border-radius: var(--radius-sm);
-            }
-            .hero-stats {
-                gap: 16px;
-            }
-            .stat-num {
-                font-size: 1.3rem;
-            }
-            .stat-label {
-                font-size: .7rem;
-            }
-            .stat-item .stat-icon {
-                font-size: 1rem;
-            }
-            .info-row strong {
-                font-size: .85rem;
-            }
-            .info-row p {
-                font-size: .82rem;
-            }
-            .social-row a {
-                width: 32px;
-                height: 32px;
-                font-size: .8rem;
-            }
-            .map-embed {
-                height: 160px;
-            }
-            .wave-divider {
-                height: 30px;
-            }
-        }
-
-        /* Extra small devices */
-        @media (max-width: 380px) {
-            .hero-title {
-                font-size: 1.5rem;
-            }
-            .hero-sub {
-                font-size: .85rem;
-            }
-            .rainbow-burst {
-                max-width: 160px;
-            }
-            .brand-logo {
-                height: 36px;
-                width: 86px;
-            }
-            .gallery-grid {
-                grid-template-columns: 1fr 1fr;
-                gap: 6px;
-            }
-            .stat-number {
-                font-size: 1.3rem;
-            }
-            .section-title {
-                font-size: 1.3rem;
-            }
-            .btn-primary {
-                font-size: .8rem;
-                padding: 10px 14px;
-            }
-            .top-bar {
-                font-size: .5rem;
-            }
-            .top-bar-track span {
-                padding: 0 6px;
-                gap: 3px;
-            }
-            .modal-form-wrap h4 {
-                font-size: .9rem;
-            }
         }
     </style>
 </head>
 
 <body>
 
-    <!-- Rainbow scroll progress -->
+    <!-- Scroll Progress -->
     <div class="scroll-rainbow" id="scrollRainbow"></div>
 
-    <!-- ============ TOP ANNOUNCEMENT BAR ============ -->
+    <!-- Top Announcement Bar (with animation) -->
     <div class="top-bar anim-fade-in anim-delay-1">
         <div class="top-bar-track">
             <span><i class="bi bi-megaphone-fill"></i> Admissions Open for 2026-27! </span>
@@ -2151,7 +1445,6 @@
             <span><i class="bi bi-telephone-fill"></i> Call us at +91 90000 00000 </span>
             <span><i class="bi bi-star-fill"></i> Recognized by Govt. of Telangana </span>
             <span><i class="bi bi-emoji-smile"></i> Where Little Minds Bloom </span>
-            <!-- duplicate for seamless loop -->
             <span><i class="bi bi-megaphone-fill"></i> Admissions Open for 2026-27! </span>
             <span><i class="bi bi-calendar-check"></i> Book a Campus Visit Today! </span>
             <span><i class="bi bi-telephone-fill"></i> Call us at +91 90000 00000 </span>
@@ -2160,13 +1453,12 @@
         </div>
     </div>
 
-    <!-- ============ NAV ============ -->
+    <!-- Header -->
     <header class="site-header" id="siteHeader">
         <div class="nav-wrap">
-            <a href="#home" class="brand anim-fade-in anim-delay-1">
-                <img src="logo1.png" alt="Sri Rainbow School logo" class="brand-logo" />
+            <a href="index.html" class="brand anim-fade-in anim-delay-1">
+                <img src="logo1.png" alt="Sri Rainbow School logo" class="brand-logo">
             </a>
-
             <nav class="main-nav" id="mainNav">
                 <a href="index.html" class="nav-link active anim-fade-up anim-delay-2">Home</a>
                 <a href="about.html" class="nav-link anim-fade-up anim-delay-3">About</a>
@@ -2175,18 +1467,16 @@
                 <a href="admission.html" class="nav-link anim-fade-up anim-delay-6">Admission</a>
                 <a href="contact.html" class="nav-link anim-fade-up anim-delay-7">Contact</a>
             </nav>
-
             <button class="btn-enquire anim-fade-up anim-delay-8" id="openEnquireBtn1">
                 <i class="bi bi-pencil-square"></i> Enquire Now
             </button>
-
-            <button class="hamburger anim-fade-in anim-delay-8" id="hamburgerBtn" aria-label="Toggle menu">
+            <button class="hamburger" id="hamburgerBtn" aria-label="Toggle menu">
                 <span></span><span></span><span></span>
             </button>
         </div>
     </header>
 
-    <!-- ============ HOME / HERO ============ -->
+    <!-- Hero Section (Enhanced with blobs, sparkles, rainbow text, stats) -->
     <section class="hero" id="home">
         <div class="hero-blobs" aria-hidden="true">
             <span class="blob blob-a"></span>
@@ -2207,15 +1497,15 @@
             <div class="hero-copy">
                 <p class="eyebrow anim-fade-up anim-delay-1"><i class="bi bi-stars"></i> Recognized by Govt. of Telangana</p>
                 <h1 class="hero-title anim-fade-up anim-delay-2">Every child is a <span class="rainbow-text">splash of colour.</span></h1>
-                <p class="hero-sub anim-fade-up anim-delay-3">Sri Rainbow School gives little learners a bright, joyful start &mdash; where curiosity is celebrated, friendships bloom, and every day feels like a new colour to explore.</p>
+                <p class="hero-sub anim-fade-up anim-delay-3">Sri Rainbow School gives little learners a bright, joyful start — where curiosity is celebrated, friendships bloom, and every day feels like a new colour to explore.</p>
                 <div class="hero-actions anim-fade-up anim-delay-4">
                     <button class="btn-primary" id="openEnquireBtn2"><i class="bi bi-send-check"></i> Admission Enquiry</button>
-                    <a href="#academics" class="btn-ghost">See Academics <i class="bi bi-arrow-down-right"></i></a>
+                    <a href="#programs" class="btn-ghost">See Academics <i class="bi bi-arrow-down-right"></i></a>
                 </div>
-                <div class="hero-stats anim-stagger-children anim-delay-5">
-                    <div class="stat"><span class="stat-num" data-count="18">0</span><span class="stat-label">Years of Joy</span></div>
-                    <div class="stat"><span class="stat-num" data-count="1200">0</span><span class="stat-label">Happy Students</span></div>
-                    <div class="stat"><span class="stat-num" data-count="60">0</span><span class="stat-label">Caring Teachers</span></div>
+                <div class="hero-stats anim-stagger-children anim-delay-5" id="heroStats">
+                    <div class="stat"><span class="stat-num" data-count="18" data-suffix="+">0</span><span class="stat-label">Years of Joy</span></div>
+                    <div class="stat"><span class="stat-num" data-count="1200" data-suffix="+">0</span><span class="stat-label">Happy Students</span></div>
+                    <div class="stat"><span class="stat-num" data-count="60" data-suffix="+">0</span><span class="stat-label">Caring Teachers</span></div>
                 </div>
             </div>
 
@@ -2224,267 +1514,167 @@
             </div>
         </div>
     </section>
+    <svg class="wave-divider" viewBox="0 0 1440 90" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M0,40 C240,90 480,0 720,30 C960,60 1200,10 1440,40 L1440,90 L0,90 Z"></path>
+    </svg>
 
-    <!-- ============ STATS BAR ============ -->
-    <section class="stats-bar">
-        <div class="stats-grid">
-            <div class="stat-item">
-                <div class="stat-icon"><i class="bi bi-calendar-heart"></i></div>
-                <div class="stat-number"><span class="accent" data-count="18">0</span>+</div>
-                <div class="stat-label">Years of Excellence</div>
+    <!-- ===== TESTIMONIALS ===== -->
+
+    <!-- Features Strip -->
+    <section class="features-strip">
+        <div class="features-grid">
+            <div class="feat-card" style="--c:var(--blue);">
+                <div class="feat-icon"><i class="bi bi-people-fill"></i></div>
+                <h4>Caring Educators</h4>
+                <p>Trained, passionate teachers who nurture every child with warmth and patience.</p>
             </div>
-            <div class="stat-item">
-                <div class="stat-icon"><i class="bi bi-people"></i></div>
-                <div class="stat-number"><span class="accent" data-count="1200">0</span>+</div>
-                <div class="stat-label">Happy Students</div>
+            <div class="feat-card" style="--c:var(--green);">
+                <div class="feat-icon"><i class="bi bi-tree-fill"></i></div>
+                <h4>Safe Campus</h4>
+                <p>Secure, green, and child-friendly spaces designed for exploration and play.</p>
             </div>
-            <div class="stat-item">
-                <div class="stat-icon"><i class="bi bi-person-heart"></i></div>
-                <div class="stat-number"><span class="accent" data-count="60">0</span>+</div>
-                <div class="stat-label">Dedicated Teachers</div>
+            <div class="feat-card" style="--c:var(--orange);">
+                <div class="feat-icon"><i class="bi bi-puzzle-fill"></i></div>
+                <h4>Play-Based Learning</h4>
+                <p>Hands-on activities that spark curiosity and build foundational skills joyfully.</p>
             </div>
-            <div class="stat-item">
-                <div class="stat-icon"><i class="bi bi-trophy"></i></div>
-                <div class="stat-number"><span class="accent" data-count="100">0</span>%</div>
-                <div class="stat-label">Joyful Learning</div>
+            <div class="feat-card" style="--c:var(--purple);">
+                <div class="feat-icon"><i class="bi bi-palette-fill"></i></div>
+                <h4>Creative Arts</h4>
+                <p>Music, dance, art, and drama woven into everyday learning for holistic growth.</p>
             </div>
         </div>
     </section>
 
-    <!-- ============ ABOUT ============ -->
-    <section class="about" id="about">
+    <!-- About Glimpse -->
+    <section class="about-glimpse">
         <div class="section-wrap">
-            <p class="eyebrow eyebrow-green anim-fade-up anim-delay-1"><i class="bi bi-flower1"></i> About Us</p>
-            <h2 class="section-title anim-fade-up anim-delay-2">A little school with a big heart</h2>
-            <p class="section-lead anim-fade-up anim-delay-3">Sri Rainbow School was built on one simple belief: children learn best when they feel safe, seen, and delighted by what's in front of them. Our classrooms are bright, our teachers are warm, and our days are full of wonder.</p>
-
-            <div class="about-grid anim-stagger-children anim-delay-4">
-                <div class="about-card" style="--c:var(--blue);">
-                    <div class="about-icon" style="--c:var(--blue);"><i class="bi bi-heart"></i></div>
-                    <h3>Our Mission</h3>
-                    <p>To nurture confident, kind and curious children through play-based, joyful learning experiences that respect each child's own pace.</p>
-                </div>
-                <div class="about-card" style="--c:var(--yellow);">
-                    <div class="about-icon" style="--c:var(--yellow); color:var(--navy-2);"><i class="bi bi-brightness-high"></i></div>
-                    <h3>Our Vision</h3>
-                    <p>A school where every colour of every child is celebrated &mdash; and where learning feels like discovery, not duty.</p>
-                </div>
-                <div class="about-card" style="--c:var(--red);">
-                    <div class="about-icon" style="--c:var(--red);"><i class="bi bi-shield-check"></i></div>
-                    <h3>Safe &amp; Caring</h3>
-                    <p>CCTV-monitored campus, trained caregivers, hygienic meals and a nurse on call &mdash; because peace of mind matters to parents too.</p>
-                </div>
-                <div class="about-card" style="--c:var(--green);">
-                    <div class="about-icon" style="--c:var(--green);"><i class="bi bi-people"></i></div>
-                    <h3>Small Class Sizes</h3>
-                    <p>Low student-teacher ratios mean every child gets seen, heard, and encouraged &mdash; every single day.</p>
-                </div>
+            <div class="about-glimpse-image">
+                <img src="images/1.jpeg" alt="Children playing and learning at Sri Rainbow School" onerror="this.style.background='linear-gradient(135deg, #FFC93C, #F4863A, #E63946)'; this.style.minHeight='300px'; this.style.display='flex'; this.style.alignItems='center'; this.style.justifyContent='center'; this.alt='Placeholder image';">
+                <span class="img-badge"><i class="bi bi-camera-fill"></i> Campus Life</span>
+            </div>
+            <div>
+                <p class="eyebrow eyebrow-red"><i class="bi bi-heart-fill"></i> Our Story</p>
+                <h2 class="section-title">More than a school — a second home.</h2>
+                <p class="section-lead">Founded with a simple belief — that every child deserves to learn in an environment filled with colour, curiosity, and care — Sri Rainbow School has been shaping confident, kind, and creative young minds. Our classrooms buzz with questions, our playgrounds ring with laughter, and our corridors echo with the rhythm of growing up.</p>
+                <p class="section-lead" style="margin-top:12px;">Recognized by the Government of Telangana, we offer a nurturing space where children from Play Group to Class 5 discover the joy of learning — every single day.</p>
+                <a href="about.html" class="btn-primary" style="margin-top:24px; display:inline-flex;"><i class="bi bi-arrow-right"></i> Learn More About Us</a>
             </div>
         </div>
-
         <svg class="wave-divider wave-yellow" viewBox="0 0 1440 90" preserveAspectRatio="none" aria-hidden="true">
             <path d="M0,50 C240,10 480,90 720,50 C960,10 1200,70 1440,30 L1440,90 L0,90 Z"></path>
         </svg>
     </section>
 
-    <!-- ============ ACADEMICS ============ -->
-    <section class="academics" id="academics">
+    <!-- Programs -->
+    <section class="programs-section" id="programs">
         <div class="section-wrap">
-            <p class="eyebrow eyebrow-orange anim-fade-up anim-delay-1"><i class="bi bi-book"></i> Academics</p>
-            <h2 class="section-title anim-fade-up anim-delay-2">A curriculum that grows with them</h2>
-            <p class="section-lead anim-fade-up anim-delay-3">From first steps into a classroom to confident, curious little learners &mdash; our programmes are designed stage by stage, colour by colour.</p>
-
-            <div class="academic-tabs anim-stagger-children anim-delay-4">
-                <div class="prog-card" style="--tint:#2E5AAC">
-                    <div class="prog-img">
-                        <img src="images/1.jpeg" alt="Play Group" loading="lazy" />
-                    </div>
-                    <div class="prog-content">
-                        <div class="prog-top"><i class="bi bi-puzzle"></i><span class="prog-age">1.5 &ndash; 3 yrs</span></div>
-                        <h3>Play Group / Nursery</h3>
-                        <p>Sensory play, rhymes, and gentle first routines that build trust and independence.</p>
-                        <ul class="prog-list">
-                            <li><i class="bi bi-check2"></i> Sensory &amp; motor skill play</li>
-                            <li><i class="bi bi-check2"></i> Music, rhymes &amp; movement</li>
-                            <li><i class="bi bi-check2"></i> Toilet training support</li>
-                        </ul>
-                    </div>
+            <p class="eyebrow eyebrow-purple"><i class="bi bi-book-fill"></i> Our Programmes</p>
+            <h2 class="section-title">Learning journeys for every stage</h2>
+            <p class="section-lead">From tiny tots taking their first steps into school to confident primary learners — each programme is crafted with age-appropriate care.</p>
+            <div class="program-cards">
+                <div class="prog-card" style="--c:var(--purple);">
+                    <div class="prog-icon"><i class="bi bi-flower1"></i></div>
+                    <h4>Play Group &amp; Nursery</h4>
+                    <p>Sensory play, music, movement, and gentle socialisation for our youngest explorers.</p>
+                    <span class="prog-age">Ages 2 – 4</span>
                 </div>
-                <div class="prog-card" style="--tint:#4CAF6D">
-                    <div class="prog-img">
-                        <img src="images/2.jpeg" alt="LKG UKG" loading="lazy" />
-                    </div>
-                    <div class="prog-content">
-                        <div class="prog-top"><i class="bi bi-palette"></i><span class="prog-age">3 &ndash; 5 yrs</span></div>
-                        <h3>LKG &amp; UKG</h3>
-                        <p>Phonics, numeracy, art and storytelling woven into a structured, playful school day.</p>
-                        <ul class="prog-list">
-                            <li><i class="bi bi-check2"></i> Phonics &amp; early literacy</li>
-                            <li><i class="bi bi-check2"></i> Numbers &amp; pattern play</li>
-                            <li><i class="bi bi-check2"></i> Art, craft &amp; storytelling</li>
-                        </ul>
-                    </div>
+                <div class="prog-card" style="--c:var(--blue);">
+                    <div class="prog-icon"><i class="bi bi-pencil-fill"></i></div>
+                    <h4>LKG &amp; UKG</h4>
+                    <p>Phonics, early numeracy, story circles, and creative expression — building strong foundations.</p>
+                    <span class="prog-age">Ages 4 – 6</span>
                 </div>
-                <div class="prog-card" style="--tint:#F4863A">
-                    <div class="prog-img">
-                        <img src="images/1.jpeg" alt="Primary Wing" loading="lazy" />
-                    </div>
-                    <div class="prog-content">
-                        <div class="prog-top"><i class="bi bi-mortarboard"></i><span class="prog-age">5 &ndash; 10 yrs</span></div>
-                        <h3>Primary Wing</h3>
-                        <p>A strong academic core &mdash; language, math and science &mdash; balanced with sport, art and values.</p>
-                        <ul class="prog-list">
-                            <li><i class="bi bi-check2"></i> English, Math, EVS &amp; Telugu</li>
-                            <li><i class="bi bi-check2"></i> Computer &amp; spoken skills lab</li>
-                            <li><i class="bi bi-check2"></i> Sports, yoga &amp; value education</li>
-                        </ul>
-                    </div>
+                <div class="prog-card" style="--c:var(--green);">
+                    <div class="prog-icon"><i class="bi bi-lightbulb-fill"></i></div>
+                    <h4>Primary Wing</h4>
+                    <p>Inquiry-based learning across subjects, fostering independence, critical thinking, and collaboration.</p>
+                    <span class="prog-age">Class 1 – 5</span>
                 </div>
             </div>
-
-            <div class="activities-strip anim-fade-up anim-delay-5">
-                <h3 class="activities-title"><i class="bi bi-controller"></i> Beyond the classroom</h3>
-                <div class="activities-row">
-                    <div class="activity-pill"><i class="bi bi-music-note-beamed"></i> Music &amp; Dance</div>
-                    <div class="activity-pill"><i class="bi bi-easel2"></i> Art &amp; Craft</div>
-                    <div class="activity-pill"><i class="bi bi-trophy"></i> Sports Day</div>
-                    <div class="activity-pill"><i class="bi bi-book-half"></i> Story Time</div>
-                    <div class="activity-pill"><i class="bi bi-tree"></i> Nature Walks</div>
-                    <div class="activity-pill"><i class="bi bi-mic"></i> Show &amp; Tell</div>
-                </div>
+            <div style="text-align:center; margin-top:32px;">
+                <a href="academics.html" class="btn-primary" style="display:inline-flex;"><i class="bi bi-arrow-right"></i> Explore All Programmes</a>
             </div>
         </div>
+    </section>
 
-        <svg class="wave-divider wave-purple" viewBox="0 0 1440 90" preserveAspectRatio="none" aria-hidden="true">
-            <path d="M0,30 C240,70 480,10 720,40 C960,70 1200,20 1440,50 L1440,90 L0,90 Z"></path>
+    <!-- Gallery Teaser -->
+    <section class="gallery-teaser">
+        <div class="section-wrap">
+            <p class="eyebrow eyebrow-orange"><i class="bi bi-images"></i> Gallery</p>
+            <h2 class="section-title">A peek into our colourful world</h2>
+            <p class="section-lead">From story circles to sports days — every image tells a story of joy, discovery, and belonging.</p>
+            <div class="teaser-grid">
+                <div class="teaser-item" style="--c:var(--blue);">
+                    <img src="images/4.jpeg" alt="Sports Day" onerror="this.style.background='#2E5AAC'; this.style.minHeight='100%';">
+                    <span class="teaser-label">Sports Day</span>
+                </div>
+                <div class="teaser-item" style="--c:var(--red);">
+                    <img src="images/5.jpeg" alt="Annual Day" onerror="this.style.background='#E63946'; this.style.minHeight='100%';">
+                    <span class="teaser-label">Annual Day</span>
+                </div>
+                <div class="teaser-item" style="--c:var(--green);">
+                    <img src="images/6.jpeg" alt="Art & Craft" onerror="this.style.background='#4CAF6D'; this.style.minHeight='100%';">
+                    <span class="teaser-label">Art &amp; Craft</span>
+                </div>
+                <div class="teaser-item" style="--c:var(--orange);">
+                    <img src="images/7.jpeg" alt="Nature Walk" onerror="this.style.background='#F4863A'; this.style.minHeight='100%';">
+                    <span class="teaser-label">Nature Walk</span>
+                </div>
+            </div>
+            <div style="text-align:center; margin-top:28px;">
+                <a href="gallery.html" class="btn-primary" style="display:inline-flex; background:var(--orange);"><i class="bi bi-grid-3x3-gap-fill"></i> View Full Gallery</a>
+            </div>
+        </div>
+        <svg class="wave-divider" viewBox="0 0 1440 90" preserveAspectRatio="none" aria-hidden="true">
+            <path d="M0,40 C240,90 480,0 720,30 C960,60 1200,10 1440,40 L1440,90 L0,90 Z"></path>
         </svg>
     </section>
 
-    <!-- ============ GALLERY ============ -->
-    <section class="gallery" id="gallery">
+    <!-- Testimonials -->
+    <section class="testimonials">
         <div class="section-wrap">
-            <p class="eyebrow eyebrow-purple anim-fade-up anim-delay-1"><i class="bi bi-images"></i> Gallery</p>
-            <h2 class="section-title anim-fade-up anim-delay-2">Moments in full colour</h2>
-            <p class="section-lead anim-fade-up anim-delay-3">A peek into our everyday &mdash; painted hands, sports days, story circles and all the little wins in between.</p>
-
-            <div class="gallery-grid anim-stagger-children anim-delay-4" id="galleryGrid">
-                <div class="gal-item" style="--c:#2E5AAC" data-caption="Story Circle Time">
-                    <img src="images/1.jpeg" alt="Story Circle Time" loading="lazy" />
+            <p class="eyebrow eyebrow-green"><i class="bi bi-chat-quote-fill"></i> Testimonials</p>
+            <h2 class="section-title">What parents say about us</h2>
+            <p class="section-lead">Hear from the families who've made Sri Rainbow School their child's second home.</p>
+            <div class="testi-cards">
+                <div class="testi-card" style="--c:var(--blue);">
+                    <div class="testi-quote"><i class="bi bi-quote"></i></div>
+                    <p>"My daughter literally runs to school every morning! The teachers are so warm, and the learning is so playful — she doesn't even realise she's learning. The best decision we made."</p>
+                    <p class="testi-author">— Priya Sharma</p>
+                    <p class="testi-role">Parent of UKG student</p>
                 </div>
-                <div class="gal-item" style="--c:#E63946" data-caption="Annual Sports Day">
-                    <img src="images/2.jpeg" alt="Annual Sports Day" loading="lazy" />
+                <div class="testi-card" style="--c:var(--red);">
+                    <div class="testi-quote"><i class="bi bi-quote"></i></div>
+                    <p>"The transformation in my son's confidence has been incredible. From a shy toddler to someone who eagerly participates in assemblies — Sri Rainbow School worked magic."</p>
+                    <p class="testi-author">— Ravi Kumar</p>
+                    <p class="testi-role">Parent of Class 2 student</p>
                 </div>
-                <div class="gal-item" style="--c:#FFC93C" data-caption="Colours &amp; Craft">
-                    <img src="images/1.jpeg" alt="Colours &amp; Craft" loading="lazy" />
+                <div class="testi-card" style="--c:var(--purple);">
+                    <div class="testi-quote"><i class="bi bi-quote"></i></div>
+                    <p>"What sets this school apart is how they truly see each child. The art programme, the festival celebrations, the little notes teachers send home — it all adds up to something truly special."</p>
+                    <p class="testi-author">— Ananya Reddy</p>
+                    <p class="testi-role">Parent of Nursery &amp; Class 3 students</p>
                 </div>
-                <div class="gal-item" style="--c:#4CAF6D" data-caption="Nature Walk">
-                    <img src="images/2.jpeg" alt="Nature Walk" loading="lazy" />
-                </div>
-                <div class="gal-item" style="--c:#7B4FA0" data-caption="Music Class">
-                    <img src="images/2.jpeg" alt="Music Class" loading="lazy" />
-                </div>
-                <div class="gal-item" style="--c:#F4863A" data-caption="Little Chef Day">
-                    <img src="images/2.jpeg" alt="Little Chef Day" loading="lazy" />
-                </div>
-                <div class="gal-item" style="--c:#E63946" data-caption="Puppet Show">
-                    <img src="images/2.jpeg" alt="Puppet Show" loading="lazy" />
-                </div>
-                <div class="gal-item" style="--c:#2E5AAC" data-caption="Annual Day">
-                    <img src="images/2.jpeg" alt="Annual Day" loading="lazy" />
-                </div>
-            </div>
-        </div>
-
-        <svg class="wave-divider wave-navy" viewBox="0 0 1440 90" preserveAspectRatio="none" aria-hidden="true">
-            <path d="M0,45 C240,5 480,85 720,45 C960,5 1200,75 1440,35 L1440,90 L0,90 Z"></path>
-        </svg>
-    </section>
-
-    <!-- Lightbox -->
-    <div class="lightbox" id="lightbox">
-        <button class="lightbox-close" id="lightboxClose" aria-label="Close"><i class="bi bi-x-lg"></i></button>
-        <div class="lightbox-card" id="lightboxCard">
-            <i class="bi bi-image"></i>
-            <p id="lightboxCaption"></p>
-        </div>
-    </div>
-
-    <!-- ============ ADMISSION BANNER ============ -->
-    <section class="admission" id="admission">
-        <div class="section-wrap admission-wrap">
-            <div class="admission-copy">
-                <p class="eyebrow eyebrow-light anim-fade-up anim-delay-1"><i class="bi bi-flag"></i> Admissions Open</p>
-                <h2 class="section-title light anim-fade-up anim-delay-2">2026&ndash;27 seats are filling up fast</h2>
-                <p class="section-lead light anim-fade-up anim-delay-3">Give your little one a colourful start. Book a campus visit or send an enquiry and our admissions team will reach out within 24 hours.</p>
-                <button class="btn-primary btn-light anim-fade-up anim-delay-4" id="openEnquireBtn3"><i class="bi bi-send-check"></i> Start Admission Enquiry</button>
-            </div>
-
-            <div class="admission-steps anim-stagger-children anim-delay-5">
-                <div class="step"><span class="step-num">1</span><div><h4>Enquire</h4><p>Share your child's details through our quick form.</p></div></div>
-                <div class="step"><span class="step-num">2</span><div><h4>Visit</h4><p>Tour the campus and meet our teachers.</p></div></div>
-                <div class="step"><span class="step-num">3</span><div><h4>Confirm</h4><p>Complete documentation and secure the seat.</p></div></div>
             </div>
         </div>
     </section>
 
-    <!-- ============ CONTACT ============ -->
-    <section class="contact" id="contact">
-        <div class="section-wrap">
-            <p class="eyebrow eyebrow-red anim-fade-up anim-delay-1"><i class="bi bi-chat-dots"></i> Contact</p>
-            <h2 class="section-title anim-fade-up anim-delay-2">Let's talk</h2>
-            <!-- <p class="section-lead anim-fade-up anim-delay-3">Questions about admissions, fees or a campus tour? We would love to hear from you.</p> -->
+    <!-- CTA Banner -->
+    <!-- <section class="cta-banner">
+        <h2>Ready to give your child the Rainbow experience?</h2>
+        <p>Admissions for 2026-27 are now open. Book a campus tour, meet our teachers, and see the magic for yourself.</p>
+        <button class="btn-primary btn-light" id="openEnquireBtn3"><i class="bi bi-send-check"></i> Book a Campus Visit</button>
+    </section> -->
 
-            <div class="contact-grid">
-                <div class="contact-info anim-stagger-children anim-delay-4">
-                    <div class="info-row"><i class="bi bi-geo-alt-fill"></i><div><strong>Address</strong><p>Sri Rainbow School Campus, Hyderabad, Telangana, India</p></div></div>
-                    <div class="info-row"><i class="bi bi-telephone-fill"></i><div><strong>Phone</strong><p>+91 90000 00000</p></div></div>
-                    <div class="info-row"><i class="bi bi-envelope-fill"></i><div><strong>Email</strong><p>hello@srirainbowschool.edu.in</p></div></div>
-                    <div class="info-row"><i class="bi bi-clock-fill"></i><div><strong>Office Hours</strong><p>Mon &ndash; Sat, 8:30 AM &ndash; 4:30 PM</p></div></div>
-                    <div class="social-row">
-                        <a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
-                        <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
-                        <a href="#" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
-                        <a href="#" aria-label="WhatsApp"><i class="bi bi-whatsapp"></i></a>
-                    </div>
-                </div>
-                <form class="contact-form anim-fade-up anim-delay-5" id="contactForm">
-                    <div class="form-row">
-                        <div class="field">
-                            <label for="cName">Your Name</label>
-                            <input type="text" id="cName" required placeholder="Anitha Reddy" />
-                        </div>
-                        <div class="field">
-                            <label for="cPhone">Phone Number</label>
-                            <input type="tel" id="cPhone" required placeholder="98765 43210" />
-                        </div>
-                    </div>
-                    <div class="field">
-                        <label for="cEmail">Email</label>
-                        <input type="email" id="cEmail" required placeholder="you@email.com" />
-                    </div>
-                    <div class="field">
-                        <label for="cMsg">Message</label>
-                        <textarea id="cMsg" rows="4" placeholder="Tell us a little about your query..."></textarea>
-                    </div>
-                    <button type="submit" class="btn-primary full"><i class="bi bi-send"></i> Send Message</button>
-                    <p class="form-note" id="contactNote"></p>
-                </form>
-            </div>
-
-            <div class="map-embed anim-fade-up anim-delay-6">
-                <iframe title="School location map" src="https://maps.google.com/maps?q=Hyderabad%2C%20Telangana&t=&z=12&ie=UTF8&iwloc=&output=embed" loading="lazy"></iframe>
-            </div>
-        </div>
-    </section>
-
-    <!-- ============ FOOTER ============ -->
+    <!-- Footer -->
     <footer class="site-footer">
         <div class="footer-wrap">
-            <div class="footer-brand anim-fade-up anim-delay-1">
+            <div class="footer-brand">
                 <img src="logo.jpg" alt="Sri Rainbow School" class="footer-logo" />
-                <p>Recognized by Govt. of Telangana &mdash; nurturing curious, kind and confident learners since day one.</p>
+                <p>Recognized by Govt. of Telangana — nurturing curious, kind and confident learners since day one.</p>
             </div>
-            <div class="footer-links anim-fade-up anim-delay-2">
+            <div class="footer-links">
                 <h4>Explore</h4>
                 <a href="index.html">Home</a>
                 <a href="about.html">About</a>
@@ -2493,13 +1683,13 @@
                 <a href="admission.html">Admission</a>
                 <a href="contact.html">Contact</a>
             </div>
-            <div class="footer-links anim-fade-up anim-delay-3">
+            <div class="footer-links">
                 <h4>Programmes</h4>
-                <a href="#academics">Play Group / Nursery</a>
-                <a href="#academics">LKG &amp; UKG</a>
-                <a href="#academics">Primary Wing</a>
+                <a href="academics.html#programs">Play Group / Nursery</a>
+                <a href="academics.html#programs">LKG &amp; UKG</a>
+                <a href="academics.html#programs">Primary Wing</a>
             </div>
-            <div class="footer-cta anim-fade-up anim-delay-4">
+            <div class="footer-cta">
                 <h4>Ready to visit?</h4>
                 <button class="btn-primary" id="openEnquireBtn4"><i class="bi bi-send-check"></i> Enquire Now</button>
             </div>
@@ -2512,11 +1702,10 @@
     <!-- Floating Enquiry Button (mobile) -->
     <button class="fab-enquire" id="fabEnquireBtn" aria-label="Admission Enquiry"><i class="bi bi-pencil-square"></i></button>
 
-    <!-- ============ ADMISSION ENQUIRY MODAL ============ -->
+    <!-- Admission Enquiry Modal -->
     <div class="modal-overlay" id="enquireModal">
         <div class="modal-card">
             <button class="modal-close" id="closeEnquireBtn" aria-label="Close form"><i class="bi bi-x-lg"></i></button>
-
             <div class="modal-side">
                 <div class="modal-side-burst" aria-hidden="true">
                     <span></span><span></span><span></span><span></span><span></span><span></span>
@@ -2524,33 +1713,31 @@
                 <h3>Let's find your child's<br />perfect fit.</h3>
                 <p>Fill this in and our admissions team will call you within one business day.</p>
             </div>
-
             <div class="modal-form-wrap">
                 <h4 id="modalHeading"><i class="bi bi-send-check"></i> Admission Enquiry</h4>
-
-                <form id="enquireForm" novalidate>
-                    <div class="field">
-                        <label for="pName">Parent / Guardian Name</label>
-                        <input type="text" id="pName" required placeholder="Full name" />
+                <form id="enquireForm">
+                    <div class="field" style="margin-bottom:16px; display:flex; flex-direction:column; gap:6px;">
+                        <label for="pName" style="font-size:.85rem; font-weight:800; color:var(--navy-2);">Parent / Guardian Name</label>
+                        <input type="text" id="pName" required placeholder="Full name" style="border:2px solid rgba(27,42,87,0.12); border-radius:var(--radius-sm); padding:12px 14px; font-family:inherit; font-size:.95rem; color:var(--navy-2); background:var(--cream);" />
                     </div>
-                    <div class="form-row">
-                        <div class="field">
-                            <label for="pPhone">Phone Number</label>
-                            <input type="tel" id="pPhone" required placeholder="10-digit number" pattern="[0-9]{10}" />
+                    <div class="form-row" style="display:grid; grid-template-columns:1fr 1fr; gap:16px;">
+                        <div class="field" style="margin-bottom:16px; display:flex; flex-direction:column; gap:6px;">
+                            <label for="pPhone" style="font-size:.85rem; font-weight:800; color:var(--navy-2);">Phone Number</label>
+                            <input type="tel" id="pPhone" required placeholder="10-digit number" pattern="[0-9]{10}" style="border:2px solid rgba(27,42,87,0.12); border-radius:var(--radius-sm); padding:12px 14px; font-family:inherit; font-size:.95rem; color:var(--navy-2); background:var(--cream);" />
                         </div>
-                        <div class="field">
-                            <label for="pEmail">Email</label>
-                            <input type="email" id="pEmail" placeholder="you@email.com" />
+                        <div class="field" style="margin-bottom:16px; display:flex; flex-direction:column; gap:6px;">
+                            <label for="pEmail" style="font-size:.85rem; font-weight:800; color:var(--navy-2);">Email</label>
+                            <input type="email" id="pEmail" placeholder="you@email.com" style="border:2px solid rgba(27,42,87,0.12); border-radius:var(--radius-sm); padding:12px 14px; font-family:inherit; font-size:.95rem; color:var(--navy-2); background:var(--cream);" />
                         </div>
                     </div>
-                    <div class="form-row">
-                        <div class="field">
-                            <label for="cChild">Child's Name</label>
-                            <input type="text" id="cChild" placeholder="Child's name" />
+                    <div class="form-row" style="display:grid; grid-template-columns:1fr 1fr; gap:16px;">
+                        <div class="field" style="margin-bottom:16px; display:flex; flex-direction:column; gap:6px;">
+                            <label for="cChild" style="font-size:.85rem; font-weight:800; color:var(--navy-2);">Child's Name</label>
+                            <input type="text" id="cChild" placeholder="Child's name" style="border:2px solid rgba(27,42,87,0.12); border-radius:var(--radius-sm); padding:12px 14px; font-family:inherit; font-size:.95rem; color:var(--navy-2); background:var(--cream);" />
                         </div>
-                        <div class="field">
-                            <label for="pClass">Applying For</label>
-                            <select id="pClass" required>
+                        <div class="field" style="margin-bottom:16px; display:flex; flex-direction:column; gap:6px;">
+                            <label for="pClass" style="font-size:.85rem; font-weight:800; color:var(--navy-2);">Applying For</label>
+                            <select id="pClass" required style="border:2px solid rgba(27,42,87,0.12); border-radius:var(--radius-sm); padding:12px 14px; font-family:inherit; font-size:.95rem; color:var(--navy-2); background:var(--cream);">
                                 <option value="" disabled selected>Select a class</option>
                                 <option>Play Group</option>
                                 <option>Nursery</option>
@@ -2564,13 +1751,12 @@
                             </select>
                         </div>
                     </div>
-                    <div class="field">
-                        <label for="pMsg">Message (optional)</label>
-                        <textarea id="pMsg" rows="3" placeholder="Anything you'd like us to know?"></textarea>
+                    <div class="field" style="margin-bottom:16px; display:flex; flex-direction:column; gap:6px;">
+                        <label for="pMsg" style="font-size:.85rem; font-weight:800; color:var(--navy-2);">Message (optional)</label>
+                        <textarea id="pMsg" rows="3" placeholder="Anything you'd like us to know?" style="border:2px solid rgba(27,42,87,0.12); border-radius:var(--radius-sm); padding:12px 14px; font-family:inherit; font-size:.95rem; color:var(--navy-2); background:var(--cream); resize:vertical;"></textarea>
                     </div>
                     <button type="submit" class="btn-primary full"><i class="bi bi-send-check"></i> Submit Enquiry</button>
                 </form>
-
                 <div class="modal-success" id="modalSuccess">
                     <div class="success-burst" aria-hidden="true">
                         <span></span><span></span><span></span><span></span><span></span><span></span>
@@ -2578,260 +1764,141 @@
                     <i class="bi bi-check-circle-fill success-icon"></i>
                     <h4>Thank you!</h4>
                     <p>Your enquiry has been received. Our admissions team will call you shortly.</p>
-                    <button class="btn-ghost" id="modalDoneBtn" style="color:var(--navy-2);border-color:var(--navy-2);">Close</button>
+                    <button class="btn-ghost" id="modalDoneBtn" style="color:var(--navy-2);">Close</button>
                 </div>
             </div>
         </div>
     </div>
 
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', () => {
 
-            /* ---------- Footer year ---------- */
             document.getElementById('year').textContent = new Date().getFullYear();
 
-            /* ---------- Sticky header shadow + scroll progress ---------- */
-            var header = document.getElementById('siteHeader');
-            var scrollRainbow = document.getElementById('scrollRainbow');
-
-            function onScroll() {
-                if (header) header.classList.toggle('scrolled', window.scrollY > 10);
-                var scrollTop = window.scrollY;
-                var docHeight = document.documentElement.scrollHeight - window.innerHeight;
-                var pct = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
-                if (scrollRainbow) scrollRainbow.style.width = pct + '%';
-                updateActiveNav();
-            }
+            const header = document.getElementById('siteHeader');
+            const scrollRainbow = document.getElementById('scrollRainbow');
+            const onScroll = () => {
+                header.classList.toggle('scrolled', window.scrollY > 10);
+                const scrollTop = window.scrollY;
+                const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+                const pct = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+                scrollRainbow.style.width = pct + '%';
+            };
             window.addEventListener('scroll', onScroll, { passive: true });
             onScroll();
 
-            /* ---------- Mobile nav toggle ---------- */
-            var hamburgerBtn = document.getElementById('hamburgerBtn');
-            var mainNav = document.getElementById('mainNav');
-            if (hamburgerBtn && mainNav) {
-                hamburgerBtn.addEventListener('click', function() {
-                    mainNav.classList.toggle('open');
-                    hamburgerBtn.classList.toggle('active');
-                });
-                mainNav.querySelectorAll('.nav-link').forEach(function(link) {
-                    link.addEventListener('click', function() {
-                        mainNav.classList.remove('open');
-                        hamburgerBtn.classList.remove('active');
-                    });
-                });
+            const hamburgerBtn = document.getElementById('hamburgerBtn');
+            const mainNav = document.getElementById('mainNav');
+            hamburgerBtn.addEventListener('click', () => {
+                mainNav.classList.toggle('open');
+                hamburgerBtn.classList.toggle('active');
+            });
+            mainNav.querySelectorAll('.nav-link').forEach(link => {
+                link.addEventListener('click', () => mainNav.classList.remove('open'));
+            });
+
+            const enquireModal = document.getElementById('enquireModal');
+            const enquireForm = document.getElementById('enquireForm');
+            const modalSuccess = document.getElementById('modalSuccess');
+            const modalHeading = document.getElementById('modalHeading');
+
+            const openTriggers = [
+                'openEnquireBtn1', 'openEnquireBtn2', 'openEnquireBtn3', 'openEnquireBtn4', 'fabEnquireBtn'
+            ];
+            openTriggers.forEach(id => {
+                const btn = document.getElementById(id);
+                if (btn) btn.addEventListener('click', openEnquireModal);
+            });
+
+            function openEnquireModal() {
+                enquireModal.classList.add('open');
+                document.body.style.overflow = 'hidden';
             }
 
-            /* ---------- Active nav link on scroll ---------- */
-            var sections = ['home', 'about', 'academics', 'gallery', 'admission', 'contact']
-                .map(function(id) { return document.getElementById(id); })
-                .filter(function(el) { return el !== null; });
-            var navLinks = Array.from(document.querySelectorAll('.nav-link'));
-
-            function updateActiveNav() {
-                var current = sections.length ? sections[0].id : 'home';
-                var scrollPos = window.scrollY + 140;
-                sections.forEach(function(sec) {
-                    if (sec && sec.offsetTop <= scrollPos) current = sec.id;
-                });
-                navLinks.forEach(function(link) {
-                    var href = link.getAttribute('href');
-                    if (href === '#' + current || (current === 'home' && href === 'index.html')) {
-                        link.classList.add('active');
-                    } else {
-                        link.classList.remove('active');
-                    }
-                });
+            function closeEnquireModal() {
+                enquireModal.classList.remove('open');
+                document.body.style.overflow = '';
+                setTimeout(() => {
+                    modalSuccess.classList.remove('show');
+                    enquireForm.style.display = '';
+                    modalHeading.style.display = '';
+                    enquireForm.reset();
+                }, 300);
             }
+            document.getElementById('closeEnquireBtn').addEventListener('click', closeEnquireModal);
+            enquireModal.addEventListener('click', e => { if (e.target === enquireModal) closeEnquireModal(); });
+            document.addEventListener('keydown', e => { if (e.key === 'Escape') closeEnquireModal(); });
+            document.getElementById('modalDoneBtn').addEventListener('click', closeEnquireModal);
 
-            /* ============================================================
-               STATS COUNTERS — Hero & Stats Bar
-               ============================================================ */
+            enquireForm.addEventListener('submit', e => {
+                e.preventDefault();
+                enquireForm.style.display = 'none';
+                modalHeading.style.display = 'none';
+                modalSuccess.classList.add('show');
+            });
+
+            /* ---------- Hero Stats Counter Animation ---------- */
             function animateCounter(el, target, duration) {
                 duration = duration || 1400;
+                var suffix = el.getAttribute('data-suffix') || '';
                 var startTime = performance.now();
 
                 function tick(now) {
                     var progress = Math.min((now - startTime) / duration, 1);
                     var eased = 1 - Math.pow(1 - progress, 3);
                     var current = Math.round(eased * target);
-                    el.textContent = current.toLocaleString();
+                    el.textContent = current.toLocaleString() + suffix;
                     if (progress < 1) {
                         requestAnimationFrame(tick);
                     } else {
-                        el.textContent = target.toLocaleString();
+                        el.textContent = target.toLocaleString() + suffix;
                     }
                 }
                 requestAnimationFrame(tick);
             }
 
-            // ---- Hero stats ----
             var heroStatNums = document.querySelectorAll('.hero-stats .stat-num');
-            var heroStatsEl = document.querySelector('.hero-stats');
+            var heroStatsEl = document.getElementById('heroStats');
+            var heroStatsAnimated = false;
 
-            // Start hero stats immediately (they're at the top, no need to wait)
-            if (heroStatNums.length) {
+            function animateHeroStats() {
+                if (heroStatsAnimated || !heroStatNums.length) return;
+                heroStatsAnimated = true;
                 heroStatNums.forEach(function(el) {
                     var target = parseInt(el.getAttribute('data-count'), 10) || 0;
                     animateCounter(el, target, 1600);
                 });
             }
 
-            // ---- Stats bar (animated when scrolled into view) ----
-            var barStats = document.querySelectorAll('.stats-bar .accent');
-            var barObserved = false;
-
-            function animateBarStats() {
-                if (barObserved) return;
-                barObserved = true;
-                barStats.forEach(function(el) {
-                    var target = parseInt(el.getAttribute('data-count'), 10) || 0;
-                    animateCounter(el, target, 1400);
-                });
+            function checkHeroStatsVisibility() {
+                if (!heroStatsEl || heroStatsAnimated) return;
+                var rect = heroStatsEl.getBoundingClientRect();
+                var windowHeight = window.innerHeight || document.documentElement.clientHeight;
+                if (rect.top < windowHeight - 50 || window.scrollY < 100) {
+                    setTimeout(animateHeroStats, 700);
+                    return true;
+                }
+                return false;
             }
 
-            if (barStats.length) {
-                var statsBarEl = document.querySelector('.stats-bar');
-                if (statsBarEl) {
-                    var barObserver = new IntersectionObserver(function(entries) {
-                        entries.forEach(function(entry) {
-                            if (entry.isIntersecting) {
-                                animateBarStats();
-                            }
-                        });
-                    }, { threshold: 0.3 });
-                    barObserver.observe(statsBarEl);
-
-                    // Fallback: if already visible, start after a short delay
-                    var rect = statsBarEl.getBoundingClientRect();
-                    if (rect.top < window.innerHeight) {
-                        setTimeout(animateBarStats, 400);
+            if (heroStatsEl && heroStatNums.length) {
+                if (!checkHeroStatsVisibility()) {
+                    if ('IntersectionObserver' in window) {
+                        var heroStatsObserver = new IntersectionObserver(function(entries) {
+                            entries.forEach(function(entry) {
+                                if (entry.isIntersecting) {
+                                    setTimeout(animateHeroStats, 700);
+                                    heroStatsObserver.disconnect();
+                                }
+                            });
+                        }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+                        heroStatsObserver.observe(heroStatsEl);
+                    } else {
+                        setTimeout(animateHeroStats, 900);
                     }
                 }
             }
-
-            /* ---------- Gallery lightbox ---------- */
-            var lightbox = document.getElementById('lightbox');
-            var lightboxCaption = document.getElementById('lightboxCaption');
-            var lightboxCard = document.getElementById('lightboxCard');
-            if (lightbox && lightboxCaption && lightboxCard) {
-                document.querySelectorAll('.gal-item').forEach(function(item) {
-                    item.addEventListener('click', function() {
-                        var caption = item.dataset.caption || 'Gallery photo';
-                        var color = getComputedStyle(item).getPropertyValue('--c').trim();
-                        lightboxCaption.innerHTML = caption;
-                        var lightboxIcon = lightboxCard.querySelector('i');
-                        if (lightboxIcon) lightboxIcon.style.color = color || '';
-                        lightbox.classList.add('open');
-                        document.body.style.overflow = 'hidden';
-                    });
-                });
-                var lightboxClose = document.getElementById('lightboxClose');
-                if (lightboxClose) {
-                    lightboxClose.addEventListener('click', function() {
-                        lightbox.classList.remove('open');
-                        document.body.style.overflow = '';
-                    });
-                }
-                lightbox.addEventListener('click', function(e) {
-                    if (e.target === lightbox) {
-                        lightbox.classList.remove('open');
-                        document.body.style.overflow = '';
-                    }
-                });
-            }
-
-            /* ============================================================
-               ADMISSION ENQUIRY MODAL — FIXED (inherited from about page)
-               ============================================================ */
-            var enquireModal = document.getElementById('enquireModal');
-            var enquireForm = document.getElementById('enquireForm');
-            var modalSuccess = document.getElementById('modalSuccess');
-            var modalHeading = document.getElementById('modalHeading');
-            var closeEnquireBtn = document.getElementById('closeEnquireBtn');
-            var modalDoneBtn = document.getElementById('modalDoneBtn');
-
-            // All trigger buttons
-            var openTriggers = [
-                document.getElementById('openEnquireBtn1'),
-                document.getElementById('openEnquireBtn2'),
-                document.getElementById('openEnquireBtn3'),
-                document.getElementById('openEnquireBtn4'),
-                document.getElementById('fabEnquireBtn')
-            ];
-
-            function openEnquireModal(e) {
-                if (e) e.preventDefault();
-                if (!enquireModal) return;
-                // Reset form and success state
-                if (enquireForm) {
-                    enquireForm.style.display = '';
-                    enquireForm.reset();
-                }
-                if (modalSuccess) modalSuccess.classList.remove('show');
-                if (modalHeading) modalHeading.style.display = '';
-                enquireModal.classList.add('open');
-                document.body.style.overflow = 'hidden';
-            }
-
-            function closeEnquireModal() {
-                if (!enquireModal) return;
-                enquireModal.classList.remove('open');
-                document.body.style.overflow = '';
-                // Reset after transition
-                setTimeout(function() {
-                    if (modalSuccess) modalSuccess.classList.remove('show');
-                    if (enquireForm) enquireForm.style.display = '';
-                    if (modalHeading) modalHeading.style.display = '';
-                    if (enquireForm) enquireForm.reset();
-                }, 300);
-            }
-
-            // Attach click events to all triggers
-            openTriggers.forEach(function(btn) {
-                if (btn) btn.addEventListener('click', openEnquireModal);
-            });
-
-            // Close button inside modal
-            if (closeEnquireBtn) closeEnquireBtn.addEventListener('click', closeEnquireModal);
-            if (modalDoneBtn) modalDoneBtn.addEventListener('click', closeEnquireModal);
-
-            // Click outside to close
-            if (enquireModal) {
-                enquireModal.addEventListener('click', function(e) {
-                    if (e.target === enquireModal) closeEnquireModal();
-                });
-            }
-
-            // Escape key to close
-            document.addEventListener('keydown', function(e) {
-                if (e.key === 'Escape') closeEnquireModal();
-            });
-
-            // Form submission
-            if (enquireForm) {
-                enquireForm.addEventListener('submit', function(e) {
-                    e.preventDefault();
-                    // Hide form, show success
-                    enquireForm.style.display = 'none';
-                    if (modalHeading) modalHeading.style.display = 'none';
-                    if (modalSuccess) modalSuccess.classList.add('show');
-                });
-            }
-
-            /* ---------- Contact form ---------- */
-            var contactForm = document.getElementById('contactForm');
-            var contactNote = document.getElementById('contactNote');
-            if (contactForm && contactNote) {
-                contactForm.addEventListener('submit', function(e) {
-                    e.preventDefault();
-                    contactNote.textContent = '✅ Thanks! We\u2019ve received your message and will get back to you soon.';
-                    contactForm.reset();
-                    setTimeout(function() { contactNote.textContent = ''; }, 6000);
-                });
-            }
-
         });
     </script>
-
 </body>
 </html>

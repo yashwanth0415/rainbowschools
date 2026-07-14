@@ -181,7 +181,7 @@
         }
         .brand-logo {
             height: 78px;
-            width: 180px;
+            width: 148px;
         }
         .main-nav {
             display: flex;
@@ -239,141 +239,86 @@
             height: 3px;
             border-radius: 2px;
             background: var(--navy);
+            transition: 0.2s ease;
+        }
+        .hamburger.active span:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 6px);
+        }
+        .hamburger.active span:nth-child(2) {
+            opacity: 0;
+        }
+        .hamburger.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(5px, -6px);
         }
 
-        /* ==========================================================================
-           Contact Hero
+/* ==========================================================================
+           Contact Hero — Clean Centered (matching Admission page)
            ========================================================================== */
         .contact-hero {
             position: relative;
             background: var(--navy-2);
             color: #fff;
-            padding-top: 20px;
+            min-height: 50vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             overflow: hidden;
         }
-        .contact-hero-blobs {
+        .contact-hero::before {
+            content: '';
             position: absolute;
             inset: 0;
+            background: url('bg.jpg') center/cover no-repeat;
+            opacity: 0.08;
             z-index: 0;
-        }
-        .blob {
-            position: absolute;
-            border-radius: 50%;
-            filter: blur(50px);
-            opacity: .35;
-        }
-        .blob-a {
-            width: 380px;
-            height: 380px;
-            background: var(--purple);
-            top: -120px;
-            left: -100px;
-        }
-        .blob-b {
-            width: 320px;
-            height: 320px;
-            background: var(--blue);
-            bottom: -140px;
-            right: -80px;
-        }
-        .blob-c {
-            width: 220px;
-            height: 220px;
-            background: var(--green);
-            top: 40%;
-            right: 12%;
         }
 
-        /* Floating particles in hero */
-        .particles {
+        /* Decorative rings — same as Admission page */
+        .contact-hero .rings {
             position: absolute;
             inset: 0;
-            z-index: 0;
             pointer-events: none;
-            overflow: hidden;
+            z-index: 0;
         }
-        .particle {
+        .contact-hero .ring {
             position: absolute;
-            width: 10px;
-            height: 10px;
             border-radius: 50%;
-            opacity: .2;
-            animation: floatParticle linear infinite;
+            border: 2px solid rgba(255, 255, 255, 0.04);
+            animation: ringPulse 8s ease-in-out infinite;
         }
-        .particle:nth-child(1) {
-            background: var(--yellow);
-            width: 14px;
-            height: 14px;
-            left: 5%;
-            top: 20%;
-            animation-duration: 18s;
+        .contact-hero .ring:nth-child(1) {
+            width: 400px;
+            height: 400px;
+            top: 10%;
+            right: -5%;
             animation-delay: 0s;
         }
-        .particle:nth-child(2) {
-            background: var(--orange);
-            width: 8px;
-            height: 8px;
-            left: 15%;
-            top: 60%;
-            animation-duration: 22s;
-            animation-delay: 2s;
-        }
-        .particle:nth-child(3) {
-            background: var(--purple);
-            width: 20px;
-            height: 20px;
-            left: 85%;
-            top: 30%;
-            animation-duration: 20s;
-            animation-delay: 4s;
-        }
-        .particle:nth-child(4) {
-            background: var(--green);
-            width: 12px;
-            height: 12px;
-            left: 75%;
-            top: 70%;
-            animation-duration: 25s;
-            animation-delay: 1s;
-        }
-        .particle:nth-child(5) {
-            background: var(--red);
-            width: 6px;
-            height: 6px;
-            left: 45%;
-            top: 15%;
-            animation-duration: 16s;
+        .contact-hero .ring:nth-child(2) {
+            width: 300px;
+            height: 300px;
+            bottom: 10%;
+            left: -5%;
             animation-delay: 3s;
+            border-color: rgba(255, 255, 255, 0.03);
         }
-        .particle:nth-child(6) {
-            background: var(--blue);
-            width: 16px;
-            height: 16px;
-            left: 55%;
-            top: 80%;
-            animation-duration: 19s;
+        .contact-hero .ring:nth-child(3) {
+            width: 200px;
+            height: 200px;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
             animation-delay: 5s;
+            border-color: rgba(255, 255, 255, 0.02);
         }
-        @keyframes floatParticle {
-            0% {
-                transform: translate(0, 0) scale(1);
-                opacity: .2;
-            }
-            25% {
-                transform: translate(30px, -60px) scale(1.3);
-                opacity: .4;
+        @keyframes ringPulse {
+            0%,
+            100% {
+                transform: scale(1);
+                opacity: 0.4;
             }
             50% {
-                transform: translate(-20px, -120px) scale(0.8);
-                opacity: .2;
-            }
-            75% {
-                transform: translate(40px, -80px) scale(1.2);
-                opacity: .35;
-            }
-            100% {
-                transform: translate(0, 0) scale(1);
-                opacity: .2;
+                transform: scale(1.15);
+                opacity: 1;
             }
         }
 
@@ -382,40 +327,56 @@
             z-index: 1;
             max-width: 1240px;
             margin: 0 auto;
-            padding: 64px 32px 110px;
-            display: grid;
-            grid-template-columns: 1fr 0.85fr;
-            gap: 40px;
+            padding: 60px 32px;
+            display: flex;
+            flex-direction: column;
             align-items: center;
+            justify-content: center;
+            text-align: center;
+            width: 100%;
         }
-        .contact-hero-copy .eyebrow {
+        .contact-hero-inner .eyebrow {
             color: #FFE59A;
+            margin-bottom: 14px;
+            justify-content: center;
         }
         .contact-hero-title {
-            font-size: clamp(2.3rem, 4.6vw, 3.6rem);
+            font-size: clamp(2.5rem, 5vw, 4rem);
             font-weight: 800;
             color: #fff;
+            line-height: 1.1;
+            max-width: 800px;
+            margin: 0 auto;
         }
         .rainbow-text {
-            background: linear-gradient(90deg, #7B4FA0, #2E5AAC, #4CAF6D, #FFC93C, #F4863A, #E63946);
+            background: linear-gradient(90deg, #FFE59A, #FFC93C, #F4863A, #E63946, #7B4FA0, #2E5AAC);
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
+            animation: rainbowShift 6s ease-in-out infinite alternate;
+        }
+        @keyframes rainbowShift {
+            0% { background-position: 0% 50%; }
+            100% { background-position: 100% 50%; }
         }
         .contact-hero-sub {
             margin-top: 20px;
             font-size: 1.1rem;
             line-height: 1.7;
             color: #C7CFEE;
-            max-width: 520px;
+            max-width: 560px;
         }
         .contact-hero-actions {
             display: flex;
             gap: 16px;
             margin-top: 34px;
             flex-wrap: wrap;
+            justify-content: center;
         }
 
+        /* ==========================================================================
+           Global Buttons
+           ========================================================================== */
         .btn-primary {
             background: var(--red);
             color: #fff;
@@ -450,88 +411,11 @@
             color: #fff;
             padding: 15px 8px;
             border-bottom: 2px solid rgba(255, 255, 255, 0.4);
-            transition: border-color .18s ease;
+            transition: border-color .18s ease, transform .18s ease;
         }
         .btn-ghost:hover {
             border-color: #fff;
-        }
-
-        .contact-hero-art {
-            position: relative;
-            display: flex;
-            justify-content: center;
-        }
-        .rainbow-burst {
-            width: 100%;
-            max-width: 420px;
-        }
-        .petal {
-            transform-origin: 0 0;
-            opacity: 0;
-            animation: petalPop .7s cubic-bezier(.2, .8, .3, 1.3) forwards;
-        }
-        .p1 {
-            fill: #7B4FA0;
-            animation-delay: .05s;
-        }
-        .p2 {
-            fill: #2E5AAC;
-            animation-delay: .15s;
-        }
-        .p3 {
-            fill: #4CAF6D;
-            animation-delay: .25s;
-        }
-        .p4 {
-            fill: #FFC93C;
-            animation-delay: .35s;
-        }
-        .p5 {
-            fill: #F4863A;
-            animation-delay: .45s;
-        }
-        .p6 {
-            fill: #E63946;
-            animation-delay: .55s;
-        }
-        .petal-core {
-            fill: var(--navy-2);
-            opacity: 0;
-            animation: fadeIn .5s ease .7s forwards;
-        }
-        @keyframes petalPop {
-            0% {
-                opacity: 0;
-                transform: scale(0.3) translateY(20px);
-            }
-            100% {
-                opacity: 1;
-                transform: scale(1) translateY(0);
-            }
-        }
-        @keyframes fadeIn {
-            to {
-                opacity: 1;
-            }
-        }
-        .cloud ellipse {
-            fill: rgba(255, 255, 255, 0.15);
-        }
-        .cloud {
-            animation: floatY 6s ease-in-out infinite;
-        }
-        .cloud2 {
-            animation-duration: 7.5s;
-            animation-delay: .4s;
-        }
-        @keyframes floatY {
-            0%,
-            100% {
-                transform: translate(60px, 320px);
-            }
-            50% {
-                transform: translate(60px, 306px);
-            }
+            transform: translateX(4px);
         }
 
         .wave-divider {
@@ -788,7 +672,7 @@
             left: 0;
             right: 0;
             height: 4px;
-            background: linear-gradient(90deg, var(--purple), var(--blue), var(--green), var(--yellow), var(--orange), var(--red));
+            /*background: linear-gradient(90deg, var(--purple), var(--blue), var(--green), var(--yellow), var(--orange), var(--red));*/
         }
         .contact-form-enhanced h3 {
             font-size: 1.3rem;
@@ -1478,44 +1362,37 @@
 
         @media (max-width: 760px) {
             .main-nav {
-                position: fixed;
-                top: 78px;
-                left: 0;
-                right: 0;
+                position: fixed; top: 100%; left: 0; right: 0;
                 background: var(--cream);
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 0;
-                padding: 10px 28px 20px;
+                flex-direction: column; align-items: stretch; gap: 0;
+                margin-left: 0; padding: 8px 24px 32px;
                 box-shadow: 0 14px 24px -14px rgba(27, 42, 87, 0.3);
-                transform: translateY(-140%);
-                opacity: 0;
-                transition: transform .25s ease, opacity .2s ease;
+                transform: translateY(-100%); opacity: 0;
+                transition: transform .3s cubic-bezier(0.4, 0, 0.2, 1), opacity .3s;
+                z-index: 502; border-bottom: none; overflow-y: auto;
+                -webkit-overflow-scrolling: touch;
             }
-            .main-nav.open {
-                transform: translateY(0);
-                opacity: 1;
-            }
-            .main-nav a {
-                padding: 12px 0;
-                width: 100%;
-                border-bottom: 1px solid rgba(27, 42, 87, 0.06);
-            }
+            .main-nav.open { transform: translateY(0); opacity: 1; }
+            .main-nav a { padding: 14px 0; width: 100%; border-bottom: 1px solid rgba(27, 42, 87, 0.06); font-size: 1rem; }
             .hamburger {
-                display: flex;
+                display: flex; min-width: 44px; min-height: 44px;
+                align-items: center; justify-content: center; z-index: 503; margin-left: auto;
             }
-            .btn-enquire {
-                display: none;
-            }
-            .fab-enquire {
-                display: flex;
-            }
+            .nav-wrap { position: relative; z-index: 503; }
+            .btn-enquire { display: none; }
+            .fab-enquire { display: flex; }
 
             .cards-grid {
                 grid-template-columns: 1fr 1fr;
             }
             .flip-card {
                 height: 170px;
+            }
+            .contact-hero {
+                min-height: 25vh;
+            }
+            .contact-hero-inner {
+                padding: 40px 22px;
             }
             .trust-grid {
                 grid-template-columns: 1fr;
@@ -1632,65 +1509,24 @@
 
     <!-- ===== CONTACT HERO ===== -->
     <section class="contact-hero">
-        <div class="contact-hero-blobs" aria-hidden="true">
-            <span class="blob blob-a"></span>
-            <span class="blob blob-b"></span>
-            <span class="blob blob-c"></span>
+        <div class="rings" aria-hidden="true">
+            <span class="ring"></span>
+            <span class="ring"></span>
+            <span class="ring"></span>
         </div>
-
-        <!-- Floating particles -->
-        <div class="particles" aria-hidden="true">
-            <span class="particle"></span>
-            <span class="particle"></span>
-            <span class="particle"></span>
-            <span class="particle"></span>
-            <span class="particle"></span>
-            <span class="particle"></span>
-        </div>
-
         <div class="contact-hero-inner">
-            <div class="contact-hero-copy">
-                <p class="eyebrow"><i class="bi bi-chat-dots"></i> Let's Connect</p>
-                <h1 class="contact-hero-title">We'd love to <span class="rainbow-text">hear from you.</span></h1>
-                <p class="contact-hero-sub">Whether you have a question about admissions, want to book a campus visit, or just want to say hello — our team is here, ready to welcome you with warmth and a smile.</p>
-                <div class="contact-hero-actions">
-                    <button class="btn-primary" id="openEnquireBtn2"><i class="bi bi-send-check"></i> Send a Message</button>
-                    <a href="#map" class="btn-ghost">Find Us <i class="bi bi-arrow-down-right"></i></a>
-                </div>
-            </div>
-
-            <div class="contact-hero-art">
-                <svg class="rainbow-burst" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                    <g class="petals" transform="translate(200,260)">
-                        <path class="petal p1" d="M0,0 C-10,-90 -30,-160 -70,-210 C-40,-160 -20,-90 -8,-4 Z"/>
-                        <path class="petal p2" d="M0,0 C-20,-110 -40,-180 -30,-250 C0,-190 10,-110 4,-4 Z"/>
-                        <path class="petal p3" d="M0,0 C-2,-120 4,-200 30,-260 C20,-190 8,-110 0,-4 Z"/>
-                        <path class="petal p4" d="M0,0 C14,-110 34,-180 70,-230 C40,-170 22,-100 6,-4 Z"/>
-                        <path class="petal p5" d="M0,0 C24,-90 54,-140 100,-175 C66,-130 40,-80 12,-4 Z"/>
-                        <path class="petal p6" d="M0,0 C34,-60 74,-90 120,-100 C82,-80 50,-50 16,-4 Z"/>
-                        <circle class="petal-core" cx="0" cy="-4" r="14"/>
-                    </g>
-                    <g class="cloud" transform="translate(60,320)">
-                        <ellipse cx="0" cy="0" rx="46" ry="22"/>
-                        <ellipse cx="30" cy="-8" rx="30" ry="20"/>
-                        <ellipse cx="-30" cy="-6" rx="26" ry="16"/>
-                    </g>
-                    <g class="cloud cloud2" transform="translate(320,90)">
-                        <ellipse cx="0" cy="0" rx="36" ry="17"/>
-                        <ellipse cx="24" cy="-6" rx="22" ry="15"/>
-                        <ellipse cx="-22" cy="-4" rx="20" ry="12"/>
-                    </g>
-                </svg>
+            <p class="eyebrow"><i class="bi bi-chat-dots"></i> Let's Connect</p>
+            <h1 class="contact-hero-title">We'd love to <span class="rainbow-text">hear from you.</span></h1>
+            <!-- <p class="contact-hero-sub">Whether you have a question about admissions, want to book a campus visit, or just want to say hello — our team is here, ready to welcome you with warmth and a smile.</p> -->
+            <div class="contact-hero-actions">
+                <button class="btn-primary" id="openEnquireBtn2"><i class="bi bi-send-check"></i> Enquire Now</button>
+                <!-- <a href="#process" class="btn-ghost">How to Apply <i class="bi bi-arrow-down-right"></i></a> -->
             </div>
         </div>
-
-        <svg class="wave-divider" viewBox="0 0 1440 90" preserveAspectRatio="none" aria-hidden="true">
-            <path d="M0,40 C240,90 480,0 720,30 C960,60 1200,10 1440,40 L1440,90 L0,90 Z"></path>
-        </svg>
-    </section>
+</section>
 
     <!-- ===== CONTACT CARDS (3D Flip) ===== -->
-    <section class="contact-cards" id="quick">
+    <!-- <section class="contact-cards" id="quick">
         <div class="section-wrap">
             <p class="eyebrow eyebrow-green"><i class="bi bi-compass"></i> Quick Connect</p>
             <h2 class="section-title">Reach us in a way that suits you</h2>
@@ -1698,7 +1534,7 @@
 
             <div class="cards-grid">
                 <!-- Card 1: Call -->
-                <div class="flip-card">
+                <!-- <div class="flip-card">
                     <div class="flip-card-inner">
                         <div class="flip-card-front" style="--c:var(--blue);">
                             <div class="card-icon"><i class="bi bi-telephone-fill"></i></div>
@@ -1714,7 +1550,6 @@
                     </div>
                 </div>
 
-                <!-- Card 2: WhatsApp -->
                 <div class="flip-card">
                     <div class="flip-card-inner">
                         <div class="flip-card-front" style="--c:var(--green);">
@@ -1731,7 +1566,7 @@
                     </div>
                 </div>
 
-                <!-- Card 3: Email -->
+           
                 <div class="flip-card">
                     <div class="flip-card-inner">
                         <div class="flip-card-front" style="--c:var(--red);">
@@ -1748,7 +1583,7 @@
                     </div>
                 </div>
 
-                <!-- Card 4: Visit -->
+              
                 <div class="flip-card">
                     <div class="flip-card-inner">
                         <div class="flip-card-front" style="--c:var(--orange);">
@@ -1770,7 +1605,7 @@
         <svg class="wave-divider wave-yellow" viewBox="0 0 1440 90" preserveAspectRatio="none" aria-hidden="true">
             <path d="M0,50 C240,10 480,90 720,50 C960,10 1200,70 1440,30 L1440,90 L0,90 Z"></path>
         </svg>
-    </section>
+    </section> 
 
     <!-- ===== CONTACT MAIN (Form + Info) ===== -->
     <section class="contact-main" id="form">
@@ -1900,7 +1735,7 @@
     </section>
 
     <!-- ===== BUSINESS HOURS ===== -->
-    <section class="hours-section" id="hours">
+   <!--  <section class="hours-section" id="hours">
         <div class="section-wrap">
             <p class="eyebrow eyebrow-purple"><i class="bi bi-clock-history"></i> Hours</p>
             <h2 class="section-title">When you can reach us</h2>
@@ -1959,7 +1794,7 @@
         <svg class="wave-divider" viewBox="0 0 1440 90" preserveAspectRatio="none" aria-hidden="true">
             <path d="M0,40 C240,90 480,0 720,30 C960,60 1200,10 1440,40 L1440,90 L0,90 Z"></path>
         </svg>
-    </section>
+    </section> -->
 
     <!-- ===== MAP ===== -->
     <section class="map-section" id="map">
@@ -1983,7 +1818,7 @@
     </section>
 
     <!-- ===== TRUST / TESTIMONIALS MINI ===== -->
-    <section class="trust-section" id="trust">
+    <!-- <section class="trust-section" id="trust">
         <div class="section-wrap">
             <p class="eyebrow eyebrow-green"><i class="bi bi-chat-quote"></i> What Parents Say</p>
             <h2 class="section-title">Our community speaks for us</h2>
@@ -2005,7 +1840,7 @@
                     <p class="trust-quote">"The campus is bright, the teachers are caring, and the communication with parents is outstanding. We're so glad we chose Sri Rainbow."</p>
                     <div class="trust-author">— Meera Iyer <span>Parent of Nursery student</span></div>
                 </div>
-               <!--  <div class="trust-item" style="--c:var(--green);">
+                <div class="trust-item" style="--c:var(--green);">
                     <span class="trust-icon"><i class="bi bi-quote"></i></div>
                     <p class="trust-quote">"We visited three other schools before Sri Rainbow. The moment we stepped in, we felt the warmth. It was an easy decision."</p>
                     <div class="trust-author">— Vikram Reddy <span>Parent of Class 2 student</span></div>
@@ -2014,14 +1849,14 @@
                     <span class="trust-icon"><i class="bi bi-quote"></i></span>
                     <p class="trust-quote">"The campus is bright, the teachers are caring, and the communication with parents is outstanding. We're so glad we chose Sri Rainbow."</p>
                     <div class="trust-author">— Meera Iyer <span>Parent of Nursery student</span></div>
-                </div> -->
+                </div>
             </div>
         </div>
 
         <svg class="wave-divider wave-purple" viewBox="0 0 1440 90" preserveAspectRatio="none" aria-hidden="true">
             <path d="M0,30 C240,70 480,10 720,40 C960,70 1200,20 1440,50 L1440,90 L0,90 Z"></path>
         </svg>
-    </section>
+    </section> -->
 
     <!-- ===== CTA BANNER ===== -->
     <section class="cta-banner">
