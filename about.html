@@ -44,7 +44,7 @@
     }
 
     * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
+    html { scroll-behavior: smooth; overflow-x: hidden; }
     body {
       margin: 0;
       font-family: var(--font-body);
@@ -784,7 +784,7 @@
       }
       .nav-wrap { position: relative; z-index: 503; }
       .btn-enquire { display: none; }
-      .fab-enquire { display: flex; }
+.fab-enquire { display: flex; }
 
       .values-grid { grid-template-columns: 1fr; }
       .team-grid { grid-template-columns: 1fr; }
@@ -800,25 +800,10 @@
       .about-hero-inner {
         padding: 40px 22px;
       }
-.modal-form-wrap { padding: 30px 22px; }
+      .modal-form-wrap { padding: 30px 22px; }
       .form-row { grid-template-columns: 1fr; }
+.footer-wrap { grid-template-columns: 1fr; gap: 30px; }
     }
-    /* ==========================================================================
-       Footer
-   ========================================================================== */
-.site-footer{background:var(--navy-2); color:#C7CFEE; padding-top:60px;}
-.footer-wrap{
-  max-width:1180px; margin:0 auto; padding:0 32px 40px;
-  display:grid; grid-template-columns:1.4fr 1fr 1fr 1fr; gap:40px;
-}
-.footer-logo{height:90px; width:auto; border-radius:12px; background:#fff; padding:6px; margin-bottom:14px;}
-.footer-brand p{font-size:.9rem; line-height:1.6;}
-.footer-links h4, .footer-cta h4{color:#fff; font-size:1rem; margin-bottom:16px;}
-.footer-links a{display:block; font-size:.9rem; margin-bottom:10px; color:#C7CFEE; transition:color .18s ease;}
-.footer-links a:hover{color:var(--yellow);}
-.footer-bottom{
-  border-top:1px solid rgba(255,255,255,0.1); padding:22px 32px; text-align:center; font-size:.85rem;
-}
   </style>
 </head>
 
