@@ -1194,17 +1194,8 @@
             left: 120px;
             transform: rotate(40deg);
         }
-        .modal-form-wrap {
-            padding: 44px 40px;
-        }
-        .modal-form-wrap h4 {
-            font-size: 1.2rem;
-            margin-bottom: 22px;
-            color: var(--navy-2);
-            display: flex;
-            gap: 10px;
-            align-items: center;
-        }
+        .modal-form-wrap { padding: 44px 40px; }
+    .modal-form-wrap h4 { font-size: 1.2rem; margin-bottom: 22px; color: var(--navy-2); display: flex; gap: 10px; align-items: center; }
         .modal-success {
             display: none;
             text-align: center;
@@ -1345,18 +1336,12 @@
             .modal-side {
                 display: none;
             }
-            .modal-side {
-                display: none;
-            }
             .program-cards {
                 grid-template-columns: 1fr 1fr;
             }
             .rainbow-burst {
                 max-width: 380px;
             }
-            .modal-form-wrap { padding: 30px 22px; }
-      .form-row { grid-template-columns: 1fr; }
-    }
         }
         @media (max-width: 760px) {
             /* Mobile nav */
@@ -1424,20 +1409,37 @@
             .testi-cards {
                 grid-template-columns: 1fr;
             }
-            .footer-wrap {
-                grid-template-columns: 1fr;
-            }
+           .footer-wrap { grid-template-columns: 1fr; gap: 30px; }
             .section-wrap {
                 padding: 70px 22px 50px;
             }
             .hero-inner {
                 padding: 40px 22px 80px;
             }
-            .modal-form-wrap { padding: 30px 22px; }
-      .form-row { grid-template-columns: 1fr; }
-    }
-            .form-row {
+           /* .modal-form-wrap {
+                padding: 30px 22px;
+            }*/
+            /* Mobile modal responsive */
+            /*.modal-card {
+                max-height: 95vh;
+                margin: 10px;
+                border-radius: var(--radius-md);
+            }
+           
+            .modal-form-wrap h4 {
+                font-size: 1.1rem;
+            }
+            .field input,
+            .field select,
+            .field textarea {
+                padding: 14px 16px;
+                font-size: 16px; /* Prevents zoom on iOS */
+            /*.form-row {
                 grid-template-columns: 1fr;
+            }*/
+            .btn-primary.full {
+                padding: 16px 24px;
+                font-size: 1rem;
             }
             .hero {
                 min-height: auto;
@@ -1451,6 +1453,9 @@
             .stat-num {
                 font-size: 1.6rem;
             }
+            .modal-form-wrap { padding: 30px 22px; }
+      .form-row { grid-template-columns: 1fr; }
+
         }
     </style>
 </head>
@@ -1682,16 +1687,18 @@
             </div>
         </div>
     </section>
+
     <!-- CTA Banner -->
     <!-- <section class="cta-banner">
         <h2>Ready to give your child the Rainbow experience?</h2>
         <p>Admissions for 2026-27 are now open. Book a campus tour, meet our teachers, and see the magic for yourself.</p>
         <button class="btn-primary btn-light" id="openEnquireBtn3"><i class="bi bi-send-check"></i> Book a Campus Visit</button>
     </section> -->
+
     <!-- Map Section -->
     <section class="map-section">
         <div class="map-embed">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d476.0928329951529!2d78.586789!3d17.327961!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sin!4v1784076397962!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d227.81786002559903!2d78.58678890798737!3d17.327960607516367!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e1!3m2!1sen!2sin!4v1784069580131!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
         </div>
     </section>
 
