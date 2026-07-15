@@ -565,8 +565,8 @@
         }
         .gal-item img {
             width: 100%;
-            height: auto;
-            object-fit: contain;
+            height: 100%;
+            object-fit: cover;
             transition: transform .4s ease;
         }
         .gal-item:hover img {
@@ -1166,7 +1166,7 @@
             .fab-enquire { display: flex; }
 
             .gallery-grid {
-                grid-template-columns: repeat(2, 1fr);
+                grid-template-columns: 1fr;
                 gap: 14px;
             }
             .stats-grid {
@@ -1189,6 +1189,14 @@
                 aspect-ratio: 4/3;
                 min-height: 200px;
             }
+            /* Disable hover transform on touch devices to prevent overlap */
+            .gal-item:hover {
+                transform: none;
+                box-shadow: none;
+            }
+            .gal-item:hover img {
+                transform: none;
+            }
             .gal-tag {
                 font-size: .6rem;
                 padding: 3px 10px;
@@ -1202,9 +1210,9 @@
             .gallery-hero-inner {
                 padding: 40px 22px 80px;
             }
-           .modal-form-wrap { padding: 30px 22px; }
-.form-row { grid-template-columns: 1fr; }
-    }
+            .modal-form-wrap {
+                padding: 30px 22px;
+            }
             .form-row {
                 grid-template-columns: 1fr;
             }
@@ -1217,13 +1225,12 @@
             .lightbox-content {
                 max-height: 95vh;
             }
-.lightbox-content img {
+            .lightbox-content img {
                 max-height: 50vh;
             }
         }
-        }
         /* ==========================================================================
-    Top Announcement Bar
+   Top Announcement Bar
    ========================================================================== */
 .top-bar {
   background: linear-gradient(90deg, #E63946, #F4863A);
